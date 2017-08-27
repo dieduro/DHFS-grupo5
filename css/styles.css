@@ -41,26 +41,26 @@ table {
 	border-spacing: 0;
 }
 
-/* CSS NUESTRO */
+/* CSS TEAMAPP! */
 
 body {
 	background-color: white;
 	font-family: 'Roboto', sans-serif;
-	max-width: 1180px;
+	max-width: 2180px;
+	margin: 0 auto;
+	padding: 5px 10px;
+}
+.container {
+	overflow: hidden;
+	padding: 0 10px;
+	margin: 10px 0 ;
 }
 a:visited {
 	color: #333333;
 }
-.container {
-	margin: 0 auto;
-	overflow: hidden;
-	text-align: center;
-	overflow: hidden;
-}
 header {
-	text-align: center;
 	overflow: hidden;
-	font-size: 25px;
+	font-size: 1.5em;
 }
 nav i {
 	float: right;
@@ -68,28 +68,31 @@ nav i {
 	margin: 16px 16px 0 0;
 }
 .encabezado {
-	margin: 25px auto;
+	width: 100%;
+	text-align: center;
 }
 .logo {
 	margin-bottom: 5px;
 	width: 197px;
 }
 .caption {
-	max-width: 250px;
+	width: 250px;
 	color: #003366;
 	font-weight: 500;
 	font-size: 1em;
+	margin: 0 auto;
 }
 .buscador {
-	margin: 40px auto 40px auto;
+	margin: 30px auto 30px auto;
 }
 .btn-hollow {
 	width: 250px;
+	padding: 6px;
 	border: 1px solid #FFCC66;
 	color: #333333;
 	text-transform: uppercase;
+	text-align: center;
 	font-weight: 600;
-	padding: 6px;
 }
 .btn-hollow:hover  {
 	background-color: #FFCC66;
@@ -103,8 +106,41 @@ nav i {
 .buscador-dropdown {
 	display: none;
 }
+.buscador-dropdown li {
+	border-top: 1px solid #FFCC66;
+}
+h2 {
+	font-size: 0.9em;
+	color: #333333;
+	font-weight: 600;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+}
 .deporte {
 	width: 100%;
+	float: left;margin-bottom: 18px;
+}
+.deporte h3 {
+	font-size: 0.9em;
+	color: #003366;
+	font-weight: 500;
+	margin-bottom: 5px;
+}
+.deporte img {
+	width: 100%;
+	margin-bottom: 10px;
+}
+h6 {
+	font-size: 0.8em;
+	line-height: 1.2em;
+}
+footer {
+	overflow: hidden;
+	font-size: 1.5em;
+	margin: 0 auto;
+}
+.social-icons {
+	text-align: center;
 }
 
 @media (min-width: 632px) {
@@ -113,6 +149,5 @@ nav i {
 	}
 	.caption {
 		font-size: 1.3em;
-		max-width: 300px;
 	}
 }
