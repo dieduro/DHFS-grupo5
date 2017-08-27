@@ -2,13 +2,64 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="css/styles.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Formulario de Registro de Cliente</title>
   </head>
   <body>
 <!--Header-->
     <header>
+      <h1>Tus Datos</h1>
     </header>
-  </body>
+<!--campos de registro obligatorios-->
+<h2>Registrate Gratis!</h2>
+<form id="registro" method="post" class="">
+  <label for = "nombreApellido">Nombre y Apellido: </label>
+  <input type="text" name="nombreyapellido" id="nombreApellido" required><br><br>
+  <label for="email">email: </label>
+  <input type="text" name="email" id="email" required><br><br>
+  <label for="contraseña">Contraseña</label>
+  <input type="password" name="contraseña" id="contraseña" required><br><br>
+  <label for="contraseña">Repetir Contraseña</label>
+  <input type="password" name="contraseña" id="contraseña" required><br><br>
+<!--Otros Campos de registro--->
+  <label for="cumple">Fecha de Nacimiento: </label>
+  <input type="date" name="cumple" id="cumple"><br><br>
+    <fieldset>
+      <legend>Sexo</legend>
+      <input type="radio" name="Sex" value="Female" checked>  Femenino
+      <input type="radio" name="Sex" value="Masculino"> Masculino
+    </fieldset>
+      <br>
+<h3>Dirección:</h3>
+    <label for="calle">Calle:</label>
+    <input type="text" id="calle" name="calle"> <br><br>
+    <label for="numero">Número: </label>
+    <input type="number" id="numero" name="numero" min="0" max="10.000"> <br><br>
+    <label for="cp">Código Postal: </label>
+    <input type="number" id="cp" name="cp" min="0" max="100.000"> <br><br>
+    <label for="ciudad">Ciudad:</label>
+    <input type="text" id="ciudad" name="ciudad"> <br><br>
+    <label for="provincia">Provincia:</label>
+    <input type="text" id="provincia" name="provincia"> <br><br>
+<h4>Donde te podemos contactar? </h4>
+    <label for="telefono">Teléfono</label>
+      <select name="telefono" id="telefono">
+        <option value="celular">Celular</option>
+        <option value="Fijo">Fijo</option><br>
+      <input type="tel" name="tel" id="tel"><br><br>
+<!--Campos de Registro relacionados a la red-->
+  <fieldset>
+    <legend>Qué deportes te gustan?</legend>
+      <input type="checkbox" name="Futbol" value="Futbol" checked>  Futbol<br>
+      <input type="checkbox" name="Basquet" value="Basquet"> Basquet<br>
+      <input type="checkbox" name="Volley" value="Volley"> Volley<br>
+      <input type="checkbox" name="Hockey" value="Hockey"> Hockey<br>
+      <input type="checkbox" name="Golf" value="Golf"> Golf<br>
+      <input type="checkbox" name="Rgby" value="Rugby"> Rugby<br>
+      <input type="checkbox" name="Softball" value="Softball"> Softball<br>
+  </fieldset><br>
+    <button type="submit" name="submit" id="submit">Enviar Información</button>
+  </form>
+</body>
 </html>
