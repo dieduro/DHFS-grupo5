@@ -22,6 +22,8 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+	box-sizing: border-box;
+	text-decoration: none;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
@@ -40,3 +42,77 @@ table {
 }
 
 /* CSS NUESTRO */
+
+body {
+	background-color: white;
+	font-family: 'Roboto', sans-serif;
+	max-width: 1180px;
+}
+a:visited {
+	color: #333333;
+}
+.container {
+	margin: 0 auto;
+	overflow: hidden;
+	text-align: center;
+	overflow: hidden;
+}
+header {
+	text-align: center;
+	overflow: hidden;
+	font-size: 25px;
+}
+nav i {
+	float: right;
+	color: #003366;
+	margin: 16px 16px 0 0;
+}
+.encabezado {
+	margin: 25px auto;
+}
+.logo {
+	margin-bottom: 5px;
+	width: 197px;
+}
+.caption {
+	max-width: 250px;
+	color: #003366;
+	font-weight: 500;
+	font-size: 1em;
+}
+.buscador {
+	margin: 40px auto 40px auto;
+}
+.btn-hollow {
+	width: 250px;
+	border: 1px solid #FFCC66;
+	color: #333333;
+	text-transform: uppercase;
+	font-weight: 600;
+	padding: 6px;
+}
+.btn-hollow:hover  {
+	background-color: #FFCC66;
+}
+.btn-solid {
+	width: 250px;
+	height: 30px;
+	background-color: #FFCC66;
+	color: white;
+}
+.buscador-dropdown {
+	display: none;
+}
+.deporte {
+	width: 100%;
+}
+
+@media (min-width: 632px) {
+	.logo {
+		width: 260px;
+	}
+	.caption {
+		font-size: 1.3em;
+		max-width: 300px;
+	}
+}
