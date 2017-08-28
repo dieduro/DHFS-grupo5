@@ -1,0 +1,153 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	box-sizing: border-box;
+	text-decoration: none;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* CSS TEAMAPP! */
+
+body {
+	background-color: white;
+	font-family: 'Roboto', sans-serif;
+	max-width: 2180px;
+	margin: 0 auto;
+	padding: 5px 10px;
+}
+.container {
+	overflow: hidden;
+	padding: 0 10px;
+	margin: 10px 0 ;
+}
+a:visited {
+	color: #333333;
+}
+header {
+	overflow: hidden;
+	font-size: 1.5em;
+}
+nav i {
+	float: right;
+	color: #003366;
+	margin: 16px 16px 0 0;
+}
+.encabezado {
+	width: 100%;
+	text-align: center;
+}
+.logo {
+	margin-bottom: 5px;
+	width: 197px;
+}
+.caption {
+	width: 250px;
+	color: #003366;
+	font-weight: 500;
+	font-size: 1em;
+	margin: 0 auto;
+}
+.buscador {
+	margin: 30px auto 30px auto;
+}
+.btn-hollow {
+	width: 250px;
+	padding: 6px;
+	border: 1px solid #FFCC66;
+	color: #333333;
+	text-transform: uppercase;
+	text-align: center;
+	font-weight: 600;
+}
+.btn-hollow:hover  {
+	background-color: #FFCC66;
+}
+.btn-solid {
+	width: 250px;
+	height: 30px;
+	background-color: #FFCC66;
+	color: white;
+}
+.buscador-dropdown {
+	display: none;
+}
+.buscador-dropdown li {
+	border-top: 1px solid #FFCC66;
+}
+h2 {
+	font-size: 0.9em;
+	color: #333333;
+	font-weight: 600;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+}
+.deporte {
+	width: 100%;
+	float: left;margin-bottom: 18px;
+}
+.deporte h3 {
+	font-size: 0.9em;
+	color: #003366;
+	font-weight: 500;
+	margin-bottom: 5px;
+}
+.deporte img {
+	width: 100%;
+	margin-bottom: 10px;
+}
+h6 {
+	font-size: 0.8em;
+	line-height: 1.2em;
+}
+footer {
+	overflow: hidden;
+	font-size: 1.5em;
+	margin: 0 auto;
+}
+.social-icons {
+	text-align: center;
+}
+
+@media (min-width: 632px) {
+	.logo {
+		width: 260px;
+	}
+	.caption {
+		font-size: 1.3em;
+	}
+}
