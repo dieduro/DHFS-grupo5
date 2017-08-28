@@ -15,24 +15,21 @@
       <div class="container">
           <div class="encabezado">
             <img class="logo" src="images/logo-home.png" alt="logo">
-            <div class="caption">Regístrate Gratis!</div>
+            <div class="caption">Regístrate</div>
           </div>
       </div><br>
     </header>
 <!--campos de registro obligatorios-->
-<h1>Tus Datos</h1><br>
 <form id="registro" method="post" class="">
   <div class="regDatosObligatorios">
-    <label for = "nombreApellido">Nombre y Apellido: </label>
-    <input type="text" name="nombreyapellido" id="nombreApellido" required><br><br>
-    <label for="email">e-mail: </label>
-    <input type="text" name="email" id="email" required><br><br>
-    <label for="contraseña">Contraseña</label>
-    <input type="password" name="contraseña" id="contraseña" required><br><br>
-    <label for="contraseña">Repetir Contraseña</label>
-    <input type="password" name="contraseña" id="contraseña" required><br><br><br>
+    <input type="text" name="nombreyapellido" id="nombreApellido" placeholder="Nombre y Apellido"required><br><br>
+    <input type="text" name="email" id="email" placeholder="E-mail"required><br><br>
+    <input type="password" name="contraseña" id="contraseña" placeholder="Contraseña"required><br><br>
+    <input type="password" name="contraseña" id="contraseña" placeholder="Contraseña"required><br><br><br>
+    <input type="checkbox" name="" value="Compartir mis datos de registro con los proveedores de contenido de TeamApp para fines de marketing">Compartir mis datos de registro con los proveedores de contenido de TeamApp para fines de marketing<br><br><br><br>
+    <p> Si haces click en "Crear Cuenta" aceptarás los <a href="#"> Términos y Condiciones</a> y <a href="#"> Política de Privacidad</a> de teamApp </p><br><br><br>
   </div>
-<!--Otros Campos de registro--->
+<!--Otros Campos de registro
 <div class="regInfoPersonal"
   <label for="cumple">Fecha de Nacimiento: </label>
   <input type="date" name="cumple" id="cumple"><br><br>
@@ -60,7 +57,6 @@
         <option value="Fijo">Fijo</option><br>
       <input type="tel" name="tel" id="tel"><br><br>
 </div>
-<!--Campos de Registro relacionados a la red-->
 <div class="regPreferencias">
   <fieldset>
     <legend>Qué deportes te gustan?</legend><br>
@@ -71,9 +67,12 @@
       <input type="checkbox" name="Golf" value="Golf"> Golf<br>
       <input type="checkbox" name="Rgby" value="Rugby"> Rugby<br>
       <input type="checkbox" name="Softball" value="Softball"> Softball<br>
-  </fieldset><br>
-    <button type="submit" name="submit" id="submit">Enviar Información</button>
   </div>
+  </fieldset><br>--->
+    <button type="submit" name="submit" id="submit">Crear Cuenta</button><br><br><br>
+    <p>Ya tenés cuenta?
+    <a href="login.html">Iniciá Sesión</a>
+  </p>
 </form>
 </body>
 </html>
