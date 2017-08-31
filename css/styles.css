@@ -67,6 +67,11 @@ nav i {
 	color: #003366;
 	margin: 16px 16px 0 0;
 }
+.back {
+	position:absolute;
+	left:0;
+	top: 0;
+}
 .encabezado {
 	width: 100%;
 	text-align: center;
@@ -118,7 +123,8 @@ h2 {
 }
 .deporte {
 	width: 100%;
-	float: left;margin-bottom: 18px;
+	float: left;
+	margin-bottom: 18px;
 }
 .deporte h3 {
 	font-size: 0.9em;
