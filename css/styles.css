@@ -15,7 +15,7 @@ table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+time, mark, audio, video, button {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -24,6 +24,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 	box-sizing: border-box;
 	text-decoration: none;
+	background-color: none;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
@@ -52,128 +53,150 @@ body {
 }
 .container {
 	overflow: hidden;
-	padding: 0 10px;
 	margin: 10px auto;
-	position:relative;
-
-
+	position: relative;
+	text-align: center;
 }
+/*
 .border-body {
 	border: 1px solid blue;
 }
+*/
+/*
 .panel {
 	overflow: hidden;
 	text-align: center;
 	margin-left: 10%;
 	margin-right: 10%;
 }
+*/
 form p {
 	margin-bottom: 10px;
 }
 a:visited {
 	color: #333333;
 }
+
+/* HEADER */
 header {
 	overflow: hidden;
 	font-size: 1.5em;
+}
+.logo {
+	margin-bottom: 5px;
+	width: 120px;
 }
 h1 {
 	display: inline-block;
 }
 nav {
 	display: inline-block;
-	position: absolute;
-	top: 10px;
-	right: 10px;
+	float: right;
 }
-
-
 nav i {
-
 	float: right;
 	color: #003366;
-	margin: 16px 16px 0 0;
 }
+
+/*
 .back {
 	position:absolute;
-	left:10px;
-	top: 10;
+	left: 10px;
+	top: 10px;
 	padding: 15px;
 }
+*/
+
+/* IMG GRANDE */
 .encabezado {
 	width: 100%;
 	text-align: center;
-	margin-top: 10px;
 	overflow: hidden;
+}
+.img-home {
+	width: 100%;
 }
 .overlay {
 	position: absolute; /* Sit on top of the page content */
-	top:0;
+	top: 0;
 	left: 0;
 	width: 100%; /* Full width (cover the whole page) */
-	height: 100%;
+	overflow: hidden;
 	text-align: center;
-	z-index: 2;
-}
-.overlay h2 {
+	}
+.caption {
+	position: relative;
+	top: 2em;
+	max-width: 250px;
 	color: white;
-	font-weight: 600;
-	position: relative;
-  top: 20px;
-
+	font-weight: 500;
+	font-size: 1.8em;
+	margin: 0 auto;
+	margin-bottom: 10px;
 }
-
-.overlay div button {
-	position: relative;
-	bottom:1px;
+.btn-register {
+	margin-top: 4em;
+	min-width: 200px;
+	padding: 6px;
+	background-color: #003366;
+	color: white;
+	text-transform: uppercase;
+	text-align: center;
+	font-weight: 500;
+	font-size: 0.9em;
 }
+/*
 .wrapper {
 	overflow: hidden;
 }
+*/
 
-.logo {
-	margin-bottom: 5px;
-	width: 197px;
-}
-.caption {
-	width: 250px;
-	color: #003366;
-	font-weight: 500;
-	font-size: 1em;
-	margin: 0 auto;
-}
+/* BUSCADOR */
 .buscador {
-	margin: 30px auto 30px auto;
-}
-.btn-hollow {
-	width: 250px;
-	padding: 6px;
-	border: 1px solid #FFCC66;
-	color: #333333;
+	border: 1px solid #003366;
+	padding: 8px;
+	margin: 10px 0 10px auto;
+	font-size: 1em;
 	text-transform: uppercase;
 	text-align: center;
-	font-weight: 600;
 }
-.btn-hollow:hover  {
-	background-color: #FFCC66;
+.select {
+	border: 0;
+	width: 100px;
+	border-right: 1px solid #003366;
 }
-.btn-solid {
-	width: 250px;
-	height: 30px;
-	background-color: #FFCC66;
+.btn-submit {
+	font-size: 0.8em;
 	color: white;
+	background-color: #003366;
+	text-transform: uppercase;
+	padding: 8px;
 }
 .buscador-dropdown {
 	display:none;
 }
 .buscador-dropdown li {
-	border-top: 1px solid #FFCC66;
+	border-top: 1px solid #003366;
 }
+.btn-hollow {
+	width: 250px;
+	padding: 6px;
+	border: 1px solid #003366;
+	color: #333333;
+	text-transform: uppercase;
+	text-align: center;
+	font-weight: 500;
+	font-size: 0.9em;
+}
+.btn-hollow:hover  {
+	background-color: #FFCC66;
+}
+
 h2 {
 	font-size: 0.9em;
 	color: #333333;
 	font-weight: 600;
-	margin-bottom: 10px;
+	text-transform: uppercase;
 
 }
 .deporte {
