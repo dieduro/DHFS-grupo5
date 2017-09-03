@@ -127,6 +127,9 @@ nav i {
 	position: relative;
 	bottom:1px;
 }
+.wrapper {
+	overflow: hidden;
+}
 
 .logo {
 	margin-bottom: 5px;
