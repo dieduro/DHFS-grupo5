@@ -17,7 +17,6 @@
             </h1>
             <nav class="menu">
             <span><i class="fa fa-bars menu" aria-hidden="true"></i></span>
-              <!--
               <div class="menu-content">
                 <ul>
                   <li><a href="#">Ayuda</a></li>
@@ -29,7 +28,6 @@
                   <div class="logo-menu"><img src="images/logo-menu.png" alt="logo"></div>
                 </ul>
               </div>
-            -->
              <nav>
       </header>
 
@@ -94,15 +92,16 @@
           <h2>Partidos por Completarse</h2>
         </div>
         <div class="deporte">
+
+          <img src="images/futbol-th.jpg" alt="futbol">
           <h3>Hockey</h3>
           <h6>Belgrano - Miercoles 20hs</h6>
-          <img src="images/futbol-th.jpg" alt="futbol">
-
         </div>
         <div class="deporte">
+
+          <img src="images/futbol-th.jpg" alt="futbol">
           <h3>Rugby</h3>
           <h6>El Palomar - Jueves 19:30hs</h6>
-          <img src="images/futbol-th.jpg" alt="futbol">
 
         </div>
 

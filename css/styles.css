@@ -88,15 +88,15 @@ header {
 h1 {
 	display: inline-block;
 }
-nav {
-	display: inline-block;
-	float: right;
-}
-nav i {
-	float: right;
-	color: #003366;
-}
 
+/* MENU */
+
+.menu {
+	float: right;
+}
+.menu-content {
+	display: none;
+}
 /*
 .back {
 	position:absolute;
@@ -114,6 +114,7 @@ nav i {
 }
 .img-home {
 	width: 100%;
+	margin-bottom: 20px;
 }
 .overlay {
 	position: absolute; /* Sit on top of the page content */
@@ -173,7 +174,6 @@ nav i {
 	text-transform: uppercase;
 	padding: 8px;
 }
-
 .buscador-dropdown li {
 	border-top: 1px solid #003366;
 }
@@ -190,7 +190,6 @@ nav i {
 .btn-hollow:hover  {
 	background-color: #FFCC66;
 }
-
 h2 {
 	font-size: 0.9em;
 	color: #333333;
@@ -204,18 +203,20 @@ h2 {
 	margin-bottom: 18px;
 }
 .deporte h3 {
-	font-size: 0.9em;
+	font-size: 1em;
 	color: #003366;
 	font-weight: 500;
-	margin-bottom: 5px;
+	margin: 5px 0;
+	text-align: left;
 }
 .deporte img {
 	width: 100%;
-	margin-bottom: 10px;
+	margin: 10px 0 2px 0;
 }
 h6 {
 	font-size: 0.8em;
 	line-height: 1.2em;
+	text-align: left;
 }
 footer {
 	overflow: hidden;
