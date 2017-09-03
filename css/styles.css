@@ -83,7 +83,6 @@ header {
 	font-size: 1.5em;
 }
 .logo {
-	margin-bottom: 5px;
 	width: 120px;
 }
 h1 {
@@ -162,8 +161,10 @@ nav i {
 }
 .select {
 	border: 0;
-	width: 100px;
+	width: 80px;
 	border-right: 1px solid #003366;
+	font-size: 0.7em;
+	color: #333333;
 }
 .btn-submit {
 	font-size: 0.8em;
@@ -172,9 +173,7 @@ nav i {
 	text-transform: uppercase;
 	padding: 8px;
 }
-.buscador-dropdown {
-	display:none;
-}
+
 .buscador-dropdown li {
 	border-top: 1px solid #003366;
 }

@@ -32,6 +32,7 @@
             -->
              <nav>
       </header>
+
 <!-- IMG GRANDE -->
     <div class="container">
       <img class="img-home" src="images/hockey-home.jpg" alt="Foto de Home">
