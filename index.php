@@ -9,38 +9,21 @@
     <title>TeamUp!</title>
   </head>
   <body>
-  <!-- HEADER -->
-      <header class="container">
-        <div class="encabezado">
-            <h1>
-            <img class="logo" src="images/logo-home.png" alt="logo TeamUp!">
-            </h1>
-            <nav class="menu">
-            <span><i class="fa fa-bars menu" aria-hidden="true"></i></span>
-              <div class="menu-content">
-                <ul>
-                  <li><a href="#">Ayuda</a></li>
-                  <li><a href="#">Ofrecé una cancha</a></li>
-                  <li><a href="#">Organizá un Partido</a></li>
-                  <li><a href="#">Descargar</a></li>
-                  <li><a href="#">Registrate</a></li>
-                  <li><a href="#"><Iniciar></Iniciar> Sesión</a></li>
-                  <div class="logo-menu"><img src="images/logo-menu.png" alt="logo"></div>
-                </ul>
-              </div>
-             <nav>
-      </header>
-
+<!--header-->
+<?php
+include_once 'header.php'
+ ?>
 <!-- IMG GRANDE -->
-    <div class="container">
-      <img class="img-home" src="images/hockey-home.jpg" alt="Foto de Home">
-      <div class="overlay">
-        <div>
-          <p class="caption">Estás a un click de empezar a jugar</p>
-          <button class="btn-register" type="button">REGISTRATE</button>
+      <div class="container">
+        <img class="img-home" src="images/hockey-home.jpg" alt="Foto de Home">
+        <div class="overlay">
+          <div>
+            <p class="caption">Estás a un click de empezar a jugar</p>
+            <button class="btn-register" type="button">REGISTRATE</button>
+          </div>
         </div>
       </div>
-    </div>
+
 <!-- BUSCADOR -->
     <div class="container">
       <h2>Buscador de Partidos</h2>
