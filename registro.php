@@ -24,7 +24,7 @@
     </header>
 <!--campos de registro obligatorios-->
 <br><br>
-  <div class="container border-body">
+  <div class="container panel">
     <div class="loginBtn-cont" >
       <button class="loginBtn loginBtn--facebook">
         Conectate con Facebook

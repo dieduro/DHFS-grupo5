@@ -20,12 +20,15 @@
             </div>
         </div><br>
     </header>
-    <div class="loginContainer">
-      <p>o</p><br><br>
-      <input type="text" name="email" id="email" placeholder="e-mail"required><br><br>
-      <input type="password" name="contraseña" id="contraseña" placeholder="Contraseña"required><br><br>
-      <input type="checkbox" name="" value="recordame">Recúerdame</p><br><br><br>
-      <button type="submit" name="iniciarSesion" id="iniciarSesion">INICIAR SESION</button><br><br><br>
+    <div class="container panel">
+
+      <form class="" action="index.php" method="post">
+        <input type="text" name="email" id="email" placeholder="e-mail"required><br><br>
+        <input type="password" name="contraseña" id="contraseña" placeholder="Contraseña"required><br><br>
+        <input type="checkbox" name="" value="recordame">Recúerdame</p><br><br><br>
+        <button type="submit" name="iniciarSesion" id="iniciarSesion">INICIAR SESION</button>
+      </form>
+      <br><br><br>
       <p>¿Olvidaste tu nombre de usuario o contraseña?<br>
       ¿No tienes cuenta? <a href="registro.html">Regístrate</a>
     </p><br><br><br>

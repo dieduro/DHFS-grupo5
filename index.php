@@ -106,7 +106,7 @@
         </div>
 
       </div>
-      <div><a href="faq.html">FAQ's</a></div>
+      <div><a href="faq.php">FAQ's</a></div>
 
     <footer class="container">
       <div class="logo"><a href="#"></a></div>

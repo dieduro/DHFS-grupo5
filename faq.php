@@ -16,7 +16,7 @@
         <i class="fa fa-bars" aria-hidden="true"></i>
       </nav>
       <div class="encabezado">
-        <a href="index.html" class="back">Volver</a>
+        <a href="index.php" class="back">Volver</a>
         <img class="logo" src="images/logo-home.png" alt="logo">
         <div class="container caption"><h1>Preguntas Frecuentes</h1></div>
       </div>
