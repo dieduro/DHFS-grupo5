@@ -281,6 +281,9 @@ footer {
 	margin: 20px;
 	text-align: center;
 }
+.listaFooter li {
+	margin-right: 10px;
+}
 
 
 @media (min-width: 632px) {
