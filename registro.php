@@ -29,7 +29,10 @@
       <button class="loginBtn loginBtn--facebook">
         Conectate con Facebook
       </button>
+      <hr>
     </div>
+
+    <h2>Creá tu cuenta</h2><br>
 
     <form id="registro" method="post" class="panel">
       <div class="regDatosObligatorios">
@@ -38,8 +41,8 @@
         <input type="password" name="contraseña" id="contraseña" placeholder="Contraseña"required><br><br>
         <input type="password" name="contraseña" id="contraseña" placeholder="Repetir Contraseña"required><br><br><br>
 
-        <div class="">
-          <input type="checkbox" name="" value="Compartir mis datos de registro con los proveedores de contenido de TeamApp para fines de marketing"> Compartir mis datos de registro con los proveedores de contenido de TEAMAPP para fines de marketing.<br><br><br><br>
+        <div class="legals">
+          <input type="checkbox" name="" value="Compartir mis datos de registro con los proveedores de contenido de TeamApp para fines de marketing"><p> Compartir mis datos de registro con los proveedores de contenido de TEAMAPP para fines de marketing.</p><br><br><br><br>
           <p> Si haces click en "Regístrate" aceptarás los <a href="#"> Términos y Condiciones</a> y <a href="#"> Política de Privacidad</a> de TEAMAPP </p><br><br><br>
         </div>
       </div>

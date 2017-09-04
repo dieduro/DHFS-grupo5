@@ -14,6 +14,7 @@
 include_once 'header.php'
  ?>
 <!-- IMG GRANDE -->
+
       <div class="container">
         <img class="img-home" src="images/hockey-home.jpg" alt="Foto de Home">
         <div class="overlay">
@@ -22,6 +23,17 @@ include_once 'header.php'
             <button class="btn-register" type="button">REGISTRATE</button>
           </div>
         </div>
+
+    <div class="container">
+      <img class="img-home" src="images/hockey-home.jpg" alt="Foto de Home">
+      <div class="overlay">
+
+          <p class="caption">Estás a un click de empezar a jugar</p>
+          <div class="btns">
+            <a href="registro.php"><button class="btn-register" type="button">REGISTRATE</button></a>
+            <a href="login.php"><button class="btn-register" type="button">INICIA SESIÓN</button></a>
+          </div>
+
       </div>
 
 <!-- BUSCADOR -->

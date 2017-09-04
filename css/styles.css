@@ -118,10 +118,10 @@ h1 {
 	margin-bottom: 20px;
 }
 .overlay {
-	position: absolute; /* Sit on top of the page content */
+	position: absolute;
 	top: 0;
 	left: 0;
-	width: 100%; /* Full width (cover the whole page) */
+	width: 100%;
 	overflow: hidden;
 	text-align: center;
 	}
@@ -136,7 +136,7 @@ h1 {
 	margin-bottom: 10px;
 }
 .btn-register {
-	margin-top: 4em;
+	margin-top: 1em;
 	min-width: 200px;
 	padding: 6px;
 	background-color: #003366;
@@ -146,6 +146,11 @@ h1 {
 	font-weight: 500;
 	font-size: 0.9em;
 	border-radius: 2px;
+}
+.btns a{
+	overflow: hidden;
+	position: relative;
+	top:10px;
 }
 
 
@@ -167,6 +172,9 @@ h1 {
 	color: #333333;
 	margin-right: 10px;
 	margin-bottom:10px;
+}
+.legals p {
+	font-size: 0.5em;
 }
 .btn-submit {
 	font-size: 0.8em;
