@@ -15,14 +15,6 @@ include_once 'header.php'
  ?>
 <!-- IMG GRANDE -->
 
-      <div class="container">
-        <img class="img-home" src="images/hockey-home.jpg" alt="Foto de Home">
-        <div class="overlay">
-          <div>
-            <p class="caption">Estás a un click de empezar a jugar</p>
-            <button class="btn-register" type="button">REGISTRATE</button>
-          </div>
-        </div>
 
     <div class="container">
       <img class="img-home" src="images/hockey-home.jpg" alt="Foto de Home">

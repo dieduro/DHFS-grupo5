@@ -89,7 +89,7 @@
   </fieldset><br>--->
         <button type="submit" name="submit" id="submit">Regístrate</button><br><br><br>
         <p>¿Ya tienes cuenta?
-        <a href="login.html">Inicia Sesión</a>
+        <a href="login.php">Inicia Sesión</a>
       </p>
     </form>
   </div>
