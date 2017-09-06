@@ -1,9 +1,17 @@
-  <!-- HEADER -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,600" rel="stylesheet">
+    <title>TeamUp!</title>
+  </head>
+  <body>
+      <!-- HEADER -->
       <header class="container">
-        <div class="encabezado">
-            <h1>
-            <img class="logo" src="images/logo-home.png" alt="logo TeamUp!">
-            </h1>
+            <h1><img class="logo" src="images/logo-home.png" alt="logo TeamUp!"></h1>
             <nav class="menu">
             <span><i class="fa fa-bars menu" aria-hidden="true"></i></span>
               <!--

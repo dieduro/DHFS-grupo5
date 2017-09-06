@@ -1,44 +1,26 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="css/styles.css">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/styles.css" type="text/css">
-    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,600" rel="stylesheet">
-    <title>Registrate</title>
-  </head>
-<body>
   <!--header-->
   <?php
   include_once 'header.php';
    ?>
 <!--campos de registro obligatorios-->
-<br><br>
-  <div class="container panel">
-    <div class="loginBtn-cont" >
-      <button class="loginBtn loginBtn--facebook">
-        Conectate con Facebook
-      </button>
+  <div class="container">
+    <div class="con-fb">
+      <a class="btn-solid-lg" href="registro.php" role="button">REGISTRATE con facebook</a>
       <hr>
     </div>
 
-    <h2>Creá tu cuenta</h2><br>
 
-    <form id="registro" method="post" class="panel">
-      <div class="regDatosObligatorios">
-        <input type="text" name="nombreyapellido" id="nombreApellido" placeholder="Nombre y Apellido"required><br><br>
-        <input type="text" name="email" id="email" placeholder="e-mail"required><br><br>
-        <input type="password" name="contraseña" id="contraseña" placeholder="Contraseña"required><br><br>
-        <input type="password" name="contraseña" id="contraseña" placeholder="Repetir Contraseña"required><br><br><br>
-
+    <form class="form" id="registro" method="post">
+      <div>
+        <input type="text" name="name" id="name" placeholder="Nombre y Apellido" required>
+        <input type="text" name="email" id="email" placeholder="Email" required>
+        <input type="password" name="contraseña" id="password" placeholder="Contraseña" required>
+        <input type="password" name="contraseña" id="password" placeholder="Repetir Contraseña" required>
         <div class="legals">
-          <input type="checkbox" name="" value="Compartir mis datos de registro con los proveedores de contenido de TeamApp para fines de marketing"><p> Compartir mis datos de registro con los proveedores de contenido de TEAMAPP para fines de marketing.</p><br><br><br><br>
-          <p> Si haces click en "Regístrate" aceptarás los <a href="#"> Términos y Condiciones</a> y <a href="#"> Política de Privacidad</a> de TEAMAPP </p><br><br><br>
-        </div>
-      </div>
-
+          <input class="chkbx" type="checkbox" name="" value="">
+          <h6 style="color:#555555">Compartir mis datos de registro con los proveedores de contenido de TEAMup! para fines de marketing.</h6>
+          <hr>
+          <h6>Si hacés click en "Registrarte" aceptarás los <a href="tts.php">Términos y Condiciones</a> y <a href="#">Política de Privacidad</a> de TEAMup! </h6>
 <!--Otros Campos de registro
 <div class="regInfoPersonal"
   <label for="cumple">Fecha de Nacimiento: </label>
@@ -79,10 +61,12 @@
       <input type="checkbox" name="Softball" value="Softball"> Softball<br>
   </div>
   </fieldset><br>--->
-        <button type="submit" name="submit" id="submit">Regístrate</button><br><br><br>
-        <p>¿Ya tienes cuenta?
-        <a href="login.php">Inicia Sesión</a>
-      </p>
+                </div>
+        <a class="btn-solid-lg" href="registro.php" role="button">REGISTRATE</a>
+        <div>
+          <h6>¿Ya tienes cuenta? <a href="login.php">Inicia Sesión</a></h6>
+        </div>
+      </div>
     </form>
   </div>
   <?php
