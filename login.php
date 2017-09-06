@@ -9,17 +9,10 @@
     <title>TeamApp!</title>
   </head>
   <body>
-    <header>
-      <nav>
-        <i class="fa fa-bars" aria-hidden="true"></i>
-      </nav>
-        <div class="container">
-            <div class="encabezado">
-              <img class="logo" src="images/logo-home.png" alt="logo">
-              <div class="caption">INICIA SESION CON FACEBOOK</div>
-            </div>
-        </div><br>
-    </header>
+    <!--header-->
+    <?php
+    include_once 'header.php';
+     ?>
     <div class="container panel">
 
       <form class="" action="index.php" method="post">

@@ -10,17 +10,10 @@
     <title>TeamApp!</title>
   </head>
   <body>
-    <!--HEADER-->
-    <header>
-      <nav>
-        <i class="fa fa-bars" aria-hidden="true"></i>
-      </nav>
-      <div class="encabezado">
-        <a href="index.php" class="back">Volver</a>
-        <img class="logo" src="images/logo-home.png" alt="logo">
-        <div class="container caption"><h1>Preguntas Frecuentes</h1></div>
-      </div>
-    </header>
+    <!--header-->
+    <?php
+    include_once 'header.php';
+     ?>
     <!--PREGUNTAS DESPLEGABLES-->
     <div class="faq-container">
       <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">

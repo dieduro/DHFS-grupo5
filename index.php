@@ -11,7 +11,7 @@
   <body>
 <!--header-->
 <?php
-include_once 'header.php'
+include_once 'header.php';
  ?>
 <!-- IMG GRANDE -->
 
