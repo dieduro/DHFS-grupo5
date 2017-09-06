@@ -8,8 +8,6 @@
       <a class="btn-solid-lg" href="registro.php" role="button">REGISTRATE con facebook</a>
       <hr>
     </div>
-
-
     <form class="form" id="registro" method="post">
       <div>
         <input type="text" name="name" id="name" placeholder="Nombre y Apellido" required>
@@ -62,7 +60,7 @@
   </div>
   </fieldset><br>--->
                 </div>
-        <a class="btn-solid-lg" href="registro.php" role="button">REGISTRATE</a>
+        <button class="btn-solid-lg" type="submit" name="register" id="register">REGISTRARME</button>
         <div>
           <h6>¿Ya tienes cuenta? <a href="login.php">Inicia Sesión</a></h6>
         </div>

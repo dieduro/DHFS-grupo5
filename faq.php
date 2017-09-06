@@ -1,28 +1,16 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/styles.css" type="text/css">
-    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,600" rel="stylesheet">
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
-    <title>TeamApp!</title>
-  </head>
-  <body>
     <!--header-->
     <?php
     include_once 'header.php';
      ?>
     <!--PREGUNTAS DESPLEGABLES-->
-    <div class="faq-container">
+    <div class="container">
       <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
     <!--PREGUNTA #1-->
     <div class="panel panel-default">
       <div class="panel-heading" role="tab" id="headingOne">
         <h4 class="panel-title">
           <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-            ¿Qué es TEAMAPP?
+            ¿Qué es TEAMup!?
           </a>
         </h4>
       </div>
@@ -37,7 +25,7 @@
       <div class="panel-heading" role="tab" id="headingTwo">
         <h4 class="panel-title">
           <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-            ¿Qué puedo hacer con TEAMAPP?
+            ¿Qué puedo hacer con TEAMup!?
           </a>
         </h4>
       </div>

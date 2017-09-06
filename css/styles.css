@@ -136,7 +136,7 @@ h6 {
   background-color: #01264a;
 }
 .btn-solid-lg {
-  max-width: 250px;
+  width: 250px;
 	padding: 6px;
 	background-color: #003366;
 	color: white;
@@ -148,6 +148,7 @@ h6 {
   margin-right: auto;
   margin-bottom: 20px;
   display: block;
+	letter-spacing: 0.05em;
 }
 .btn-solid-lg:hover {
   background-color: #01264a;
@@ -275,8 +276,17 @@ input {
   max-width: 250px;
   margin: 10px auto;
 }
+
 .chkbx {
   display: inline-block;
+}
+
+/* FAQ */
+.panel {
+	overflow: hidden;
+	text-align: center;
+	margin: 0 auto;
+	max-width: 480px;
 }
 
 /* MEDIA QUERIES ------------------------------- */
