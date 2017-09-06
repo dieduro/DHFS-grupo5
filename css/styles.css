@@ -66,9 +66,10 @@ a {
 header {
 	font-size: 1.5em;
 	width: 100%;
+	height: 40px;
 	text-align: center;
 	overflow: hidden;
-  margin: 10px 0;
+  margin: 10px auto;
 }
 .logo {
 	width: 120px;
@@ -98,7 +99,16 @@ h5 {
 h6 {
 	font-size: 0.8em;
 	line-height: 1.2em;
-	text-align: left;
+}
+.linkeo {
+	margin: 0 auto 15px auto;
+	width: 250px;
+}
+hr {
+	margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #eee;
 }
 /* BOTONES  ------------------------------- */
 .btn-solid {
@@ -115,7 +125,6 @@ h6 {
 	font-weight: 500;
 	font-size: 0.9em;
 	display: block;
-
 }
 .btn-solid:hover {
   background-color: #01264a;
@@ -143,10 +152,7 @@ h6 {
 	text-transform: uppercase;
 	text-align: center;
 	font-size: 0.8em;
-  margin-top: 0;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 20px;
+	margin: 0 auto;
   display: block;
 	letter-spacing: 0.05em;
 }
@@ -208,7 +214,7 @@ h6 {
 	border-right: 1px solid #003366;
 	font-size: 0.7em;
 	color: #333333;
-	margin-right: 10px;
+	margin-right: 5px;
 }
 
 /* RECOMENDADOS ------------------------------- */
@@ -229,10 +235,6 @@ h6 {
 }
 
 /* FOOTER ------------------------------- */
-footer {
-	overflow: hidden;
-	margin: 0 auto;
-}
 .social-icons {
 	text-align: center;
   margin-bottom: 15px;
@@ -243,8 +245,17 @@ footer {
 .social-icons a:hover {
   color: #01264a;
 }
+.fa {
+	margin: 0 5px;
+}
 .listaFooter {
   margin-bottom: 10px;
+}
+.listaFooter h3 {
+	font-size: 0.8em;
+}
+.listaFooter a {
+	font-size: 0.8em;
 }
 .copyright {
   text-align: center;
@@ -254,12 +265,12 @@ footer {
 
 /* FORMS */
 .form {
-  margin-top: 20px;
+  margin: 20px auto;
 }
 .form h6 {
 	display: inline;
 }
-input {
+input[type="text"] {
   border: 1px solid #003366;
   margin: 5px auto;
 	width: 250px;
@@ -267,7 +278,19 @@ input {
   display: block;
   font-size: 0.8em;
 }
-.con-fb {
+input[type="password"] {
+	border: 1px solid #003366;
+  margin: 5px auto;
+	width: 250px;
+  padding: 6px;
+  display: block;
+  font-size: 0.8em;
+}
+input[type="checkbox"] {
+	display: inline-block;
+}
+
+.con_fb {
   max-width: 250px;
   margin: 0 auto;
 }
@@ -276,9 +299,11 @@ input {
   max-width: 250px;
   margin: 10px auto;
 }
-
-.chkbx {
-  display: inline-block;
+.recordarme {
+	max-width: 250px;
+	margin: 0 auto 10px auto;
+	text-align: left;
+	font-size: 0.8em;
 }
 
 /* FAQ */
@@ -287,6 +312,15 @@ input {
 	text-align: center;
 	margin: 0 auto;
 	max-width: 480px;
+	border-radius: 0;
+}
+.panel-group .panel { {
+	border-radius: 0;
+}
+.panel-body {
+	font-size: 0.9em;
+	line-height: normal;
+	text-align: left;
 }
 
 /* MEDIA QUERIES ------------------------------- */

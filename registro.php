@@ -4,7 +4,7 @@
    ?>
 <!--campos de registro obligatorios-->
   <div class="container">
-    <div class="con-fb">
+    <div class="con_fb">
       <a class="btn-solid-lg" href="registro.php" role="button">REGISTRATE con facebook</a>
       <hr>
     </div>
@@ -15,7 +15,7 @@
         <input type="password" name="contraseña" id="password" placeholder="Contraseña" required>
         <input type="password" name="contraseña" id="password" placeholder="Repetir Contraseña" required>
         <div class="legals">
-          <input class="chkbx" type="checkbox" name="" value="">
+          <input type="checkbox" name="" value="">
           <h6 style="color:#555555">Compartir mis datos de registro con los proveedores de contenido de TEAMup! para fines de marketing.</h6>
           <hr>
           <h6>Si hacés click en "Registrarte" aceptarás los <a href="tts.php">Términos y Condiciones</a> y <a href="#">Política de Privacidad</a> de TEAMup! </h6>
@@ -61,11 +61,11 @@
   </fieldset><br>--->
                 </div>
         <button class="btn-solid-lg" type="submit" name="register" id="register">REGISTRARME</button>
-        <div>
-          <h6>¿Ya tienes cuenta? <a href="login.php">Inicia Sesión</a></h6>
-        </div>
       </div>
     </form>
+    <div class="linkeo">
+      <h6>¿Ya tienes cuenta? <a href="login.php">Inicia Sesión</a></h6>
+    </div>
   </div>
   <?php
   include_once 'footer.php';
