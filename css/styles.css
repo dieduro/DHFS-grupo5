@@ -99,7 +99,6 @@ h6 {
 	font-size: 0.8em;
 	line-height: 1.2em;
 	text-align: left;
-  display: inline;
 }
 /* BOTONES  ------------------------------- */
 .btn-solid {
@@ -221,6 +220,9 @@ h6 {
 	width: 100%;
 	margin: 10px 0 2px 0;
 }
+.deporte h6 {
+	text-align: left;
+}
 .faltan {
   color: #f42c2c;
 }
@@ -252,6 +254,9 @@ footer {
 /* FORMS */
 .form {
   margin-top: 20px;
+}
+.form h6 {
+	display: inline;
 }
 input {
   border: 1px solid #003366;

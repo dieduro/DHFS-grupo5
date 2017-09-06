@@ -76,13 +76,12 @@
              <div class="deporte">
                <img src="images/futbol-th.jpg" alt="futbol">
                <h5>Hockey</h5>
-
-               <h6>Belgrano - Miercoles 20hs</h6>
+               <h6 class="data-day">Belgrano - Miercoles 20hs</h6>
              </div>
              <div class="deporte">
                <img src="images/futbol-th.jpg" alt="futbol">
                <h5>Rugby</h5>
-               <h6>El Palomar - Jueves 19:30hs</h6>
+               <h6 class="data-day">El Palomar - Jueves 19:30hs</h6>
              </div>
            </div>
            <!-- FOOTER -->
