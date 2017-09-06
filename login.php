@@ -27,5 +27,8 @@
     </p><br><br><br>
     <p>Si haces click en "Acceder con Facebook" y no eres usuario de TEAMAPP, quedarás registrado y aceptarás los  <a href="#"> Términos y Condiciones</a> y <a href="#"> Política de Privacidad</a> de TEAMAPP!</p>
     </div>
+    <?php
+    include_once 'footer.php';
+     ?>
   </body>
 </html>

@@ -1,18 +1,3 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/styles.css" type="text/css">
-  <link rel="stylesheet" href="css/font-awesome/css/font-awesome.css">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,600" rel="stylesheet">
-  <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
-  <title>TeamApp!</title>
-</head>
-
-<body>
-
   <footer>
   <nav class="row">
     <div class="col-xs-12 col-md-4">
@@ -61,10 +46,11 @@
     <div class="col-xs-4 col-md-4">
       <small class="copyright" style="float:right">&copy; 2017 TEAMUP</small>
       </div>
-
-
-
   </footer>
-</body>
 
-</html>
+  <div class="social-icons">
+    <i class="fa fa-facebook" aria-hidden="true"></i>
+    <i class="fa fa-instagram" aria-hidden="true"></i>
+    <i class="fa fa-twitter" aria-hidden="true"></i>
+  </div>
+</footer>

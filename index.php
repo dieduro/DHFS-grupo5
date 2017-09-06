@@ -114,13 +114,9 @@ include_once 'header.php';
           </ul>
         </div>
       </div>
-      <div class="social-icons">
-        <i class="fa fa-facebook" aria-hidden="true"></i>
-        <i class="fa fa-instagram" aria-hidden="true"></i>
-        <i class="fa fa-twitter" aria-hidden="true"></i>
-      </div>
-    </footer>
-
-
+      
+    <?php
+    include_once 'footer.php';
+     ?>
   </body>
 </html>
