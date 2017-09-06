@@ -61,6 +61,11 @@ body {
 a {
   color: #003366;
 }
+a:hover {
+	text-decoration: none;
+	color: #003366;
+	font-weight: 600;
+}
 
 /* HEADER ------------------------------- */
 header {
@@ -313,14 +318,23 @@ input[type="checkbox"] {
 	margin: 0 auto;
 	max-width: 480px;
 	border-radius: 0;
+	box-shadow: none;
 }
-.panel-group .panel { {
-	border-radius: 0;
+.panel-title {
+	font-size: 0.9em;
+}
+.panel-group .panel {
+	border-radius: 0px;
 }
 .panel-body {
 	font-size: 0.9em;
 	line-height: normal;
 	text-align: left;
+}
+
+.panel-default > .panel-heading {
+	border-color: #003366;
+	background-color: white;
 }
 
 /* MEDIA QUERIES ------------------------------- */
