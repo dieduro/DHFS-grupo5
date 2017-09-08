@@ -57,6 +57,7 @@ body {
   margin-right: auto;
   margin-left: auto;
   text-align: center;
+	position: relative;
 }
 a {
   color: #003366;
@@ -87,6 +88,7 @@ h3 {
 	color: #333333;
 	font-weight: 600;
 	text-transform: uppercase;
+	display: inline-block;
 }
 h4 {
   font-size: 0.9em;
@@ -222,6 +224,75 @@ hr {
 	margin-right: 5px;
 }
 
+/* SLIDER  ------------------------------- */
+.slider {
+	width: 100%;
+	overflow: hidden;
+	text-align: left;
+}
+.flechas {
+	position: absolute;
+	z-index: 1;
+	color: white;
+	display: none;
+}
+.flecha_izq {
+	color: #003366;
+	float: left;
+}
+.flecha_der {
+	color: #003366;
+	float: right;
+}
+.ver_todos {
+	float: right;
+	margin-bottom: 15px;
+	font-size: 0.8em;
+	vertical-align: baseline;
+	line-height: 1.5em;
+}
+.evento {
+	position: relative;
+	width: 100%;
+	margin-bottom: 15px;
+}
+.evento img {
+	width: 100%;
+}
+.evento_deporte {
+	font-weight: 500;
+	font-size: 1.5em;
+	text-transform: uppercase;
+	margin-bottom: 4px;
+}
+.evento_zona {
+	font-size: 1em;
+	text-transform: uppercase;
+	font-weight: 400;
+}
+.overlay {
+	position: absolute;
+	left: 20px;
+	top: 20px;
+	z-index: 2;
+	color: white;
+	text-shadow: 1px 1px 2px #303030;
+}
+.evento_datos {
+	text-align: left;
+	margin-top: 5px;
+}
+.faltan {
+	font-weight: 600;
+	color: red;
+	text-transform: uppercase;
+	font-size: 0.8em;
+	margin-bottom: 3px;
+}
+.evento_fecha {
+	font-size: 0.8em;
+}
+
 /* RECOMENDADOS ------------------------------- */
 .deporte {
 	width: 100%;
@@ -234,9 +305,6 @@ hr {
 }
 .deporte h6 {
 	text-align: left;
-}
-.faltan {
-  color: #f42c2c;
 }
 
 /* FOOTER ------------------------------- */
@@ -268,7 +336,7 @@ hr {
   font-size: 0.75em;
 }
 
-/* FORMS */
+/* FORMS ------------------------------- */
 .form {
   margin: 20px auto;
 }
@@ -294,7 +362,6 @@ input[type="password"] {
 input[type="checkbox"] {
 	display: inline-block;
 }
-
 .con_fb {
   max-width: 250px;
   margin: 0 auto;

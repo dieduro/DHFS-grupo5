@@ -68,8 +68,79 @@
              </form>
            </div>
          </div>
-         <!-- RECOMENDADOS -->
-           <div class="container">
+     <!-- ÚLTIMOS -->
+         <div class="container">
+           <div class="slider">
+            <div class="flechas">
+              <div class="flecha_izq">
+                <i class="fa fa-arrow-left" aria-hidden="true"></i>
+              </div>
+              <div class="flecha_der">
+                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div class="eventos">
+              <h3>PARTIDOS POR COMPLETARSE</h3>
+              <a class="ver_todos"href="#">ver todos</a>
+              <div class="evento">
+                <img src="images/volley.jpg" alt="">
+                <div class="overlay">
+                  <p class="evento_deporte">Volley</p>
+                  <p class=evento_zona>Vicente Lopez</p>
+                </div>
+                <div class="evento_datos">
+                   <p class="faltan">Falta 1!</p>
+                   <p class="evento_fecha">viernes 18 - 20:00</p>
+                </div>
+              </div>
+              <div class="evento">
+                <img src="images/rugby.jpg" alt="">
+                <div class="overlay">
+                  <p class="evento_deporte">Rugby</p>
+                  <p class=evento_zona>Belgrano</p>
+                </div>
+                <div class="evento_datos">
+                   <p class="faltan">Faltan 5!</p>
+                   <p class="evento_fecha">viernes 18 - 20:00</p>
+                </div>
+              </div>
+              <div class="evento">
+                <img src="images/futbol_fem.jpg" alt="">
+                <div class="overlay">
+                  <p class="evento_deporte">Futbol Femenino</p>
+                  <p class=evento_zona>San Isidro</p>
+                </div>
+                <div class="evento_datos">
+                   <p class="faltan">Faltan 2!</p>
+                   <p class="evento_fecha">jueves 17 - 21:00</p>
+                </div>
+              </div>
+              <div class="evento">
+                <img src="images/hockey.jpg" alt="">
+                <div class="overlay">
+                  <p class="evento_deporte">Hockey</p>
+                  <p class=evento_zona>San Fernando</p>
+                </div>
+                <div class="evento_datos">
+                   <p class="faltan">Faltan 5!</p>
+                   <p class="evento_fecha">jueves 17 - 21:0</p>
+                </div>
+              </div>
+              <div class="evento">
+                <img src="images/volley.jpg" alt="">
+                <div class="overlay">
+                  <p class="evento_deporte">Tennis</p>
+                  <p class=evento_zona>Floresta</p>
+                </div>
+                <div class="evento_datos">
+                   <p class="faltan">Faltan 5!</p>
+                   <p class="evento_fecha">jueves 17 - 21:0</p>
+                </div>
+              </div>
+            </div>
+           </div>
+     <!-- RECOMENDADOS -->
+     <!-- <div class="container">
              <div>
                <h4>Partidos por Completarse</h4>
              </div>
@@ -83,10 +154,11 @@
                <h5>Rugby</h5>
                <h6 class="data-day">El Palomar - Jueves 19:30hs</h6>
              </div>
-           </div>
-           <!-- FOOTER -->
-             <?php
-             include_once 'footer.php';
-              ?>
+           </div> -->
+
+     <!-- FOOTER -->
+          <?php
+          include_once 'footer.php';
+          ?>
        </body>
      </html>
