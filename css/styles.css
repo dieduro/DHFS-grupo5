@@ -8,7 +8,7 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
+b, u, center,
 dl, dt, dd, ol, ul, li, input,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
@@ -52,9 +52,10 @@ body {
 	margin: 0 auto 20px auto;
 }
 .container {
+
   padding-right: 15px;
   padding-left: 15px;
-  margin-right: auto;
+	margin-right: auto;
   margin-left: auto;
 	position: relative;
 }
@@ -68,20 +69,27 @@ a:hover {
 }
 
 /* HEADER ------------------------------- */
+.head-left {
+	display:none;
+}
 header {
 	font-size: 1.5em;
 	width: 100%;
 	height: 40px;
+	display: flex;
 	text-align: center;
 	overflow: hidden;
-  margin: 10px auto;
 }
 .logo {
 	width: 120px;
 }
 h1 {
-	display: inline-block;
+	width: 100%;
+	flex: 1;
+	margin-top: 10px;
+	padding-left: 10px;
 }
+
 h3 {
 	font-size: 0.9em;
 	color: #333333;
@@ -116,6 +124,45 @@ hr {
   border: 0;
   border-top: 1px solid #eee;
 }
+
+/* MENU  ------------------------------- */
+.burger-icon {
+	float: right;
+	top:3px;
+	margin:auto;
+	padding: 2px;
+	display:none;
+}
+.menu {
+	width: auto;
+}
+.menu ul{
+
+	display: flex;
+	justify-content:flex-end;
+	align-items:flex-start;
+	overflow: hidden;
+	height: 40px;
+	margin: 0;
+	padding: 0;
+
+}
+
+.nav-items {
+	margin: 10px 10px 0 5px;
+	width: auto;
+}
+.nav-items:last-child {
+	margin-right: 10px;
+}
+.nav-items a {
+	color: rgb(34, 41, 142);
+	font-size: 0.4em;
+	font-family: Roboto, sans-serif;
+	font-weight: 600;
+}
+
+
 /* BOTONES  ------------------------------- */
 .btn-solid {
   margin-top: 0.6em;
@@ -166,14 +213,7 @@ hr {
   background-color: #01264a;
 }
 
-/* MENU  ------------------------------- */
-.menu {
-	float: right;
-  color: #003366;
-}
-.menu-content {
-	display: none;
-}
+
 
 /* MEGA-IMG ------------------------------- */
 .mega {
@@ -203,6 +243,7 @@ hr {
 }
 .caption {
   text-align: center;
+	//display:none;
 }
 
 /* BUSCADOR ------------------------------- */
@@ -294,6 +335,16 @@ hr {
 }
 
 /* RECOMENDADOS ------------------------------- */
+.prox-part {
+	overflow: hidden;
+}
+.lista-prox-part {
+	display: flex;
+	flex-wrap: wrap;
+}
+.lista-prox-part li {
+	padding: 10px;
+}
 .deporte {
 	width: 100%;
 	float: left;
@@ -406,10 +457,35 @@ input[type="checkbox"] {
 }
 
 /* MEDIA QUERIES ------------------------------- */
+@media (min-width: 420px) {
+	.nav-items a {
+		font-size: 0.6em;
+	}
+}
+
 @media (min-width: 768px) {
-  .container {
+	header {
+		justify-content: center;
+
+	}
+	.head-left {
+		display:inline;
+		width: 25%;
+	}
+	h1 {
+		padding: 0 10px;
+		align-self: center;
+		width: auto;
+	}
+	.menu ul {
+		flex-wrap: wrap;
+	}
+
+
+	}
+	/*.container {
     width: 750px;
-  }
+  }*/
 }
 @media (min-width: 992px) {
   .container {

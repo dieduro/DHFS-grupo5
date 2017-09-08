@@ -9,11 +9,13 @@
     <title></title>
   </head>
   <body>
+
     <!--header-->
     <?php
     include_once 'header.php';
      ?>
     <section class="mega">
+
       <div class="container">
         <div class="caption">
           <h2>Estás a un click de empezar a jugar</h2>
@@ -23,7 +25,7 @@
       </div>
      </section>
      <!-- BUSCADOR -->
-         <div class="container">
+         <section class="container">
            <h3>Buscador de Partidos</h3>
            <div class="buscador">
              <form class="buscador-form" action="#">
@@ -67,9 +69,11 @@
                <button class="btn-solid-sm" type="submit" name="buscar">Buscar</button>
              </form>
            </div>
-         </div>
+        </section>
+<<<<<<< Updated upstream
+
      <!-- ÚLTIMOS -->
-         <div class="container">
+         <section class="container">
            <div class="slider">
             <div class="flechas">
               <div class="flecha_izq">
@@ -138,7 +142,8 @@
                 </div>
               </div>
             </div>
-           </div>
+          </div>
+        </section>
      <!-- RECOMENDADOS -->
      <!-- <div class="container">
              <div>
@@ -160,5 +165,62 @@
           <?php
           include_once 'footer.php';
           ?>
+=======
+      <!--   </section>
+         - RECOMENDADOS -
+           <section class="container prox-part">
+             <div>
+               <h4>Partidos por Completarse</h4>
+             </div>
+              <ul class="lista-prox-part">
+                <li>
+                   <div class="deporte">
+                     <img src="images/futbol-th.jpg" alt="futbol">
+                     <h5>Hockey</h5>
+                     <h6 class="data-day">Belgrano - Miercoles 20hs</h6>
+                   </div>
+                </li>
+                <li>
+                  <div class="deporte">
+                    <img src="images/futbol-th.jpg" alt="futbol">
+                    <h5>Rugby</h5>
+                    <h6 class="data-day">El Palomar - Jueves 19:30hs</h6>
+                  </div>
+                </li>
+                <li>
+                  <div class="deporte">
+                    <img src="images/futbol-th.jpg" alt="futbol">
+                    <h5>Rugby</h5>
+                    <h6 class="data-day">El Palomar - Jueves 19:30hs</h6>
+                  </div>
+                </li>
+                <li>
+                  <div class="deporte">
+                    <img src="images/futbol-th.jpg" alt="futbol">
+                    <h5>Rugby</h5>
+                    <h6 class="data-day">El Palomar - Jueves 19:30hs</h6>
+                  </div>
+                </li>
+                <li>
+                  <div class="deporte">
+                    <img src="images/futbol-th.jpg" alt="futbol">
+                    <h5>Rugby</h5>
+                    <h6 class="data-day">El Palomar - Jueves 19:30hs</h6>
+                  </div>
+                </li>
+                <li>
+                  <div class="deporte">
+                    <img src="images/futbol-th.jpg" alt="futbol">
+                    <h5>Rugby</h5>
+                    <h6 class="data-day">El Palomar - Jueves 19:30hs</h6>
+                  </div>
+                </li>
+               </ul>
+           </section>
+           <!- FOOTER -->
+             <?php
+             include_once 'footer.php';
+              ?> -->
+>>>>>>> Stashed changes
        </body>
      </html>
