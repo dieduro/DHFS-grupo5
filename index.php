@@ -71,8 +71,10 @@
               </div>
             </div>
             <div class="eventos">
-              <h3>PARTIDOS POR COMPLETARSE</h3>
-              <a class="ver_todos"href="#">ver todos</a>
+                <div class="section_tit">
+                    <h3>PARTIDOS POR COMPLETARSE</h3>
+                     <a class="ver_todos"href="#">ver todos</a>
+                </div>
               <div class="evento">
                 <img src="images/volley.jpg" alt="">
                 <div class="overlay">
