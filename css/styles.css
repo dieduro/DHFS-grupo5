@@ -477,6 +477,14 @@ input[type="checkbox"] {
 		flex-wrap: wrap;
 		visibility: visible;
 	}
+	.evento {
+	display: table-cell;
+	padding-right: 10px;
+	width: 20%;
+	}
+	.evento:last-child {
+	padding-right: 0;
+	}
 
 	/*.container {
     width: 750px;
