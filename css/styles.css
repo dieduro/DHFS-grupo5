@@ -255,6 +255,7 @@ hr {
 	position: relative;
 	width: 100%;
 	margin-bottom: 15px;
+	overflow: hidden;
 }
 .evento img {
 	width: 100%;
