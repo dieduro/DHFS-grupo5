@@ -1,21 +1,9 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="css/master.css" type="text/css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,600" rel="stylesheet">
-    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.css">
-    <title></title>
-  </head>
-  <body>
-
-    <!--header-->
+    <!--HEADER-->
     <?php
     include_once 'header.php';
      ?>
+    <!-- CONTENIDO -->
     <section class="mega">
-
       <div class="container">
         <div class="caption">
           <h2>Estás a un click de empezar a jugar</h2>
@@ -70,9 +58,8 @@
              </form>
            </div>
         </section>
-<<<<<<< Updated upstream
 
-     <!-- ÚLTIMOS -->
+    <!-- ÚLTIMOS -->
          <section class="container">
            <div class="slider">
             <div class="flechas">
@@ -160,17 +147,11 @@
                <h6 class="data-day">El Palomar - Jueves 19:30hs</h6>
              </div>
            </div> -->
-
-     <!-- FOOTER -->
-          <?php
-          include_once 'footer.php';
-          ?>
-=======
       <!--   </section>
          - RECOMENDADOS -
            <section class="container prox-part">
              <div>
-               <h4>Partidos por Completarse</h4>
+               <h4>Partidos Recomendados</h4>
              </div>
               <ul class="lista-prox-part">
                 <li>
@@ -221,6 +202,5 @@
              <?php
              include_once 'footer.php';
               ?> -->
->>>>>>> Stashed changes
        </body>
      </html>
