@@ -61,7 +61,11 @@
 
     <!-- ÚLTIMOS -->
          <section class="container">
-           <div class="slider">
+            <div class="section_tit">
+                  <h3>PARTIDOS POR COMPLETARSE</h3>
+                  <a class="ver_todos"href="#">ver todos</a>
+            </div>
+            <div class="slider">
             <div class="flechas">
               <div class="flecha_izq">
                 <i class="fa fa-arrow-left" aria-hidden="true"></i>
@@ -71,10 +75,6 @@
               </div>
             </div>
             <div class="eventos">
-                <div class="section_tit">
-                    <h3>PARTIDOS POR COMPLETARSE</h3>
-                     <a class="ver_todos"href="#">ver todos</a>
-                </div>
               <div class="evento">
                 <img src="images/volley.jpg" alt="">
                 <div class="overlay">
