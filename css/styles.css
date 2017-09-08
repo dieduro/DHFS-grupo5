@@ -48,19 +48,17 @@ table {
 body {
 	background-color: white;
 	font-family: 'Roboto', sans-serif;
-	max-width: 1180px;
 	margin: 0 auto 20px auto;
 }
 .container {
-
-  padding-right: 15px;
-  padding-left: 15px;
+ 	padding-right: 15px;
+  	padding-left: 15px;
 	margin-right: auto;
-  margin-left: auto;
+  	margin-left: auto;
 	position: relative;
 }
 a {
-  color: #003366;
+  	color: #003366;
 }
 a:hover {
 	text-decoration: none;
@@ -70,7 +68,7 @@ a:hover {
 
 /* HEADER ------------------------------- */
 .head-left {
-	display:none;
+	display: none;
 }
 header {
 	font-size: 1.5em;
@@ -79,6 +77,8 @@ header {
 	display: flex;
 	text-align: center;
 	overflow: hidden;
+	margin-bottom: 15px;
+	margin-top: 10px;
 }
 .logo {
 	width: 120px;
@@ -87,9 +87,8 @@ h1 {
 	width: 100%;
 	flex: 1;
 	margin-top: 10px;
-	padding-left: 10px;
+	position: absolute;
 }
-
 h3 {
 	font-size: 0.9em;
 	color: #333333;
@@ -98,7 +97,7 @@ h3 {
 	display: inline-block;
 }
 h4 {
-  font-size: 0.9em;
+	font-size: 0.9em;
 	color: #333333;
 	font-weight: 400;
 	text-transform: uppercase;
@@ -120,34 +119,31 @@ h6 {
 }
 hr {
 	margin-top: 20px;
-  margin-bottom: 20px;
-  border: 0;
-  border-top: 1px solid #eee;
+  	margin-bottom: 20px;
+  	border: 0;
+  	border-top: 1px solid #eee;
 }
 
 /* MENU  ------------------------------- */
 .burger-icon {
 	float: right;
-	top:3px;
-	margin:auto;
-	padding: 2px;
-	display:none;
+	margin: 10px 5px 0 0;
 }
 .menu {
-	width: auto;
+	width: 100%;
+	margin-right: 15px;
+	float: right;
 }
-.menu ul{
-
+.menu ul {
+	visibility: hidden;
 	display: flex;
-	justify-content:flex-end;
-	align-items:flex-start;
+	justify-content: flex-end;
+	align-items: flex-start;
 	overflow: hidden;
 	height: 40px;
 	margin: 0;
 	padding: 0;
-
 }
-
 .nav-items {
 	margin: 10px 10px 0 5px;
 	width: auto;
@@ -156,19 +152,20 @@ hr {
 	margin-right: 10px;
 }
 .nav-items a {
-	color: rgb(34, 41, 142);
 	font-size: 0.4em;
 	font-family: Roboto, sans-serif;
-	font-weight: 600;
+	font-weight: 500;
 }
-
+.nav-items a:hover {
+	color: #5a5a5a;
+}
 
 /* BOTONES  ------------------------------- */
 .btn-solid {
-  margin-top: 0.6em;
-  margin-right: auto;
-  margin-bottom: 0;
-  margin-left: auto;
+  	margin-top: 0.6em;
+ 	margin-right: auto;
+  	margin-bottom: 0;
+ 	margin-left: auto;
 	max-width: 200px;
 	padding: 6px;
 	background-color: #003366;
@@ -180,7 +177,7 @@ hr {
 	display: block;
 }
 .btn-solid:hover {
-  background-color: #01264a;
+  	background-color: #01264a;
 }
 .btn-solid-sm {
 	max-width: 70px;
@@ -190,15 +187,15 @@ hr {
 	text-transform: uppercase;
 	text-align: center;
 	font-size: 0.8em;
-  margin-top: 0;
-  margin-left: auto;
-  margin-right: auto;
+  	margin-top: 0;
+  	margin-left: auto;
+  	margin-right: auto;
 }
 .btn-solid-sm:hover {
-  background-color: #01264a;
+  	background-color: #01264a;
 }
 .btn-solid-lg {
-  width: 250px;
+  	width: 250px;
 	padding: 6px;
 	background-color: #003366;
 	color: white;
@@ -206,50 +203,48 @@ hr {
 	text-align: center;
 	font-size: 0.8em;
 	margin: 0 auto;
-  display: block;
+  	display: block;
 	letter-spacing: 0.05em;
 }
 .btn-solid-lg:hover {
-  background-color: #01264a;
+  	background-color: #01264a;
 }
-
-
 
 /* MEGA-IMG ------------------------------- */
 .mega {
-  display: flex;
-  align-items: center;
-  background-image: url('../images/mega.jpg');
-  background-size: cover;
-  color: #ffffff;
-  height: 300px;
-  width: 100%;
-  text-shadow: 0.25px 0.25px 0.25px #000000;
-  margin-bottom: 20px;
+	display: flex;
+	align-items: center;
+	background-image: url('../images/mega.jpg');
+	background-size: cover;
+	color: #ffffff;
+	height: 300px;
+	width: 100%;
+	text-shadow: 0.25px 0.25px 0.25px #000000;
+	margin-bottom: 20px;
 }
 .mega h2 {
-  font-size: 1.8em;
-  font-weight: 700;
-  margin: 0;
-  color: #fff;
-  max-width: 250px; /* para que se arme en dos lineas */
-  margin: 0 auto; /* para que se centre en otros viewports */
+	font-size: 1.8em;
+	font-weight: 700;
+	margin: 0;
+	color: #fff;
+	max-width: 250px; /* para que se arme en dos lineas */
+	margin: 0 auto; /* para que se centre en otros viewports */
 }
 .mega img {
-  margin: 0 0 30px;
-  padding-left: -15px;
-  padding-right: -15px;
-  width: 100%;
+	margin: 0 0 30px;
+	padding-left: -15px;
+	padding-right: -15px;
+	width: 100%;
 }
 .caption {
-  text-align: center;
+	text-align: center;
 	//display:none;
 }
 
 /* BUSCADOR ------------------------------- */
 .buscador {
 	border: 1px solid #003366;
-	padding: 8px;
+	padding: 1.5vh;
 	margin: 10px 0 20px auto;
 	font-size: 1em;
 	text-transform: uppercase;
@@ -290,6 +285,7 @@ hr {
 	font-size: 0.8em;
 	vertical-align: baseline;
 	line-height: 1.5em;
+	font-weight: 600;
 }
 .evento {
 	position: relative;
@@ -308,7 +304,6 @@ hr {
 }
 .evento_zona {
 	font-size: 1em;
-	text-transform: uppercase;
 	font-weight: 400;
 }
 .overlay {
@@ -364,16 +359,16 @@ hr {
   margin-bottom: 15px;
 }
 .social-icons a {
-  color: black;
+ 	color: black;
 }
 .social-icons a:hover {
-  color: #01264a;
+ 	color: #01264a;
 }
 .fa {
 	margin: 0 5px;
 }
 .listaFooter {
-  margin-bottom: 10px;
+ 	margin-bottom: 10px;
 	text-align: left;
 }
 .listaFooter h3 {
@@ -383,45 +378,45 @@ hr {
 	font-size: 0.8em;
 }
 .copyright {
-  text-align: center;
-  color: #555555;
-  font-size: 0.75em;
+	text-align: center;
+	color: #555555;
+	font-size: 0.75em;
 }
 
 /* FORMS ------------------------------- */
 .form {
-  margin: 20px auto;
+	margin: 20px auto;
 }
 .form h6 {
 	display: inline;
 }
 input[type="text"] {
-  border: 1px solid #003366;
-  margin: 5px auto;
+	border: 1px solid #003366;
+	margin: 5px auto;
 	width: 250px;
-  padding: 6px;
-  display: block;
-  font-size: 0.8em;
+	padding: 6px;
+	display: block;
+	font-size: 0.8em;
 }
 input[type="password"] {
 	border: 1px solid #003366;
-  margin: 5px auto;
+	margin: 5px auto;
 	width: 250px;
-  padding: 6px;
-  display: block;
-  font-size: 0.8em;
+	padding: 6px;
+	display: block;
+	font-size: 0.8em;
 }
 input[type="checkbox"] {
 	display: inline-block;
 }
 .con_fb {
-  max-width: 250px;
-  margin: 0 auto;
+	max-width: 250px;
+	margin: 0 auto;
 }
 .legals {
-  text-align: left;
-  max-width: 250px;
-  margin: 10px auto;
+	text-align: left;
+	max-width: 250px;
+	margin: 10px auto;
 }
 .recordarme {
 	max-width: 250px;
@@ -450,7 +445,6 @@ input[type="checkbox"] {
 	line-height: normal;
 	text-align: left;
 }
-
 .panel-default > .panel-heading {
 	border-color: #003366;
 	background-color: white;
@@ -466,7 +460,6 @@ input[type="checkbox"] {
 @media (min-width: 768px) {
 	header {
 		justify-content: center;
-
 	}
 	.head-left {
 		display:inline;
@@ -475,14 +468,18 @@ input[type="checkbox"] {
 	h1 {
 		padding: 0 10px;
 		align-self: center;
-		width: auto;
+		width: 500px;
+	}
+	.burger-icon {
+		display: none;
 	}
 	.menu ul {
 		flex-wrap: wrap;
+		visibility: visible;
 	}
-
-
-	}
+	.buscador {
+		height: 2vh;
+}
 	/*.container {
     width: 750px;
   }*/
