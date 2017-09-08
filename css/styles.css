@@ -56,7 +56,6 @@ body {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
-  text-align: center;
 	position: relative;
 }
 a {
@@ -324,6 +323,7 @@ hr {
 }
 .listaFooter {
   margin-bottom: 10px;
+	text-align: left;
 }
 .listaFooter h3 {
 	font-size: 0.8em;
