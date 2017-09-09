@@ -270,7 +270,13 @@ hr {
 	visibility: hidden;
 	width: 100%;
 	padding: 0 10px;
-	font-size: 2em;
+	font-size: 1.5em;
+}
+.flechas button {
+	width: 40px;
+	height: 40px;
+	background-color: rgba(0, 51, 102, 0.71);
+	border-radius: 50%;
 }
 .flecha_izq {
 	float: left;

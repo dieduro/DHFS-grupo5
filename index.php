@@ -68,10 +68,16 @@
             <div class="slider">
             <div class="flechas">
               <div class="flecha_izq">
-                <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                <button type="button" name="button">
+                  <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                </button>
+
               </div>
               <div class="flecha_der">
-                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                <button type="button" name="button">
+                  <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                </button>
+
               </div>
             </div>
             <div class="eventos">
