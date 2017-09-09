@@ -120,13 +120,13 @@
                 </div>
               </div>
               <div class="evento">
-                <img src="images/volley.jpg" alt="">
+                <img src="images/squash.jpg" alt="">
                 <div class="overlay">
-                  <p class="evento_deporte">Tennis</p>
+                  <p class="evento_deporte">Squash</p>
                   <p class=evento_zona>Floresta</p>
                 </div>
                 <div class="evento_datos">
-                   <p class="faltan">Faltan 5!</p>
+                   <p class="faltan">Falta 1!</p>
                    <p class="evento_fecha">jueves 17 - 21:0</p>
                 </div>
               </div>
