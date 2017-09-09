@@ -16,12 +16,12 @@
         <div class="head-left">
 
         </div>
-        <h1><a href="index.php"><img class="logo" src="images/logo-home.png" alt="logo TeamUp!"></a></h1>
+        <h1><a href="index.php" class="header_link"><img class="logo" src="images/logo-home.png" alt="logo TeamUp!"></a></h1>
         <nav class="menu">
           <ul>
-            <li class="nav-items"><a href="login.php">Login</a></li>
-            <li class="nav-items"><a href="registro.php">Registrate</a></li>
-            <li class="nav-items"><a href="faq.php">¿Qué es <i>TeamUp!?</i></a></li>
+            <li class="nav-items"><a href="login.php" class="header_link">Login</a></li>
+            <li class="nav-items"><a href="registro.php" class="header_link">Registrate</a></li>
+            <li class="nav-items"><a href="faq.php" class="header_link">¿Qué es <i>TeamUp!?</i></a></li>
             <!--
             <li><a href="#">Ayuda</a></li>
             <li><a href="#">Ofrecé una cancha</a></li>
@@ -35,3 +35,5 @@
         </nav>
           <span class="burger-icon"><i class="fa fa-bars menu" aria-hidden="true"></i></span>
       </header>
+    </body>
+    </html>

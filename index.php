@@ -8,13 +8,16 @@
         <div class="caption">
           <h2>Estás a un click de empezar a jugar</h2>
           <a class="btn-solid" href="registro.php" role="button">REGISTRATE</a>
-          <a class="btn-solid" href="login.php" role="button">INGRESÁ</a>
+          <a class="btn-solid" href="login.php" role="button">INICIÁ SESIÓN</a>
         </div>
       </div>
      </section>
      <!-- BUSCADOR -->
          <section class="container">
-           <h3>Buscador de Partidos</h3>
+           <div class="section_tit">
+              <h3>Buscador de Partidos</h3>
+           </div>
+
            <div class="buscador">
              <form class="buscador-form" action="#">
                <select class="select" name="deporte" placeholder="Deporte">
@@ -140,11 +143,10 @@
           </div>
         </section>
 
-
          <!-- RECOMENDADOS -->
            <section class="container prox-part">
-             <div>
-               <h4>Partidos Recomendados</h4>
+             <div class="section_tit">
+               <h3>Partidos Recomendados</h3>
              </div>
               <ul class="lista-prox-part">
                 <li>
@@ -195,5 +197,9 @@
              <?php
              include_once 'footer.php';
               ?>
+              <script id="__bs_script__">//<![CDATA[
+        document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.18.13'><\/script>".replace("HOST", location.hostname));
+        //]]></script>
+
        </body>
      </html>
