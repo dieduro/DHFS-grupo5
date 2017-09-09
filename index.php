@@ -139,24 +139,9 @@
             </div>
           </div>
         </section>
-     <!-- RECOMENDADOS -->
-     <!-- <div class="container">
-             <div>
-               <h4>Partidos por Completarse</h4>
-             </div>
-             <div class="deporte">
-               <img src="images/futbol-th.jpg" alt="futbol">
-               <h5>Hockey</h5>
-               <h6 class="data-day">Belgrano - Miercoles 20hs</h6>
-             </div>
-             <div class="deporte">
-               <img src="images/futbol-th.jpg" alt="futbol">
-               <h5>Rugby</h5>
-               <h6 class="data-day">El Palomar - Jueves 19:30hs</h6>
-             </div>
-           </div> -->
-      <!--   </section>
-         - RECOMENDADOS -
+
+
+         <!-- RECOMENDADOS -->
            <section class="container prox-part">
              <div>
                <h4>Partidos Recomendados</h4>
@@ -206,9 +191,9 @@
                 </li>
                </ul>
            </section>
-           <!- FOOTER -->
+           <!-- FOOTER -->
              <?php
              include_once 'footer.php';
-              ?> -->
+              ?>
        </body>
      </html>
