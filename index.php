@@ -1,30 +1,23 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="css/master.css" type="text/css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,600" rel="stylesheet">
-    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.css">
-    <title></title>
-  </head>
-  <body>
-    <!--header-->
+    <!--HEADER-->
     <?php
     include_once 'header.php';
      ?>
+    <!-- CONTENIDO -->
     <section class="mega">
       <div class="container">
         <div class="caption">
           <h2>Estás a un click de empezar a jugar</h2>
           <a class="btn-solid" href="registro.php" role="button">REGISTRATE</a>
-          <a class="btn-solid" href="login.php" role="button">INGRESÁ</a>
+          <a class="btn-solid" href="login.php" role="button">INICIÁ SESIÓN</a>
         </div>
       </div>
      </section>
      <!-- BUSCADOR -->
-         <div class="container">
-           <h3>Buscador de Partidos</h3>
+         <section class="container">
+           <div class="section_tit">
+              <h3>Buscador de Partidos</h3>
+           </div>
+
            <div class="buscador">
              <form class="buscador-form" action="#">
                <select class="select" name="deporte" placeholder="Deporte">
@@ -67,26 +60,147 @@
                <button class="btn-solid-sm" type="submit" name="buscar">Buscar</button>
              </form>
            </div>
-         </div>
+        </section>
+
+    <!-- ÚLTIMOS -->
+         <section class="container">
+            <div class="section_tit">
+                  <h3>PARTIDOS POR COMPLETARSE</h3>
+                  <a class="ver_todos"href="#">ver todos</a>
+            </div>
+            <div class="slider">
+            <div class="flechas">
+              <div class="flecha_izq">
+                <button type="button" name="button">
+                  <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                </button>
+
+              </div>
+              <div class="flecha_der">
+                <button type="button" name="button">
+                  <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                </button>
+
+              </div>
+            </div>
+            <div class="eventos">
+              <div class="evento">
+                <img src="images/volley.jpg" alt="">
+                <div class="overlay">
+                  <p class="evento_deporte">Volley</p>
+                  <p class=evento_zona>Vicente Lopez</p>
+                </div>
+                <div class="evento_datos">
+                   <p class="faltan">Falta 1!</p>
+                   <p class="evento_fecha">viernes 18 - 20:00</p>
+                </div>
+              </div>
+              <div class="evento">
+                <img src="images/rugby.jpg" alt="">
+                <div class="overlay">
+                  <p class="evento_deporte">Rugby</p>
+                  <p class=evento_zona>Belgrano</p>
+                </div>
+                <div class="evento_datos">
+                   <p class="faltan">Faltan 5!</p>
+                   <p class="evento_fecha">viernes 18 - 20:00</p>
+                </div>
+              </div>
+              <div class="evento">
+                <img src="images/futbol_fem.jpg" alt="">
+                <div class="overlay">
+                  <p class="evento_deporte">Futbol Femenino</p>
+                  <p class=evento_zona>San Isidro</p>
+                </div>
+                <div class="evento_datos">
+                   <p class="faltan">Faltan 2!</p>
+                   <p class="evento_fecha">jueves 17 - 21:00</p>
+                </div>
+              </div>
+              <div class="evento">
+                <img src="images/hockey.jpg" alt="">
+                <div class="overlay">
+                  <p class="evento_deporte">Hockey</p>
+                  <p class=evento_zona>San Fernando</p>
+                </div>
+                <div class="evento_datos">
+                   <p class="faltan">Faltan 5!</p>
+                   <p class="evento_fecha">jueves 17 - 21:0</p>
+                </div>
+              </div>
+              <div class="evento">
+                <img src="images/squash.jpg" alt="">
+                <div class="overlay">
+                  <p class="evento_deporte">Squash</p>
+                  <p class=evento_zona>Floresta</p>
+                </div>
+                <div class="evento_datos">
+                   <p class="faltan">Falta 1!</p>
+                   <p class="evento_fecha">jueves 17 - 21:0</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
          <!-- RECOMENDADOS -->
-           <div class="container">
-             <div>
-               <h4>Partidos por Completarse</h4>
+           <section class="container prox-part">
+             <div class="section_tit">
+               <h3>Partidos Recomendados</h3>
              </div>
-             <div class="deporte">
-               <img src="images/futbol-th.jpg" alt="futbol">
-               <h5>Hockey</h5>
-               <h6 class="data-day">Belgrano - Miercoles 20hs</h6>
-             </div>
-             <div class="deporte">
-               <img src="images/futbol-th.jpg" alt="futbol">
-               <h5>Rugby</h5>
-               <h6 class="data-day">El Palomar - Jueves 19:30hs</h6>
-             </div>
-           </div>
+              <ul class="lista-prox-part">
+                <li>
+                   <div class="deporte">
+                     <img src="images/futbol-th.jpg" alt="futbol">
+                     <h5>Hockey</h5>
+                     <h6 class="data-day">Belgrano - Miercoles 20hs</h6>
+                   </div>
+                </li>
+                <li>
+                  <div class="deporte">
+                    <img src="images/futbol-th.jpg" alt="futbol">
+                    <h5>Rugby</h5>
+                    <h6 class="data-day">El Palomar - Jueves 19:30hs</h6>
+                  </div>
+                </li>
+                <li>
+                  <div class="deporte">
+                    <img src="images/futbol-th.jpg" alt="futbol">
+                    <h5>Rugby</h5>
+                    <h6 class="data-day">El Palomar - Jueves 19:30hs</h6>
+                  </div>
+                </li>
+                <li>
+                  <div class="deporte">
+                    <img src="images/futbol-th.jpg" alt="futbol">
+                    <h5>Rugby</h5>
+                    <h6 class="data-day">El Palomar - Jueves 19:30hs</h6>
+                  </div>
+                </li>
+                <li>
+                  <div class="deporte">
+                    <img src="images/futbol-th.jpg" alt="futbol">
+                    <h5>Rugby</h5>
+                    <h6 class="data-day">El Palomar - Jueves 19:30hs</h6>
+                  </div>
+                </li>
+                <li>
+                  <div class="deporte">
+                    <img src="images/futbol-th.jpg" alt="futbol">
+                    <h5>Rugby</h5>
+                    <h6 class="data-day">El Palomar - Jueves 19:30hs</h6>
+                  </div>
+                </li>
+               </ul>
+           </section>
            <!-- FOOTER -->
              <?php
              include_once 'footer.php';
               ?>
+              <script id="__bs_script__">//<![CDATA[
+    document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.18.13'><\/script>".replace("HOST", location.hostname));
+//]]></script>
+
+
        </body>
      </html>
