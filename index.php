@@ -3,6 +3,7 @@
     include_once 'header.php';
      ?>
     <!-- CONTENIDO -->
+<<<<<<< HEAD
     <section class="mega">
       <div class="container">
         <div class="caption">
@@ -13,6 +14,19 @@
       </div>
      </section>
      <!-- BUSCADOR -->
+=======
+      <section class="mega">
+        <div class="container">
+          <div class="caption">
+            <h2>Estás a un click de empezar a jugar</h2>
+            <a class="btn-solid" href="registro.php" role="button">REGISTRATE</a>
+            <a class="btn-solid" href="login.php" role="button">INGRESÁ</a>
+          </div>
+        </div>
+       </section>
+
+        <!-- BUSCADOR -->
+>>>>>>> d001d825e8c8949750c6f5374ba229cb8aa6f0d5
          <section class="container">
            <div class="section_tit">
               <h3>Buscador de Partidos</h3>
@@ -60,6 +74,7 @@
                <button class="btn-solid-sm" type="submit" name="buscar">Buscar</button>
              </form>
            </div>
+<<<<<<< HEAD
         </section>
 
     <!-- ÚLTIMOS -->
@@ -83,6 +98,30 @@
 
               </div>
             </div>
+=======
+         </section>
+        <!-- END BUSCADOR -->
+
+        <!-- ÚLTIMOS -->
+        <section class="container">
+            <div class="section_tit">
+              <h3>PARTIDOS POR COMPLETARSE</h3>
+              <a class="ver_todos"href="#">ver todos</a>
+            </div>
+            <div class="slider">
+              <div class="flechas">
+                <div class="flecha_izq">
+                  <button type="button" name="button">
+                    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <div class="flecha_der">
+                  <button type="button" name="button">
+                    <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+>>>>>>> d001d825e8c8949750c6f5374ba229cb8aa6f0d5
             <div class="eventos">
               <div class="evento">
                 <img src="images/volley.jpg" alt="">
@@ -198,9 +237,14 @@
              include_once 'footer.php';
               ?>
               <script id="__bs_script__">//<![CDATA[
+<<<<<<< HEAD
     document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.18.13'><\/script>".replace("HOST", location.hostname));
 //]]></script>
 
+=======
+        document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.18.13'><\/script>".replace("HOST", location.hostname));
+        //]]></script>
+>>>>>>> d001d825e8c8949750c6f5374ba229cb8aa6f0d5
 
        </body>
      </html>

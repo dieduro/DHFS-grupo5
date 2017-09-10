@@ -264,7 +264,11 @@ hr {
 }
 .flechas {
 	position: absolute;
+<<<<<<< HEAD
 	top: 35px;
+=======
+	top: 25%;
+>>>>>>> d001d825e8c8949750c6f5374ba229cb8aa6f0d5
 	z-index: 2;
 	color: white;
 	visibility: hidden;
