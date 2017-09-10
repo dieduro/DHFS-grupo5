@@ -152,14 +152,14 @@
                 <li>
                    <div class="deporte">
                      <img src="images/volley.jpg" alt="futbol">
-                     <h5>Hockey</h5>
+                     <h5>Voley</h5>
                      <h6 class="data-day">Belgrano - Miercoles 20hs</h6>
                    </div>
                 </li>
                 <li>
                   <div class="deporte">
                     <img src="images/futbol.jpg" alt="futbol">
-                    <h5>Rugby</h5>
+                    <h5>Futbol</h5>
                     <h6 class="data-day">El Palomar - Jueves 19:30hs</h6>
                   </div>
                 </li>
@@ -173,21 +173,21 @@
                 <li>
                   <div class="deporte">
                     <img src="images/hockey.jpg" alt="futbol">
-                    <h5>Rugby</h5>
+                    <h5>Hockey</h5>
                     <h6 class="data-day">El Palomar - Jueves 19:30hs</h6>
                   </div>
                 </li>
                 <li>
                   <div class="deporte">
                     <img src="images/basket2.jpg" alt="futbol">
-                    <h5>Rugby</h5>
+                    <h5>Basket</h5>
                     <h6 class="data-day">El Palomar - Jueves 19:30hs</h6>
                   </div>
                 </li>
                 <li>
                   <div class="deporte">
                     <img src="images/squash.jpg" alt="futbol">
-                    <h5>Rugby</h5>
+                    <h5>Squash</h5>
                     <h6 class="data-day">El Palomar - Jueves 19:30hs</h6>
                   </div>
                 </li>
@@ -195,12 +195,8 @@
            </section>
            <!-- FOOTER -->
              <?php
-             include_once 'footer.php';
+             include_once 'footer2.php';
               ?>
-              <script id="__bs_script__">//<![CDATA[
-    document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.18.13'><\/script>".replace("HOST", location.hostname));
-//]]></script>
-
 
        </body>
      </html>

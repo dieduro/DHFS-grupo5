@@ -368,7 +368,79 @@ h1 {
 }
 
 /* FOOTER ------------------------------- */
-.social-icons {
+.footer_outer {
+  width: 100%;
+  height: 160px;
+  padding: 20px;
+	margin-top: 20px;
+	margin-bottom: 30px;
+  overflow:hidden;
+
+}
+.footer_outer h3 {
+  font-size: 11px;
+  margin-top: 0px;
+}
+.footer_logo {
+	width: 20%;
+  float: left;
+
+}
+.footer_cia {
+  float: left;
+	width: 18%;
+	padding-right: 20px;
+  height: 70%;
+	overflow: hidden;
+	font-size: 0.8em;
+
+}
+.footer_comunidades {
+	width: 24%;
+  float: left;
+	padding-right: 20px;
+	overflow: hidden;
+	font-size: 0.8em;
+
+}
+.footer_enlaces {
+  float: left;
+	width: 14%;
+	padding-right: 20px;
+	overflow: hidden;
+	font-size: 0.8em;
+
+}
+.footer_redes {
+  width: 23%;
+	float: right;
+}
+.footer_redes ul {
+	float: right;
+}
+.footer_redes li {
+  display: inline;
+  margin-right: 0.8px;
+  float: left;
+	font-size: 1.0em;
+}
+.footer_legales {
+    clear: both;
+  font-size: 0.8em;
+}
+.footer_legales li {
+  float: left;
+  margin-right: 10px
+}
+.footer_copyright {
+  float: right;
+  font-size: 1em;
+}
+.logo-foot {
+  width:70%;
+}
+
+/*.social-icons {
 	text-align: center;
   margin-bottom: 15px;
 }
@@ -395,7 +467,8 @@ h1 {
 	text-align: center;
 	color: #555555;
 	font-size: 0.75em;
-}
+}*/
+
 
 /* FORMS ------------------------------- */
 .form {

@@ -29,7 +29,7 @@
     </div>
      </div>
     <?php
-    include_once 'footer.php';
+    include_once 'footer2.php';
      ?>
   </body>
 </html>
