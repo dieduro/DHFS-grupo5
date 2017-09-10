@@ -3,7 +3,8 @@
   include_once 'header.php';
    ?>
 <!--campos de registro obligatorios-->
-  <div class="container">
+<div class="register_img">
+  <div class="container caja">
     <div class="con_fb">
       <a class="btn-solid-lg" href="registro.php" role="button">REGISTRATE con facebook</a>
       <hr>
@@ -19,7 +20,7 @@
           <h6 style="color:#555555">Compartir mis datos de registro con los proveedores de contenido de TEAMup! para fines de marketing.</h6>
           <hr>
           <h6>Si hacés click en "Registrarte" aceptarás los <a href="tts.php">Términos y Condiciones</a> y <a href="#">Política de Privacidad</a> de TEAMup! </h6>
-<!--Otros Campos de registro
+          <!--Otros Campos de registro
 <div class="regInfoPersonal"
   <label for="cumple">Fecha de Nacimiento: </label>
   <input type="date" name="cumple" id="cumple"><br><br>
@@ -59,7 +60,7 @@
       <input type="checkbox" name="Softball" value="Softball"> Softball<br>
   </div>
   </fieldset><br>--->
-                </div>
+        </div>
         <button class="btn-solid-lg" type="submit" name="register" id="register">REGISTRARME</button>
       </div>
     </form>
@@ -67,6 +68,7 @@
       <h6>¿Ya tienes cuenta? <a href="login.php">Inicia Sesión</a></h6>
     </div>
   </div>
+</div>
   <?php
   include_once 'footer.php';
    ?>

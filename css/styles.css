@@ -113,14 +113,15 @@ h6 {
 	line-height: 1.2em;
 }
 .linkeo {
-	margin: 0 auto 15px auto;
+	margin: 0 auto;
 	width: 250px;
+	text-align: center;
 }
 hr {
 	margin-top: 20px;
   margin-bottom: 20px;
   border: 0;
-  border-top: 1px solid #eee;
+  border-top: 1px solid #969696;
 }
 
 /* MENU  ------------------------------- */
@@ -431,7 +432,7 @@ input[type="checkbox"] {
 }
 .recordarme {
 	max-width: 250px;
-	margin: 0 auto 10px auto;
+	margin: 10px auto;
 	text-align: left;
 	font-size: 0.8em;
 }
@@ -469,9 +470,6 @@ input[type="checkbox"] {
 }
 
 @media (min-width: 768px) {
-	.container {
-		padding: 15px 0;
-	}
 	header {
 		justify-content: center;
 		margin: 25px 0;
@@ -499,8 +497,8 @@ input[type="checkbox"] {
 		height: 70vh;
 	}
 	.mega h2 {
-		font-size: 2.5em;
-		max-width: 400px;
+		font-size: 4em;
+		max-width: 600px;
 	}
 	.buscador select {
 		font-size: initial;
@@ -512,6 +510,24 @@ input[type="checkbox"] {
 	}
 	.header_link {
 		display: inline-block;
+	}
+	.caja {
+		background-color: white;
+		width: 300px;
+		padding-top: 25px;
+		padding-bottom: 25px;
+	}
+	.login_img {
+		background-image: url("../images/rugby_field.jpg");
+		background-size: cover;
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+	.register_img {
+		background-image: url("../images/tennis_field.jpg");
+		background-size: cover;
+		padding-top: 50px;
+		padding-bottom: 50px;
 	}
 
 }
