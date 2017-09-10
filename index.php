@@ -151,42 +151,42 @@
               <ul class="lista-prox-part">
                 <li>
                    <div class="deporte">
-                     <img src="images/futbol-th.jpg" alt="futbol">
+                     <img src="images/volley.jpg" alt="futbol">
                      <h5>Hockey</h5>
                      <h6 class="data-day">Belgrano - Miercoles 20hs</h6>
                    </div>
                 </li>
                 <li>
                   <div class="deporte">
-                    <img src="images/futbol-th.jpg" alt="futbol">
+                    <img src="images/futbol.jpg" alt="futbol">
                     <h5>Rugby</h5>
                     <h6 class="data-day">El Palomar - Jueves 19:30hs</h6>
                   </div>
                 </li>
                 <li>
                   <div class="deporte">
-                    <img src="images/futbol-th.jpg" alt="futbol">
+                    <img src="images/rugby.jpg" alt="futbol">
                     <h5>Rugby</h5>
                     <h6 class="data-day">El Palomar - Jueves 19:30hs</h6>
                   </div>
                 </li>
                 <li>
                   <div class="deporte">
-                    <img src="images/futbol-th.jpg" alt="futbol">
+                    <img src="images/hockey.jpg" alt="futbol">
                     <h5>Rugby</h5>
                     <h6 class="data-day">El Palomar - Jueves 19:30hs</h6>
                   </div>
                 </li>
                 <li>
                   <div class="deporte">
-                    <img src="images/futbol-th.jpg" alt="futbol">
+                    <img src="images/basket2.jpg" alt="futbol">
                     <h5>Rugby</h5>
                     <h6 class="data-day">El Palomar - Jueves 19:30hs</h6>
                   </div>
                 </li>
                 <li>
                   <div class="deporte">
-                    <img src="images/futbol-th.jpg" alt="futbol">
+                    <img src="images/squash.jpg" alt="futbol">
                     <h5>Rugby</h5>
                     <h6 class="data-day">El Palomar - Jueves 19:30hs</h6>
                   </div>
