@@ -73,7 +73,7 @@ a:hover {
 header {
 	font-size: 1.5em;
 	width: 100%;
-	height: 40px;
+	height: 50px;
 	display: flex;
 	text-align: center;
 	overflow: hidden;
@@ -88,7 +88,7 @@ h1 {
 	position: absolute;
 }
 h3 {
-	font-size: 0.9em;
+	font-size: 1.2em;
 	color: #333333;
 	font-weight: 600;
 	text-transform: uppercase;
@@ -162,7 +162,7 @@ hr {
  	margin-right: auto;
   	margin-bottom: 0;
  	margin-left: auto;
-	max-width: 200px;
+	max-width: 250px;
 	padding: 6px;
 	background-color: #003366;
 	color: white;
@@ -202,7 +202,7 @@ hr {
   	display: block;
 	letter-spacing: 0.05em;
 }
-.btn-solid-lg:hover {
+.btn-solid-lg: {
   	background-color: #01264a;
 }
 
@@ -341,9 +341,12 @@ hr {
 .lista-prox-part {
 	display: flex;
 	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: space-between;
 }
 .lista-prox-part li {
-	padding: 10px;
+	flex-basis: 32%;
+	margin:0;
 }
 .deporte {
 	width: 100%;
@@ -356,6 +359,14 @@ hr {
 }
 .deporte h6 {
 	text-align: left;
+}
+
+.section_tit {
+	height: 10vh;
+}
+.section_tit h3 {
+	position:absolute;
+	top: 5vh;
 }
 
 /* FOOTER ------------------------------- */
@@ -431,6 +442,7 @@ input[type="checkbox"] {
 }
 
 /* FAQ */
+
 .panel {
 	overflow: hidden;
 	text-align: center;
@@ -465,6 +477,7 @@ input[type="checkbox"] {
 @media (min-width: 768px) {
 	header {
 		justify-content: center;
+		height: 65px;
 	}
 	.head-left {
 		display:inline;
@@ -487,22 +500,30 @@ input[type="checkbox"] {
 	}
 	.mega h2 {
 		font-size: 2.5em;
-		max-width: 400px;
+		max-width: 280px;
 	}
 	.buscador select {
 		font-size: initial;
 		width: 25%;
 	}
+	.btn-solid {
+		max-width: 280px;
+		font-size: 1.1em;
+	}
+	.logo {
+		width:180px;
+	}
+	.header_link {
+		display: inline-block;
+	}
 
 
-	/*.container {
-    width: 750px;
-  }*/
+
 }
 @media (min-width: 860px) {
-  .container {
+  /*.container {
     width: 970px;
-  }
+  }*/
 	.evento {
 	display: table-cell;
 	padding-right: 10px;

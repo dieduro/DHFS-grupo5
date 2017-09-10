@@ -15,7 +15,10 @@
 
         <!-- BUSCADOR -->
          <section class="container">
-           <h3>Buscador de Partidos</h3>
+           <div class="section_tit">
+              <h3>Buscador de Partidos</h3>
+           </div>
+
            <div class="buscador">
              <form class="buscador-form" action="#">
                <select class="select" name="deporte" placeholder="Deporte">
@@ -139,29 +142,11 @@
             </div>
           </div>
         </section>
-      <!-- END ÚLTIMOS -->
 
-     <!-- RECOMENDADOS -->
-     <!-- <div class="container">
-             <div>
-               <h4>Partidos por Completarse</h4>
-             </div>
-             <div class="deporte">
-               <img src="images/futbol-th.jpg" alt="futbol">
-               <h5>Hockey</h5>
-               <h6 class="data-day">Belgrano - Miercoles 20hs</h6>
-             </div>
-             <div class="deporte">
-               <img src="images/futbol-th.jpg" alt="futbol">
-               <h5>Rugby</h5>
-               <h6 class="data-day">El Palomar - Jueves 19:30hs</h6>
-             </div>
-           </div> -->
-      <!--   </section>
-         - RECOMENDADOS -
+         <!-- RECOMENDADOS -->
            <section class="container prox-part">
-             <div>
-               <h4>Partidos Recomendados</h4>
+             <div class="section_tit">
+               <h3>Partidos Recomendados</h3>
              </div>
               <ul class="lista-prox-part">
                 <li>
@@ -208,9 +193,13 @@
                 </li>
                </ul>
            </section>
-           <!- FOOTER -->
+           <!-- FOOTER -->
              <?php
              include_once 'footer.php';
-              ?> -->
+              ?>
+              <script id="__bs_script__">//<![CDATA[
+        document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.18.13'><\/script>".replace("HOST", location.hostname));
+        //]]></script>
+
        </body>
      </html>
