@@ -17,9 +17,9 @@
         <input type="password" name="contraseña" id="password" placeholder="Repetir Contraseña" required>
         <div class="legals">
           <input type="checkbox" name="" value="">
-          <h6 style="color:#555555">Compartir mis datos de registro con los proveedores de contenido de TEAMup! para fines de marketing.</h6>
+          <h6 style="color:#555555">Compartir mis datos de registro con los proveedores de contenido de TEAMUP! para fines de marketing.</h6>
           <hr>
-          <h6>Si hacés click en "Registrarte" aceptarás los <a href="tts.php">Términos y Condiciones</a> y <a href="#">Política de Privacidad</a> de TEAMup! </h6>
+          <h6>Si hacés click en "Registrarme" aceptarás los <a href="#">Términos y Condiciones</a> y <a href="#">Política de Privacidad</a> de TEAMup! </h6>
           <!--Otros Campos de registro
 <div class="regInfoPersonal"
   <label for="cumple">Fecha de Nacimiento: </label>

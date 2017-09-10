@@ -15,16 +15,16 @@
             <input type="checkbox" name="recordame" value="recordame">
             <label for="recordame">Recordame</label>
           </div>
-          <button class="btn-solid-lg" type="submit" name="iniciarSesion" id="iniciarSesion">INICIAR SESION</button>
+          <button class="btn-solid-lg" type="submit" name="iniciarSesion" id="iniciarSesion">INICIAR SESIÓN</button>
         </form>
         <div class="linkeo">
           <h6><a href="#">¿Olvidaste tu nombre de usuario o contraseña?</a></h6>
           <br>
-          <h6>¿No tienes cuenta? <a href="registro.html">Registrate</a></h6>
+          <h6>¿No tenés cuenta? <a href="registro.php">Registrate</a></h6>
         </div>
         <div class="legals">
         <hr>
-        <h6>Si haces click en "INGRESÁ CON FACEBOOK" y no eres usuario de TEAMAPP, quedarás registrado y aceptarás los  <a href="tts.php">Términos y Condiciones</a> y <a href="#"> Política de Privacidad</a> de TEAMAup!</p>
+        <h6>Si hacés click en "INGRESÁ CON FACEBOOK" y no eres usuario de TEAMUP!, quedarás registrado y aceptarás los  <a href="#">Términos y Condiciones</a> y <a href="#"> Política de Privacidad</a> de TEAMUP!</p>
       </div>
     </div>
      </div>
