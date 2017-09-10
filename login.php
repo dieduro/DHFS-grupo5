@@ -2,6 +2,8 @@
     <?php
     include_once 'header.php';
      ?>
+
+     <!-- CONTENIDO -->
      <div class="login_img">
       <div class="container caja">
         <div class="con_fb">
@@ -23,13 +25,13 @@
           <h6>¿No tenés cuenta? <a href="registro.php">Registrate</a></h6>
         </div>
         <div class="legals">
-        <hr>
-        <h6>Si hacés click en "INGRESÁ CON FACEBOOK" y no eres usuario de TEAMUP!, quedarás registrado y aceptarás los  <a href="#">Términos y Condiciones</a> y <a href="#"> Política de Privacidad</a> de TEAMUP!</p>
+          <hr>
+          <h6>Si hacés click en "INGRESÁ CON FACEBOOK" y no eres usuario de TEAMUP!, quedarás registrado y aceptarás los  <a href="#">Términos y Condiciones</a> y <a href="#"> Política de Privacidad</a> de TEAMUP!</p>
+        </div>
       </div>
-    </div>
      </div>
+
+     <!-- FOOTER -->
     <?php
     include_once 'footer2.php';
      ?>
-  </body>
-</html>

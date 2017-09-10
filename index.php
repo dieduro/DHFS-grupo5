@@ -197,6 +197,3 @@
              <?php
              include_once 'footer2.php';
               ?>
-
-       </body>
-     </html>

@@ -604,7 +604,12 @@ input[type="checkbox"] {
 		padding-top: 50px;
 		padding-bottom: 50px;
 	}
-
+	.faq_img {
+		background-image: url("../images/faq_img.jpg");
+		background-size: cover;
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
 }
 @media (min-width: 860px) {
   /*.container {
