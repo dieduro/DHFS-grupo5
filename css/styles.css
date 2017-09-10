@@ -51,14 +51,13 @@ body {
 	padding: 10px 0 10px 0
 }
 .container {
- 	padding-right: 15px;
-  	padding-left: 15px;
+ 	padding: 15px 0;
 	margin-right: auto;
-  	margin-left: auto;
+  margin-left: auto;
 	position: relative;
 }
 a {
-  	color: #003366;
+  color: #003366;
 }
 a:hover {
 	text-decoration: none;
@@ -106,6 +105,7 @@ h5 {
 	font-weight: 500;
 	margin: 5px 0;
 	text-align: left;
+	text-transform: uppercase;
 }
 h6 {
 	font-size: 0.8em;
@@ -117,14 +117,15 @@ h6 {
 }
 hr {
 	margin-top: 20px;
-  	margin-bottom: 20px;
-  	border: 0;
-  	border-top: 1px solid #eee;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #eee;
 }
 
 /* MENU  ------------------------------- */
 .burger-icon {
 	float: right;
+	color: #003366;
 }
 .menu {
 	width: 100%;
@@ -158,9 +159,9 @@ hr {
 
 /* BOTONES  ------------------------------- */
 .btn-solid {
-  	margin-top: 0.6em;
+  margin-top: 0.6em;
  	margin-right: auto;
-  	margin-bottom: 0;
+  margin-bottom: 0;
  	margin-left: auto;
 	max-width: 250px;
 	padding: 6px;
@@ -173,7 +174,7 @@ hr {
 	display: block;
 }
 .btn-solid:hover {
-  	background-color: #01264a;
+  background-color: #01264a;
 }
 .btn-solid-sm {
 	max-width: 70px;
@@ -183,15 +184,15 @@ hr {
 	text-transform: uppercase;
 	text-align: center;
 	font-size: 0.8em;
-  	margin-top: 0;
-  	margin-left: auto;
-  	margin-right: auto;
+  margin-top: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 .btn-solid-sm:hover {
-  	background-color: #01264a;
+  background-color: #01264a;
 }
 .btn-solid-lg {
-  	width: 250px;
+  width: 250px;
 	padding: 6px;
 	background-color: #003366;
 	color: white;
@@ -264,7 +265,7 @@ hr {
 }
 .flechas {
 	position: absolute;
-	top: 35px;
+	top: 25%;
 	z-index: 2;
 	color: white;
 	visibility: hidden;
@@ -306,6 +307,7 @@ hr {
 	font-size: 1.5em;
 	text-transform: uppercase;
 	margin-bottom: 4px;
+	max-width: 100px;
 }
 .evento_zona {
 	font-size: 1em;
@@ -359,14 +361,6 @@ hr {
 }
 .deporte h6 {
 	text-align: left;
-}
-
-.section_tit {
-	height: 10vh;
-}
-.section_tit h3 {
-	position:absolute;
-	top: 5vh;
 }
 
 /* FOOTER ------------------------------- */
@@ -442,7 +436,6 @@ input[type="checkbox"] {
 }
 
 /* FAQ */
-
 .panel {
 	overflow: hidden;
 	text-align: center;
@@ -477,11 +470,14 @@ input[type="checkbox"] {
 @media (min-width: 768px) {
 	header {
 		justify-content: center;
-		height: 65px;
+		margin-bottom: 15px;
 	}
 	.head-left {
 		display:inline;
 		width: 25%;
+	}
+	.logo {
+		width: 180px;
 	}
 	h1 {
 		padding: 0 10px;
@@ -500,7 +496,7 @@ input[type="checkbox"] {
 	}
 	.mega h2 {
 		font-size: 2.5em;
-		max-width: 280px;
+		max-width: 400px;
 	}
 	.buscador select {
 		font-size: initial;
@@ -510,14 +506,9 @@ input[type="checkbox"] {
 		max-width: 280px;
 		font-size: 1.1em;
 	}
-	.logo {
-		width:180px;
-	}
 	.header_link {
 		display: inline-block;
 	}
-
-
 
 }
 @media (min-width: 860px) {
@@ -532,9 +523,6 @@ input[type="checkbox"] {
 	.evento:last-child {
 	padding-right: 0;
 	width: 19%;
-	}
-	.evento-deporte {
-		font-size: 1em;
 	}
 	.flechas {
 		visibility: visible;
