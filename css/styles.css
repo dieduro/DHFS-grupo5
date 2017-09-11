@@ -371,16 +371,16 @@ h1 {
 
 .footer_outer {
 	max-width: 1140px;
-  width:100%;
-  height: 150px;
+  	width:100%;
+  	height: 150px;
 	margin: 0 auto;
-	padding-top:10px;
-  overflow:hidden;
+	padding-top: 20px;
+  	overflow:hidden;
 
 }
 .footer_outer h3 {
-  font-size: 0.6em;
-  margin-top: 0px;
+  	font-size: 0.6em;
+  	margin-top: 0px;
 }
 .footer_inner {
 	display:flex;
@@ -392,29 +392,25 @@ footer .logo {
 	width: 20%;
 	padding-top: 3px;
 	box-sizing: content-box;
-  //float: left;
+  	//float: left;
 }
 footer .logo img {
-  width: 100%;
+ 	width: 110px;
 	overflow: hidden;
 }
 footer .cia {
-  float: left;
+  	float: left;
 	/*width: 18%;
 	padding-right: 20px;
-  height: 70%;*/
+  	height: 70%;*/
 	box-sizing: border-box;
 	overflow: hidden;
-
-
 }
 footer .comunidades {
 	/*width: 24%;
-  float: left;
+  	float: left;
 	padding-right: 20px;*/
 	overflow: hidden;
-
-
 }
 footer .enlaces {
   float: left;
@@ -428,7 +424,7 @@ footer .enlaces {
 	font-size: 0.5em;
 }
 footer .redes {
-  //width: 23%;
+  	//width: 23%;
 	width:100%;
 	overflow: hidden;
 	box-sizing: border-box;
@@ -439,35 +435,33 @@ footer .redes {
 }
 footer .redes ul {
 	overflow: hidden;
-	display:flex;
+	display: flex;
 	align-items: center;
 	justify-content:center;
 	height: 30px;
 	//float: right;
 }
 footer .redes li {
-  display: inline;
-  margin-right: 20px;
-  float: left;
+  	display: inline;
+  	margin-right: 20px;
+  	float: left;
 	font-size: 1.5em;
 }
 footer .redes li:last-child {
 	margin-right:0;
 }
 footer .legales {
-  clear: both;
+ 	clear: both;
 	position:relative;
 	top:15px;
 	box-sizing: border-box;
 	overflow: hidden;
-
 	margin: 0 auto;
 	padding: 0 15px;
-
 }
 footer .legales li {
-  float: left;
-  margin-right: 10px;
+  	float: left;
+  	margin-right: 10px;
 	font-size: 0.6em;
 
 }
@@ -483,13 +477,10 @@ footer .copyright {
 	display: block;
 	overflow: hidden;
 	text-align: center;
-  margin: 0 auto;
+  	margin: 0 auto;
 	font-size: 0.5em;
-
-  //float: right;
-
+  	//float: right;
 }
-
 
 /* FORMS ------------------------------- */
 .form {
@@ -655,9 +646,6 @@ input[type="checkbox"] {
 	}
 	footer .redes ul{
 		height: 40px;
-	}
-	footer .redes li {
-		font-size: 2em;
 	}
 	.footer_outer h3 {
 		font-size: 0.9em;
