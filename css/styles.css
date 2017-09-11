@@ -48,7 +48,8 @@ table {
 body {
 	background-color: #FFF;
 	font-family: 'Roboto', sans-serif;
-	padding: 10px 0 0 0
+	padding: 10px 0 0 0;
+
 }
 .container {
  	padding-right: 15px;
@@ -107,6 +108,11 @@ hr {
 /* HEADER ------------------------------- */
 .head-left {
 	display: none;
+}
+.header_logo {
+	text-align: center;
+	overflow: hidden;
+	display: block;
 }
 header {
 	font-size: 1.5em;
@@ -351,7 +357,7 @@ h1 {
 	justify-content: space-between;
 }
 .lista-prox-part li {
-	flex-basis: 32%;
+	flex-basis: 98%;
 	margin:0;
 }
 .deporte {
@@ -392,7 +398,6 @@ footer .logo {
 	width: 20%;
 	padding-top: 3px;
 	box-sizing: content-box;
-  //float: left;
 }
 footer .logo img {
   width: 100%;
@@ -400,40 +405,25 @@ footer .logo img {
 }
 footer .cia {
   float: left;
-	/*width: 18%;
-	padding-right: 20px;
-  height: 70%;*/
 	box-sizing: border-box;
 	overflow: hidden;
-
-
 }
 footer .comunidades {
-	/*width: 24%;
-  float: left;
-	padding-right: 20px;*/
 	overflow: hidden;
-
-
 }
 footer .enlaces {
   float: left;
-	/*width: 14%;
-	padding-right: 20px;*/
 	overflow: hidden;
-
 }
 .foot_links {
 	padding-top: 3px;
 	font-size: 0.5em;
 }
 footer .redes {
-  //width: 23%;
 	width:100%;
 	overflow: hidden;
 	box-sizing: border-box;
 	margin-bottom: 10px;
-	//float: right;
 	margin: 10 auto;
 	padding: 0 15px;
 }
@@ -443,7 +433,6 @@ footer .redes ul {
 	align-items: center;
 	justify-content:center;
 	height: 30px;
-	//float: right;
 }
 footer .redes li {
   display: inline;
@@ -460,16 +449,13 @@ footer .legales {
 	top:15px;
 	box-sizing: border-box;
 	overflow: hidden;
-
 	margin: 0 auto;
 	padding: 0 15px;
-
 }
 footer .legales li {
   float: left;
   margin-right: 10px;
 	font-size: 0.6em;
-
 }
 footer .copyright {
 	position:relative;
@@ -477,7 +463,6 @@ footer .copyright {
 	height: 20px;
 	padding-top: 5px;
 	margin:0 auto;
-
 }
 .copyright p {
 	display: block;
@@ -485,9 +470,6 @@ footer .copyright {
 	text-align: center;
   margin: 0 auto;
 	font-size: 0.5em;
-
-  //float: right;
-
 }
 
 
@@ -543,15 +525,18 @@ input[type="checkbox"] {
 	box-shadow: none;
 }
 .panel-title {
-	font-size: 0.9em;
+	font-size: 1em;
+	font-weight: 600;
 }
 .panel-group .panel {
 	border-radius: 0px;
 }
 .panel-body {
 	font-size: 0.9em;
-	line-height: normal;
-	text-align: left;
+	line-height: 1.4em;
+	text-align: justify;
+	/*line-height: normal;
+	text-align: left;*/
 }
 .panel-default > .panel-heading {
 	border-color: #003366;
@@ -579,7 +564,12 @@ input[type="checkbox"] {
 	.copyright p {
 		font-size: 0.65em;
 	}
+	.lista-prox-part li {
+		flex-basis: 48%;
+
+	}
 }
+
 
 @media (min-width: 768px) {
 	header {
@@ -672,11 +662,13 @@ input[type="checkbox"] {
 	footer .legales li {
 		font-size: 0.8em;
 	}
+	.lista-prox-part li {
+		flex-basis: 32%;
+		margin:0;
+	}
 }
 @media (min-width: 860px) {
-  /*.container {
-    width: 970px;
-  }*/
+
 	.evento {
 	display: table-cell;
 	padding-right: 10px;
