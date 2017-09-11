@@ -18,7 +18,7 @@
                   </a>
                 </h4>
               </div>
-              <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+              <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                 <div class="panel-body">
                   TEAMAPP es una plataforma pensada para conectar jugadores con equipos, y equipos con canchas.<br/> ¿Viste esa vez que te agarraron ganas de jugar <i>badminton</i> y no se te ocurrió con quién? Encontra equipos de todos los deportes en TEAMAPP!
                 </div>
