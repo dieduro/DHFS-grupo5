@@ -184,7 +184,7 @@ h1 {
 	display: block;
 }
 .btn-solid:hover {
-  background-color: #01264a;
+  	background-color: #01264a;
 }
 .btn-solid-sm {
 	max-width: 70px;
@@ -194,15 +194,15 @@ h1 {
 	text-transform: uppercase;
 	text-align: center;
 	font-size: 0.8em;
-  margin-top: 0;
-  margin-left: auto;
-  margin-right: auto;
+ 	margin-top: 0;
+  	margin-left: auto;
+  	margin-right: auto;
 }
 .btn-solid-sm:hover {
-  background-color: #01264a;
+  	background-color: #01264a;
 }
 .btn-solid-lg {
-  width: 250px;
+  	width: 250px;
 	padding: 6px;
 	background-color: #003366;
 	color: white;
@@ -275,10 +275,9 @@ h1 {
 }
 .flechas {
 	position: absolute;
-	top: 25%;
+	top: 35%;
 	z-index: 2;
 	color: white;
-	visibility: hidden;
 	width: 100%;
 	padding: 0 10px;
 	font-size: 1.5em;
@@ -304,10 +303,13 @@ h1 {
 	font-weight: 600;
 }
 .evento {
+	display: none;
 	position: relative;
 	width: 100%;
-	margin-bottom: 15px;
 	overflow: hidden;
+}
+.evento:first-child {
+	display: block;
 }
 .evento img {
 	width: 100%;
@@ -373,20 +375,85 @@ h1 {
 	text-align: left;
 }
 
+/* FORMS ------------------------------- */
+.form {
+	margin: 20px auto;
+}
+.form h6 {
+	display: inline;
+}
+input[type="text"] {
+	border: 1px solid #003366;
+	margin: 5px auto;
+	width: 250px;
+	padding: 6px;
+	display: block;
+	font-size: 0.8em;
+}
+input[type="password"] {
+	border: 1px solid #003366;
+	margin: 5px auto;
+	width: 250px;
+	padding: 6px;
+	display: block;
+	font-size: 0.8em;
+}
+input[type="checkbox"] {
+	display: inline-block;
+}
+.con_fb {
+	max-width: 250px;
+	margin: 0 auto;
+}
+.legals {
+	text-align: left;
+	max-width: 250px;
+	margin: 10px auto;
+}
+.recordarme {
+	max-width: 250px;
+	margin: 10px auto;
+	text-align: left;
+	font-size: 0.8em;
+}
+
+/* FAQ */
+.panel {
+	overflow: hidden;
+	text-align: center;
+	margin: 0 auto;
+	max-width: 480px;
+	border-radius: 0;
+	box-shadow: none;
+}
+.panel-title {
+	font-size: 0.9em;
+}
+.panel-group .panel {
+	border-radius: 0px;
+}
+.panel-body {
+	font-size: 0.9em;
+	line-height: normal;
+	text-align: left;
+}
+.panel-default > .panel-heading {
+	border-color: #003366;
+	background-color: white;
+}
+
 /* FOOTER ------------------------------- */
 
 .footer_outer {
 	max-width: 1140px;
   width:100%;
-  height: 150px;
 	margin: 0 auto;
-	padding-top:10px;
+	padding-top: 20px;
   overflow:hidden;
-
 }
 .footer_outer h3 {
-  font-size: 0.6em;
-  margin-top: 0px;
+  	font-size: 0.6em;
+  	margin-top: 0px;
 }
 .footer_inner {
 	display:flex;
@@ -400,11 +467,11 @@ footer .logo {
 	box-sizing: content-box;
 }
 footer .logo img {
-  width: 100%;
+ 	width: 110px;
 	overflow: hidden;
 }
 footer .cia {
-  float: left;
+
 	box-sizing: border-box;
 	overflow: hidden;
 }
@@ -420,6 +487,7 @@ footer .enlaces {
 	font-size: 0.5em;
 }
 footer .redes {
+
 	width:100%;
 	overflow: hidden;
 	box-sizing: border-box;
@@ -429,7 +497,7 @@ footer .redes {
 }
 footer .redes ul {
 	overflow: hidden;
-	display:flex;
+	display: flex;
 	align-items: center;
 	justify-content:center;
 	height: 30px;
@@ -444,7 +512,7 @@ footer .redes li:last-child {
 	margin-right:0;
 }
 footer .legales {
-  clear: both;
+ 	clear: both;
 	position:relative;
 	top:15px;
 	box-sizing: border-box;
@@ -458,17 +526,14 @@ footer .legales li {
 	font-size: 0.6em;
 }
 footer .copyright {
-	position:relative;
-	top:25px;
-	height: 20px;
 	padding-top: 5px;
-	margin:0 auto;
+	margin:12px auto;
 }
 .copyright p {
 	display: block;
 	overflow: hidden;
 	text-align: center;
-  margin: 0 auto;
+  	margin: 0 auto;
 	font-size: 0.5em;
 }
 
@@ -535,13 +600,13 @@ input[type="checkbox"] {
 	font-size: 0.9em;
 	line-height: 1.4em;
 	text-align: justify;
-	/*line-height: normal;
-	text-align: left;*/
+
 }
 .panel-default > .panel-heading {
 	border-color: #003366;
 	background-color: white;
 }
+
 
 /* MEDIA QUERIES ------------------------------- */
 @media (min-width: 420px) {
@@ -551,9 +616,7 @@ input[type="checkbox"] {
 }
 
 @media (min-width:620px) {
-	.footer_outer {
-		height: 160px;
-	}
+
 	.footer_outer h3 {
 		font-size: 0.8em;
 		margin-bottom: 5px;
@@ -613,6 +676,21 @@ input[type="checkbox"] {
 	.header_link {
 		display: inline-block;
 	}
+	.evento {
+		display: table-cell;
+		padding-right: 10px;
+		width: 20%;
+	}
+	.evento:first-child {
+		display: table-cell;
+	}
+	.evento:last-child {
+		padding-right: 0;
+		width: 19%;
+	}
+	.flechas {
+		top: 25%;
+	}
 	.caja {
 		background-color: white;
 		max-width: 300px;
@@ -637,17 +715,12 @@ input[type="checkbox"] {
 		padding-top: 50px;
 		padding-bottom: 50px;
 	}
-	.footer_outer {
-		height: 190px;
-	}
+
 	footer .redes {
 		margin-bottom: 20px;
 	}
 	footer .redes ul{
 		height: 40px;
-	}
-	footer .redes li {
-		font-size: 2em;
 	}
 	.footer_outer h3 {
 		font-size: 0.9em;
@@ -677,11 +750,8 @@ input[type="checkbox"] {
 	.evento:last-child {
 	padding-right: 0;
 	width: 19%;
+
 	}
-	.flechas {
-		visibility: visible;
-	}
-}
 @media (min-width: 1200px) {
   .container {
     width: 1170px;
