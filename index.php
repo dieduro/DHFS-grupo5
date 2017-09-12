@@ -62,7 +62,7 @@
            </div>
         </section>
 
-    <!-- ÚLTIMOS -->
+    <!-- ÚLTIMO MOMENTO -->
          <section class="container">
             <div class="section_tit">
                   <h3>¡PARTIDOS DE ULTIMO MOMENTO!</h3>
@@ -194,9 +194,6 @@
                </ul>
            </section>
 
-           <script id="__bs_script__">//<![CDATA[
-    document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.18.13'><\/script>".replace("HOST", location.hostname));
-//]]></script>
            <!-- FOOTER -->
              <?php
              include_once 'footer2.php';

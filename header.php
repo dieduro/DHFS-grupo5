@@ -22,15 +22,6 @@
             <li class="nav-items"><a href="login.php" class="header_link">Login</a></li>
             <li class="nav-items"><a href="registro.php" class="header_link">Registrate</a></li>
             <li class="nav-items"><a href="faq.php" class="header_link">¿Qué es <i>TeamUp!?</i></a></li>
-            <!--
-            <li><a href="#">Ayuda</a></li>
-            <li><a href="#">Ofrecé una cancha</a></li>
-            <li><a href="#">Organizá un Partido</a></li>
-            <li><a href="#">Descargar</a></li>
-            <li><a href="#">Registrate</a></li>
-            <li><a href="#"><Iniciar></Iniciar> Sesión</a></li>
-            <div class="logo-menu"><img src="images/logo-menu.png" alt="logo"></div>
-                    -->
           </ul>
         </nav>
           <span class="burger-icon"><i class="fa fa-bars menu" aria-hidden="true"></i></span>
