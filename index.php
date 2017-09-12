@@ -65,7 +65,7 @@
     <!-- ÚLTIMOS -->
          <section class="container">
             <div class="section_tit">
-                  <h3>PARTIDOS POR COMPLETARSE</h3>
+                  <h3>¡PARTIDOS DE ULTIMO MOMENTO!</h3>
                   <a class="ver_todos"href="#">ver todos</a>
             </div>
             <div class="slider">
@@ -92,7 +92,7 @@
                 </div>
                 <div class="evento_datos">
                    <p class="faltan">Falta 1!</p>
-                   <p class="evento_fecha">viernes 18 - 20:00</p>
+                   <p class="evento_fecha">HOY - 20:00</p>
                 </div>
               </div>
               <div class="evento">
@@ -103,7 +103,7 @@
                 </div>
                 <div class="evento_datos">
                    <p class="faltan">Faltan 5!</p>
-                   <p class="evento_fecha">viernes 18 - 20:00</p>
+                   <p class="evento_fecha">HOY - 20:00</p>
                 </div>
               </div>
               <div class="evento">
@@ -114,7 +114,7 @@
                 </div>
                 <div class="evento_datos">
                    <p class="faltan">Faltan 2!</p>
-                   <p class="evento_fecha">jueves 17 - 21:00</p>
+                   <p class="evento_fecha">MAÑANA - 15:00</p>
                 </div>
               </div>
               <div class="evento">
@@ -125,7 +125,7 @@
                 </div>
                 <div class="evento_datos">
                    <p class="faltan">Faltan 5!</p>
-                   <p class="evento_fecha">jueves 17 - 21:0</p>
+                   <p class="evento_fecha">MAÑANA - 19:30</p>
                 </div>
               </div>
               <div class="evento">
@@ -136,7 +136,7 @@
                 </div>
                 <div class="evento_datos">
                    <p class="faltan">Falta 1!</p>
-                   <p class="evento_fecha">jueves 17 - 21:0</p>
+                   <p class="evento_fecha">MAÑANA- 21:30</p>
                 </div>
               </div>
             </div>
