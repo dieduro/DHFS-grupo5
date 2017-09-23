@@ -1,7 +1,7 @@
-    <!--HEADER-->
-    <?php
-    include_once 'header.php';
-     ?>
+<!--HEADER-->
+<?php
+  require_once("header.php");
+?>
     <!-- CONTENIDO -->
     <section class="mega">
       <div class="container">
@@ -63,38 +63,36 @@
         </section>
 
     <!-- ÚLTIMO MOMENTO -->
-         <section class="container">
-            <div class="section_tit">
-                  <h3>¡PARTIDOS DE ULTIMO MOMENTO!</h3>
-                  <a class="ver_todos"href="#">ver todos</a>
+      <section class="container">
+        <div class="section_tit">
+          <h3>¡PARTIDOS DE ULTIMO MOMENTO!</h3>
+          <a class="ver_todos"href="#">ver todos</a>
+        </div>
+        <div class="slider">
+          <div class="flechas">
+            <div class="flecha_izq">
+              <button type="button" name="button">
+                <i class="fa fa-arrow-left" aria-hidden="true"></i>
+              </button>
             </div>
-            <div class="slider">
-            <div class="flechas">
-              <div class="flecha_izq">
-                <button type="button" name="button">
-                  <i class="fa fa-arrow-left" aria-hidden="true"></i>
-                </button>
-
+            <div class="flecha_der">
+              <button type="button" name="button">
+                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+          <div class="eventos">
+            <div class="evento">
+              <img src="images/volley.jpg" alt="">
+              <div class="overlay">
+                <p class="evento_deporte">Volley</p>
+                <p class=evento_zona>Vicente Lopez</p>
               </div>
-              <div class="flecha_der">
-                <button type="button" name="button">
-                  <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                </button>
-
+              <div class="evento_datos">
+                <p class="faltan">Falta 1!</p>
+                <p class="evento_fecha">HOY - 20:00</p>
               </div>
             </div>
-            <div class="eventos">
-              <div class="evento">
-                <img src="images/volley.jpg" alt="">
-                <div class="overlay">
-                  <p class="evento_deporte">Volley</p>
-                  <p class=evento_zona>Vicente Lopez</p>
-                </div>
-                <div class="evento_datos">
-                   <p class="faltan">Falta 1!</p>
-                   <p class="evento_fecha">HOY - 20:00</p>
-                </div>
-              </div>
               <div class="evento">
                 <img src="images/rugby.jpg" alt="">
                 <div class="overlay">
@@ -194,7 +192,7 @@
                </ul>
            </section>
 
-           <!-- FOOTER -->
-             <?php
-             include_once 'footer2.php';
-              ?>
+<!-- FOOTER -->
+<?php
+ include_once 'footer2.php';
+?>

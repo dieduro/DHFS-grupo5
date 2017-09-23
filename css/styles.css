@@ -49,7 +49,6 @@ body {
 	background-color: #FFF;
 	font-family: 'Roboto', sans-serif;
 	padding: 10px 0 0 0;
-
 }
 .container {
  	padding-right: 15px;
@@ -59,11 +58,13 @@ body {
 	position: relative;
 }
 a {
-  color: #003366;
+  color: #006660;
 }
 a:hover {
 	text-decoration: none;
-	font-weight: 600;
+	font-weight: initial;
+	color: #999999;
+
 }
 h3 {
 	font-size: 1.2em;
@@ -80,7 +81,7 @@ h4 {
 }
 h5 {
 	font-size: 1em;
-	color: #003366;
+	color: #006660;
 	font-weight: 500;
 	margin: 5px 0;
 	text-align: left;
@@ -135,7 +136,7 @@ h1 {
 /* MENU  ------------------------------- */
 .burger-icon {
 	float: right;
-	color: #003366;
+	color: #006660;
 }
 .menu {
 	width: 100%;
@@ -164,18 +165,18 @@ h1 {
 	font-weight: 500;
 }
 .nav-items a:hover {
-	color: #5a5a5a;
+	color: #999999;
+}
+.user {
+	color: orange;
 }
 
 /* BOTONES  ------------------------------- */
 .btn-solid {
-  margin-top: 0.6em;
- 	margin-right: auto;
-  margin-bottom: 0;
- 	margin-left: auto;
+  margin: 10px auto;
 	max-width: 250px;
 	padding: 6px;
-	background-color: #003366;
+	background-color: #006660;
 	color: white;
 	text-transform: uppercase;
 	text-align: center;
@@ -184,37 +185,41 @@ h1 {
 	display: block;
 }
 .btn-solid:hover {
-  	background-color: #01264a;
+  background-color: #02413d;
+	color: white;
+	font-weight: normal;
 }
 .btn-solid-sm {
 	max-width: 70px;
 	padding: 6px;
-	background-color: #003366;
+	background-color: #006660;
 	color: white;
 	text-transform: uppercase;
 	text-align: center;
 	font-size: 0.8em;
  	margin-top: 0;
-  	margin-left: auto;
-  	margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 .btn-solid-sm:hover {
-  	background-color: #01264a;
+  background-color: #02413d;
+	color: white;
 }
 .btn-solid-lg {
-  	width: 250px;
+  width: 250px;
 	padding: 6px;
-	background-color: #003366;
+	background-color: #006660;
 	color: white;
 	text-transform: uppercase;
 	text-align: center;
 	font-size: 0.8em;
 	margin: 0 auto;
-  	display: block;
+  display: block;
 	letter-spacing: 0.05em;
 }
-.btn-solid-lg: {
-  	background-color: #01264a;
+.btn-solid-lg:hover {
+  background-color: #02413d;
+	color: white;
 }
 
 /* MEGA-IMG ------------------------------- */
@@ -226,7 +231,6 @@ h1 {
 	color: #ffffff;
 	height: 60vh;
 	width: 100%;
-	text-shadow: 0.25px 0.25px 0.25px #000000;
 	margin-bottom: 20px;
 }
 .mega h2 {
@@ -236,6 +240,7 @@ h1 {
 	color: #fff;
 	max-width: 250px; /* para que se arme en dos lineas */
 	margin: 0 auto; /* para que se centre en otros viewports */
+	text-shadow: 0.25px 0.25px 0.25px #000000;
 }
 .mega img {
 	margin: 0 0 30px;
@@ -250,7 +255,7 @@ h1 {
 
 /* BUSCADOR ------------------------------- */
 .buscador {
-	border: 1px solid #003366;
+	border: 1px solid #006660;
 	padding: 1.5vh;
 	margin: 10px 0 20px auto;
 	font-size: 1em;
@@ -260,7 +265,7 @@ h1 {
 .select {
 	border: 0;
 	width: 65px;
-	border-right: 1px solid #003366;
+	border-right: 1px solid #006660;
 	font-size: 0.7em;
 	color: #333333;
 	margin-right: 5px;
@@ -285,7 +290,7 @@ h1 {
 .flechas button {
 	width: 40px;
 	height: 40px;
-	background-color: rgba(0, 51, 102, 0.71);
+	background-color: #006660;
 	border-radius: 50%;
 }
 .flecha_izq {
@@ -383,7 +388,7 @@ h1 {
 	display: inline;
 }
 input[type="text"] {
-	border: 1px solid #003366;
+	border: 1px solid #006660;
 	margin: 5px auto;
 	width: 250px;
 	padding: 6px;
@@ -391,7 +396,7 @@ input[type="text"] {
 	font-size: 0.8em;
 }
 input[type="password"] {
-	border: 1px solid #003366;
+	border: 1px solid #006660;
 	margin: 5px auto;
 	width: 250px;
 	padding: 6px;
@@ -400,6 +405,12 @@ input[type="password"] {
 }
 input[type="checkbox"] {
 	display: inline-block;
+}
+input[type="file"] {
+	display: block;
+	width: 250px;
+	margin: 0 auto;
+	font-size: 0.8em;
 }
 .con_fb {
 	max-width: 250px;
@@ -415,6 +426,15 @@ input[type="checkbox"] {
 	margin: 10px auto;
 	text-align: left;
 	font-size: 0.8em;
+}
+.errores {
+	font-size: 0.9em;
+	line-height: normal;
+	color: red;
+	padding-left: 15px;
+	max-width: 245px;
+	list-style: disc;
+	margin: 0 auto;
 }
 
 /* FAQ */
@@ -438,7 +458,7 @@ input[type="checkbox"] {
 	text-align: left;
 }
 .panel-default > .panel-heading {
-	border-color: #003366;
+	border-color: #006660;
 	background-color: white;
 }
 
@@ -546,7 +566,7 @@ footer .copyright {
 	display: inline;
 }
 input[type="text"] {
-	border: 1px solid #003366;
+	border: 1px solid #006660;
 	margin: 5px auto;
 	width: 250px;
 	padding: 6px;
@@ -554,7 +574,7 @@ input[type="text"] {
 	font-size: 0.8em;
 }
 input[type="password"] {
-	border: 1px solid #003366;
+	border: 1px solid #006660;
 	margin: 5px auto;
 	width: 250px;
 	padding: 6px;
@@ -563,10 +583,6 @@ input[type="password"] {
 }
 input[type="checkbox"] {
 	display: inline-block;
-}
-.con_fb {
-	max-width: 250px;
-	margin: 0 auto;
 }
 .legals {
 	text-align: left;
@@ -600,13 +616,11 @@ input[type="checkbox"] {
 	font-size: 0.9em;
 	line-height: 1.4em;
 	text-align: justify;
-
 }
 .panel-default > .panel-heading {
-	border-color: #003366;
+	border-color: #006660;
 	background-color: white;
 }
-
 
 /* MEDIA QUERIES ------------------------------- */
 @media (min-width: 420px) {
@@ -616,7 +630,6 @@ input[type="checkbox"] {
 }
 
 @media (min-width:620px) {
-
 	.footer_outer h3 {
 		font-size: 0.8em;
 		margin-bottom: 5px;
@@ -629,10 +642,8 @@ input[type="checkbox"] {
 	}
 	.lista-prox-part li {
 		flex-basis: 48%;
-
 	}
 }
-
 
 @media (min-width: 768px) {
 	header {
@@ -715,7 +726,6 @@ input[type="checkbox"] {
 		padding-top: 50px;
 		padding-bottom: 50px;
 	}
-
 	footer .redes {
 		margin-bottom: 20px;
 	}
@@ -740,18 +750,18 @@ input[type="checkbox"] {
 		margin:0;
 	}
 }
-@media (min-width: 860px) {
 
+@media (min-width: 860px) {
 	.evento {
-	display: table-cell;
-	padding-right: 10px;
-	width: 20%;
+		display: table-cell;
+		padding-right: 10px;
+		width: 20%;
 	}
 	.evento:last-child {
-	padding-right: 0;
-	width: 19%;
-
+		padding-right: 0;
+		width: 19%;
 	}
+
 @media (min-width: 1200px) {
   .container {
     width: 1170px;

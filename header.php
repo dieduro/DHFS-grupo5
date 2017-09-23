@@ -1,3 +1,27 @@
+<?php
+  require_once("funciones.php");
+  /*
+  var_dump(estaLogueado());
+  echo "<hr>";
+  var_dump(usuarioLogueado()["email"]);
+  echo "<hr>";
+  var_dump(usuarioLogueado()["name"]);
+  echo "<hr>";
+  var_dump($_POST["email"]);
+  echo "<hr>";
+  var_dump($_SESSION["email"]);
+  echo "<hr>";
+  var_dump($_POST["password"]);
+  echo "<hr>";
+  var_dump($_SESSION["password"]);
+  echo "<hr>";
+  var_dump($_SESSION["usuarioLogueado"]);
+  */
+
+//  $usuario = traerPorMail($_POST["email"]);
+
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -14,14 +38,20 @@
       <!-- HEADER -->
       <header>
         <div class="head-left">
-
+            <!-- DIV VACIO -->
         </div>
         <h1><a href="index.php" class="header_link"><img class="logo" src="images/logo-home.png" alt="logo TeamUp!"></a></h1>
         <nav class="menu">
           <ul>
-            <li class="nav-items"><a href="login.php" class="header_link">Login</a></li>
-            <li class="nav-items"><a href="registro.php" class="header_link">Registrate</a></li>
-            <li class="nav-items"><a href="faq.php" class="header_link">¿Qué es <i>TeamUp!?</i></a></li>
+            <?php if (estaLogueado()) : ?>
+              <li class="nav-items"><a href="#" class="header_link user"><?=usuarioLogueado()["name"]?></a></li>
+              <li class="foto-perfil"><img src="images/<?=$usuario["email"]?>.jpg" alt="" width=20>
+              <li class="nav-items"><a href="logout.php" class="header_link">Logout</a></li>
+            <?php else: ?>
+              <li class="nav-items"><a href="registro.php" class="header_link">Registrate</a></li>
+              <li class="nav-items"><a href="login.php" class="header_link">Login</a></li>
+              <li class="nav-items"><a href="faq.php" class="header_link">¿Qué es <i>TeamUp!?</i></a></li>
+            <?php endif; ?>
           </ul>
         </nav>
           <span class="burger-icon"><i class="fa fa-bars menu" aria-hidden="true"></i></span>

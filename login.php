@@ -1,18 +1,47 @@
-    <!--header-->
-    <?php
-    include_once 'header.php';
-     ?>
+<?php
+require_once("funciones.php");
 
-     <!-- CONTENIDO -->
+if (estaLogueado()) {
+  header("Location:index.php");
+}
+
+$arrayErrores = [];
+if ($_POST) {
+
+  //Validar
+  $arrayErrores = validarLogin($_POST);
+
+  //Si es valido, loguear
+  if (count($arrayErrores) == 0) {
+    loguear($_POST["email"]);
+    if (isset($_POST["recordame"])) {
+      recordarUsuario($_POST["email"]);
+    }
+      header("Location:index.php");exit;
+    }
+  }
+
+  // HEADER
+  include_once("header.php");
+  ?>
+
+  <!-- CONTENIDO -->
      <div class="login_img">
       <div class="container caja">
         <div class="con_fb">
           <a class="btn-solid-lg" href="login.php" role="button">INGRESÁ con facebook</a>
           <hr>
         </div>
-        <form class="form" id="login.php" action="index.php" method="post">
-          <input type="text" name="email" id="email" placeholder="Email" required>
-          <input  type="password" name="contraseña" id="contraseña" placeholder="Contraseña" required>
+        <?php if (count($arrayErrores) > 0) : ?>
+          <ul class="errores">
+            <?php foreach($arrayErrores as $error) : ?>
+              <li><?=$error?></li>
+            <?php endforeach; ?>
+          </ul>
+        <?php endif; ?>
+        <form class="form" action="login.php" id="login" method="POST">
+          <input type="text" name="email" id="email" placeholder="Email">
+          <input  type="password" name="password" id="password" placeholder="Contraseña">
           <div class="recordarme">
             <input type="checkbox" name="recordame" value="recordame">
             <label for="recordame">Recordame</label>
@@ -29,9 +58,9 @@
           <h6>Si hacés click en "INGRESÁ CON FACEBOOK" y no eres usuario de TEAMUP!, quedarás registrado y aceptarás los  <a href="#">Términos y Condiciones</a> y <a href="#"> Política de Privacidad</a> de TEAMUP!</p>
         </div>
       </div>
-     </div>
+    </div>
 
-     <!-- FOOTER -->
+    <!-- FOOTER -->
     <?php
-    include_once 'footer2.php';
+    require_once("footer2.php");
      ?>
