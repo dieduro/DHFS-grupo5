@@ -18,8 +18,6 @@
   var_dump($_SESSION["usuarioLogueado"]);
   */
 
-//  $usuario = traerPorMail($_POST["email"]);
-
 ?>
 
 <!DOCTYPE html>
@@ -44,8 +42,8 @@
         <nav class="menu">
           <ul>
             <?php if (estaLogueado()) : ?>
+              <li class="nav-items foto-perfil"><img src="images/<?=usuarioLogueado()["email"]?>.jpg" alt="">
               <li class="nav-items"><a href="#" class="header_link user"><?=usuarioLogueado()["name"]?></a></li>
-              <li class="foto-perfil"><img src="images/<?=$usuario["email"]?>.jpg" alt="" width=20>
               <li class="nav-items"><a href="logout.php" class="header_link">Logout</a></li>
             <?php else: ?>
               <li class="nav-items"><a href="registro.php" class="header_link">Registrate</a></li>
