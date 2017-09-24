@@ -1,12 +1,10 @@
 <?php
-require_once("funciones.php")
-if (!estaLogueado()) {
-  header("Location:index.php");
-}
-
-$usuarios = traerTodos();
-
-include_once("header.php")
+  require_once("funciones.php")
+  if (!estaLogueado()) {
+    header("Location:index.php");
+  }
+  $usuarios = traerTodos();
+  include_once("header.php")
 ?>
 
 <div class="">
