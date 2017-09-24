@@ -118,6 +118,7 @@ hr {
 header {
 	font-size: 1.5em;
 	width: 100%;
+	height: 40px;
 	display: flex;
 	text-align: center;
 	overflow: hidden;

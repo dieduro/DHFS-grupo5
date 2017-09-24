@@ -21,7 +21,7 @@ if ($_POST) {
     guardarUsuario($usuario);
 
     // 2) Guardamos la foto
-    $archivo = $_FILES["foto-perfil"]["tmp-name"];
+    $archivo = $_FILES["foto-perfil"]["tmp_name"];
     $nombreDeLaFoto = $_FILES["foto-perfil"]["name"];
     $extension = pathinfo($nombreDeLaFoto, PATHINFO_EXTENSION);
     $nombre = dirname(__FILE__) . "/images/" . $_POST["email"] . ".$extension";
