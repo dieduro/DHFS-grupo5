@@ -42,7 +42,7 @@
     </ul>
   </div>
   <div class="copyright">
-    <p>&copy;2017  TEAMUP</p>
+    <p>&copy;<?php echo date ("Y");?>  TEAMUP</p>
   </div>
 </footer>
 

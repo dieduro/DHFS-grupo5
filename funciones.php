@@ -29,7 +29,7 @@ function validarInformacion($informacion) {
   }
   // y si es igual a la ingresada por confirmacion
   else if ($informacion["password"] != $informacion["cpassword"]) {
-    $arrayDeErrores["password"] = "Las contraseñas no son iguales";
+    $arrayDeErrores["cpassword"] = "Las contraseñas no son iguales";
   }
 
   //chequeamos la foto

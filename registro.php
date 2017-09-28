@@ -45,23 +45,43 @@ include_once("header.php");
       <a class="btn-solid-lg" href="registro.php" role="button">REGISTRATE con facebook</a>
       <hr>
     </div>
-    <?php if (count($arrayErrores) > 0) : ?>
+    <!--<?php if (count($arrayErrores) > 0) : ?>
       <ul class="errores">
         <?php foreach($arrayErrores as $error) : ?>
           <li><?=$error?></li>
         <?php endforeach ; ?>
       </ul>
-    <?php endif; ?>
+    <?php endif; ?> -->
     <form class="form" action="registro.php" id="registro" enctype="multipart/form-data" method="POST">
       <div>
         <input type="text" name="name" id="name" placeholder="Nombre y Apellido" value="<?=$nameDefault?>">
         <input type="text" name="email" id="email" placeholder="Email" value="<?=$emailDefault?>" >
+        <?php if (isset($arrayErrores["email"])) { ?>
+          <div class="errores">
+        <?php echo $arrayErrores["email"]; ?></div>
+        <?php } ?>
         <input type="password" name="password" id="password" placeholder="Contraseña" >
+        <?php if (isset($arrayErrores["password"])) { ?>
+          <div class="errores">
+        <?php echo $arrayErrores["password"]; ?></div>
+        <?php } ?>
         <input type="password" name="cpassword" id="cpassword" placeholder="Repetir Contraseña" >
+        <?php if (isset($arrayErrores["cpassword"])) { ?>
+          <div class="errores">
+        <?php echo $arrayErrores["cpassword"]; ?></div>
+        <?php } ?>
         <input type="file" name="foto-perfil" value="">
+        <?php if (isset($arrayErrores["foto-perfil"])) { ?>
+          <div class="errores">
+        <?php echo $arrayErrores["foto-perfil"]; ?></div>
+        <?php } ?>
         <div class="legals">
           <input type="checkbox" name="legals" value="">
           <h6 style="color:#555555">Compartir mis datos de registro con los proveedores de contenido de TEAMUP! para fines de marketing.</h6>
+          <?php if (isset($arrayErrores["legals"])) { ?>
+            <div class="errores">
+          <?php echo $arrayErrores["legals"]; ?></div>
+          <?php } ?>
           <hr>
           <h6>Si hacés click en "Registrarme" aceptarás los <a href="#">Términos y Condiciones</a> y <a href="#">Política de Privacidad</a> de TEAMup! </h6>
         </div>
