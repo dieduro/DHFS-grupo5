@@ -32,16 +32,24 @@ if ($_POST) {
           <a class="btn-solid-lg" href="login.php" role="button">INGRESÁ con facebook</a>
           <hr>
         </div>
-        <?php if (count($arrayErrores) > 0) : ?>
+        <!--<?php if (count($arrayErrores) > 0) : ?>
           <ul class="errores">
             <?php foreach($arrayErrores as $error) : ?>
               <li><?=$error?></li>
             <?php endforeach; ?>
           </ul>
-        <?php endif; ?>
+        <?php endif; ?> -->
         <form class="form" action="login.php" id="login" method="POST">
           <input type="text" name="email" id="email" placeholder="Email">
+          <?php if (isset($arrayErrores["email"])) { ?>
+            <div class="errores">
+              <?php echo $arrayErrores["email"]; ?></div>
+            <?php } ?>
           <input  type="password" name="password" id="password" placeholder="Contraseña">
+          <?php if (isset($arrayErrores["password"])) { ?>
+            <div class="errores">
+          <?php echo $arrayErrores["password"]; ?></div>
+          <?php } ?>
           <div class="recordarme">
             <input type="checkbox" name="recordame" value="recordame">
             <label for="recordame">Recordame</label>
