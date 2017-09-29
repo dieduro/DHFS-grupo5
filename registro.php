@@ -24,7 +24,7 @@ if ($_POST) {
     $archivo = $_FILES["foto-perfil"]["tmp_name"];
     $nombreDeLaFoto = $_FILES["foto-perfil"]["name"];
     $extension = pathinfo($nombreDeLaFoto, PATHINFO_EXTENSION);
-    $nombre = dirname(__FILE__) . "/images/" . $_POST["email"] . ".$extension";
+    $nombre = dirname(__FILE__) . "/images/users_img/" . $_POST["email"] . ".$extension";
     move_uploaded_file($archivo, $nombre);
 
     // 3) Redirigimos
@@ -59,7 +59,7 @@ include_once("header.php");
         <?php echo $arrayErrores["password"]; ?></div>
         <?php } ?>
         <input type="password" name="cpassword" id="cpassword" placeholder="Repetir Contraseña" >
-        <input type="file" name="foto-perfil" value="<?=$pathDefault?>">
+        <input type="file" name="foto-perfil" value="">
         <div class="legals">
           <input type="checkbox" name="legals" value="">
           <h6 style="color:#555555">Compartir mis datos de registro con los proveedores de contenido de TEAMUP! para fines de marketing.</h6>

@@ -41,7 +41,7 @@
         <nav class="menu">
           <ul>
             <?php if (estaLogueado()) : ?>
-              <li class="nav-items foto-perfil"><img src="images/<?=usuarioLogueado()["email"]?>.jpg" alt="">
+              <li class="nav-items foto-perfil"><img src="images/users_img/<?=usuarioLogueado()["email"]?>.jpg" alt="">
               <li class="nav-items"><a href="#" class="header_link user"><?=usuarioLogueado()["name"]?></a></li>
               <li class="nav-items"><a href="logout.php" class="header_link">Logout</a></li>
             <?php else: ?>
