@@ -1,23 +1,5 @@
 <?php
   require_once("funciones.php");
-  /*
-  var_dump(estaLogueado());
-  echo "<hr>";
-  var_dump(usuarioLogueado()["email"]);
-  echo "<hr>";
-  var_dump(usuarioLogueado()["name"]);
-  echo "<hr>";
-  var_dump($_POST["email"]);
-  echo "<hr>";
-  var_dump($_SESSION["email"]);
-  echo "<hr>";
-  var_dump($_POST["password"]);
-  echo "<hr>";
-  var_dump($_SESSION["password"]);
-  echo "<hr>";
-  var_dump($_SESSION["usuarioLogueado"]);
-  */
-
 ?>
 
 <!DOCTYPE html>

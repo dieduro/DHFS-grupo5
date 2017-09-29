@@ -5,9 +5,14 @@
 <section class="mega">
   <div class="container">
     <div class="caption">
+      <?php
+      if (!estaLogueado()){ ?>
       <h2>Estás a un click de empezar a jugar</h2>
       <a class="btn-solid" href="registro.php" role="button">REGISTRATE</a>
       <a class="btn-solid" href="login.php" role="button">INICIÁ SESIÓN</a>
+    <?php }else {?>
+      <h2>¡Ya estás listo para empezar a jugar!</h2>
+    <?php } ?>
     </div>
   </div>
 </section>

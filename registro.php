@@ -27,7 +27,10 @@ if ($_POST) {
     $nombre = dirname(__FILE__) . "/images/users_img/" . $_POST["email"] . ".$extension";
     move_uploaded_file($archivo, $nombre);
 
-    // 3) Redirigimos
+    // 3) Seteamos la cookie para que ya quede LOGUEADO
+    recordarUsuario($_POST["email"]);
+
+    // 4) Redirigimos
     header("Location:redirection.php");exit;
   }
   $emailDefault = $_POST["email"];
