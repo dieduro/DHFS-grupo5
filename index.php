@@ -147,43 +147,55 @@
    </div>
     <ul class="lista-prox-part">
       <li>
-         <div class="deporte">
-           <img src="images/volley.jpg" alt="futbol">
-           <h5>Voley</h5>
-           <h6 class="data-day">Belgrano - Miercoles 20hs</h6>
-         </div>
+        <div class="deporte">
+          <a href="#">
+            <img src="images/volley.jpg" alt="futbol">
+          </a>
+          <h5>Voley</h5>
+          <h6 class="data-day">Belgrano - Miercoles 20hs</h6>
+        </div>
       </li>
       <li>
         <div class="deporte">
-          <img src="images/futbol.jpg" alt="futbol">
+          <a href="#">
+            <img src="images/futbol.jpg" alt="futbol">
+          </a>
           <h5>Futbol</h5>
           <h6 class="data-day">El Palomar - Jueves 19:30hs</h6>
         </div>
       </li>
       <li>
         <div class="deporte">
-          <img src="images/rugby.jpg" alt="futbol">
+          <a href="#">
+            <img src="images/rugby.jpg" alt="futbol">
+          </a>
           <h5>Rugby</h5>
           <h6 class="data-day">El Palomar - Jueves 19:30hs</h6>
         </div>
       </li>
       <li>
         <div class="deporte">
-          <img src="images/hockey.jpg" alt="futbol">
+          <a href="">
+            <img src="images/hockey.jpg" alt="futbol">
+          </a>
           <h5>Hockey</h5>
           <h6 class="data-day">El Palomar - Jueves 19:30hs</h6>
         </div>
       </li>
       <li>
         <div class="deporte">
-          <img src="images/basket2.jpg" alt="futbol">
+          <a href="#">
+            <img src="images/basket2.jpg" alt="futbol">
+          </a>
           <h5>Basket</h5>
           <h6 class="data-day">El Palomar - Jueves 19:30hs</h6>
         </div>
       </li>
       <li>
         <div class="deporte">
-          <img src="images/squash.jpg" alt="futbol">
+          <a href="#">
+            <img src="images/squash.jpg" alt="futbol">
+          </a>
           <h5>Squash</h5>
           <h6 class="data-day">El Palomar - Jueves 19:30hs</h6>
         </div>

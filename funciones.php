@@ -35,9 +35,13 @@ function validarInformacion($informacion) {
   //chequeamos la foto
   $errorDeLaFoto = $_FILES["foto-perfil"]["error"];
   $nombreDeLaFoto = $_FILES["foto-perfil"]["name"];
+  $tamañoFoto = $_FILES["foto-perfil"]["size"];
   $extension = pathinfo($nombreDeLaFoto, PATHINFO_EXTENSION);
   if ($errorDeLaFoto != UPLOAD_ERR_OK) {
     $arrayDeErrores["foto-perfil"] = "Hubo un error al cargar la foto";
+  }
+  else if ($tamañoFoto > 2097152) {
+    $arrayDeErrores["foto-perfil"] = "La foto tiene que pesar menos 2 Mb";
   }
   else if ($extension != "jpg" && $extension != "jpeg" && $extension != "png" && $extension != "gif") {
     $arrayDeErrores["foto-perfil"] = "Debés subir una imagen JPG, JPEG, PNG o GIF";

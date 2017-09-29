@@ -29,7 +29,6 @@
     <link rel="stylesheet" href="css/font-awesome/css/font-awesome.css">
     <link rel="stylesheet" href="css/styles.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,600" rel="stylesheet">
-
     <title>TeamUp!</title>
   </head>
   <body>
@@ -54,5 +53,3 @@
         </nav>
           <span class="burger-icon"><i class="fa fa-bars menu" aria-hidden="true"></i></span>
       </header>
-    </body>
-    </html>

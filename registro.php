@@ -28,7 +28,7 @@ if ($_POST) {
     move_uploaded_file($archivo, $nombre);
 
     // 3) Redirigimos
-    header("Location:index.php");exit;
+    header("Location:redirection.php");exit;
   }
   $emailDefault = $_POST["email"];
   $nameDefault = $_POST["name"];
@@ -58,7 +58,7 @@ include_once("header.php");
         <input type="text" name="email" id="email" placeholder="Email" value="<?=$emailDefault?>" >
         <input type="password" name="password" id="password" placeholder="Contraseña" >
         <input type="password" name="cpassword" id="cpassword" placeholder="Repetir Contraseña" >
-        <input type="file" name="foto-perfil" value="">
+        <input type="file" name="foto-perfil" value="<?=$pathDefault?>">
         <div class="legals">
           <input type="checkbox" name="legals" value="">
           <h6 style="color:#555555">Compartir mis datos de registro con los proveedores de contenido de TEAMUP! para fines de marketing.</h6>
