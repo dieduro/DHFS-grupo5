@@ -1,5 +1,9 @@
 <?php
   require_once("header.php");
+  require_once("funciones.php");
+  initDB();
+  exportToDB();
+
 ?>
     <!-- CONTENIDO -->
 <section class="mega">

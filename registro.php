@@ -18,7 +18,9 @@ if ($_POST) {
   if (count($arrayErrores) == 0) {
     // 1) creamos el usuario
     $usuario = armarUsuario($_POST);
-    guardarUsuario($usuario);
+    $usuario = guardarUsuarioDB($usuario);
+    guardarUsuarioJSON($usuario);
+
 
     // 2) Guardamos la foto
     $archivo = $_FILES["foto-perfil"]["tmp_name"];

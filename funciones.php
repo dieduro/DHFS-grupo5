@@ -3,7 +3,116 @@ session_start();
 if (!estaLogueado() && isset($_COOKIE["usuarioLogueado"])) {
   loguear($_COOKIE["usuarioLogueado"]);
 }
+//CONECTAMOS CON LA BASE DE DATOS
+$dsn = 'mysql:host=localhost;charset=utf8mb4;port:3306';
+$username = "root";
+$password = "root";
+try {
+  $db = new PDO ($dsn, $username, $password);
+} catch (Exception $e) {
+  echo $e-> getMessage();
+}
 
+
+//FUNCIONES json
+function traerTodosJSON() {
+  $archivo = file_get_contents("usuarios.json");
+  $array = explode(PHP_EOL, $archivo);
+  // eliminamos la última linea del array que es un espacio vacío
+  array_pop($array);
+
+  $arrayFinal = [];
+  foreach ($array as $usuario) {
+    $arrayFinal[] = json_decode($usuario, true);
+  }
+  return $arrayFinal;
+}
+function traerPorMail($email) {
+  useDB();
+  global $db;
+  $sql = "SELECT * from users where email = :email";
+  $query = $db->prepare($sql);
+  $query->bindValue(":email", $email);
+  $query->execute();
+  $usuario = $query->fetch(PDO::FETCH_ASSOC);
+  return $usuario;
+}
+function guardarUsuarioJSON($usuario) {
+  // codificamos en JSON
+  $usuarioJSON = json_encode($usuario);
+  // guardamos en JSON con espacios y APPENDEAMOS
+  file_put_contents("usuarios.json", $usuarioJSON . PHP_EOL, FILE_APPEND);
+}
+
+
+//FUNCIONES DB
+//CREA LA BASE DE DATOS
+function createDB() {
+  global $db;
+  $base = "CREATE DATABASE teamup_db;";
+  $query = $db->prepare($base);
+  $query->execute();
+}
+//SELECCIONA LA DB A USAR
+function useDB() {
+  global $db;
+  $useDB = "USE teamup_db;";
+  $query = $db->prepare($useDB);
+  $query->execute();
+}
+//CREACION DE TABLA USERS
+function createUsersTable() {
+  global $db;
+  $sql = "CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(40),
+    email VARCHAR(40) UNIQUE,
+    password VARCHAR(70) UNIQUE
+    )";
+  $query = $db->prepare($sql);
+  $query->execute();
+}
+// llena la DB con datos de usuarios.json
+function exportToDB(){
+  $arrayUsersJson = traerTodosJSON();
+  foreach ($arrayUsersJson as $user) {
+    guardarUsuarioDB($user);
+  }
+}
+//Inicializa la base
+function initDB(){
+  createDB();
+  useDB();
+  createUsersTable();
+}
+
+// guardar usuario en DB
+function guardarUsuarioDB($usuario) { //si le pongo un & pasa el valor por referencia y no hace falta el Return
+  useDB();
+  global $db;
+  $sql = "INSERT INTO users VALUES (default,:name, :email, :password)";
+  $query = $db->prepare($sql);
+  $query->bindValue(":name", $usuario["name"]);
+  $query->bindValue(":email", $usuario["email"]);
+  $query->bindValue(":password", $usuario["password"]);
+  $query->execute();
+  $usuario["id"] = $db->lastInsertId();
+  return $usuario;
+}
+// extrae todos los USUARIOS de la DB
+function traerTodosDB() {
+  useDB();
+  global $db;
+  $sql = "SELECT * from usuarios";
+  $query = $db->prepare($sql);
+  $query->execute();
+  $arrayFinal = $query->fetchAll(PDO::FETCH_ASSOC);
+  return $arrayFinal;
+}
+
+
+// VALIDACIONES
+//VALIDA FORMULARIO DE REGISTRO
 function validarInformacion($informacion) {
   $arrayDeErrores = [];
 
@@ -23,7 +132,7 @@ function validarInformacion($informacion) {
   }
 
   //chequeamos la password
-  if (strlen($informacion["password"]) < 8) {
+  if (strlen($informacion["password"]) < 6) {
     $arrayDeErrores["password"] = "La contraseña tiene que tener al menos 8 caracteres";
   }
   // y si es igual a la ingresada por confirmacion
@@ -32,18 +141,20 @@ function validarInformacion($informacion) {
   }
 
   //chequeamos la foto
-  $errorDeLaFoto = $_FILES["foto-perfil"]["error"];
-  $nombreDeLaFoto = $_FILES["foto-perfil"]["name"];
-  $tamañoFoto = $_FILES["foto-perfil"]["size"];
-  $extension = pathinfo($nombreDeLaFoto, PATHINFO_EXTENSION);
-  if ($errorDeLaFoto != UPLOAD_ERR_OK) {
-    $arrayDeErrores["foto-perfil"] = "Hubo un error al cargar la foto";
-  }
-  else if ($tamañoFoto > 2097152) {
-    $arrayDeErrores["foto-perfil"] = "La foto tiene que pesar menos 2 Mb";
-  }
-  else if ($extension != "jpg" && $extension != "jpeg" && $extension != "png" && $extension != "gif") {
-    $arrayDeErrores["foto-perfil"] = "Debés subir una imagen JPG, JPEG, PNG o GIF";
+  if ($_FILES["foto-perfil"]["error"]!=4){
+    $errorDeLaFoto = $_FILES["foto-perfil"]["error"];
+    $nombreDeLaFoto = $_FILES["foto-perfil"]["name"];
+    $tamañoFoto = $_FILES["foto-perfil"]["size"];
+    $extension = pathinfo($nombreDeLaFoto, PATHINFO_EXTENSION);
+    if ($errorDeLaFoto != UPLOAD_ERR_OK) {
+      $arrayDeErrores["foto-perfil"] = "Hubo un error al cargar la foto";
+    }
+    else if ($tamañoFoto > 2097152) {
+      $arrayDeErrores["foto-perfil"] = "La foto tiene que pesar menos 2 Mb";
+    }
+    else if ($extension != "jpg" && $extension != "jpeg" && $extension != "png" && $extension != "gif") {
+      $arrayDeErrores["foto-perfil"] = "Debés subir una imagen JPG, JPEG, PNG o GIF";
+    }
   }
   //revisamos que haya chequeado los legales
   if (!isset($informacion["legals"])) {
@@ -52,7 +163,7 @@ function validarInformacion($informacion) {
   return $arrayDeErrores;
 }
 
-// validamos el login
+// VALIDA FORMULARIO DE LOGIN
 function validarLogin($informacion) {
   $arrayDeErrores = [];
 
@@ -76,7 +187,9 @@ function validarLogin($informacion) {
   return $arrayDeErrores;
 }
 
-// armamos el usuario
+
+
+// ARMA USUARIO (hashea password)
 function armarUsuario($data) {
   return [
   "name" => $data["name"],
@@ -94,28 +207,7 @@ function guardarUsuario($usuario) {
   file_put_contents("usuarios.json", $usuarioJSON . PHP_EOL, FILE_APPEND);
 }
 
-function traerTodos() {
-  $archivo = file_get_contents("usuarios.json");
-  $array = explode(PHP_EOL, $archivo);
-  // eliminamos la última linea del array que es un espacio vacío
-  array_pop($array);
 
-  $arrayFinal = [];
-  foreach ($array as $usuario) {
-    $arrayFinal[] = json_decode($usuario, true);
-  }
-  return $arrayFinal;
-}
-
-function traerPorMail($email) {
-  $todos = traerTodos();
-  foreach ($todos as $usuario) {
-    if ($usuario["email"] == $email) {
-      return $usuario;
-    }
-  }
-  return NULL;
-}
 
 function loguear($email) {
   $_SESSION["usuarioLogueado"] = $email;

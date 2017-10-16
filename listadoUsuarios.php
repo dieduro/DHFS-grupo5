@@ -1,10 +1,11 @@
 <?php
-  require_once("funciones.php")
+  require_once("funciones.php");
+  createUsersTable();
   if (!estaLogueado()) {
     header("Location:index.php");
   }
   $usuarios = traerTodos();
-  include_once("header.php")
+  include_once("header.php");
 ?>
 
 <div class="">
