@@ -67,8 +67,10 @@ function createUsersTable() {
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(40),
     email VARCHAR(40) UNIQUE,
-    password VARCHAR(70) UNIQUE
-    )";
+    password VARCHAR(70) UNIQUE,
+    fotoPath VARCHAR(70) NOT NULL,
+    token VARCHAR(70) UNIQUE
+  )AUTO_INCREMENT=1";
   $query = $db->prepare($sql);
   $query->execute();
 }
@@ -90,11 +92,13 @@ function initDB(){
 function guardarUsuarioDB($usuario) { //si le pongo un & pasa el valor por referencia y no hace falta el Return
   useDB();
   global $db;
-  $sql = "INSERT INTO users VALUES (default,:name, :email, :password)";
+  $sql = "INSERT INTO users VALUES (default,:name, :email, :password, :fotoPath, :token)";
   $query = $db->prepare($sql);
   $query->bindValue(":name", $usuario["name"]);
   $query->bindValue(":email", $usuario["email"]);
   $query->bindValue(":password", $usuario["password"]);
+  $query->bindValue(":fotoPath", $usuario["fotoPath"]);
+  $query->bindValue(":token", $usuario["token"]);
   $query->execute();
   $usuario["id"] = $db->lastInsertId();
   return $usuario;
@@ -190,12 +194,14 @@ function validarLogin($informacion) {
 
 
 // ARMA USUARIO (hashea password)
-function armarUsuario($data) {
+function armarUsuario($data, $fotoPath) {
   return [
   "name" => $data["name"],
   "email" => $data["email"],
   // hasheamos el password
   "password" => password_hash($data["password"], PASSWORD_DEFAULT),
+  "fotoPath" => $fotoPath,
+  "token" => md5(uniqid(rand()))
   ];
 }
 
@@ -235,6 +241,17 @@ function usuarioLogueado() {
 // seteamos la cookie
 function recordarUsuario($email) {
   setcookie("usuarioLogueado", $email, time() + 60*60*24*7);
+}
+
+function getFotoPath($usuario) {
+  useDB();
+  global $db;
+  $sql = "SELECT u.fotoPath as ruta FROM users u WHERE email = :email;";
+  $query = $db->prepare($sql);
+  $query->bindValue(":email", $usuario["email"]);
+  $query->execute();
+  $fotoPath = $query->fetch(PDO::FETCH_ASSOC);
+  return $fotoPath;
 }
 
  ?>

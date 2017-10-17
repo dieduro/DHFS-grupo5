@@ -24,16 +24,11 @@
     <nav class="menu">
       <ul>
         <?php if (estaLogueado()) {
-            $userImg = "images/users_img/".usuarioLogueado()["email"].".jpg";
-          if(file_exists($userImg)){
-            $userImgSrc = $userImg;
-          }
-          else {
-            $userImgSrc = "images/users_img/userDefault.png";
-          }
-          
+            $usuario = usuarioLogueado();
+            $fotoPath = getFotoPath($usuario);
+
         ?>
-          <li class="nav-items foto-perfil"><img src=<?=$userImgSrc?> alt="">
+          <li class="nav-items foto-perfil"><img src=<?=$fotoPath["ruta"]?> alt="">
           <li class="nav-items"><a href="#" class="header_link user"><?=usuarioLogueado()["name"]?></a></li>
           <li class="nav-items"><a href="logout.php" class="header_link">Logout</a></li>
       <?php }else{?>

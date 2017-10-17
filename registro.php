@@ -16,18 +16,26 @@ if ($_POST) {
 
   // si la validacion es correcta
   if (count($arrayErrores) == 0) {
-    // 1) creamos el usuario
-    $usuario = armarUsuario($_POST);
+    if($_FILES["foto-perfil"]["error"] !=4 ){
+    // 1) Guardamos la foto
+      $archivo = $_FILES["foto-perfil"]["tmp_name"];
+      $nombreDeLaFoto = $_FILES["foto-perfil"]["name"];
+      $extension = pathinfo($nombreDeLaFoto, PATHINFO_EXTENSION);
+      $fotoPath = "/images/users_img/" . $_POST["email"] . ".$extension";
+      $nombre = dirname(__FILE__) . $fotoPath ;
+      move_uploaded_file($archivo, $nombre);
+    }else {
+      $fotoPath = "images/users_img/userDefault.png";
+    }
+
+
+    // 2) creamos el usuario
+    $usuario = armarUsuario($_POST, $fotoPath);
     $usuario = guardarUsuarioDB($usuario);
     guardarUsuarioJSON($usuario);
 
 
-    // 2) Guardamos la foto
-    $archivo = $_FILES["foto-perfil"]["tmp_name"];
-    $nombreDeLaFoto = $_FILES["foto-perfil"]["name"];
-    $extension = pathinfo($nombreDeLaFoto, PATHINFO_EXTENSION);
-    $nombre = dirname(__FILE__) . "/images/users_img/" . $_POST["email"] . ".$extension";
-    move_uploaded_file($archivo, $nombre);
+
 
     // 3) Seteamos la cookie para que ya quede LOGUEADO
     recordarUsuario($_POST["email"]);
