@@ -2,6 +2,9 @@
 require_once("funciones.php");
 include_once("header.php");
 $arrayErrores = [];
+
+$email = $_COOKIE['emailRecuperacion'];
+
 // si vino por POST
 if ($_POST) {
   //Validamos
@@ -10,14 +13,15 @@ if ($_POST) {
   // si la validacion es correcta
   if (count($arrayErrores) == 0) {
     $password = $_POST["password"];
-    updatePassword($password,$token);
+    $newPass = hashPass($password);
+    updatePassword($newPass,$email);
     ?>
     <h3>¡Contraseña actualizada con éxito!<br>Volver a la <a href="index.php">HOME</a></h3>
     <?php
   }
 
 }
-$token = $_GET['token'];
+
 if (count($arrayErrores) > 0) : ?>
   <ul class="errores">
     <?php foreach($arrayErrores as $error) : ?>

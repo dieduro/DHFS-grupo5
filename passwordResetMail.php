@@ -1,6 +1,6 @@
 <?php
 require_once("funciones.php");
-
+setcookie("emailRecuperacion", $_POST["email"], time() + 900);
  $token = getToken($_POST["email"]);
  $url = "passwordReset.php?token=" . $token;
  ?>

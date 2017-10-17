@@ -292,18 +292,18 @@ function getToken($email) {
 }
 
 function hashPass($password) {
-  password_hash($password, PASSWORD_DEFAULT);
+  $newPass = password_hash($password, PASSWORD_DEFAULT);
   return $newPass;
 }
 
-function updatePassword($newPass, $token) {
+function updatePassword($newPass, $email) {
   try {
     useDB();
     global $db;
-    $sql = "UPDATE users SET password = :password where token = :token";
+    $sql = "UPDATE users SET password = :password where email = :email";
     $query = $db-> prepare($sql);
     $query->bindValue(":password", $newPass);
-    $query->bindValue(":token", $token);
+    $query->bindValue(":email", $email);
     $query->execute();
 
   } catch (Exception $e) {
