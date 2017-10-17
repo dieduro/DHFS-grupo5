@@ -57,7 +57,7 @@ if ($_POST) {
           <button class="btn-solid-lg" type="submit" name="iniciarSesion" id="iniciarSesion">INICIAR SESIÓN</button>
         </form>
         <div class="linkeo">
-          <h6><a href="#">¿Olvidaste tu nombre de usuario o contraseña?</a></h6>
+          <h6><a href="forgotPassword.php">¿Olvidaste tu nombre de usuario o contraseña?</a></h6>
           <br>
           <h6>¿No tenés cuenta? <a href="registro.php">Registrate</a></h6>
         </div>

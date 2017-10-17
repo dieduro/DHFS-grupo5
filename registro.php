@@ -75,7 +75,7 @@ include_once("header.php");
         <input type="file" name="foto-perfil" value="">
         <div class="legals">
           <input type="checkbox" name="legals" value="">
-          <h6 style="color:#555555">Compartir mis datos de registro con los proveedores de contenido de TEAMUP! para fines de marketing.</h6>
+          <h6 style="color:#555555">Acepto los términos y condiciones de servicio.</h6>
           <?php if (isset($arrayErrores["legals"])) { ?>
             <div class="errores">
           <?php echo $arrayErrores["legals"]; ?></div>

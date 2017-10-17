@@ -107,7 +107,7 @@ function guardarUsuarioDB($usuario) { //si le pongo un & pasa el valor por refer
 function traerTodosDB() {
   useDB();
   global $db;
-  $sql = "SELECT * from usuarios";
+  $sql = "SELECT * from users";
   $query = $db->prepare($sql);
   $query->execute();
   $arrayFinal = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -166,7 +166,6 @@ function validarInformacion($informacion) {
   }
   return $arrayDeErrores;
 }
-
 // VALIDA FORMULARIO DE LOGIN
 function validarLogin($informacion) {
   $arrayDeErrores = [];
@@ -190,7 +189,33 @@ function validarLogin($informacion) {
   }
   return $arrayDeErrores;
 }
+//VALIDA RECUPERO DE PASSWORD_DEFAULT
+function validarRecuPass($informacion) {
+  $arrayDeErrores = [];
 
+  if (strlen($informacion["email"]) == 0) {
+    $arrayDeErrores["email"] = "No completaste tu email";
+  }
+  else if (filter_var($informacion["email"], FILTER_VALIDATE_EMAIL) == false) {
+    $arrayDeErrores["email"] = "El mail que ingresaste no es válido";
+  }
+  return $arrayDeErrores;
+
+}
+// VALIDA RESETEO DE PASSWORD
+function validarResetPassword($informacion) {
+  $arrayDeErrores = [];
+  //chequeamos la password
+  if (strlen($informacion["password"]) < 6) {
+    $arrayDeErrores["password"] = "La contraseña tiene que tener al menos 8 caracteres";
+  }
+  // y si es igual a la ingresada por confirmacion
+  else if ($informacion["password"] != $informacion["cpassword"]) {
+    $arrayDeErrores["password"] = "Las contraseñas no son iguales";
+  }
+
+  return $arrayDeErrores;
+}
 
 
 // ARMA USUARIO (hashea password)
@@ -253,5 +278,42 @@ function getFotoPath($usuario) {
   $fotoPath = $query->fetch(PDO::FETCH_ASSOC);
   return $fotoPath;
 }
+
+function getToken($email) {
+  $todos = traerTodosDB();
+  foreach ($todos as $usuario) {
+    if ($usuario["email"] == $email) {
+      return $usuario["token"];
+    }
+  }
+  return NULL;
+
+
+}
+
+function hashPass($password) {
+  password_hash($password, PASSWORD_DEFAULT);
+  return $newPass;
+}
+
+function updatePassword($newPass, $token) {
+  try {
+    useDB();
+    global $db;
+    $sql = "UPDATE users SET password = :password where token = :token";
+    $query = $db-> prepare($sql);
+    $query->bindValue(":password", $newPass);
+    $query->bindValue(":token", $token);
+    $query->execute();
+
+  } catch (Exception $e) {
+    echo $e->getMessage();
+    echo "cagamos dijo RAMOOOOOS";exit;
+  }
+
+
+}
+
+
 
  ?>
