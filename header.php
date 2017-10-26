@@ -1,5 +1,6 @@
 <?php
-  require_once("funciones.php");
+  require_once("soporte.php");
+  require_once("clases/usuario.php");
 ?>
 
 <!DOCTYPE html>
@@ -23,9 +24,9 @@
 
     <nav class="menu">
       <ul>
-        <?php if (estaLogueado()) {
-            $usuario = usuarioLogueado();
-            $fotoPath = getFotoPath($usuario);
+        <?php if ($auth->estaLogueado()) {
+            $usuario = $auth->usuarioLogueado();
+            $fotoPath = $usuario->getFotoPath($usuario);
 
         ?>
           <li class="nav-items foto-perfil"><img src=<?=$fotoPath["ruta"]?> alt="">

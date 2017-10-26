@@ -1,7 +1,8 @@
 <?php
-  require_once("funciones.php");
+  require_once("soporte.php");
+  require_once("clases/usuario.php");
 
-  if (estaLogueado()) {
+  if ($auth->estaLogueado()) {
     header("Location:index.php");
   }
 
@@ -12,33 +13,24 @@ $nameDefault = "";
 // si vino por POST
 if ($_POST) {
   //Validamos
-  $arrayErrores = validarInformacion($_POST);
+  $arrayErrores = $validator->validarInformacion($_POST, $db);
 
   // si la validacion es correcta
   if (count($arrayErrores) == 0) {
-    if($_FILES["foto-perfil"]["error"] !=4 ){
+    if($_FILES["foto-perfil"]["error"] !=4){
     // 1) Guardamos la foto
-      $archivo = $_FILES["foto-perfil"]["tmp_name"];
-      $nombreDeLaFoto = $_FILES["foto-perfil"]["name"];
-      $extension = pathinfo($nombreDeLaFoto, PATHINFO_EXTENSION);
-      $fotoPath = "/images/users_img/" . $_POST["email"] . ".$extension";
-      $nombre = dirname(__FILE__) . $fotoPath ;
-      move_uploaded_file($archivo, $nombre);
-    }else {
+      $usuario->guardarFoto();
+    } else {
       $fotoPath = "images/users_img/userDefault.png";
     }
-
 
     // 2) creamos el usuario
     $usuario = armarUsuario($_POST, $fotoPath);
     $usuario = guardarUsuarioDB($usuario);
     guardarUsuarioJSON($usuario);
 
-
-
-
     // 3) Seteamos la cookie para que ya quede LOGUEADO
-    recordarUsuario($_POST["email"]);
+    $auth->recordarUsuario($_POST["email"]);
 
     // 4) Redirigimos
     header("Location:redirection.php");exit;
@@ -48,7 +40,7 @@ if ($_POST) {
 }
 
 // HEADER
-include_once("header.php");
+require_once("header.php");
 ?>
 
 <!-- empieza el formulario -->

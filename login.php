@@ -1,7 +1,7 @@
 <?php
-require_once("funciones.php");
+require_once("soporte.php");
 
-if (estaLogueado()) {
+if ($auth->estaLogueado()) {
   header("Location:index.php");
 }
 
@@ -9,13 +9,13 @@ $arrayErrores = [];
 if ($_POST) {
 
   //Validar
-  $arrayErrores = validarLogin($_POST);
+  $arrayErrores = $validator->validarLogin($_POST);
 
   //Si es valido, loguear
   if (count($arrayErrores) == 0) {
-    loguear($_POST["email"]);
+    $auth->loguear($_POST["email"]);
     if (isset($_POST["recordame"])) {
-      recordarUsuario($_POST["email"]);
+      $auth->recordarUsuario($_POST["email"]);
     }
       header("Location:index.php");exit;
     }

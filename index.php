@@ -1,8 +1,7 @@
 <?php
+  require_once("soporte.php");
   require_once("header.php");
-  require_once("funciones.php");
-  initDB();
-  exportToDB();
+
 
 ?>
     <!-- CONTENIDO -->
@@ -10,11 +9,11 @@
   <div class="container">
     <div class="caption">
       <?php
-      if (!estaLogueado()){ ?>
+      if (!$auth->estaLogueado()){ ?>
       <h2>Estás a un click de empezar a jugar</h2>
       <a class="btn-solid" href="registro.php" role="button">REGISTRATE</a>
       <a class="btn-solid" href="login.php" role="button">INICIÁ SESIÓN</a>
-    <?php }else {?>
+    <?php } else {?>
       <h2>¡Ya estás listo para empezar a jugar!</h2>
     <?php } ?>
     </div>
@@ -214,5 +213,5 @@
 
 <!-- FOOTER -->
 <?php
- include_once 'footer2.php';
+ require_once("footer2.php");
 ?>
