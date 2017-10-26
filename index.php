@@ -152,6 +152,7 @@
  <section class="container prox-part">
    <div class="section_tit">
      <h3>Partidos Recomendados</h3>
+     <a class="ver_todos"href="#">ver todos</a>
    </div>
     <ul class="lista-prox-part">
       <li>

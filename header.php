@@ -17,7 +17,7 @@
 <body>
       <!-- HEADER -->
   <header>
-    <div class="head-left">
+    <div class="head_left">
         <!-- DIV VACIO -->
     </div>
     <h1><a href="index.php" class="header_link"><img class="logo" src="images/logo-home.png" alt="logo TeamUp!"></a></h1>
