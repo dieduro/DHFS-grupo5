@@ -1,11 +1,12 @@
 <?php
-  require_once("soporte.php");
-  require_once("clases/usuario.php");
+require_once("soporte.php");
+require_once("clases/usuario.php");
 
-  if ($auth->estaLogueado()) {
-    header("Location:index.php");
-  }
+if ($auth->estaLogueado()) {
+  header("Location:index.php");
+}
 
+$usuario = $db->traerPorMail($_GET["usuario"]);
 $arrayErrores = [];
 $emailDefault = "";
 $nameDefault = "";
@@ -18,7 +19,7 @@ if ($_POST) {
   // si la validacion es correcta
   if (count($arrayErrores) == 0) {
     if($_FILES["foto-perfil"]["error"] !=4){
-    // 1) Guardamos la foto
+      // 1) Guardamos la foto
       $usuario->guardarFoto();
     } else {
       $fotoPath = "images/users_img/userDefault.png";
@@ -56,35 +57,35 @@ require_once("header.php");
         <input type="text" name="email" id="email" placeholder="Email" value="<?=$emailDefault?>" >
         <?php if (isset($arrayErrores["email"])) { ?>
           <div class="errores">
-        <?php echo $arrayErrores["email"]; ?></div>
-        <?php } ?>
-        <input type="password" name="password" id="password" placeholder="Contraseña" >
-        <?php if (isset($arrayErrores["password"])) { ?>
-          <div class="errores">
-        <?php echo $arrayErrores["password"]; ?></div>
-        <?php } ?>
-        <input type="password" name="cpassword" id="cpassword" placeholder="Repetir Contraseña" >
-        <input type="file" name="foto-perfil" value="">
-        <div class="legals">
-          <input type="checkbox" name="legals" value="">
-          <h6 style="color:#555555">Acepto los términos y condiciones de servicio.</h6>
-          <?php if (isset($arrayErrores["legals"])) { ?>
-            <div class="errores">
-          <?php echo $arrayErrores["legals"]; ?></div>
+            <?php echo $arrayErrores["email"]; ?></div>
           <?php } ?>
-          <hr>
-          <h6>Si hacés click en "Registrarme" aceptarás los <a href="#">Términos y Condiciones</a> y <a href="#">Política de Privacidad</a> de TEAMup! </h6>
+          <input type="password" name="password" id="password" placeholder="Contraseña" >
+          <?php if (isset($arrayErrores["password"])) { ?>
+            <div class="errores">
+              <?php echo $arrayErrores["password"]; ?></div>
+            <?php } ?>
+            <input type="password" name="cpassword" id="cpassword" placeholder="Repetir Contraseña" >
+            <input type="file" name="foto-perfil" value="">
+            <div class="legals">
+              <input type="checkbox" name="legals" value="">
+              <h6 style="color:#555555">Acepto los términos y condiciones de servicio.</h6>
+              <?php if (isset($arrayErrores["legals"])) { ?>
+                <div class="errores">
+                  <?php echo $arrayErrores["legals"]; ?></div>
+                <?php } ?>
+                <hr>
+                <h6>Si hacés click en "Registrarme" aceptarás los <a href="#">Términos y Condiciones</a> y <a href="#">Política de Privacidad</a> de TEAMup! </h6>
+              </div>
+              <button class="btn-solid-lg" type="submit" name="button" id="register">REGISTRARME</button>
+            </div>
+          </form>
+          <div class="linkeo">
+            <h6>¿Ya tienes cuenta? <a href="login.php">Inicia Sesión</a></h6>
+          </div>
         </div>
-        <button class="btn-solid-lg" type="submit" name="button" id="register">REGISTRARME</button>
       </div>
-    </form>
-    <div class="linkeo">
-      <h6>¿Ya tienes cuenta? <a href="login.php">Inicia Sesión</a></h6>
-    </div>
-  </div>
-</div>
 
-<!-- FOOTER -->
-  <?php
-  require_once("footer2.php");
-   ?>
+      <!-- FOOTER -->
+      <?php
+      require_once("footer2.php");
+      ?>
