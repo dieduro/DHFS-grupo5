@@ -19,16 +19,15 @@ if ($_POST) {
   // si la validacion es correcta
   if (count($arrayErrores) == 0) {
     if($_FILES["foto-perfil"]["error"] !=4){
-      // 1) Guardamos la foto
+      // 1) Creamos el usuario
+      $usuario = new Usuario($_POST["email"], $_POST["password"], $_POST["edad"], $_POST["username"], $_POST["pais"]);
+      $usuario = $db->guardarUsuario($usuario);
+      
+      // 2) Guardamos la foto
       $usuario->guardarFoto();
     } else {
       $fotoPath = "images/users_img/userDefault.png";
     }
-
-    // 2) creamos el usuario
-    $usuario = armarUsuario($_POST, $fotoPath);
-    $usuario = guardarUsuarioDB($usuario);
-    guardarUsuarioJSON($usuario);
 
     // 3) Seteamos la cookie para que ya quede LOGUEADO
     $auth->recordarUsuario($_POST["email"]);
