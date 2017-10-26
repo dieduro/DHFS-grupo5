@@ -1,7 +1,9 @@
 <?php
   require_once("soporte.php");
   require_once("header.php");
-
+  // require_once("exportToDB.php");
+  $db->initDB();
+  // exportToDB();
 
 ?>
     <!-- CONTENIDO -->

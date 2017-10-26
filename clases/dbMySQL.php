@@ -95,20 +95,12 @@ class dbMySQL extends Db {
     return $fotoPath;
   }
 
-  // llena la DB con datos de usuarios.json
-  function exportToDB(){
-    $arrayUsersJson = traerTodosJSON();
-    foreach ($arrayUsersJson as $user) {
-      guardarUsuarioDB($user);
-    }
-  }
-
   function updatePassword($newPass, $email) {
     try {
-      useDB();
+      $this->useDB();
       $sql = "UPDATE users SET password = :password where email = :email";
       $query = $db-> prepare($sql);
-      $query->bindValue(":password", $newPass);
+      $query->bindValue(":password", $newPass); //??
       $query->bindValue(":email", $email->getMail());
       $query->execute();
     } catch (Exception $e) {
