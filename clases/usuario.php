@@ -61,7 +61,7 @@ class Usuario {
     $nombreDeLaFoto = $_FILES["foto-perfil"]["name"];
     $extension = pathinfo($nombreDeLaFoto, PATHINFO_EXTENSION);
     $fotoPath = "/images/users_img/" . $_POST["email"] . ".$extension";
-    $nombre = dirname(__FILE__) . $fotoPath ;
+    $nombre = dirname(__FILE__) . $fotoPath;
     move_uploaded_file($archivo, $nombre);
   }
 

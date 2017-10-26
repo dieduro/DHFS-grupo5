@@ -6,7 +6,6 @@ if ($auth->estaLogueado()) {
   header("Location:index.php");
 }
 
-$usuario = $db->traerPorMail($_GET["usuario"]);
 $arrayErrores = [];
 $emailDefault = "";
 $nameDefault = "";
@@ -22,7 +21,7 @@ if ($_POST) {
       // 1) Creamos el usuario
       $usuario = new Usuario($_POST["email"], $_POST["password"], $_POST["edad"], $_POST["username"], $_POST["pais"]);
       $usuario = $db->guardarUsuario($usuario);
-      
+
       // 2) Guardamos la foto
       $usuario->guardarFoto();
     } else {

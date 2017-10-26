@@ -15,35 +15,42 @@ class dbMySQL extends Db {
     } catch (Exception $e) {
       echo $e->getMessage();
     }
+  }
 
-    //CREA LA BASE DE DATOS
-    function createDB() {
-      $base = "CREATE DATABASE teamup_db";
-      $query = $this->conn->prepare($base);
-      $query->execute();
-    }
-    //SELECCIONA LA DB A USAR
-    function useDB() {
-      $useDB = "USE teamup_db;";
-      $query = $this->conn->prepare($useDB);
-      $query->execute();
-    }
-    //CREACION DE TABLA USERS
-    function createUsersTable() {
-      $sql = "CREATE TABLE users (
-        id INT AUTO_INCREMENT PRIMARY KEY,
-        name VARCHAR(40),
-        email VARCHAR(40) UNIQUE,
-        password VARCHAR(70) UNIQUE,
-        fotoPath VARCHAR(70) NOT NULL,
-        token VARCHAR(70) UNIQUE
-      )AUTO_INCREMENT=1";
-      $query = $this->conn->prepare($sql);
-      $query->execute();
-    }
+  //CREA LA BASE DE DATOS
+  function createDB() {
+    $base = "CREATE DATABASE teamup_db";
+    $query = $this->conn->prepare($base);
+    $query->execute();
+  }
+  //SELECCIONA LA DB A USAR
+  function useDB() {
+    $useDB = "USE teamup_db;";
+    $query = $this->conn->prepare($useDB);
+    $query->execute();
+  }
+
+  //CREACION DE TABLA USERS
+  function createUsersTable() {
+    $sql = "CREATE TABLE users (
+      id INT AUTO_INCREMENT PRIMARY KEY,
+      name VARCHAR(40),
+      email VARCHAR(40) UNIQUE,
+      password VARCHAR(70) UNIQUE,
+      fotoPath VARCHAR(70) NOT NULL,
+      token VARCHAR(70) UNIQUE
+    ) AUTO_INCREMENT=1";
+    $query = $this->conn->prepare($sql);
+    $query->execute();
+  }
+  //Inicializa la base
+  public function initDB(){
+    $this->createDB();
+    $this->useDB();
+    $this->createUsersTable();
   }
   // guardar usuario en DB
-  function guardarUsuario($usuario) { //si le pongo un & pasa el valor por referencia y no hace falta el Return
+  public function guardarUsuario($usuario) { //si le pongo un & pasa el valor por referencia y no hace falta el Return
     $sql = "INSERT INTO users VALUES (default,:name, :email, :password, :fotoPath, :token)";
     $query = $this->conn->prepare($sql);
     $query->bindValue(":name", $usuario->getName());
@@ -56,7 +63,7 @@ class dbMySQL extends Db {
     return $usuario;
   }
   // extrae todos los USUARIOS de la DB
-  function traerTodos() {
+  public function traerTodos() {
     $sql = "SELECT * from users";
     $query = $this->conn->prepare($sql);
     $query->execute();
@@ -67,7 +74,7 @@ class dbMySQL extends Db {
     }
     return $arrayFinal;
   }
-  function traerPorMail($email) {
+  public function traerPorMail($email) {
     $sql = "SELECT * from users where email = :email";
     $query = $this->conn->prepare($sql);
     $query->bindValue(":email", $email);
@@ -95,28 +102,21 @@ class dbMySQL extends Db {
       guardarUsuarioDB($user);
     }
   }
-  //Inicializa la base
-  function initDB(){
-    createDB();
-    useDB();
-    createUsersTable();
-  }
 
   function updatePassword($newPass, $email) {
     try {
       useDB();
-      global $db;
       $sql = "UPDATE users SET password = :password where email = :email";
       $query = $db-> prepare($sql);
       $query->bindValue(":password", $newPass);
-      $query->bindValue(":email", $email);
+      $query->bindValue(":email", $email->getMail());
       $query->execute();
-
     } catch (Exception $e) {
       echo $e->getMessage();
       echo "cagamos dijo RAMOOOOOS";exit;
     }
   }
 }
+
 
 ?>

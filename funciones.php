@@ -1,6 +1,7 @@
 <?php
 
 
+
 /*
 // ARMA USUARIO (hashea password)
 function armarUsuario($data, $fotoPath) {
