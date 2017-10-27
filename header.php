@@ -24,13 +24,13 @@
 
     <nav class="menu">
       <ul>
-        <?php if ($auth->estaLogueado()) {
-            $usuario = $auth->usuarioLogueado();
-            $fotoPath = $usuario->getFotoPath($usuario);
-
+        <?php if ($auth->estaLogueado($db)) {
+            $usuario = $auth->usuarioLogueado($db);
+            // $fotoPath = $usuario->getFotoPath($usuario);
         ?>
-          <li class="nav-items foto-perfil"><img src=<?=$fotoPath["ruta"]?> alt="">
-          <li class="nav-items"><a href="#" class="header_link user"><?=usuarioLogueado()["name"]?></a></li>
+
+          <li class="nav-items foto-perfil"><img src=<?php /* $fotoPath["ruta"]*/?> alt="">
+          <li class="nav-items"><a href="#" class="header_link user"><?=$auth->usuarioLogueado($db)["name"]?></a></li>
           <li class="nav-items"><a href="logout.php" class="header_link">Logout</a></li>
       <?php }else{?>
           <li class="nav-items"><a href="registro.php" class="header_link">Registrate</a></li>

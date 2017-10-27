@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 include_once("clases/auth.php");
 include_once("clases/validator.php");

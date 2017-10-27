@@ -4,7 +4,6 @@ include_once("db.php");
 
 class Auth {
   public function _construct() {
-    session_start();
     if (!$this->estaLogueado() && isset($_COOKIE["usuarioLogueado"])) {
       $this->loguear($_COOKIE["usuarioLogueado"]);
     }
@@ -35,7 +34,7 @@ class Auth {
 
   // seteamos la cookie
   public function recordarUsuario($email) {
-    setcookie("usuarioLogueado", $this->email, time() + 60*60*24*7);
+    setcookie("usuarioLogueado", email, time() + 60*60*24*7);
   }
 
   public function logout() {

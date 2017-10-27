@@ -10,14 +10,13 @@ if ($_POST) {
 
   //Validar
   $arrayErrores = $validator->validarLogin($_POST, $db);
-
   //Si es valido, loguear
   if (count($arrayErrores) == 0) {
     $auth->loguear($_POST["email"]);
     if (isset($_POST["recordame"])) {
       $auth->recordarUsuario($_POST["email"]);
     }
-      header("Location:index.php");exit;
+      header("Location:login.php");exit;
     }
   }
 
