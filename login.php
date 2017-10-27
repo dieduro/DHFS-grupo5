@@ -9,7 +9,7 @@ $arrayErrores = [];
 if ($_POST) {
 
   //Validar
-  $arrayErrores = $validator->validarLogin($_POST);
+  $arrayErrores = $validator->validarLogin($_POST, $db);
 
   //Si es valido, loguear
   if (count($arrayErrores) == 0) {

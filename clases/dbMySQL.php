@@ -5,9 +5,10 @@ include_once("usuario.php");
 
 class dbMySQL extends Db {
   private $conn;
+
   public function __construct() {
     //CONECTAMOS CON LA BASE DE DATOS
-    $dsn = 'mysql:host=localhost;charset=utf8mb4;port:3306';
+    $dsn = 'mysql:host=localhost;charset=utf8mb4;port:3306, ';
     $username = "root";
     $password = ""; // ana tiene pass vacia, diego tiene pass "root"
     try {
@@ -51,17 +52,19 @@ class dbMySQL extends Db {
   }
   // guardar usuario en DB
   public function guardarUsuario($usuario) { //si le pongo un & pasa el valor por referencia y no hace falta el Return
-    $sql = "INSERT INTO users VALUES (default,:name, :email, :password, :fotoPath, :token)";
+    $this->useDB();
+    $sql = 'INSERT INTO users (name, email, password) VALUES (:name, :email, :password)';
     $query = $this->conn->prepare($sql);
     $query->bindValue(":name", $usuario->getName());
     $query->bindValue(":email", $usuario->getEmail());
     $query->bindValue(":password", $usuario->getPassword());
-    $query->bindValue(":fotoPath", $usuario->getFotoPath());
-    $query->bindValue(":token", $usuario->getToken());
+    // $query->bindValue(":fotoPath", $usuario->getFotoPath());
+    // $query->bindValue(":token", $usuario->getToken());
     $query->execute();
-    $usuario->setId($this->conn->lastInsertId());
+    // $usuario->setId($this->conn->lastInsertId());
     return $usuario;
   }
+
   // extrae todos los USUARIOS de la DB
   public function traerTodos() {
     $sql = "SELECT * from users";
@@ -75,13 +78,14 @@ class dbMySQL extends Db {
     return $arrayFinal;
   }
   public function traerPorMail($email) {
+    $this->useDB();
     $sql = "SELECT * from users where email = :email";
     $query = $this->conn->prepare($sql);
     $query->bindValue(":email", $email);
     $query->execute();
     $usuario = $query->fetch(PDO::FETCH_ASSOC);
     if($usuario) {
-      $usuarios = new Usuario ($usuario["name"], $usuario["email"], $usuario["password"], $usuario["fotoPath"], $usuario["token"]);
+      $usuarios = new Usuario ($usuario["name"], $usuario["email"], $usuario["password"]);//, $usuario["fotoPath"], $usuario["token"]);
     }
     return $usuario;
   }

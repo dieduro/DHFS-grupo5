@@ -14,16 +14,15 @@ $nameDefault = "";
 if ($_POST) {
   //Validamos
   $arrayErrores = $validator->validarInformacion($_POST, $db);
-
   // si la validacion es correcta
   if (count($arrayErrores) == 0) {
     if($_FILES["foto-perfil"]["error"] !=4){
-      // 1) Creamos el usuario
-      $usuario = new Usuario($_POST["email"], $_POST["password"], $_POST["edad"], $_POST["username"], $_POST["pais"]);
-      $usuario = $db->guardarUsuario($usuario);
 
+      // 1) Creamos el usuario
+      $usuario = new Usuario($_POST["name"], $_POST["email"], $_POST["password"]);
+      // $usuario->guardarFoto();
+      $usuario = $db->guardarUsuario($usuario);
       // 2) Guardamos la foto
-      $usuario->guardarFoto();
     } else {
       $fotoPath = "images/users_img/userDefault.png";
     }

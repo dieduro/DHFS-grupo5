@@ -1,12 +1,13 @@
 <?php
 
 class Usuario {
+  private $id;
   private $name;
   private $email;
   private $password;
 
-  public function __construct($name, $email, $password) {
-    if ($id == null) {
+  public function __construct($name, $email, $password, $id = null) {
+    if ($this->id == null) {
       $this->password = password_hash($password, PASSWORD_DEFAULT);
     } else {
       $this->password = $password;
@@ -14,7 +15,6 @@ class Usuario {
     $this->id = $id;
     $this->name = $name;
     $this->email = $email;
-    $this->password = $password;
   }
 
   public function setId($id) {
@@ -41,18 +41,18 @@ class Usuario {
   public function getPassword() {
     return $this->password;
   }
-  public function setFotoPath($fotoPath) {
-    $this->fotoPath = $fotoPath;
-  }
-  public function getFotoPath() {
-    return $this->fotoPath;
-  }
-  public function setToken($token) {
-    $this->token = $token;
-  }
-  public function getToken() {
-    return $this->token;
-  }
+  // public function setFotoPath($fotoPath) {
+  //   $this->fotoPath = $fotoPath;
+  // }
+  // public function getFotoPath() {
+  //   return $this->fotoPath;
+  // }
+  // public function setToken($token) {
+  //   $this->token = $token;
+  // }
+  // public function getToken() {
+  //   return $this->token;
+  // }
 
 
 
@@ -60,7 +60,7 @@ class Usuario {
     $archivo = $_FILES["foto-perfil"]["tmp_name"];
     $nombreDeLaFoto = $_FILES["foto-perfil"]["name"];
     $extension = pathinfo($nombreDeLaFoto, PATHINFO_EXTENSION);
-    $fotoPath = "/images/users_img/" . $_POST["email"] . ".$extension";
+    $fotoPath = '\images\users_img' . $_POST["email"] . ".$extension";
     $nombre = dirname(__FILE__) . $fotoPath;
     move_uploaded_file($archivo, $nombre);
   }

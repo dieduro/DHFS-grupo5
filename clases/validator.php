@@ -33,21 +33,21 @@ class Validator {
     }
 
     //chequeamos la foto
-    if ($_FILES["foto-perfil"]["error"]!=4){
-      $errorDeLaFoto = $_FILES["foto-perfil"]["error"];
-      $nombreDeLaFoto = $_FILES["foto-perfil"]["name"];
-      $tamañoFoto = $_FILES["foto-perfil"]["size"];
-      $extension = pathinfo($nombreDeLaFoto, PATHINFO_EXTENSION);
-      if ($errorDeLaFoto != UPLOAD_ERR_OK) {
-        $arrayDeErrores["foto-perfil"] = "Hubo un error al cargar la foto";
-      }
-      else if ($tamañoFoto > 2097152) {
-        $arrayDeErrores["foto-perfil"] = "La foto tiene que pesar menos 2 Mb";
-      }
-      else if ($extension != "jpg" && $extension != "jpeg" && $extension != "png" && $extension != "gif") {
-        $arrayDeErrores["foto-perfil"] = "Debés subir una imagen JPG, JPEG, PNG o GIF";
-      }
-    }
+    // if ($_FILES["foto-perfil"]["error"]!=4){
+    //   $errorDeLaFoto = $_FILES["foto-perfil"]["error"];
+    //   $nombreDeLaFoto = $_FILES["foto-perfil"]["name"];
+    //   $tamañoFoto = $_FILES["foto-perfil"]["size"];
+      // $extension = pathinfo($nombreDeLaFoto, PATHINFO_EXTENSION);
+      // if ($errorDeLaFoto != UPLOAD_ERR_OK) {
+      //   $arrayDeErrores["foto-perfil"] = "Hubo un error al cargar la foto";
+      // }
+      // else if ($tamañoFoto > 2097152) {
+      //   $arrayDeErrores["foto-perfil"] = "La foto tiene que pesar menos 2 Mb";
+      // }
+      // else if ($extension != "jpg" && $extension != "jpeg" && $extension != "png" && $extension != "gif") {
+      //   $arrayDeErrores["foto-perfil"] = "Debés subir una imagen JPG, JPEG, PNG o GIF";
+      // }
+    // }
     //revisamos que haya chequeado los legales
     if (!isset($informacion["legals"])) {
       $arrayDeErrores["legals"] = "Para poder usar el servicio debés aceptar compartir tu información";
@@ -72,7 +72,7 @@ class Validator {
       //validar la contraseña
       $usuario = $db->traerPorMail($informacion["email"]);
       // comparamos pass ingresada con pass guardada
-      if (password_verify($informacion["password"], $usuario->getPassword()) == false) {
+      if (password_verify($informacion["password"], $usuario["password"] == false)) {
         $arrayDeErrores["password"] = "La contraseña no coincide";
       }
     }
