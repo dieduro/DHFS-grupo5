@@ -34,7 +34,7 @@ class Auth {
 
   // seteamos la cookie
   public function recordarUsuario($email) {
-    setcookie("usuarioLogueado", email, time() + 60*60*24*7);
+    setcookie("usuarioLogueado", $email, time() + 60*60*24*7);
   }
 
   public function logout() {

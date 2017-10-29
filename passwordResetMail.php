@@ -1,8 +1,15 @@
 <?php
-require_once("funciones.php");
+require_once("soporte.php");
+require_once("clases/usuario.php");
+
 setcookie("emailRecuperacion", $_POST["email"], time() + 900);
- $token = getToken($_POST["email"]);
+
+ $usuario = $db->traerPorMail($_POST["email"]);
+
+ if ($usuario){
+ $token = $usuario->getToken();
  $url = "passwordReset.php?token=" . $token;
+
  ?>
 
  <body>
@@ -15,6 +22,11 @@ setcookie("emailRecuperacion", $_POST["email"], time() + 900);
    <br>
    <p>Accedé a este link para reestablecer tu contraseña: </p><br><br>
    <a href="<?=$url?>"><?=$url?></a>
-
-
  </body>
+
+ <?php }else{  ?>
+   <h1>TU USUARIO NO EXISTE!</h1>
+   <h3>No te hagas el vivo perejil ;-)</h3>
+   <a href="index.php">Nos vimo en disney..........>>>>>></a>
+
+<?php } ?>

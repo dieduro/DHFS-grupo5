@@ -1,22 +1,25 @@
 <?php
-require_once("funciones.php");
+require_once("soporte.php");
+require_once("clases/usuario.php");
 include_once("header.php");
 $arrayErrores = [];
 
 $email = $_COOKIE['emailRecuperacion'];
 
+
 // si vino por POST
 if ($_POST) {
   //Validamos
-  $arrayErrores = validarResetPassword($_POST);
+  $arrayErrores = $validator->validarResetPassword($_POST);
 
   // si la validacion es correcta
   if (count($arrayErrores) == 0) {
     $password = $_POST["password"];
-    $newPass = hashPass($password);
-    updatePassword($newPass,$email);
+    $db->updatePassword($password,$email);
+
     ?>
     <h3>¡Contraseña actualizada con éxito!<br>Volver a la <a href="index.php">HOME</a></h3>
+
     <?php
   }
 

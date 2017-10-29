@@ -1,5 +1,6 @@
 <?php
-require_once("funciones.php");
+require_once("soporte.php");
+require_once("clases/usuario.php");
 include_once("header.php");
 
   if (!$_POST){
@@ -15,7 +16,7 @@ include_once("header.php");
 
 <?php
   }else{
-  $errores = validarRecuPass($_POST);
+  $errores = $validator->validarRecuPass($_POST);
   if(count($errores)==0){
      $email = $_POST["email"];
      ?>

@@ -28,10 +28,7 @@ function getToken($email) {
   return NULL;
 }
 
-function hashPass($password) {
-  $newPass = password_hash($password, PASSWORD_DEFAULT);
-  return $newPass;
-}
+
 
 
 

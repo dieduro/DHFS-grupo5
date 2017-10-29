@@ -14,21 +14,28 @@ $nameDefault = "";
 if ($_POST) {
   //Validamos
   $arrayErrores = $validator->validarInformacion($_POST, $db);
+
+
   // si la validacion es correcta
   if (count($arrayErrores) == 0) {
-    if($_FILES["foto-perfil"]["error"] !=4){
 
-      // 1) Creamos el usuario
-      $usuario = new Usuario($_POST["name"], $_POST["email"], $_POST["password"]);
-      // $usuario->guardarFoto();
-      $usuario = $db->guardarUsuario($usuario);
+    // 1) Creamos el usuario
+    $usuario = new Usuario(null,$_POST["name"], $_POST["email"], $_POST["password"], null, null);
+
+
+    if($_FILES["foto-perfil"]["error"] !=4){
       // 2) Guardamos la foto
+      $fotoPath = $usuario->guardarFoto();
     } else {
-      $fotoPath = "images/users_img/userDefault.png";
+      $usuario->setfotoPath("images/users_img/userDefault.png");
     }
 
+    $con = $db->guardarUsuario($usuario);
+    
     // 3) Seteamos la cookie para que ya quede LOGUEADO
     $auth->recordarUsuario($_POST["email"]);
+    $auth->loguear($_POST["email"]);
+
 
     // 4) Redirigimos
     header("Location:redirection.php");exit;
@@ -63,6 +70,10 @@ require_once("header.php");
             <?php } ?>
             <input type="password" name="cpassword" id="cpassword" placeholder="Repetir Contraseña" >
             <input type="file" name="foto-perfil" value="">
+            <?php if (isset($arrayErrores["foto-perfil"])) { ?>
+              <div class="errores">
+                <?php echo $arrayErrores["foto-perfil"]; ?></div>
+              <?php } ?>
             <div class="legals">
               <input type="checkbox" name="legals" value="">
               <h6 style="color:#555555">Acepto los términos y condiciones de servicio.</h6>
