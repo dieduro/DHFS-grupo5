@@ -23,9 +23,9 @@ if ($_POST) {
     <?php
   }
 
-}
+}else {
 
-if (count($arrayErrores) > 0) : ?>
+  if (count($arrayErrores) > 0) : ?>
   <ul class="errores">
     <?php foreach($arrayErrores as $error) : ?>
       <li><?=$error?></li>
@@ -40,3 +40,4 @@ if (count($arrayErrores) > 0) : ?>
 
   <button class="btn-solid-lg" type="submit" name="iniciarSesion" id="iniciarSesion">Reestablecer Contraseña</button>
 </form>
+<?php } ?>
