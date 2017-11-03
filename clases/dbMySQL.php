@@ -10,7 +10,7 @@ class dbMySQL extends Db {
     //CONECTAMOS CON LA BASE DE DATOS
     $dsn = 'mysql:host=localhost;charset=utf8mb4;port:3306, ';
     $username = "root";
-    $password = "root"; // ana tiene pass vacia, diego tiene pass "root"
+    $password = ""; // ana tiene pass vacia, diego tiene pass "root"
     try {
       $this->conn = new PDO ($dsn, $username, $password);
     } catch (Exception $e) {

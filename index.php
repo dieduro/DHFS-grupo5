@@ -59,21 +59,14 @@ $db->initDB();
         <option value="mdq">Mar del Plata</option>
         <option value="rosario">Rosario</option>
       </select>
-      <select class="select" name="fecha" id="">
-        <option value="xFecha">Fecha</option>
-        <option value="semana">Esta Semana</option>
-        <option value="quincena">Próximos 15 días</option>
-        <option value="mes">Próximo Mes</option>
-        <option value="trimes">Próximos 3 Meses</option>
-        <option value="medioAno">Próximos 6 Meses</option>
-      </select>
+      <input type="date" name="date" value="" placeholder="Fecha">
       <button class="btn-solid-sm" type="submit" name="buscar">Buscar</button>
     </form>
   </div>
 </section>
 
 <!-- ÚLTIMO MOMENTO -->
-<section class="container">
+<section class="container section">
   <div class="section_tit">
     <h3>¡PARTIDOS DE ULTIMO MOMENTO!</h3>
     <a class="ver_todos"href="#">ver todos</a>
@@ -93,7 +86,7 @@ $db->initDB();
     </div>
     <div class="eventos">
       <div class="evento">
-        <img src="images/volley.jpg" alt="">
+        <img src="images/volleyU.jpg" alt="">
         <div class="overlay">
           <p class="evento_deporte">Volley</p>
           <p class=evento_zona>Vicente Lopez</p>
@@ -104,7 +97,7 @@ $db->initDB();
         </div>
       </div>
       <div class="evento">
-        <img src="images/rugby.jpg" alt="">
+        <img src="images/rugbyU.jpg" alt="">
         <div class="overlay">
           <p class="evento_deporte">Rugby</p>
           <p class=evento_zona>Belgrano</p>
@@ -115,9 +108,9 @@ $db->initDB();
         </div>
       </div>
       <div class="evento">
-        <img src="images/futbol_fem.jpg" alt="">
+        <img src="images/pingpongU.jpg" alt="">
         <div class="overlay">
-          <p class="evento_deporte">Futbol Femenino</p>
+          <p class="evento_deporte">PingPong</p>
           <p class=evento_zona>San Isidro</p>
         </div>
         <div class="evento_datos">
@@ -126,7 +119,7 @@ $db->initDB();
         </div>
       </div>
       <div class="evento">
-        <img src="images/hockey.jpg" alt="">
+        <img src="images/hockeyU.jpg" alt="">
         <div class="overlay">
           <p class="evento_deporte">Hockey</p>
           <p class=evento_zona>San Fernando</p>
@@ -137,9 +130,9 @@ $db->initDB();
         </div>
       </div>
       <div class="evento">
-        <img src="images/squash.jpg" alt="">
+        <img src="images/basketU.jpg" alt="">
         <div class="overlay">
-          <p class="evento_deporte">Squash</p>
+          <p class="evento_deporte">Basket</p>
           <p class=evento_zona>Floresta</p>
         </div>
         <div class="evento_datos">
@@ -152,7 +145,7 @@ $db->initDB();
 </section>
 
 <!-- RECOMENDADOS -->
-<section class="container prox-part">
+<section class="container section">
   <div class="section_tit">
     <h3>Partidos Recomendados</h3>
   </div>
@@ -163,7 +156,7 @@ $db->initDB();
           <img src="images/volley.jpg" alt="futbol">
         </a>
         <h5>Voley</h5>
-        <h6 class="data-day">Belgrano - Miercoles 20hs</h6>
+        <h6 class="data-day">Belgrano - Miercoles 5, 20hs</h6>
       </div>
     </li>
     <li>
@@ -172,7 +165,7 @@ $db->initDB();
           <img src="images/futbol.jpg" alt="futbol">
         </a>
         <h5>Futbol</h5>
-        <h6 class="data-day">El Palomar - Jueves 19:30hs</h6>
+        <h6 class="data-day">El Palomar - Jueves 3, 19:30hs</h6>
       </div>
     </li>
     <li>
@@ -181,7 +174,7 @@ $db->initDB();
           <img src="images/rugby.jpg" alt="futbol">
         </a>
         <h5>Rugby</h5>
-        <h6 class="data-day">El Palomar - Jueves 19:30hs</h6>
+        <h6 class="data-day">El Palomar - Jueves 18, 19:30hs</h6>
       </div>
     </li>
     <li>
@@ -190,7 +183,7 @@ $db->initDB();
           <img src="images/hockey.jpg" alt="futbol">
         </a>
         <h5>Hockey</h5>
-        <h6 class="data-day">El Palomar - Jueves 19:30hs</h6>
+        <h6 class="data-day">El Palomar - Sábado 21, 19:30hs</h6>
       </div>
     </li>
     <li>
@@ -199,7 +192,7 @@ $db->initDB();
           <img src="images/basket2.jpg" alt="futbol">
         </a>
         <h5>Basket</h5>
-        <h6 class="data-day">El Palomar - Jueves 19:30hs</h6>
+        <h6 class="data-day">El Palomar - Jueves 5, 19:30hs</h6>
       </div>
     </li>
     <li>
@@ -208,11 +201,14 @@ $db->initDB();
           <img src="images/squash.jpg" alt="futbol">
         </a>
         <h5>Squash</h5>
-        <h6 class="data-day">El Palomar - Jueves 19:30hs</h6>
+        <h6 class="data-day">El Palomar - Lunes 16, 19:30hs</h6>
       </div>
     </li>
   </ul>
 </section>
+<div class="container section">
+    <button class="btn-solid" type="submit" name="ver_mas">VER MÁS PARTIDOS</button>
+</div>
 
 <!-- FOOTER -->
 <?php

@@ -360,9 +360,7 @@ h1 {
 }
 
 /* RECOMENDADOS ------------------------------- */
-.prox-part {
-	overflow: hidden;
-}
+
 .lista-prox-part {
 	display: flex;
 	flex-wrap: wrap;
