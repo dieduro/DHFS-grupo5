@@ -37,7 +37,7 @@ require_once("clases/usuario.php");
           <li class="nav-items foto-perfil"><img  src="<?=$fotoPath?>" alt="RE"></li>
           <li class="nav-items"><a href="#" class="header_link user"><?=$nameUsuario?></a></li>
           <li class="nav-items"><a href="logout.php" class="header_link">Logout</a></li>
-        <?php }else{?>
+        <?php } else {?>
           <li class="nav-items"><a href="registro.php" class="header_link">Registrate</a></li>
           <li class="nav-items"><a href="login.php" class="header_link">Login</a></li>
           <li class="nav-items"><a href="faq.php" class="header_link">¿Qué es <i>TeamUp!?</i></a></li>
