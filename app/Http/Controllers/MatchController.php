@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use \App\Partido;
+use \App\Match;
 
-class PartidosController extends Controller
+class MatchController extends Controller
 {
   public function index()
   {
-    $partidos = Partido::all();
+    $partidos = Match::all();
     $parametros = [
       "partidos" => $partidos,
     ];
@@ -25,8 +25,9 @@ class PartidosController extends Controller
   {
     $input = $request->except('_token');
     $rules = [
-      "campo1" => "required",
-      "campo2" => "required"
+      'name' => $request->input('name'),
+      'datetime' => $request->input('datetime'),
+      'place' => $request->input('place')
     ];
 
     $messages = [
@@ -34,49 +35,50 @@ class PartidosController extends Controller
     ];
 
     $validator = Validator::make($input, $rules, $messages);
-    $producto = Partido::create([
-      'campo1' => $request->input('campo1'),
-      'campo2' => $request->input('campo2')
+    $partido = Match::create([
+      'name' => $request->input('name'),
+      'datetime' => $request->input('datetime'),
+      'place' => $request->input('place')
     ]);
     return redirect('/partidos');
   }
 
   public function show($id)
   {
-    $partido = Partido::find($id);
+    $match = Match::find($id);
     $parametros = [
-      'partido' => $partido,
+      'match' => $match,
     ]
-    return view('partidos.partido', $parametros);
+    return view('matches.match', $parametros);
   }
 
   public function edit($id)
   {
-    $partido = Partido::find($id);
+    $match = Match::find($id);
     $parametros = [
-      'partido' => $partido,
+      'match' => $match,
     ]
-    return view('partidos.editar', $parametros);
+    return view('matches.edit', $parametros);
   }
 
   public function update(Request $request, $id)
   {
-    $partido = Partido::find($id);
+    $match = Match::find($id);
     foreach ($request->except('_token') as $key => $value) {
-      $partido->$key = $value;
-    }
+      $match->$key = $value;
+  }
 
-    $partido->save();
+    $match->save();
     $parametros = [
-      'partido' => $partido,
+      'match' => $match,
     ]
-    return view('partidos.partido', $parametros);
+    return view('matches.match', $parametros);
   }
 
   public function destroy($id)
   {
-    $partido = Partido::find($id);
-    $partido->delete();
-    return redirect('/partidos');
+    $match = Match::find($id);
+    $match->delete();
+    return redirect('/partido');
   }
 }

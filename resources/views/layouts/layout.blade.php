@@ -19,15 +19,21 @@
     <h1><a href="/" class="header_link"><img class="logo" src="images/logo-home.png" alt="logo TeamUp!"></a></h1>
     <nav class="menu">
       <ul>
-        @if (session('status'))
-          <li class="nav-items foto-perfil"><img  src="{{ $user->photo }}" alt="RE"></li>
-          <li class="nav-items"><a href="/profile" class="header_link user">{{ $user->name }}</a></li>
-          <li class="nav-items"><a href="/logout" class="header_link">Logout</a></li>
-        @else
-          <li class="nav-items"><a href="/registro" class="header_link">Registrate</a></li>
-          <li class="nav-items"><a href="/login" class="header_link">Login</a></li>
+          <li class="nav-items foto-perfil"><img  src=" " alt="RE"></li>
+          <li class="nav-items"><a href="/profile" class="header_link user"></a></li>
+          <li class="nav-items">
+              <a href="{{ route('logout') }}"
+                  onclick="event.preventDefault();
+                           document.getElementById('logout-form').submit();">
+                  Logout
+              </a>
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                  {{ csrf_field() }}
+              </form>
+          </li>
+          <li class="nav-items"><a href="{{ route('register') }}" class="header_link">Registrate</a></li>
+          <li class="nav-items"><a href="{{ route('login') }}" class="header_link">Login</a></li>
           <li class="nav-items"><a href="/faq" class="header_link">¿Qué es <i>TeamUp!?</i></a></li>
-        @endif
       </ul>
     </nav>
     <span class="burger-icon"><i class="fa fa-bars menu" aria-hidden="true"></i></span>

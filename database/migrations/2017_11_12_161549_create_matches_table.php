@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTablePartidos extends Migration
+class CreateTableMatches extends Migration
 {
   /**
   * Run the migrations.
@@ -15,8 +15,8 @@ class CreateTablePartidos extends Migration
   {
     Schema::create('matches', function (Blueprint $table) {
       $table->increments('id');
-      $table->string('sport');
-      $table->datetime('datetime');
+      $table->string('name');
+      $table->dateTime('datetime');
       $table->string('place');
       $table->timestamps();
     });
@@ -29,6 +29,6 @@ class CreateTablePartidos extends Migration
   */
   public function down()
   {
-    Schema::dropIfExists('users');
+    Schema::dropIfExists('matches');
   }
 }
