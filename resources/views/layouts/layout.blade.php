@@ -16,10 +16,10 @@
     <div class="head_left">
       <!-- DIV VACIO -->
     </div>
-    <h1><a href="index" class="header_link"><img class="logo" src="images/logo-home.png" alt="logo TeamUp!"></a></h1>
+    <h1><a href="/" class="header_link"><img class="logo" src="images/logo-home.png" alt="logo TeamUp!"></a></h1>
     <nav class="menu">
       <ul>
-        @if (session('status') == PHP_SESSION_ACTIVE)
+        @if (session('status'))
           <li class="nav-items foto-perfil"><img  src="{{ $user->photo }}" alt="RE"></li>
           <li class="nav-items"><a href="/profile" class="header_link user">{{ $user->name }}</a></li>
           <li class="nav-items"><a href="/logout" class="header_link">Logout</a></li>
