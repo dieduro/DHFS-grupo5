@@ -150,7 +150,7 @@
       <li>
         <div class="deporte">
           <a href="#">
-            <img src="images/volley.jpg" alt="futbol">
+            <img src="{{ asset ('images/volley.jpg') }}" alt="futbol">
           </a>
           <h5>Voley</h5>
           <h6 class="data-day">Belgrano - Miercoles 5, 20hs</h6>
@@ -159,7 +159,7 @@
       <li>
         <div class="deporte">
           <a href="#">
-            <img src="images/futbol.jpg" alt="futbol">
+            <img src="{{ asset ('images/futbol.jpg') }}" alt="futbol">
           </a>
           <h5>Futbol</h5>
           <h6 class="data-day">El Palomar - Jueves 3, 19:30hs</h6>
@@ -168,7 +168,7 @@
       <li>
         <div class="deporte">
           <a href="#">
-            <img src="images/rugby.jpg" alt="futbol">
+            <img src="{{ asset ('images/rugby.jpg') }}" alt="futbol">
           </a>
           <h5>Rugby</h5>
           <h6 class="data-day">El Palomar - Jueves 18, 19:30hs</h6>
