@@ -44,3 +44,6 @@ Route::get('/partido/editar', 'PartidosController@edit');
 Route::post('/partido/editar', 'PartidosController@update');
 Route::get('/partido/eliminar', 'PartidosController@destroy');
 Route::get('/perfil', 'UserController@showProfile');
+
+Route::get('/deporte/crear', 'SportsController@create');
+Route::post('/deporte/crear', 'SportsController@store');
