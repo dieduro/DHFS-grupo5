@@ -35,7 +35,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 // RUTAS PROPIAS
-Route::get('faq', 'AlgoController@show');
+Route::get('/faq', 'AlgoController@show');
 Route::get('/partidos', 'PartidosController@index');
 Route::get('/partidos/crear', 'PartidosController@create');
 Route::post('/partidos/crear', 'PartidosController@store');
@@ -43,3 +43,4 @@ Route::get('/partido', 'PartidosController@show');
 Route::get('/partido/editar', 'PartidosController@edit');
 Route::post('/partido/editar', 'PartidosController@update');
 Route::get('/partido/eliminar', 'PartidosController@destroy');
+Route::get('/perfil', 'UserController@showProfile');

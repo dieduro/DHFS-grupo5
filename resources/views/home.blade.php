@@ -9,13 +9,13 @@
   <section class="mega">
     <div class="container">
       <div class="caption">
-        {{-- @if (session('status')) --}}
+        @if (Auth::guest())
           <h2>Estás a un click de empezar a jugar</h2>
           <a class="btn-solid" href="{{ route('register') }}" role="button">REGISTRATE</a>
           <a class="btn-solid" href="{{ route('login') }}" role="button">INICIÁ SESIÓN</a>
-        {{-- @else --}}
+        @else
           <h2>¡Ya estás listo para empezar a jugar!</h2>
-        {{-- @endif --}}
+        @endif
       </div>
     </div>
   </section>

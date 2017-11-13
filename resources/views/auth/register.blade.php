@@ -1,5 +1,9 @@
 @extends('layouts.layout')
 
+@section('title')
+  TeamUp! - Registro
+@endsection
+
 @section('content')
   <div class="register_img">
     <div class="container caja">
@@ -37,7 +41,7 @@
           <input id="password-confirm" type="password" placeholder="Repetir Contraseña" name="password_confirmation" required>
         </div>
         <div class="legals">
-          <input type="checkbox" name="legals" value="">
+          <input type="checkbox" name="legals" value="" required>
           <h6 style="color:#555555">Acepto los Términos y Condiciones de servicio.</h6>
           <hr>
           <h6>Si hacés click en "Registrarme" aceptarás los <a href="/ttos">Términos y Condiciones</a> y <a href="/privacyPolicy">Política de Privacidad</a> de TEAMup!</h6>
