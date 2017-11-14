@@ -40,6 +40,7 @@
         <div class="">
           <input id="password-confirm" type="password" placeholder="Repetir Contraseña" name="password_confirmation" required>
         </div>
+        
         <div class="legals">
           <input type="checkbox" name="legals" value="" required>
           <h6 style="color:#555555">Acepto los Términos y Condiciones de servicio.</h6>

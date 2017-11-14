@@ -18,15 +18,17 @@ class MatchesController extends Controller
 
   public function create()
   {
-    return view('partidos.crear');
+    return view('matches.create');
   }
 
   public function store(Request $request)
   {
     $rules = [
       'sport' => 'required',
-      'datetime' => 'required',
-      'place' => 'required'
+      'when' => 'required',
+      'where' => 'required',
+      'nplayer' => 'required',
+      'description' => 'required'
     ];
 
     $messages = [
@@ -35,9 +37,11 @@ class MatchesController extends Controller
 
     $request->validate($rules, $messages);
     $match = Match::create([
-      'name' => $request->input('name'),
-      'datetime' => $request->input('datetime'),
-      'place' => $request->input('place')
+      'sport' => $request->input('sport'),
+      'when' => $request->input('when'),
+      'where' => $request->input('where'),
+      'nplayer' => $request->input('nplayer'),
+      'description' => $request->input('description')
     ]);
     return redirect('/partidos');
   }
@@ -47,7 +51,7 @@ class MatchesController extends Controller
     $match = Match::find($id);
     $param = [
       'match' => $match,
-    ]
+    ];
     return view('matches.match', $param);
   }
 
@@ -56,7 +60,7 @@ class MatchesController extends Controller
     $match = Match::find($id);
     $param = [
       'match' => $match,
-    ]
+    ];
     return view('matches.edit', $param);
   }
 
@@ -69,7 +73,7 @@ class MatchesController extends Controller
     $match->save();
     $param = [
       'match' => $match,
-    ]
+    ];
     return view('matches.match', $param);
   }
 

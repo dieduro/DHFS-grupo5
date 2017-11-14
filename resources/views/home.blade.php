@@ -19,6 +19,16 @@
       </div>
     </div>
   </section>
+
+  <!-- CREADOR DE PARTIDOS -->
+  <section class="container">
+    <a class="btn-solid" href="/partido/nuevo" role="button">Creá un partido!</a>
+
+
+  </section>
+
+
+
   <!-- BUSCADOR -->
   <section class="container">
     <div class="section_tit">

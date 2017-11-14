@@ -21,7 +21,7 @@
       <ul>
         @if(Auth::check())
           <li class="nav-items foto-perfil"><img  src="" alt="RE"></li>
-          <li class="nav-items"><a href="/perfil" class="header_link user">{{ Auth::user()->name }}</a></li>
+          <li class="nav-items"><a href="/perfil/{{Auth::user()->id}}" class="header_link user">{{ Auth::user()->name }}</a></li>
           <li class="nav-items">
               <a href="{{ route('logout') }}"
                   onclick="event.preventDefault();

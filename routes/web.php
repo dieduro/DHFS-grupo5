@@ -34,7 +34,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // RUTAS PROPIAS
 Route::get('/faq', 'AlgoController@show');
-Route::get('/perfil', 'UserController@showProfile');
+Route::get('/perfil/{id}', 'UsersController@show');
 
 // RUTAS PARTIDOS
 Route::get('/partidos', 'MatchesController@index');
