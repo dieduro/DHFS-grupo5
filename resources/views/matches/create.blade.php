@@ -1,13 +1,15 @@
 @extends('layouts.layout')
 
 @section('title')
-  TeamUp! - Nuevo Deporte
+  TeamUp! - Nuevo Partido
 @endsection
 
 @section('content')
   <div class="container">
     <form class="" action="/" method="post">
       <input type="text" name="name" value="name">
-      <input type="text" name="players" value="players">
+      <input type="date" name="datetime" value="datetime">
+      <input type="place" name="place" value="place"> <!-- api google -->
     </form>
   </div>
+@endsection

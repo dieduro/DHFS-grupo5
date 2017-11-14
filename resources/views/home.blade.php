@@ -28,23 +28,10 @@
     <div class="buscador">
       <form class="buscador-form" action="#">
         <select class="select" name="deporte" placeholder="Deporte">
-          <option value="xDeporte">Deporte</option>
-          <option value="baseball">Baseball</option>
-          <option value="basket">Basket</option>
-          <option value="floorball">Floorball</option>
-          <option value="futbol">Futbol</option>
-          <option value="futbolAme">Futbol Americano</option>
-          <option value="handball">Handball</option>
-          <option value="hockey">Hockey</option>
-          <option value="padel">Padel</option>
-          <option value="paintball">Paintball</option>
-          <option value="polo">Polo</option>
-          <option value="rugby">Rugby</option>
-          <option value="softball">Softball</option>
-          <option value="squash">Squash</option>
-          <option value="tenis">Tenis</option>
-          <option value="voley">Voley</option>
-          <option value="waterpolo">Waterpolo</option>
+          <option value="">Deporte</option>
+          @foreach ($sports as $sport)
+            <option value="{{ $sport->name }}">{{ $sport->name }}</option>
+          @endforeach
         </select>
         <select class="select" name="zona" id="" placeholder="Zona">
           <option value="xZona">Zona</option>

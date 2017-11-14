@@ -5,15 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use \App\Match;
 
-class MatchController extends Controller
+class MatchesController extends Controller
 {
   public function index()
   {
     $partidos = Match::all();
-    $parametros = [
+    $param = [
       "partidos" => $partidos,
     ];
-    return view('partidos.index', $parametros);
+    return view('partidos.index', $param);
   }
 
   public function create()
@@ -23,19 +23,18 @@ class MatchController extends Controller
 
   public function store(Request $request)
   {
-    $input = $request->except('_token');
     $rules = [
-      'name' => $request->input('name'),
-      'datetime' => $request->input('datetime'),
-      'place' => $request->input('place')
+      'sport' => 'required',
+      'datetime' => 'required',
+      'place' => 'required'
     ];
 
     $messages = [
-      "required" => "El :attribute es obligatorio",
+      "required" => "El campo es obligatorio",
     ];
 
-    $validator = Validator::make($input, $rules, $messages);
-    $partido = Match::create([
+    $request->validate($rules, $messages);
+    $match = Match::create([
       'name' => $request->input('name'),
       'datetime' => $request->input('datetime'),
       'place' => $request->input('place')
@@ -46,19 +45,19 @@ class MatchController extends Controller
   public function show($id)
   {
     $match = Match::find($id);
-    $parametros = [
+    $param = [
       'match' => $match,
     ]
-    return view('matches.match', $parametros);
+    return view('matches.match', $param);
   }
 
   public function edit($id)
   {
     $match = Match::find($id);
-    $parametros = [
+    $param = [
       'match' => $match,
     ]
-    return view('matches.edit', $parametros);
+    return view('matches.edit', $param);
   }
 
   public function update(Request $request, $id)
@@ -67,12 +66,11 @@ class MatchController extends Controller
     foreach ($request->except('_token') as $key => $value) {
       $match->$key = $value;
   }
-
     $match->save();
-    $parametros = [
+    $param = [
       'match' => $match,
     ]
-    return view('matches.match', $parametros);
+    return view('matches.match', $param);
   }
 
   public function destroy($id)

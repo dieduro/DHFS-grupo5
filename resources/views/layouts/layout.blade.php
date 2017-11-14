@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
-  <link rel="stylesheet" href="css/font-awesome/css/font-awesome.css">
-  <link rel="stylesheet" href="css/styles.css" type="text/css">
+  <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/font-awesome/css/font-awesome.css') }} ">
+  <link rel="stylesheet" href="{{ asset('css/styles.css') }}" type="text/css">
   <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,600" rel="stylesheet">
   <title>@yield('title')</title>
@@ -16,7 +16,7 @@
     <div class="head_left">
       <!-- DIV VACIO -->
     </div>
-    <h1><a href="/" class="header_link"><img class="logo" src="images/logo-home.png" alt="logo TeamUp!"></a></h1>
+    <h1><a href="/" class="header_link"><img class="logo" src="{{ asset('images/logo-home.png') }}" alt="logo TeamUp!"></a></h1>
     <nav class="menu">
       <ul>
         @if(Auth::check())
@@ -55,7 +55,7 @@
     </div>
     <div class="footer_inner">
       <div class="logo">
-        <img src="images/logo-home.png" alt="logo">
+        <img src="{{ asset('images/logo-home.png') }}" alt="logo">
       </div>
       <div class="cia">
         <ul>

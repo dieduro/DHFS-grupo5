@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use \App\Sport;
 
-class SportController extends Controller
+class SportsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,11 +14,11 @@ class SportController extends Controller
      */
     public function index()
     {
-      $sports = Sport::all();
-      $parametros = [
-        "sports" => $sports,
+      $sports = Sport::orderBy('name', 'asc')->get();
+      $param = [
+        "sports" => $sports
       ];
-      return view('sports.index', $parametros);
+      return view('sports.index', $param);
     }
 
     /**
@@ -39,22 +39,23 @@ class SportController extends Controller
      */
     public function store(Request $request)
     {
-      $input = $request->except('_token');
       $rules = [
-        'name' => $request->input('name'),
-        'players' => $request->input('players')
+        'name' => 'required|unique:sports',
+        'players' => 'required|numeric'
       ];
 
       $messages = [
-        "required" => "El :attribute es obligatorio",
+        "required" => "El campo es obligatorio",
+        "unique" => 'Ya existe el deporte',
+        'numeric' => 'El campo debe ser un número'
       ];
 
-      $validator = Validator::make($input, $rules, $messages);
-      $deporte = Sport::create([
+      $request->validate($rules, $messages);
+      $sport = Sport::create([
         'name' => $request->input('name'),
         'players' => $request->input('players')
       ]);
-      return redirect('/sports');
+      return redirect('/deportes');
     }
 
     /**
@@ -66,10 +67,10 @@ class SportController extends Controller
     public function show($id)
     {
       $sport = Sport::find($id);
-      $parametros = [
+      $param = [
         'sport' => $sport,
-      ]
-      return view('sports.sport', $parametros);
+      ];
+      return view('sports.sport', $param);
     }
 
     /**
@@ -81,10 +82,10 @@ class SportController extends Controller
     public function edit($id)
     {
       $sport = Sport::find($id);
-      $parametros = [
-        'sport' => $sport,
-      ]
-      return view('sport.edit', $parametros);
+      $param = [
+        'sport' => $sport
+      ];
+      return view('sport.edit', $param);
     }
 
     /**
@@ -99,6 +100,7 @@ class SportController extends Controller
       $sport = Sport::find($id);
       foreach ($request->except('_token') as $key => $value) {
         $sport->$key = $value;
+      }
     }
 
     /**

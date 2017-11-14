@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', 'HomeController@index');
 
 // Login Routes...
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
@@ -36,14 +34,22 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // RUTAS PROPIAS
 Route::get('/faq', 'AlgoController@show');
-Route::get('/partidos', 'PartidosController@index');
-Route::get('/partidos/crear', 'PartidosController@create');
-Route::post('/partidos/crear', 'PartidosController@store');
-Route::get('/partido', 'PartidosController@show');
-Route::get('/partido/editar', 'PartidosController@edit');
-Route::post('/partido/editar', 'PartidosController@update');
-Route::get('/partido/eliminar', 'PartidosController@destroy');
 Route::get('/perfil', 'UserController@showProfile');
 
-Route::get('/deporte/crear', 'SportsController@create');
-Route::post('/deporte/crear', 'SportsController@store');
+// RUTAS PARTIDOS
+Route::get('/partidos', 'MatchesController@index');
+Route::get('/partido/nuevo', 'MatchesController@create');
+Route::post('/partido/nuevo', 'MatchesController@store');
+Route::get('/partido', 'MatchesController@show');
+Route::get('/partido/editar', 'MatchesController@edit');
+Route::post('/partido/editar', 'MatchesController@update');
+Route::get('/partido/eliminar', 'MatchesController@destroy');
+
+// RUTAS DEPORTES
+Route::get('/deportes', 'SportsController@index');
+Route::get('/deportes/nuevo', 'SportsController@create');
+Route::post('/deportes/nuevo', 'SportsController@store');
+Route::get('/deporte', 'SportsController@show');
+Route::get('/deporte/editar', 'SportsController@edit');
+Route::post('/deporte/editar', 'SportsController@update');
+Route::get('/deporte/eliminar', 'SportsController@destroy');
