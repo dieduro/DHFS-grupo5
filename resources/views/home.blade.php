@@ -15,19 +15,11 @@
           <a class="btn-solid" href="{{ route('login') }}" role="button">INICIÁ SESIÓN</a>
         @else
           <h2>¡Ya estás listo para empezar a jugar!</h2>
+          <a class="btn-solid" href="/partido/nuevo" role="button">Creá un partido!</a>
         @endif
       </div>
     </div>
   </section>
-
-  <!-- CREADOR DE PARTIDOS -->
-  <section class="container">
-    <a class="btn-solid" href="/partido/nuevo" role="button">Creá un partido!</a>
-
-
-  </section>
-
-
 
   <!-- BUSCADOR -->
   <section class="container">
@@ -174,7 +166,7 @@
       <li>
         <div class="deporte">
           <a href="">
-            <img src="images/hockey.jpg" alt="futbol">
+            <img src="{{ asset ('images/hockey.jpg') }}"  alt="futbol">
           </a>
           <h5>Hockey</h5>
           <h6 class="data-day">El Palomar - Sábado 21, 19:30hs</h6>
@@ -183,7 +175,7 @@
       <li>
         <div class="deporte">
           <a href="#">
-            <img src="images/basket2.jpg" alt="futbol">
+            <img src="{{ asset ('images/basket2.jpg') }}"  alt="futbol">
           </a>
           <h5>Basket</h5>
           <h6 class="data-day">El Palomar - Jueves 5, 19:30hs</h6>
@@ -192,7 +184,7 @@
       <li>
         <div class="deporte">
           <a href="#">
-            <img src="images/squash.jpg" alt="futbol">
+            <img src="{{ asset ('images/squash.jpg') }}"  alt="futbol">
           </a>
           <h5>Squash</h5>
           <h6 class="data-day">El Palomar - Lunes 16, 19:30hs</h6>
@@ -203,4 +195,10 @@
   <div class="container section">
       <button class="btn-solid" type="submit" name="ver_mas">VER MÁS PARTIDOS</button>
   </div>
+
+    <section class="container section">
+      <div class="section_tit">
+        <h3>Partidos Recomendados</h3>
+      </div>
+    </section>
 @endsection
