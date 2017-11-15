@@ -102,7 +102,7 @@ hr {
   border-top: 1px solid #969696;
 }
 .section_tit {
-	margin-top: 35px;
+	margin-top: 50px;
 }
 
 /* HEADER ------------------------------- */
@@ -457,6 +457,26 @@ input[type="file"] {
 .panel-default > .panel-heading {
 	border-color: #003366;
 	background-color: white;
+}
+
+.fa {
+	font-size: 30px;
+}
+.faq_title {
+	font-weight: bold;
+	line-height: 2em;
+}
+.faq_index {
+	display: flex;
+}
+.faq_card {
+	width: 31.73%;
+	display: block;
+  margin: 1% 0.8% 1% 0.8%;
+	padding: 15px;
+	text-align: center;
+	line-height: 1.4em;
+	height: 30vh;
 }
 
 /* FOOTER ------------------------------- */

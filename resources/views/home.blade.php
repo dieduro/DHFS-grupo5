@@ -193,12 +193,38 @@
     </ul>
   </section>
   <div class="container section">
-      <button class="btn-solid" type="submit" name="ver_mas">VER MÁS PARTIDOS</button>
+    <button class="btn-solid" type="submit" name="ver_mas">VER MÁS PARTIDOS</button>
   </div>
 
-    <section class="container section">
-      <div class="section_tit">
-        <h3>Partidos Recomendados</h3>
+  <section class="container section">
+    <div class="section_tit">
+      <h3>¿Cómo funciona?</h3>
+    </div>
+    <div class="faq_index">
+      <div class="faq_card">
+        <i class="fa fa-users" aria-hidden="true"></i>
+        <p class="faq_title">Get Paired</p>
+        <p>
+          Tell us when and what you want to practice and we’ll pair you with an optimal peer.
+          We provide interview questions (and answers) you will both use to interview each other.
+        </p>
       </div>
-    </section>
+      <div class="faq_card">
+        <i class="fa fa-users" aria-hidden="true"></i>
+        <p class="faq_title">Get Paired</p>
+        <p >
+          Tell us when and what you want to practice and we’ll pair you with an optimal peer.
+          We provide interview questions (and answers) you will both use to interview each other.
+        </p>
+      </div>
+      <div class="faq_card">
+        <i class="fa fa-users" aria-hidden="true"></i>
+        <p class="faq_title">Get Paired</p>
+        <p>
+          Tell us when and what you want to practice and we’ll pair you with an optimal peer.
+          We provide interview questions (and answers) you will both use to interview each other.
+        </p>
+      </div>
+    </div>
+  </section>
 @endsection
