@@ -16,7 +16,7 @@
         <div class="{{ $errors->has('name') ? ' has-error' : '' }}">
           <input id="name" type="text" placeholder="Nombre y Apellido" name="name" value="{{ old('name') }}"  required autofocus>
           @if ($errors->has('name'))
-            <span class="help-block">
+            <span class="errores">
               <strong>{{ $errors->first('name') }}</strong>
             </span>
           @endif
@@ -24,7 +24,7 @@
         <div class="{{ $errors->has('email') ? ' has-error' : '' }}">
           <input id="email" type="email" name="email" placeholder="Email" value="{{ old('email') }}" required>
           @if ($errors->has('email'))
-            <span class="help-block">
+            <span class="errores">
               <strong>{{ $errors->first('email') }}</strong>
             </span>
           @endif
@@ -32,7 +32,7 @@
         <div class="{{ $errors->has('password') ? ' has-error' : '' }}">
           <input id="password" type="password" name="password" placeholder="Contraseña" required>
           @if ($errors->has('password'))
-            <span class="help-block">
+            <span class="errores">
               <strong>{{ $errors->first('password') }}</strong>
             </span>
           @endif
@@ -40,17 +40,23 @@
         <div class="">
           <input id="password-confirm" type="password" placeholder="Repetir Contraseña" name="password_confirmation" required>
         </div>
-        
-        <div class="legals">
-          <input type="checkbox" name="legals" value="" required>
+        <div class="legals {{ $errors->has('legals') ? ' has-error' : '' }}">
+          <input type="checkbox" name="legals" value="1" required>
           <h6 style="color:#555555">Acepto los Términos y Condiciones de servicio.</h6>
+          @if ($errors->has('legals'))
+            <span class="errores">
+              <strong>{{ $errors->first('legals') }}</strong>
+            </span>
+          @endif
+        </div>
+        <div class="legals">
           <hr>
           <h6>Si hacés click en "Registrarme" aceptarás los <a href="/ttos">Términos y Condiciones</a> y <a href="/privacyPolicy">Política de Privacidad</a> de TEAMup!</h6>
         </div>
         <button class="btn-solid-lg" type="submit" name="button" id="register">REGISTRARME</button>
       </form>
       <div class="linkeo">
-      <h6>¿Ya tienes cuenta? <a href="login.php">Inicia Sesión</a></h6>
+      <h6>¿Ya tienes cuenta? <a href="{{ route('login') }}" >Inicia Sesión</a></h6>
     </div>
   </div>
 </div>
