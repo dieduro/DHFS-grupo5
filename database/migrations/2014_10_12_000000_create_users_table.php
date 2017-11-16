@@ -18,8 +18,8 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('photo');
-            $table->rememberToken();
+            $table->string('photo')->default('public/storage/users_img/default.jpg');
+            $table->rememberToken()->nullable();
             $table->timestamps();
         });
     }
