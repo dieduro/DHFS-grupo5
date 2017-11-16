@@ -14,23 +14,23 @@
 Route::get('/', 'HomeController@index');
 
 // Login Routes...
-Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
-Route::post('login', 'Auth\LoginController@login');
-Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+Route::get('ingresar', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('ingresar', 'Auth\LoginController@login');
+Route::post('salir', 'Auth\LoginController@logout')->name('logout');
 
 // Registration Routes...
 Route::get('registro', 'Auth\RegisterController@showRegistrationForm')->name('register');
 Route::post('registro', 'Auth\RegisterController@register');
 
 // Password Reset Routes...
-Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm');
+Route::get('password/resetear', 'Auth\ForgotPasswordController@showLinkRequestForm');
 Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');
-Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm');
-Route::post('password/reset', 'Auth\ResetPasswordController@reset');
+Route::get('password/resetear}/{token}', 'Auth\ResetPasswordController@showResetForm');
+Route::post('password/resetear', 'Auth\ResetPasswordController@reset');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/inicio', 'HomeController@index')->name('home');
 
 // RUTAS PROPIAS
 Route::get('/faq', 'AlgoController@show');
