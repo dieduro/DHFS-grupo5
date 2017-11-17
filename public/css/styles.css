@@ -425,13 +425,13 @@ input[type="file"] {
 	font-size: 0.8em;
 }
 .errores {
-	font-size: 0.9em;
+	font-size: 0.8em;
 	line-height: normal;
 	color: red;
-	padding-left: 15px;
 	max-width: 245px;
 	list-style: disc;
 	margin: 0 auto;
+	display: flex;
 }
 
 /* FAQ */
