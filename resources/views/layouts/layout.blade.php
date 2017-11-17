@@ -22,7 +22,7 @@
       <ul>
         @if(Auth::check())
           <li class="nav-items foto-perfil"><img src="{{ asset( 'storage\users_img\default.jpg') }}" alt="RE"></li>
-          <li class="nav-items"><a href="/perfil/{{ Auth::user()->id }}" class="header_link user">{{ Auth::user()->name }}</a></li>
+          <li class="nav-items"><a href="/perfil/{{ Auth::user()->id }}" class="header_link user">{{ Auth::user()->username }}</a></li>
           <li class="nav-items">
             <a href="{{ route('logout') }}"
             onclick="event.preventDefault();
@@ -36,8 +36,9 @@
       @else
         <li class="nav-items"><a href="{{ route('register') }}" class="header_link">Registrate</a></li>
         <li class="nav-items"><a href="{{ route('login') }}" class="header_link">Ingresar</a></li>
+        <li class="nav-items"><a href="/faq" class="header_link">¿Qué es <i>TeamUp!?</i></a></li>
       @endif
-      <li class="nav-items"><a href="/faq" class="header_link">¿Qué es <i>TeamUp!?</i></a></li>
+
 
     </ul>
   </nav>

@@ -17,7 +17,7 @@
         <div class="{{ $errors->has('email') ? ' has-error' : '' }}">
           <input type="email" name="email" id="email" placeholder="Email" value="{{ old('email') }}" required autofocus>
           @if ($errors->has('email'))
-            <span class="help-block">
+            <span class="errores">
               <strong>{{ $errors->first('email') }}</strong>
             </span>
           @endif
@@ -25,7 +25,7 @@
         <div class="{{ $errors->has('password') ? ' has-error' : '' }}">
           <input type="password" name="password" id="password" placeholder="Contraseña" required>
           @if ($errors->has('password'))
-            <span class="help-block">
+            <span class="errores">
               <strong>{{ $errors->first('password') }}</strong>
             </span>
           @endif
