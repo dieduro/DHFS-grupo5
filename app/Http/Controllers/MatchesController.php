@@ -11,7 +11,7 @@ class MatchesController extends Controller
 {
   public function index()
   {
-    $matches = Match::all();
+    $matches = Match::where('user_id', "=", Auth::user()->id)->get();
     $param = [
       "matches" => $matches
     ];
@@ -30,7 +30,7 @@ class MatchesController extends Controller
   public function store(Request $request)
   {
     $rules = [
-      'sport' => 'required',
+      'sport_id' => 'required',
       'nplayers' => 'required',
       'date' => 'required',
       'place' => 'required',
@@ -43,7 +43,7 @@ class MatchesController extends Controller
 
     $request->validate($rules, $messages);
     $match = Match::create([
-      'sport' => $request->input('sport'),
+      'sport_id' => $request->input('sport_id'),
       'date' => $request->input('date'),
       'place' => $request->input('place'),
       'nplayers' => $request->input('nplayers'),
@@ -53,14 +53,14 @@ class MatchesController extends Controller
     return redirect('/partidos');
   }
 
-  public function show($id)
-  {
-    $match = Match::find($id);
-    $param = [
-      'match' => $match,
-    ];
-    return view('matches.match', $param);
-  }
+  // public function show($id)
+  // {
+  //   $match = Match::find($id);
+  //   $param = [
+  //     'match' => $match,
+  //   ];
+  //   return view('matches.match', $param);
+  // }
 
   public function edit($id)
   {

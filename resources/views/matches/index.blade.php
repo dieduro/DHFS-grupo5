@@ -32,17 +32,19 @@
         <th>Deporte</th>
         <th>Lugar</th>
         <th>Fecha</th>
-        <th>Jugadores</th>
+        <th>Jugadores Inscriptos</th>
+        <th>Jugadores Totales</th>
         <th>Editar</th>
         <th>Eliminar</th>
       </tr>
       @foreach ($matches as $match)
         <tr>
           <td> <input type="checkbox" name="selectAll" value=""> </td>
-          <td><a href="#">{{ $match->sport }}</a></td>
+          <td><a href="#">{{ $match->sport->name }}</a></td>
           <td><a href="#">{{ $match->date }}</a></td>
           <td><a href="#">{{ $match->place }}</a></td>
-          <td><a href="#">{{ $match->nplayer }}</a></td>
+          <td><a href="#">{{ $match->nplayers }}</a></td>
+          <td><a href="#">{{ $match->sport->players }}</a></td>
           <td><a href="#">{{ $match->description }}</a></td>
           <td><a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
           <td><a href="#"><i class="fa fa-times" aria-hidden="true"></i></a></td>

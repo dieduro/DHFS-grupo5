@@ -10,10 +10,10 @@
       {{ csrf_field() }}
       <div class="{{ $errors->has('sport') ? ' has-error' : '' }}">
         <label for="sport">Deporte</label>
-        <select class="select" name="sport" placeholder="Deporte" autofocus >
+        <select class="select" name="sport_id" placeholder="Deporte" autofocus >
           <option value="">Deporte</option>
           @foreach ($sports as $sport)
-            <option value="{{ $sport->name }}">{{ $sport->name }}</option>
+            <option value="{{ $sport->id }} ">{{ $sport->name }}</option>
           @endforeach
         </select>
         @if ($errors->has('sport'))
