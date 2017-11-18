@@ -33,7 +33,7 @@
       </div>
       <div class="{{ $errors->has('date') ? ' has-error' : '' }}">
         <label for="date">¿Cuándo se juega?</label>
-        <input type="date" name="date" value="datetime">
+        <input type="datetime-local" name="date" value="datetime">
         @if ($errors->has('date'))
           <span class="date">
             <strong>{{ $errors->first('date') }}</strong>
@@ -60,10 +60,10 @@
         @endif
       </div>
       <div class="">
-        <input type="hidden" name="user_id" value="{{ Auth::$user->id }}">
+        <input type="hidden" name="user_id" value="{{ Auth::user()->first_name }}">
       </div>
       <div class="">
-        <button class="btn-solid-lg" type="submit" name="crear" id="Crear">Crear</button>
+        <button class="btn-solid-lg" type="submit" name=crear" id="Crear">Crear</butto>
       </div>
       <div class="">
         <a class="btn-solid" href="/partidos" role="button">Cancelar</a>
