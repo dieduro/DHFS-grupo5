@@ -37,8 +37,8 @@ Route::get('/faq', 'AlgoController@show');
 
 // RUTAS PARTIDOS
 Route::get('/partidos', 'MatchesController@index');
-Route::get('/partido/nuevo', 'MatchesController@create');
-Route::post('/partido/nuevo', 'MatchesController@store');
+Route::get('/partidos/nuevo', 'MatchesController@create');
+Route::post('/partidos/nuevo', 'MatchesController@store');
 Route::get('/partido', 'MatchesController@show');
 Route::get('/partido/editar', 'MatchesController@edit');
 Route::post('/partido/editar', 'MatchesController@update');

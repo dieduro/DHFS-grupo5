@@ -4,29 +4,34 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use \App\Match;
+use \App\Sport;
 
 class MatchesController extends Controller
 {
   public function index()
   {
-    $partidos = Match::all();
+    $matches = Match::all();
     $param = [
-      "partidos" => $partidos,
+      "matches" => $matches
     ];
     return view('matches.index', $param);
   }
 
   public function create()
   {
-    return view('matches.create');
+    $sports = Sport::orderBy('name', 'asc')->get();
+    $param = [
+      "sports" => $sports
+    ];
+    return view('matches.create', $param);
   }
 
   public function store(Request $request)
   {
     $rules = [
       'sport' => 'required',
-      'when' => 'required',
-      'where' => 'required',
+      'date' => 'required',
+      'place' => 'required',
       'nplayer' => 'required',
       'description' => 'required'
     ];
@@ -38,8 +43,8 @@ class MatchesController extends Controller
     $request->validate($rules, $messages);
     $match = Match::create([
       'sport' => $request->input('sport'),
-      'when' => $request->input('when'),
-      'where' => $request->input('where'),
+      'date' => $request->input('date'),
+      'place' => $request->input('place'),
       'nplayer' => $request->input('nplayer'),
       'description' => $request->input('description')
     ]);
@@ -69,7 +74,7 @@ class MatchesController extends Controller
     $match = Match::find($id);
     foreach ($request->except('_token') as $key => $value) {
       $match->$key = $value;
-  }
+    }
     $match->save();
     $param = [
       'match' => $match,
@@ -81,6 +86,6 @@ class MatchesController extends Controller
   {
     $match = Match::find($id);
     $match->delete();
-    return redirect('/partido');
+    return redirect('/partidos');
   }
 }
