@@ -13,7 +13,7 @@ class MatchesController extends Controller
     $param = [
       "partidos" => $partidos,
     ];
-    return view('partidos.index', $param);
+    return view('matches.index', $param);
   }
 
   public function create()

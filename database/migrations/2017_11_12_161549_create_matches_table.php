@@ -20,6 +20,7 @@ class CreateMatchesTable extends Migration
       $table->string('where');
       $table->integer('nplayers');
       $table->text('description');
+      $table->integer('user_id');
       $table->timestamps();
     });
   }

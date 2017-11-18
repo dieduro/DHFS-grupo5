@@ -34,7 +34,6 @@ Route::get('/inicio', 'HomeController@index')->name('home');
 
 // RUTAS PROPIAS
 Route::get('/faq', 'AlgoController@show');
-Route::get('/perfil/{id}', 'UsersController@show');
 
 // RUTAS PARTIDOS
 Route::get('/partidos', 'MatchesController@index');
@@ -53,3 +52,5 @@ Route::get('/deporte', 'SportsController@show');
 Route::get('/deporte/editar', 'SportsController@edit');
 Route::post('/deporte/editar', 'SportsController@update');
 Route::get('/deporte/eliminar', 'SportsController@destroy');
+
+Route::get('/{username}', 'UsersController@show');
