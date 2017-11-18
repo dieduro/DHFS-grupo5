@@ -60,6 +60,9 @@
         @endif
       </div>
       <div class="">
+        <input type="hidden" name="user_id" value="{{ Auth::$user->id }}">
+      </div>
+      <div class="">
         <button class="btn-solid-lg" type="submit" name="crear" id="Crear">Crear</button>
       </div>
       <div class="">
