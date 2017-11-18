@@ -9,7 +9,7 @@
     <form class="" action="/partidos/nuevo" method="post">
       {{ csrf_field() }}
       <div class="{{ $errors->has('sport') ? ' has-error' : '' }}">
-        <label for="">Descripción del Partido</label>
+        <label for="sport">Deporte</label>
         <select class="select" name="sport" placeholder="Deporte" autofocus >
           <option value="">Deporte</option>
           @foreach ($sports as $sport)
@@ -60,10 +60,7 @@
         @endif
       </div>
       <div class="">
-        <input type="hidden" name="user_id" value="{{ Auth::user()->first_name }}">
-      </div>
-      <div class="">
-        <button class="btn-solid-lg" type="submit" name=crear" id="Crear">Crear</butto>
+        <button class="btn-solid-lg" type="submit" name="crear" id="Crear">Crear</butto>
       </div>
       <div class="">
         <a class="btn-solid" href="/partidos" role="button">Cancelar</a>

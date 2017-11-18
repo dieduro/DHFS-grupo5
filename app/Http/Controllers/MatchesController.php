@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use \App\Match;
 use \App\Sport;
+use Auth;
 
 class MatchesController extends Controller
 {
@@ -30,9 +31,9 @@ class MatchesController extends Controller
   {
     $rules = [
       'sport' => 'required',
+      'nplayers' => 'required',
       'date' => 'required',
       'place' => 'required',
-      'nplayer' => 'required',
       'description' => 'required'
     ];
 
@@ -45,8 +46,9 @@ class MatchesController extends Controller
       'sport' => $request->input('sport'),
       'date' => $request->input('date'),
       'place' => $request->input('place'),
-      'nplayer' => $request->input('nplayer'),
-      'description' => $request->input('description')
+      'nplayers' => $request->input('nplayers'),
+      'description' => $request->input('description'),
+      'user_id' => Auth::user()->id
     ]);
     return redirect('/partidos');
   }
