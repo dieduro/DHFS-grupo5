@@ -55,6 +55,8 @@ class RegisterController extends Controller
     ];
 
     $messages = [
+      'max' => 'El campo debe tener menos de 255 caracteres',
+      'min' => 'El campo debe tener al menos 6 caracteres',
       'required' => 'El campo es obligatorio',
       'email' => 'Asegurate de poner un mail válido',
       'unique' => 'Ya existe el usuario',

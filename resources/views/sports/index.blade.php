@@ -11,7 +11,7 @@
     </ul>
     <ul>
       @foreach ($sports as $sport)
-        <a href="#"><li>{{ $sport->name }}</li></a> 
+        <a href="#"><li>{{ $sport->name }}</li></a>
       @endforeach
     </ul>
   </div>

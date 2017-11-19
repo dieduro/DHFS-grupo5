@@ -14,7 +14,7 @@
       <form class="form" method="POST" action="{{ route('register') }}" enctype="multipart/form-data" id="register">
         {{ csrf_field() }}
         <div class="{{ $errors->has('username') ? ' has-error' : '' }}">
-          <input id="username" type="text" placeholder="Nombre de Usuario" name="username" value="{{ old('username') }}"   autofocus>
+          <input id="username" type="text" placeholder="Nombre de Usuario" name="username" value="{{ old('username') }}"  autofocus>
           @if ($errors->has('username'))
             <span class="errores">
               <strong>{{ $errors->first('username') }}</strong>

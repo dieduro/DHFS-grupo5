@@ -15,7 +15,7 @@
           <a class="btn-solid" href="{{ route('login') }}" role="button">INICIÁ SESIÓN</a>
         @else
           <h2>¡Ya estás listo para empezar a jugar!</h2>
-          <a class="btn-solid" href="/partido/nuevo" role="button">Creá un partido!</a>
+          <a class="btn-solid" href="/partidos/nuevo" role="button">Creá un partido!</a>
         @endif
       </div>
     </div>

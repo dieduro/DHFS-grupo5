@@ -5,59 +5,66 @@
 @endsection
 
 @section('content')
-
-
-
   <div class="container">
-    <form class="" action="/partido/nuevo" method="post">
+    <form class="" action="/partidos/nuevo" method="post">
       {{ csrf_field() }}
-      <div class="">
-        <label for="sport">¿Qué deporte van a jugar?</label>
-        <select class="select" name="sport" placeholder="Deporte">
-          <option value="xDeporte">Deporte</option>
-          <option value="baseball">Baseball</option>
-          <option value="basket">Basket</option>
-          <option value="floorball">Floorball</option>
-          <option value="futbol">Futbol</option>
-          <option value="futbolAme">Futbol Americano</option>
-          <option value="handball">Handball</option>
-          <option value="hockey">Hockey</option>
-          <option value="padel">Padel</option>
-          <option value="paintball">Paintball</option>
-          <option value="polo">Polo</option>
-          <option value="rugby">Rugby</option>
-          <option value="softball">Softball</option>
-          <option value="squash">Squash</option>
-          <option value="tenis">Tenis</option>
-          <option value="voley">Voley</option>
-          <option value="waterpolo">Waterpolo</option>
+      <div class="{{ $errors->has('sport') ? ' has-error' : '' }}">
+        <label for="sport">Deporte</label>
+        <select class="select" name="sport_id" placeholder="Deporte" autofocus >
+          <option value="">Deporte</option>
+          @foreach ($sports as $sport)
+            <option value="{{ $sport->id }} ">{{ $sport->name }}</option>
+          @endforeach
         </select>
+        @if ($errors->has('sport'))
+          <span class="sport">
+            <strong>{{ $errors->first('sport') }}</strong>
+          </span>
+        @endif
       </div>
-      <div class="">
-        <label for="">¿Cuántos jugadores necesitás?</label>
+      <div class="{{ $errors->has('nplayers') ? ' has-error' : '' }}">
+        <label for="nplayers">¿Cuántos jugadores necesitás?</label>
         <input type="number" name="nplayers" value="" min=1 max=30>
+        @if ($errors->has('nplayers'))
+          <span class="nplayers">
+            <strong>{{ $errors->first('nplayers') }}</strong>
+          </span>
+        @endif
       </div>
-      <div class="">
-        <label for="">¿Cuándo se juega?</label>
-        <input type="date" name="when" value="datetime">
+      <div class="{{ $errors->has('date') ? ' has-error' : '' }}">
+        <label for="date">¿Cuándo se juega?</label>
+        <input type="datetime-local" name="date" value="datetime">
+        @if ($errors->has('date'))
+          <span class="date">
+            <strong>{{ $errors->first('date') }}</strong>
+          </span>
+        @endif
       </div>
-      <div class="">
+      <div class="{{ $errors->has('place') ? ' has-error' : '' }}">
         <label for="">¿Dónde se juega?</label>
-        <input type="text" name="where" value="">
+        <input type="text" name="place" value="">
         {{--<input type="place" name="place" value=""> <!-- api google -->--}}
+        @if ($errors->has('place'))
+          <span class="place">
+            <strong>{{ $errors->first('place') }}</strong>
+          </span>
+        @endif
       </div>
-      <div class="">
+      <div class="{{ $errors->has('description') ? ' has-error' : '' }}">
         <label for="">Descripción del Partido</label>
-
         <textarea name="description" rows="8" cols="80"></textarea>
+        @if ($errors->has('description'))
+          <span class="description">
+            <strong>{{ $errors->first('description') }}</strong>
+          </span>
+        @endif
       </div>
       <div class="">
-        <button type="submit" name="button">Crear</button>
-
+        <button class="btn-solid-lg" type="submit" name="crear" id="Crear">Crear</butto>
       </div>
-
-
-
+      <div class="">
+        <a class="btn-solid" href="/partidos" role="button">Cancelar</a>
+      </div>
     </form>
   </div>
 @endsection
