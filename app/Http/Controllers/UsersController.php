@@ -46,6 +46,7 @@ class UsersController extends Controller
      */
     public function show($username)
     {
+      
       $user = User::where('username', "=", $username)->get();
       $param = [
         'user' => $user

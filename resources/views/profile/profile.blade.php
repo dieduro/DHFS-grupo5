@@ -6,6 +6,7 @@
 
 @section('content')
   <div class="container caja">
+    
     <div class="section_tit">
     <h3>Actualizar Datos de Perfil</h3>
     </div>

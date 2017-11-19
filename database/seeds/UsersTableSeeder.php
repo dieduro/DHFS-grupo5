@@ -17,7 +17,7 @@ class UsersTableSeeder extends Seeder
           'last_name' => "admin",
         	'email' => 'admin@gmail.com',
         	'password' => bcrypt(123456789),
-        	'photo' => 'users_img/default.jpg',
+        	'photo' => 'images/users_img/userDefault.png',
         	'remember_token' => str_random(10),
         	'created_at' => Carbon::now(),
         	'updated_at' => Carbon::now()
