@@ -1,6 +1,6 @@
 /* http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
+v2.0 | 20110126
+License: none (public domain)
 */
 
 html, body, div, span, applet, object, iframe,
@@ -54,14 +54,14 @@ body {
 	display: grid;
 }
 .container {
- 	padding-right: 15px;
+	padding-right: 15px;
 	padding-left: 15px;
 	margin-right: auto;
-  margin-left: auto;
+	margin-left: auto;
 	position: relative;
 }
 a {
-  color: #003366;
+	color: #003366;
 }
 a:hover {
 	text-decoration: none;
@@ -99,9 +99,9 @@ h6 {
 }
 hr {
 	margin-top: 20px;
-  margin-bottom: 20px;
-  border: 0;
-  border-top: 1px solid #969696;
+	margin-bottom: 20px;
+	border: 0;
+	border-top: 1px solid #969696;
 }
 .section_tit {
 	margin-top: 50px;
@@ -182,7 +182,7 @@ h1 {
 
 /* BOTONES  ------------------------------- */
 .btn-solid {
-  margin: 10px auto;
+	margin: 10px auto;
 	max-width: 250px;
 	padding: 6px;
 	background-color: #003366;
@@ -194,7 +194,7 @@ h1 {
 	display: block;
 }
 .btn-solid:hover {
-  background-color: #01264a;
+	background-color: #01264a;
 	color: white;
 }
 .btn-solid-sm {
@@ -205,16 +205,16 @@ h1 {
 	text-transform: uppercase;
 	text-align: center;
 	font-size: 0.8em;
- 	margin-top: 0;
-  margin-left: auto;
-  margin-right: auto;
+	margin-top: 0;
+	margin-left: auto;
+	margin-right: auto;
 }
 .btn-solid-sm:hover {
-  background-color: #01264a;
+	background-color: #01264a;
 	color: white;
 }
 .btn-solid-lg {
-  	width: 250px;
+	width: 250px;
 	padding: 6px;
 	background-color: #003366;
 	color: white;
@@ -222,19 +222,23 @@ h1 {
 	text-align: center;
 	font-size: 0.8em;
 	margin: 0 auto;
-  display: block;
+	display: block;
 	letter-spacing: 0.05em;
 }
 .btn-solid-lg:hover {
-  	background-color: #01264a;
-		color: white;
+	background-color: #01264a;
+	color: white;
 }
-
+.btn_upload {
+	max-width: 100px;
+	display: block;
+	border-radius: 10%;
+}
 /* MEGA-IMG ------------------------------- */
 .mega {
 	display: flex;
 	align-items: center;
-	background-image: url('../images/mega.jpg');
+	background-image: url('../storage/images/mega.jpg');
 	background-size: cover;
 	color: #ffffff;
 	height: 60vh;
@@ -393,6 +397,44 @@ h1 {
 .form h6 {
 	display: inline;
 }
+
+.file_div {
+	margin: 5px 10px;
+	padding: 0 5px;
+
+	overflow: hidden;
+	box-sizing: border-box;
+}
+
+.file_div #profilePic_label {
+	position: relative;
+	top: 5px;
+	font-size: 0.8em;
+}
+
+label {
+ cursor: pointer;
+ /* Style as you please, it will become the visible UI component. */
+}
+
+#upload-photo {
+ opacity: 0;
+ position: absolute;
+ z-index: -1;
+
+
+
+}
+
+.profile_icon {
+	width: 20%;
+	height: auto;
+	border-radius: 50%;
+	display: block;
+	margin: 15px auto 0;
+
+ }
+
 input[type="text"], input[type="email"], input[type="password"] {
 	border: 1px solid #003366;
 	margin: 5px auto;
@@ -408,9 +450,14 @@ input[type="checkbox"] {
 input[type="file"] {
 	display: block;
 	width: 250px;
-	margin: 0 auto;
+	margin: 10px auto;
 	font-size: 0.8em;
 }
+
+
+
+
+
 .con_fb {
 	max-width: 250px;
 	margin: 0 auto;
@@ -474,7 +521,7 @@ input[type="file"] {
 .faq_card {
 	width: 31.73%;
 	display: block;
-  margin: 1% 0.8% 1% 0.8%;
+	margin: 1% 0.8% 1% 0.8%;
 	padding: 15px;
 	text-align: center;
 	line-height: 1.4em;
@@ -485,14 +532,14 @@ input[type="file"] {
 
 .footer_outer {
 	max-width: 1140px;
-  width: 100%;
+	width: 100%;
 	margin: 0 auto;
 	padding-top: 20px;
-  overflow: hidden;
+	overflow: hidden;
 }
 .footer_outer h3 {
-  	font-size: 0.6em;
-  	margin-top: 0px;
+	font-size: 0.6em;
+	margin-top: 0px;
 }
 .footer_inner {
 	display: flex;
@@ -506,7 +553,7 @@ footer .logo {
 	box-sizing: content-box;
 }
 footer .logo img {
- 	width: 110px;
+	width: 110px;
 	overflow: hidden;
 }
 footer .cia {
@@ -517,7 +564,7 @@ footer .comunidades {
 	overflow: hidden;
 }
 footer .enlaces {
-  float: left;
+	float: left;
 	overflow: hidden;
 }
 .foot_links {
@@ -540,16 +587,16 @@ footer .redes ul {
 	height: 30px;
 }
 footer .redes li {
-  display: inline;
-  margin-right: 20px;
-  float: left;
+	display: inline;
+	margin-right: 20px;
+	float: left;
 	font-size: 1.5em;
 }
 footer .redes li:last-child {
 	margin-right: 0;
 }
 footer .legales {
- 	clear: both;
+	clear: both;
 	position:relative;
 	top: 15px;
 	box-sizing: border-box;
@@ -558,8 +605,8 @@ footer .legales {
 	padding: 0 15px;
 }
 footer .legales li {
-  float: left;
-  margin-right: 10px;
+	float: left;
+	margin-right: 10px;
 	font-size: 0.6em;
 }
 footer .copyright {
@@ -570,7 +617,7 @@ footer .copyright {
 	display: block;
 	overflow: hidden;
 	text-align: center;
-  margin: 0 auto;
+	margin: 0 auto;
 	font-size: 0.5em;
 }
 
@@ -740,19 +787,23 @@ input[type="checkbox"] {
 		padding-bottom: 25px;
 	}
 	.login_img {
-		background-image: url("../images/rugby_field.jpg");
+		background-image: url("../storage/images/rugby_field.jpg");
 		background-size: cover;
 		padding-top: 50px;
 		padding-bottom: 50px;
 	}
 	.register_img {
-		background-image: url("../images/tennis_field.jpg");
+		background-image: url("../storage/images/tennis_field.jpg");
 		background-size: cover;
 		padding-top: 50px;
 		padding-bottom: 50px;
 	}
+
+	.profile_icon {
+		width: 45%;
+	}
 	.faq_img {
-		background-image: url("../images/faq_img.jpg");
+		background-image: url("../storage/images/faq_img.jpg");
 		background-size: cover;
 		padding-top: 50px;
 		padding-bottom: 50px;
@@ -784,17 +835,17 @@ input[type="checkbox"] {
 }
 @media (min-width: 860px) {
 	.evento {
-	display: table-cell;
-	padding-right: 10px;
-	width: 20%;
+		display: table-cell;
+		padding-right: 10px;
+		width: 20%;
 	}
 	.evento:last-child {
-	padding-right: 0;
-	width: 19%;
+		padding-right: 0;
+		width: 19%;
 
 	}
-@media (min-width: 1200px) {
-  .container {
-    width: 1170px;
-  }
-}
+	@media (min-width: 1200px) {
+		.container {
+			width: 1170px;
+		}
+	}

@@ -11,11 +11,15 @@ class MatchesController extends Controller
 {
   public function index()
   {
+    if(Auth::check()){
     $matches = Match::where('user_id', "=", Auth::user()->id)->get();
     $param = [
       "matches" => $matches
     ];
     return view('matches.index', $param);
+  }else{
+    return redirect('/ingresar');
+  }
   }
 
   public function create()

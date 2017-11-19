@@ -40,7 +40,18 @@
         <div class="">
           <input id="password-confirm" type="password" placeholder="Repetir Contraseña" name="password_confirmation" >
         </div>
-        <div class="legals {{ $errors->has('legals') ? ' has-error' : '' }}">
+        <div class="file_div">
+        <label for="upload-photo"  ><img class="profile_icon" src=" {{asset('storage\images\users_img\userDefault.png')}}" alt="Subí tu foto de perfil"><span class="btn-solid-sm btn_upload">SUBI TU FOTO</span></label>
+      <input type="file" name="photo" id="upload-photo" />
+      </div>
+        {{--<div class="">
+          <div class="file_div">
+            <label for="photo" id="profilePic_label">Foto de Perfil</label>
+              <input type="file" name="photo" value="">
+          </div> --}}
+
+
+                <div class="legals {{ $errors->has('legals') ? ' has-error' : '' }}">
           <input type="checkbox" name="legals" value="1" >
           <h6 style="color:#555555">Acepto los Términos y Condiciones del servicio.</h6>
           @if ($errors->has('legals'))
@@ -49,14 +60,12 @@
             </span>
           @endif
         </div>
-        <div class="legals">
-          <hr>
-          <h6>Si hacés click en "Registrarme" aceptarás los <a href="/ttos">Términos y Condiciones</a> y <a href="/privacyPolicy">Política de Privacidad</a> de TEAMup!</h6>
-        </div>
+
         <button class="btn-solid-lg" type="submit" name="button" id="register">REGISTRARME</button>
       </form>
       <div class="linkeo">
-      <h6>¿Ya tienes cuenta? <a href="{{ route('login') }}" >Inicia Sesión</a></h6>
+      <h6>¿Ya tienes cuenta? <a href="{{ route('login') }}" >Iniciá Sesión</a></h6>
+      </div>
     </div>
   </div>
 </div>
