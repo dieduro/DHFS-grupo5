@@ -40,9 +40,9 @@ Route::get('/partidos', 'MatchesController@index');
 Route::get('/partidos/nuevo', 'MatchesController@create');
 Route::post('/partidos/nuevo', 'MatchesController@store');
 Route::get('/partido', 'MatchesController@show');
-Route::get('/partido/editar', 'MatchesController@edit');
-Route::post('/partido/editar', 'MatchesController@update');
-Route::get('/partido/eliminar', 'MatchesController@destroy');
+Route::get('/partido/editar/{id}', 'MatchesController@edit');
+Route::post('/partido/editar/{id}', 'MatchesController@update');
+Route::get('/partido/eliminar/{id}', 'MatchesController@destroy');
 
 // RUTAS DEPORTES
 Route::get('/deportes', 'SportsController@index');

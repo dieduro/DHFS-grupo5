@@ -46,8 +46,9 @@
           <td><a href="#">{{ $match->nplayers }}</a></td>
           <td><a href="#">{{ $match->sport->players }}</a></td>
           <td><a href="#">{{ $match->description }}</a></td>
-          <td><a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
-          <td><a href="#"><i class="fa fa-times" aria-hidden="true"></i></a></td>
+          <td> <a href="/partido/editar/{{$match->id}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
+          <td><a href="/partido/eliminar/{{$match->id}}"><i class="fa fa-times" aria-hidden="true"></i></a></td>
+
         </tr>
       @endforeach
     </table>

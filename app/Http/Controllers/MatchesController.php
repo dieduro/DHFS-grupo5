@@ -53,15 +53,6 @@ class MatchesController extends Controller
     return redirect('/partidos');
   }
 
-  // public function show($id)
-  // {
-  //   $match = Match::find($id);
-  //   $param = [
-  //     'match' => $match,
-  //   ];
-  //   return view('matches.match', $param);
-  // }
-
   public function edit($id)
   {
     $match = Match::find($id);
