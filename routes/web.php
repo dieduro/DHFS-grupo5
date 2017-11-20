@@ -33,7 +33,7 @@ Auth::routes();
 Route::get('/inicio', 'HomeController@index')->name('home');
 
 // RUTAS PROPIAS
-Route::get('/faq', 'AlgoController@show');
+Route::get('/faq', 'FaqController@index');
 
 // RUTAS PARTIDOS
 Route::get('/partidos', 'MatchesController@index');

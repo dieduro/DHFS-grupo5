@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('last_name')->nullable();
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('photo')->default('images\users_img\userDefault.png');
+            $table->string('photo')->default('public\images\default.jpg');
             $table->rememberToken()->nullable();
             $table->timestamps();
         });
