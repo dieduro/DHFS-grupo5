@@ -2,10 +2,15 @@
 
 namespace App\Http\Controllers\Auth;
 
+
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Support\Collection as Collection;
+use Illuminate\Http\UploadedFile as UploadedFile;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -47,6 +52,7 @@ class RegisterController extends Controller
   */
   protected function validator(array $data)
   {
+
     $rules = [
       'username' => 'required|string|max:255',
       'email' => 'required|string|email|max:255|unique:users',
@@ -66,6 +72,24 @@ class RegisterController extends Controller
     return Validator::make($data, $rules, $messages);
   }
 
+  public function register(Request $request)
+  {
+      $this->validator($request->all())->validate();
+
+      event(new Registered($user = $this->create($request->all())));
+
+      $extensionImagen = $request->file('photo')->getClientOriginalExtension();
+
+      $user->photo = $request->file('photo')->storeAs('storage/images/users_img', $user->email . "." . $extensionImagen, 'public');
+      $user->save();
+
+      $this->guard()->login($user);
+
+      return $this->registered($request, $user)
+                      ?: redirect($this->redirectPath());
+  }
+
+
   /**
   * Create a new user instance after a valid registration.
   *
@@ -78,6 +102,7 @@ class RegisterController extends Controller
       'username' => $data['username'],
       'email' => $data['email'],
       'password' => bcrypt($data['password']),
+      'photo' => null
     ]);
   }
 }
