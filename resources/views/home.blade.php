@@ -27,26 +27,23 @@
     <div class="faq_index">
       <div class="faq_card">
         <i class="fa fa-users" aria-hidden="true"></i>
-        <p class="faq_title">Get Paired</p>
+        <p class="faq_title">Buscá partidos</p>
         <p>
-          Tell us when and what you want to practice and we’ll pair you with an optimal peer.
-          We provide interview questions (and answers) you will both use to interview each other.
+          ¿Tenés ganas de sumarte a un partido ya armado? TeamUp te permite unirte a partidos del deporte que quieras, interactuar con el resto de los jugadores y encontrarse para hacer deporte.
         </p>
       </div>
       <div class="faq_card">
         <i class="fa fa-users" aria-hidden="true"></i>
-        <p class="faq_title">Get Paired</p>
+        <p class="faq_title">Creá partidos</p>
         <p >
-          Tell us when and what you want to practice and we’ll pair you with an optimal peer.
-          We provide interview questions (and answers) you will both use to interview each other.
+          Convertite en el organizador del partido y reclutá jugadores. Podés iniciar la convocatoria con los jugadores que ya tengas y habilitar los puestos que te faltan.
         </p>
       </div>
       <div class="faq_card">
         <i class="fa fa-users" aria-hidden="true"></i>
-        <p class="faq_title">Get Paired</p>
+        <p class="faq_title">Dejate tentar</p>
         <p>
-          Tell us when and what you want to practice and we’ll pair you with an optimal peer.
-          We provide interview questions (and answers) you will both use to interview each other.
+          Hacete de una buena reputación y las convocatorias a partidos llegarán hacia tí con ofertas que no podrás rechazar!
         </p>
       </div>
     </div>
