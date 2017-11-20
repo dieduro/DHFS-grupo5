@@ -58,17 +58,17 @@
           </span>
         @endif
       </div>
-
       <div class="legals {{ $errors->has('legals') ? ' has-error' : '' }}">
         <input type="checkbox" name="legals" value="1" >
         <h6 style="color:#555555">Acepto los Términos y Condiciones del servicio.</h6>
+        <hr>
+        <h6>Si hacés click en "REGISTRATE CON FACEBOOK" aceptarás los <a href="#">Términos y Condiciones</a> y <a href="#">Política de Privacidad</a> de TEAMup! </h6>
         @if ($errors->has('legals'))
           <span class="errores">
             <strong>{{ $errors->first('legals') }}</strong>
           </span>
         @endif
       </div>
-
       <button class="btn-solid-lg" type="submit" name="button" id="register">REGISTRARME</button>
     </form>
     <div class="linkeo">
