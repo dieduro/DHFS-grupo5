@@ -20,34 +20,6 @@
       </div>
     </div>
   </section>
-  <section class="container section">
-    <div class="section_tit">
-      <h3>¿Cómo funciona?</h3>
-    </div>
-    <div class="faq_index">
-      <div class="faq_card">
-        <i class="fa fa-users" aria-hidden="true"></i>
-        <p class="faq_title">Buscá partidos</p>
-        <p>
-          ¿Tenés ganas de sumarte a un partido ya armado? TeamUp te permite unirte a partidos del deporte que quieras, interactuar con el resto de los jugadores y encontrarse para hacer deporte.
-        </p>
-      </div>
-      <div class="faq_card">
-        <i class="fa fa-users" aria-hidden="true"></i>
-        <p class="faq_title">Creá partidos</p>
-        <p >
-          Convertite en el organizador del partido y reclutá jugadores. Podés iniciar la convocatoria con los jugadores que ya tengas y habilitar los puestos que te faltan.
-        </p>
-      </div>
-      <div class="faq_card">
-        <i class="fa fa-users" aria-hidden="true"></i>
-        <p class="faq_title">Dejate tentar</p>
-        <p>
-          Hacete de una buena reputación y las convocatorias a partidos llegarán hacia tí con ofertas que no podrás rechazar!
-        </p>
-      </div>
-    </div>
-  </section>
   <!-- BUSCADOR -->
   <section class="container">
     <div class="section_tit">
@@ -75,6 +47,35 @@
         <input type="date" name="date" value="" placeholder="Fecha">
         <button class="btn-solid-sm" type="submit" name="buscar">Buscar</button>
       </form>
+    </div>
+  </section>
+
+  <section class="container section">
+    <div class="section_tit">
+      <h3>¿Cómo funciona?</h3>
+    </div>
+    <div class="faq_index">
+      <div class="faq_card">
+        <i class="fa fa-users" aria-hidden="true"></i>
+        <p class="faq_title">Buscá partidos</p>
+        <p>
+          ¿Tenés ganas de sumarte a un partido ya armado? TeamUp te permite unirte a partidos del deporte que quieras, interactuar con el resto de los jugadores y encontrarse para hacer deporte.
+        </p>
+      </div>
+      <div class="faq_card">
+        <i class="fa fa-users" aria-hidden="true"></i>
+        <p class="faq_title">Creá partidos</p>
+        <p >
+          Convertite en el organizador del partido y reclutá jugadores. Podés iniciar la convocatoria con los jugadores que ya tengas y habilitar los puestos que te faltan.
+        </p>
+      </div>
+      <div class="faq_card">
+        <i class="fa fa-users" aria-hidden="true"></i>
+        <p class="faq_title">Dejate tentar</p>
+        <p>
+          Hacete de una buena reputación y las convocatorias a partidos llegarán hacia tí con ofertas que no podrás rechazar!
+        </p>
+      </div>
     </div>
   </section>
 
