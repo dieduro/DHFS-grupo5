@@ -53,4 +53,4 @@ Route::get('/deporte/editar', 'SportsController@edit');
 Route::post('/deporte/editar', 'SportsController@update');
 Route::get('/deporte/eliminar', 'SportsController@destroy');
 
-Route::get('/{username}', 'UsersController@show');
+Route::get('/{username}', 'UsersController@show')->middleware('guest');

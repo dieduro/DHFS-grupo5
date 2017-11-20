@@ -238,7 +238,7 @@ h1 {
 .mega {
 	display: flex;
 	align-items: center;
-	background-image: url('../storage/images/mega.jpg');
+	background-image: url('../images/mega.jpg');
 	background-size: cover;
 	color: #ffffff;
 	height: 60vh;
@@ -787,13 +787,13 @@ input[type="checkbox"] {
 		padding-bottom: 25px;
 	}
 	.login_img {
-		background-image: url("../storage/images/rugby_field.jpg");
+		background-image: url("..images/rugby_field.jpg");
 		background-size: cover;
 		padding-top: 50px;
 		padding-bottom: 50px;
 	}
 	.register_img {
-		background-image: url("../storage/images/tennis_field.jpg");
+		background-image: url("..images/tennis_field.jpg");
 		background-size: cover;
 		padding-top: 50px;
 		padding-bottom: 50px;
@@ -803,7 +803,7 @@ input[type="checkbox"] {
 		width: 45%;
 	}
 	.faq_img {
-		background-image: url("../storage/images/faq_img.jpg");
+		background-image: url("..images/faq_img.jpg");
 		background-size: cover;
 		padding-top: 50px;
 		padding-bottom: 50px;

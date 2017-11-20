@@ -5,10 +5,11 @@
 @endsection
 
 @section('content')
+
   <div class="container caja">
-    
+
     <div class="section_tit">
-    <h3>Actualizar Datos de Perfil</h3>
+      <h3>Actualizar Datos de Perfil</h3>
     </div>
     <form class="form" method="POST" action="{{ route('register') }}" enctype="multipart/form-data" id="register">
       {{ csrf_field() }}
@@ -54,7 +55,7 @@
       </div>
       <div class="">
         <label for="password-confirm">Actualizar foto de Perfil</label>
-          <input type="file" name="photo" value="">
+        <input type="file" name="photo" value="">
       </div>
       <button class="btn-solid-lg" type="submit" name="button" id="register">Actualizar</button>
     </form>

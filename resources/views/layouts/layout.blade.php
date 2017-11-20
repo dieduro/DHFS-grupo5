@@ -12,16 +12,17 @@
   <title>@yield('title')</title>
 </head>
 <body>
+
   <!-- HEADER -->
   <header>
     <div class="head_left">
       <!-- DIV VACIO -->
     </div>
-    <h1><a href="/" class="header_link"><img class="logo" src="{{ asset('storage/images/logo-home.png') }}" alt="logo TeamUp!"></a></h1>
+    <h1><a href="/" class="header_link"><img class="logo" src="{{ asset('images/logo-home.png') }}" alt="logo TeamUp!"></a></h1>
     <nav class="menu">
       <ul>
         @if(Auth::check())
-          <li class="nav-items foto-perfil"><img src="{{ asset(Auth::user()->photo) }}" alt="RE"></li>
+          <li class="nav-items foto-perfil"><img src="{{ 'storage/'.Auth::user()->photo }}" alt="RE"></li>
           <li class="nav-items"><a href="/{{ Auth::user()->username }}" class="header_link user">{{ Auth::user()->username }}</a></li>
           <li class="nav-items">
             <a href="{{ route('logout') }}"
@@ -58,7 +59,7 @@
   </div>
   <div class="footer_inner">
     <div class="logo">
-      <img src="{{ asset('storage/images/logo-home.png') }}" alt="logo">
+      <img src="{{ asset('../images/logo-home.png') }}" alt="logo">
     </div>
     <div class="cia">
       <ul>
