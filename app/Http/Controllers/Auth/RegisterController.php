@@ -66,7 +66,7 @@ class RegisterController extends Controller
       'required' => 'El campo es obligatorio',
       'email' => 'Asegurate de poner un mail válido',
       'unique' => 'Ya existe el usuario',
-      'confirmed' => 'Las contraseñas no son iguales',
+      'confirmed' => 'Las contraseñas no son iguales'
     ];
 
     return Validator::make($data, $rules, $messages);
@@ -74,19 +74,21 @@ class RegisterController extends Controller
 
   public function register(Request $request)
   {
-      $this->validator($request->all())->validate();
+    $this->validator($request->all())->validate();
+    event(new Registered($user = $this->create($request->all())));
 
-      event(new Registered($user = $this->create($request->all())));
-
+    if ($request->has('photo')) {
       $extensionImagen = $request->file('photo')->getClientOriginalExtension();
-
       $user->photo = $request->file('photo')->storeAs('/images/users_img', $user->email . "." . $extensionImagen, 'public');
-      $user->save();
+    } else {
+      $user->photo = 'images\users_img\default.jpg';
+    }
+    $user->save();
 
-      $this->guard()->login($user);
+    $this->guard()->login($user);
 
-      return $this->registered($request, $user)
-                      ?: redirect($this->redirectPath());
+    return $this->registered($request, $user)
+    ?: redirect($this->redirectPath());
   }
 
 
