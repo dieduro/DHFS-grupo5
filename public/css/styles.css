@@ -797,24 +797,23 @@ table {
 		padding-bottom: 25px;
 	}
 	.login_img {
-		background-image: url("..images/rugby_field.jpg");
+		background-image: url("../images/login_img.jpg");
 		background-size: cover;
 		padding-top: 50px;
 		padding-bottom: 50px;
 	}
 	.register_img {
-		background-image: url("..images/tennis_field.jpg");
+		background-image: url("../images/register_img.jpg");
 		background-size: cover;
 		padding-top: 50px;
 		padding-bottom: 50px;
 	}
-
 	.profile_icon {
 		width: 45%;
 	}
 	.faq_img {
-		background-image: url("..images/faq_img.jpg");
-		background-size: cover;
+		background-image: url("../images/faq_img.jpg");
+
 		padding-top: 50px;
 		padding-bottom: 50px;
 	}
