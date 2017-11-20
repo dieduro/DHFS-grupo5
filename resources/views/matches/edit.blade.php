@@ -8,7 +8,7 @@
   <div class="container">
     <form class="" action="/partido/editar/{id}" method="post">
       {{ csrf_field() }}
-
+      {{ method_field('patch') }}
       <div class="{{ $errors->has('nplayers') ? ' has-error' : '' }}">
         <label for="nplayers">¿Cuántos jugadores necesitás?</label>
         <input type="number" name="nplayers" value="" placeholder="{{ $match->nplayers }}" min=1 max=30>

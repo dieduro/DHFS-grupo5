@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-  <div class="container caja">
+  <div class="container section">
     <a href="/partidos/nuevo">Crear Partido</a>
   </div>
   <div class="controls">
@@ -25,15 +25,15 @@
     </div>
 
   </div>
-  <div class="container grid">
+  <div class="container section">
     <table>
       <tr>
-        <th> <input type="checkbox" name="selectAll" value=""></th>
+        <th><input type="checkbox" name="selectAll" value=""></th>
         <th>Deporte</th>
-        <th>Lugar</th>
         <th>Fecha</th>
-        <th>Jugadores Inscriptos</th>
-        <th>Jugadores Totales</th>
+        <th>Lugar</th>
+        <th>Jugadores</th>
+        <th>Descripción</th>
         <th>Editar</th>
         <th>Eliminar</th>
       </tr>
@@ -43,12 +43,10 @@
           <td><a href="#">{{ $match->sport->name }}</a></td>
           <td><a href="#">{{ $match->date }}</a></td>
           <td><a href="#">{{ $match->place }}</a></td>
-          <td><a href="#">{{ $match->nplayers }}</a></td>
-          <td><a href="#">{{ $match->sport->players }}</a></td>
+          <td><a href="#">{{ $match->nplayers }} / <span style="color: red">{{ $match->sport->players }}</span> </a></td>
           <td><a href="#">{{ $match->description }}</a></td>
-          <td> <a href="/partido/editar/{{$match->id}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
+          <td><a href="/partido/editar/{{$match->id}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
           <td><a href="/partido/eliminar/{{$match->id}}"><i class="fa fa-times" aria-hidden="true"></i></a></td>
-
         </tr>
       @endforeach
     </table>

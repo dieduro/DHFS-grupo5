@@ -272,7 +272,7 @@ h1 {
 	margin: 10px 0 20px auto;
 	font-size: 1em;
 	display: flex;
-  justify-content: space-evenly;
+	justify-content: space-evenly;
 	flex-wrap: wrap;
 }
 .select {
@@ -398,7 +398,6 @@ h1 {
 .form h6 {
 	display: inline;
 }
-
 .file_div {
 	margin: 5px 10px;
 	padding: 0 5px;
@@ -406,7 +405,6 @@ h1 {
 	overflow: hidden;
 	box-sizing: border-box;
 }
-
 .file_div #profilePic_label {
 	position: relative;
 	top: 5px;
@@ -414,25 +412,21 @@ h1 {
 }
 
 label {
- cursor: pointer;
- /* Style as you please, it will become the visible UI component. */
+	cursor: pointer;
+	/* Style as you please, it will become the visible UI component. */
 }
-
 #upload-photo {
- opacity: 0;
- position: absolute;
- z-index: -1;
+	opacity: 0;
+	position: absolute;
+	z-index: -1;
 }
-
 .profile_icon {
 	width: 20%;
 	height: auto;
 	border-radius: 50%;
 	display: block;
 	margin: 15px auto 0;
-
- }
-
+}
 input[type="text"], input[type="email"], input[type="password"] {
 	border: 1px solid #003366;
 	margin: 5px auto;
@@ -441,7 +435,6 @@ input[type="text"], input[type="email"], input[type="password"] {
 	display: block;
 	font-size: 0.8em;
 }
-
 input[type="checkbox"] {
 	display: inline-block;
 }
@@ -451,7 +444,6 @@ input[type="file"] {
 	margin: 10px auto;
 	font-size: 0.8em;
 }
-
 .con_fb {
 	max-width: 250px;
 	margin: 0 auto;
@@ -477,7 +469,7 @@ input[type="file"] {
 	display: flex;
 }
 
-/* FAQ */
+/* FAQ -------------------------------------- */
 .panel {
 	overflow: hidden;
 	text-align: center;
@@ -501,9 +493,8 @@ input[type="file"] {
 	border-color: #003366;
 	background-color: white;
 }
-
 .fa {
-	font-size: 30px;
+	font-size: 20px;
 }
 .faq_title {
 	font-weight: bold;
@@ -524,13 +515,11 @@ input[type="file"] {
 	line-height: 1.4em;
 	height: 30vh;
 }
-
 .faq_card .fa {
 	color: #F78D57;
 }
 
 /* FOOTER ------------------------------- */
-
 .footer_outer {
 	max-width: 1140px;
 	width: 100%;
@@ -622,7 +611,6 @@ footer .copyright {
 	font-size: 0.5em;
 }
 
-
 /* FORMS ------------------------------- */
 .form {
 	margin: 20px auto;
@@ -698,6 +686,23 @@ input[type="checkbox"] {
 .panel-default > .panel-heading {
 	border-color: #003366;
 	background-color: white;
+}
+
+/* TABLA PARTIDOS */
+.controls {
+	display: flex;
+	margin: 0 auto;
+}
+table, th, td {
+	border-bottom: 1px solid #E5EAEF;
+	padding: 8px;
+	text-align: center;
+}
+th {
+	background-color: #E5EAEF;
+}
+table {
+	width: 100%;
 }
 
 
