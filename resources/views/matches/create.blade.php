@@ -50,12 +50,12 @@
           </span>
         @endif
       </div>
-      <div class="{{ $errors->has('description') ? ' has-error' : '' }}">
+      <div class="{{ $errors->has('comment') ? ' has-error' : '' }}">
         <label for="">Descripción del Partido</label>
-        <textarea name="description" rows="8" cols="80"></textarea>
-        @if ($errors->has('description'))
-          <span class="description">
-            <strong>{{ $errors->first('description') }}</strong>
+        <textarea name="comment" rows="8" cols="80"></textarea>
+        @if ($errors->has('comment'))
+          <span class="comment">
+            <strong>{{ $errors->first('comment') }}</strong>
           </span>
         @endif
       </div>

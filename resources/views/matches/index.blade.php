@@ -44,8 +44,8 @@
           <td><a href="#">{{ $match->date }}</a></td>
           <td><a href="#">{{ $match->place }}</a></td>
           <td><a href="#">{{ $match->nplayers }} / <span style="color: red">{{ $match->sport->players }}</span> </a></td>
-          <td><a href="#"></a></td>
           <td><a href="#">{{ $match->comment }}</a></td>
+          <td><a href="#">{{ $match->photo }}</a></td>
           <td><a href="/partido/editar/{{$match->id}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
           <td><a href="/partido/eliminar/{{$match->id}}"><i class="fa fa-times" aria-hidden="true"></i></a></td>
         </tr>
