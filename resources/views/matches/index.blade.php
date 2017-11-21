@@ -28,7 +28,7 @@
   <div class="container section">
     <table>
       <tr>
-        <th><input type="checkbox" name="selectAll" value=""></th>
+        <th><input type="checkbox" name="selectAll" id="todo"></th>
         <th>Deporte</th>
         <th>Fecha</th>
         <th>Lugar</th>
@@ -39,7 +39,7 @@
       </tr>
       @foreach ($matches as $match)
         <tr>
-          <td> <input type="checkbox" name="selectAll" value=""> </td>
+          <td> <input type="checkbox" name="selectAll" class="guanoguan"> </td>
           <td><a href="#">{{ $match->sport->name }}</a></td>
           <td><a href="#">{{ $match->date }}</a></td>
           <td><a href="#">{{ $match->place }}</a></td>
@@ -51,4 +51,8 @@
       @endforeach
     </table>
   </div>
+@endsection
+
+@section('scripts')
+  <script src="/js/main.js"></script>
 @endsection

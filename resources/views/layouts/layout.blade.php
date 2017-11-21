@@ -104,5 +104,6 @@
 <script src="css/bootstrap/js/bootstrap.min.js"></script>
 <!-- script para redireccion de registro -->
 
+@yield('scripts')
 </body>
 </html>
