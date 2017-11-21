@@ -26,7 +26,7 @@ Route::post('registro', 'Auth\RegisterController@register');
 // Password Reset Routes...
 Route::get('password/resetear', 'Auth\ForgotPasswordController@showLinkRequestForm');
 Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');
-Route::get('password/resetear}/{token}', 'Auth\ResetPasswordController@showResetForm');
+Route::get('password/resetear/{token}', 'Auth\ResetPasswordController@showResetForm');
 Route::post('password/resetear', 'Auth\ResetPasswordController@reset');
 
 Auth::routes();
@@ -34,13 +34,12 @@ Auth::routes();
 Route::get('/inicio', 'HomeController@index')->name('home');
 
 // RUTAS PROPIAS
-Route::get('/faq', 'AlgoController@show');
+Route::get('/faq', 'FaqController@index');
 
 // RUTAS PARTIDOS
 Route::get('/partidos', 'MatchesController@index');
 Route::get('/partidos/nuevo', 'MatchesController@create');
 Route::post('/partidos/nuevo', 'MatchesController@store');
-Route::get('/partido', 'MatchesController@show');
 Route::get('/partido/editar/{id}', 'MatchesController@edit');
 Route::post('/partido/editar/{id}', 'MatchesController@update');
 Route::get('/partido/eliminar/{id}', 'MatchesController@destroy');
@@ -49,9 +48,12 @@ Route::get('/partido/eliminar/{id}', 'MatchesController@destroy');
 Route::get('/deportes', 'SportsController@index');
 Route::get('/deportes/nuevo', 'SportsController@create');
 Route::post('/deportes/nuevo', 'SportsController@store');
-Route::get('/deporte', 'SportsController@show');
-Route::get('/deporte/editar', 'SportsController@edit');
-Route::post('/deporte/editar', 'SportsController@update');
+Route::get('/deporte/editar/{id}', 'SportsController@edit');
+Route::post('/deporte/editar/{id}', 'SportsController@update');
 Route::get('/deporte/eliminar', 'SportsController@destroy');
 
+<<<<<<< HEAD
 Route::get('/{username}', 'UsersController@show')->middleware('isLogged');
+=======
+Route::get('/{username}', 'UsersController@show');
+>>>>>>> 839a3d24f3404730371ede1fa58e197cecc7013e

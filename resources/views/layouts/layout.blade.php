@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/bootstrap/css/bootstrap.css') }}">
   <link rel="stylesheet" href="{{ asset('css/font-awesome/css/font-awesome.css') }} ">
   <link rel="stylesheet" href="{{ asset('css/styles.css') }}" type="text/css">
   <link rel="shortcut icon" href="{{ asset('/images/favicon.ico')}}" type="image/x-icon">
@@ -22,7 +22,7 @@
     <nav class="menu">
       <ul>
         @if(Auth::check())
-          <li class="nav-items foto-perfil"><img src="{{ 'storage/'.Auth::user()->photo }}" alt="RE"></li>
+          <li class="nav-items foto-perfil"><img src="{{ 'storage/'. Auth::user()->photo }}" alt=""></li>
           <li class="nav-items"><a href="/{{ Auth::user()->username }}" class="header_link user">{{ Auth::user()->username }}</a></li>
           <li class="nav-items">
             <a href="{{ route('logout') }}"
@@ -101,7 +101,7 @@
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="css/bootstrap/js/bootstrap.min.js"></script>
 <!-- script para redireccion de registro -->
 
 </body>
