@@ -59,6 +59,7 @@ body {
 	margin-right: auto;
 	margin-left: auto;
 	position: relative;
+	overflow: hidden;
 }
 a {
 	color: #003366;
@@ -787,13 +788,13 @@ input[type="checkbox"] {
 		padding-bottom: 25px;
 	}
 	.login_img {
-		background-image: url("..images/rugby_field.jpg");
+		background-image: url("../images/rugby_field.jpg");
 		background-size: cover;
 		padding-top: 50px;
 		padding-bottom: 50px;
 	}
 	.register_img {
-		background-image: url("..images/tennis_field.jpg");
+		background-image: url("../images/tennis_field.jpg");
 		background-size: cover;
 		padding-top: 50px;
 		padding-bottom: 50px;

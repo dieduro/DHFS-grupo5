@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'HomeController@index');
+Route::post('/', 'MatchesController@index')->middleware('guest');
 
 // Login Routes...
 Route::get('ingresar', 'Auth\LoginController@showLoginForm')->name('login');
@@ -53,4 +54,4 @@ Route::get('/deporte/editar', 'SportsController@edit');
 Route::post('/deporte/editar', 'SportsController@update');
 Route::get('/deporte/eliminar', 'SportsController@destroy');
 
-Route::get('/{username}', 'UsersController@show')->middleware('guest');
+Route::get('/{username}', 'UsersController@show')->middleware('isLogged');

@@ -27,7 +27,7 @@
     </div>
 
     <div class="buscador">
-      <form class="buscador-form" action="#">
+      <form class="buscador-form" action="home.blade.php" method="POST">
         <select class="select" name="deporte" placeholder="Deporte">
           <option value="">Deporte</option>
           @foreach ($sports as $sport)
