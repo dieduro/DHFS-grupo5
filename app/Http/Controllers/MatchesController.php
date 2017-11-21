@@ -38,7 +38,7 @@ class MatchesController extends Controller
       'nplayers' => 'required',
       'date' => 'required',
       'place' => 'required',
-      'description' => 'required'
+      'comment' => 'required'
     ];
 
     $messages = [
@@ -51,7 +51,7 @@ class MatchesController extends Controller
       'date' => $request->input('date'),
       'place' => $request->input('place'),
       'nplayers' => $request->input('nplayers'),
-      'description' => $request->input('description'),
+      'comment' => $request->input('description'),
       'user_id' => Auth::user()->id
     ]);
     return redirect('/partidos');

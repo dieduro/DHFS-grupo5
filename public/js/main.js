@@ -1,8 +1,8 @@
 window.addEventListener('load', function() {
-  var todo = document.querySelector('#todo');
+  var todo = document.querySelector('#selectAll');
 
   todo.addEventListener('click', function() {
-    var selected = document.querySelectorAll('.guanoguan');
+    var selected = document.querySelectorAll('.select');
 
     selected.forEach(function(elem) {
       if (elem.checked == true){

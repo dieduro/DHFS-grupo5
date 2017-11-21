@@ -23,28 +23,29 @@
         <option value="delete"><a href="#">Por Lugar</a></option>
       </select>
     </div>
-
   </div>
   <div class="container section">
     <table>
       <tr>
-        <th><input type="checkbox" name="selectAll" id="todo"></th>
+        <th><input type="checkbox" name="selectAll" id="selectAll"></th>
         <th>Deporte</th>
         <th>Fecha</th>
         <th>Lugar</th>
         <th>Jugadores</th>
-        <th>Descripción</th>
+        <th>Comentarios</th>
+        <th>Fotos</th>
         <th>Editar</th>
         <th>Eliminar</th>
       </tr>
       @foreach ($matches as $match)
         <tr>
-          <td> <input type="checkbox" name="selectAll" class="guanoguan"> </td>
+          <td> <input type="checkbox" name="selectAll" class="select"> </td>
           <td><a href="#">{{ $match->sport->name }}</a></td>
           <td><a href="#">{{ $match->date }}</a></td>
           <td><a href="#">{{ $match->place }}</a></td>
           <td><a href="#">{{ $match->nplayers }} / <span style="color: red">{{ $match->sport->players }}</span> </a></td>
-          <td><a href="#">{{ $match->description }}</a></td>
+          <td><a href="#"></a></td>
+          <td><a href="#">{{ $match->comment }}</a></td>
           <td><a href="/partido/editar/{{$match->id}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
           <td><a href="/partido/eliminar/{{$match->id}}"><i class="fa fa-times" aria-hidden="true"></i></a></td>
         </tr>

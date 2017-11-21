@@ -19,7 +19,8 @@ class CreateMatchesTable extends Migration
       $table->dateTime('date');
       $table->string('place');
       $table->integer('nplayers');
-      $table->text('description');
+      $table->text('comment');
+      $table->string('photo');
       $table->integer('user_id');
       $table->timestamps();
     });

@@ -17,6 +17,7 @@ class CreateSportsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->integer('players');
+            $table->string('photo');
             $table->timestamps();
         });
     }
