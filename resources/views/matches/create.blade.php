@@ -23,7 +23,7 @@
         @endif
       </div>
       <div class="{{ $errors->has('nplayers') ? ' has-error' : '' }}">
-        <label for="nplayers">¿Cuántos jugadores necesitás?</label>
+        <label for="nplayers">Cantidad de jugadores que tenés</label>
         <input type="number" name="nplayers" value="" min=1 max=30>
         @if ($errors->has('nplayers'))
           <span class="nplayers">
@@ -32,7 +32,7 @@
         @endif
       </div>
       <div class="{{ $errors->has('date') ? ' has-error' : '' }}">
-        <label for="date">¿Cuándo se juega?</label>
+        <label for="date">Fecha</label>
         <input type="datetime-local" name="date" value="datetime">
         @if ($errors->has('date'))
           <span class="date">
@@ -41,7 +41,7 @@
         @endif
       </div>
       <div class="{{ $errors->has('place') ? ' has-error' : '' }}">
-        <label for="">¿Dónde se juega?</label>
+        <label for="">Lugar</label>
         <input type="text" name="place" value="">
         {{--<input type="place" name="place" value=""> <!-- api google -->--}}
         @if ($errors->has('place'))
@@ -51,7 +51,7 @@
         @endif
       </div>
       <div class="{{ $errors->has('comment') ? ' has-error' : '' }}">
-        <label for="">Descripción del Partido</label>
+        <label for="">Comentarios</label>
         <textarea name="comment" rows="8" cols="80"></textarea>
         @if ($errors->has('comment'))
           <span class="comment">

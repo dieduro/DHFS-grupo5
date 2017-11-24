@@ -17,7 +17,7 @@ class MatchesController extends Controller
       "matches" => $matches
     ];
     return view('matches.index', $param);
-  }else{
+  } else {
     return redirect('/ingresar');
   }
   }
@@ -62,28 +62,42 @@ class MatchesController extends Controller
     return redirect('/partidos');
   }
 
+/* EDITAR DATOS DE PARTIDOS */
   public function edit($id)
   {
     $match = Match::find($id);
+    $sports = Sport::all();
     $param = [
       'match' => $match,
+      'sports' => $sports
     ];
     return view('matches.edit', $param);
   }
 
+/* ACTUALIZAR LA DB DE PARTIDOS */
   public function update(Request $request, $id)
   {
     $match = Match::find($id);
-    foreach ($request->except('_token') as $key => $value) {
-      $match->$key = $value;
-    }
+    if(Auth::check()){
+    $matches = Match::where('user_id', "=", Auth::user()->id)->get();
+
+    $match->nplayers = $request->input('nplayers');
+    $match->date = $request->input('date');
+    $match->place = $request->input('place');
+    $match->comment = $request->input('comment');
+
     $match->save();
+
     $param = [
       'match' => $match,
+      'matches' => $matches
     ];
-    return view('matches.match', $param);
+    // return view('matches.index', $param);
+      return redirect('/partidos');
   }
+}
 
+/* ELIMINAR PARTIDO  */
   public function destroy($id)
   {
     $match = Match::find($id);

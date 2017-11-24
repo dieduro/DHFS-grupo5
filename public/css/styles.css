@@ -62,7 +62,7 @@ body {
 	overflow: hidden;
 }
 a {
-	color: #003366;
+	color: #30499B;
 }
 a:hover {
 	text-decoration: none;
@@ -83,7 +83,7 @@ h4 {
 }
 h5 {
 	font-size: 1em;
-	color: #003366;
+	color: #30499B;
 	font-weight: 500;
 	margin: 5px 0;
 	text-align: left;
@@ -138,7 +138,7 @@ h1 {
 /* MENU  ------------------------------- */
 .burger-icon {
 	float: right;
-	color: #003366;
+	color: #30499B;
 }
 .menu {
 	width: 100%;
@@ -169,7 +169,7 @@ h1 {
 	color: #999999;
 }
 .user {
-	color: orange;
+	color: #f3a530;
 }
 .foto-perfil {
 	max-height: 40px;
@@ -186,7 +186,7 @@ h1 {
 	margin: 10px auto;
 	max-width: 250px;
 	padding: 6px;
-	background-color: #003366;
+	background-color: #30499B;
 	color: white;
 	text-transform: uppercase;
 	text-align: center;
@@ -201,7 +201,7 @@ h1 {
 .btn-solid-sm {
 	max-width: 70px;
 	padding: 6px;
-	background-color: #003366;
+	background-color: #30499B;
 	color: white;
 	text-transform: uppercase;
 	text-align: center;
@@ -217,7 +217,7 @@ h1 {
 .btn-solid-lg {
 	width: 250px;
 	padding: 6px;
-	background-color: #003366;
+	background-color: #30499B;
 	color: white;
 	text-transform: uppercase;
 	text-align: center;
@@ -268,7 +268,7 @@ h1 {
 
 /* BUSCADOR ------------------------------- */
 .buscador {
-	border: 1px solid #003366;
+	border: 1px solid #30499B;
 	padding: 1.5vh;
 	margin: 10px 0 20px auto;
 	font-size: 1em;
@@ -279,7 +279,7 @@ h1 {
 .select {
 	border: 0;
 	width: 65px;
-	border-right: 1px solid #003366;
+	border-right: 1px solid #30499B;
 	font-size: 0.7em;
 	color: #333333;
 	margin-right: 5px;
@@ -429,7 +429,7 @@ label {
 	margin: 15px auto 0;
 }
 input[type="text"], input[type="email"], input[type="password"] {
-	border: 1px solid #003366;
+	border: 1px solid #30499B;
 	margin: 5px auto;
 	width: 250px;
 	padding: 6px;
@@ -491,7 +491,7 @@ input[type="file"] {
 	text-align: left;
 }
 .panel-default > .panel-heading {
-	border-color: #003366;
+	border-color: #30499B;
 	background-color: white;
 }
 .fa {
@@ -620,7 +620,7 @@ footer .copyright {
 	display: inline;
 }
 input[type="text"] {
-	border: 1px solid #003366;
+	border: 1px solid #30499B;
 	margin: 5px auto;
 	width: 250px;
 	padding: 6px;
@@ -628,7 +628,7 @@ input[type="text"] {
 	font-size: 0.8em;
 }
 input[type="password"] {
-	border: 1px solid #003366;
+	border: 1px solid #30499B;
 	margin: 5px auto;
 	width: 250px;
 	padding: 6px;
@@ -685,7 +685,7 @@ input[type="checkbox"] {
 	text-align: justify;
 }
 .panel-default > .panel-heading {
-	border-color: #003366;
+	border-color: #30499B;
 	background-color: white;
 }
 
