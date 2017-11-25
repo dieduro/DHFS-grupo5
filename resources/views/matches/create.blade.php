@@ -63,7 +63,7 @@
         <button class="btn-solid-lg" type="submit" name="crear" id="Crear">Crear</butto>
       </div>
       <div class="">
-        <a class="btn-solid" href="/partidos" role="button">Cancelar</a>
+        <a class="btn-solid-lg" href="/partidos" role="button">Cancelar</a>
       </div>
     </form>
   </div>

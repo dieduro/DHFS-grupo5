@@ -50,14 +50,14 @@
         <input type="file" name="photo" value="">
       </div> --}}
 
-      <div class="{{ $errors->has('password') ? ' has-error' : '' }}">
+      {{-- <div class="{{ $errors->has('password') ? ' has-error' : '' }}">
         <input type="file" name="photo" value="">
         @if ($errors->has('photo'))
           <span class="errores">
             <strong>{{ $errors->first('photo') }}</strong>
           </span>
         @endif
-      </div>
+      </div> --}}
       <div class="legals {{ $errors->has('legals') ? ' has-error' : '' }}">
         <input type="checkbox" name="legals" value="1" >
         <h6 style="color:#555555">Acepto los Términos y Condiciones del servicio.</h6>

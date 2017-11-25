@@ -78,8 +78,8 @@ class MatchesController extends Controller
   public function update(Request $request, $id)
   {
     $match = Match::find($id);
-    if(Auth::check()){
-    $matches = Match::where('user_id', "=", Auth::user()->id)->get();
+    // if(Auth::check()){
+    // $matches = Match::where('user_id', "=", Auth::user()->id)->get();
 
     $match->nplayers = $request->input('nplayers');
     $match->date = $request->input('date');
@@ -94,7 +94,7 @@ class MatchesController extends Controller
     ];
     // return view('matches.index', $param);
       return redirect('/partidos');
-  }
+  // }
 }
 
 /* ELIMINAR PARTIDO  */

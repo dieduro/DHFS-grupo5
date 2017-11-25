@@ -140,6 +140,27 @@ h1 {
 	float: right;
 	color: #30499B;
 }
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 99;
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.show {
+	display:block;
+}
 .menu {
 	width: 100%;
 	margin-right: 15px;
@@ -517,7 +538,7 @@ input[type="file"] {
 	height: 30vh;
 }
 .faq_card .fa {
-	color: #F78D57;
+	color: #F3A530;
 }
 
 /* FOOTER ------------------------------- */

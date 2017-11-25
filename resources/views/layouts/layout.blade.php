@@ -39,11 +39,17 @@
         <li class="nav-items"><a href="{{ route('login') }}" class="header_link">Ingresar</a></li>
         <li class="nav-items"><a href="/faq" class="header_link">¿Qué es <i>TeamUp!?</i></a></li>
       @endif
-
-
     </ul>
   </nav>
-  <span class="burger-icon"><i class="fa fa-bars menu" aria-hidden="true"></i></span>
+  {{-- <span class="burger-icon"><i class="fa fa-bars menu" aria-hidden="true"></i></span> --}}
+  <div class="burger-icon dropdown">
+  <button class="dropbtn"><i class="fa fa-bars menu" aria-hidden="true"></i></button>
+  <div id="myDropdown" class="dropdown-content">
+    <li><a href="{{ route('register') }}" class="header_link">Registrate</a></li>
+    <li ><a href="{{ route('login') }}" class="header_link">Ingresar</a></li>
+    <li ><a href="/faq" class="header_link">¿Qué es <i>TeamUp!?</i></a></li>
+  </div>
+</div>
 </header>
 
 

@@ -52,5 +52,7 @@ Route::get('/deporte/editar/{id}', 'SportsController@edit');
 Route::post('/deporte/editar/{id}', 'SportsController@update');
 Route::get('/deporte/eliminar', 'SportsController@destroy');
 
-
 Route::get('/{username}', 'UsersController@show')->middleware('isLogged');
+Route::get('/{username}/editar', 'UsersController@edit');
+Route::patch('/{username}/editar', 'UsersController@update');
+Route::get('/{username})/eliminar', 'UserController@destroy');

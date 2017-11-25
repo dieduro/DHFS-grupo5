@@ -1,6 +1,10 @@
 window.addEventListener('load', function() {
 
-  
+  var btn = document.querySelector('.dropbtn');
+  btn.onclick = function() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+
 
   // var todo = document.querySelector('#selectAll');
   //
@@ -12,7 +16,7 @@ window.addEventListener('load', function() {
   //       elem.checked = false;
   //     } else {
   //       elem.checked = true;
-// }
-// });
-// });
+  // }
+  // });
+  // });
 });

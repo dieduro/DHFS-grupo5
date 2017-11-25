@@ -46,7 +46,6 @@ class UsersController extends Controller
      */
     public function show($username)
     {
-      
       $user = User::where('username', "=", $username)->get();
       $param = [
         'user' => $user
@@ -62,7 +61,11 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        //
+      $user = User::find($id);
+      $param = [
+        $user => 'user'
+      ];
+      return view('profile.edit', $param);
     }
 
     /**
@@ -74,7 +77,22 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::find($id);
+
+        $user->first_name = $request->input('first_name');
+        $user->last_name = $request->input('last_name');
+        $user->email = $request->input('email');
+        $user->contraseña = $request->input('contraseña');
+        $user->photo = $request->input('photo');
+
+        $extensionImagen = $request->file('photo')->getClientOriginalExtension();
+        $user->photo = $request->file('photo')->storeAs('/images/users_img', $user->email . "." . $extensionImagen, 'public');
+
+        $match->save();
+        $param = [
+          'user' => $user,
+        ];
+        return redirect('/profile');
     }
 
     /**
