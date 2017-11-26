@@ -95,6 +95,8 @@ class UsersController extends Controller
         return redirect('/profile');
     }
 
+
+
     /**
      * Remove the specified resource from storage.
      *
