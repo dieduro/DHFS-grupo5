@@ -11,11 +11,14 @@
   <div class="container section">
 
   <div class="matches-container">
+    
+    {{--PARTIDO #--}}
     <div class="container-match">
       <div class="top"></div>
       <div class="overlay-match">
         <h3 class="sport-heading">TENIS</h3>
-        <div class="nplayers-container countL">
+        <p class="countMobile">2/4</p>
+        <div class="nplayers-container countDesktop">
           <span class="hay-nplayers">2</span>
           <svg class="divisor "  viewBox="0 0 80 120"
           xmlns="http://www.w3.org/2000/svg">
@@ -38,18 +41,20 @@
     </div>
     <div class="bottom">
       <div class="views-likes">
-        <i class="fa fa-eye" aria-hidden="true"></i>
+        <i class="fa fa-eye"  aria-hidden="true"></i>
         <p>25</p>
         <i class="fa fa-heart" style="color:white;" aria-hidden="true"></i>
         <p>6</p>
       </div>
     </div>
   </div>
-  <div class="container-match">
+  {{--PARTIDO #--}}
+    <div class="container-match">
       <div class="top"></div>
       <div class="overlay-match">
         <h3 class="sport-heading">TENIS</h3>
-        <div class="nplayers-container countL">
+        <p class="countMobile">2/4</p>
+        <div class="nplayers-container countDesktop">
           <span class="hay-nplayers">2</span>
           <svg class="divisor "  viewBox="0 0 80 120"
           xmlns="http://www.w3.org/2000/svg">
@@ -79,11 +84,13 @@
       </div>
     </div>
   </div>
-  <div class="container-match">
+  {{--PARTIDO #--}}
+    <div class="container-match">
       <div class="top"></div>
       <div class="overlay-match">
         <h3 class="sport-heading">TENIS</h3>
-        <div class="nplayers-container countL">
+        <p class="countMobile">2/4</p>
+        <div class="nplayers-container countDesktop">
           <span class="hay-nplayers">2</span>
           <svg class="divisor "  viewBox="0 0 80 120"
           xmlns="http://www.w3.org/2000/svg">
@@ -113,74 +120,8 @@
       </div>
     </div>
   </div>
-  <div class="container-match">
-      <div class="top"></div>
-      <div class="overlay-match">
-        <h3 class="sport-heading">TENIS</h3>
-        <div class="nplayers-container countL">
-          <span class="hay-nplayers">2</span>
-          <svg class="divisor "  viewBox="0 0 80 120"
-          xmlns="http://www.w3.org/2000/svg">
-          <line x1="90" y1="10" x2="50" y2="90"
-          stroke-width="2" stroke="black"/>
-        </svg>
-        <span class="total-nplayers">4</span>
-      </div>
-      <div class= "info-match">
-        <p>Sábado 25, Nov</p>
-        <p>20:00</p>
-        <p>Club Comunicaciones</p>
-        <p>Agronomía, CABA</p>
-      </div>
-      <div class="picContainer">
-        <div class="fondo">
-          <img  class="userPic" src="{{ asset('storage/'. Auth::user()->photo) }}" alt="">
-        </div>
-      </div>
-    </div>
-    <div class="bottom">
-      <div class="views-likes">
-        <i class="fa fa-eye" aria-hidden="true"></i>
-        <p>25</p>
-        <i class="fa fa-heart" style="color:white;" aria-hidden="true"></i>
-        <p>6</p>
-      </div>
-    </div>
-  </div>
-  <div class="container-match">
-      <div class="top"></div>
-      <div class="overlay-match">
-        <h3 class="sport-heading">TENIS</h3>
-        <div class="nplayers-container countL">
-          <span class="hay-nplayers">2</span>
-          <svg class="divisor "  viewBox="0 0 80 120"
-          xmlns="http://www.w3.org/2000/svg">
-          <line x1="90" y1="10" x2="50" y2="90"
-          stroke-width="2" stroke="black"/>
-        </svg>
-        <span class="total-nplayers">4</span>
-      </div>
-      <div class= "info-match">
-        <p>Sábado 25, Nov</p>
-        <p>20:00</p>
-        <p>Club Comunicaciones</p>
-        <p>Agronomía, CABA</p>
-      </div>
-      <div class="picContainer">
-        <div class="fondo">
-          <img  class="userPic" src="{{ asset('storage/'. Auth::user()->photo) }}" alt="">
-        </div>
-      </div>
-    </div>
-    <div class="bottom">
-      <div class="views-likes">
-        <i class="fa fa-eye" aria-hidden="true"></i>
-        <p>25</p>
-        <i class="fa fa-heart" style="color:white;" aria-hidden="true"></i>
-        <p>6</p>
-      </div>
-    </div>
-  </div>
+  
+  
 
 </div>
 
