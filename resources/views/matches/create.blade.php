@@ -5,12 +5,12 @@
 @endsection
 
 @section('content')
-  <div class="container">
+  <div class="container caja">
     <form class="" action="/partidos/nuevo" method="post">
       {{ csrf_field() }}
-      <div class="{{ $errors->has('sport') ? ' has-error' : '' }}">
-        <label for="sport">Deporte</label>
-        <select class="select" name="sport_id" placeholder="Deporte" autofocus >
+      <div class="match-field {{ $errors->has('sport') ? ' has-error' : '' }}">
+        <label for="sport" class="hide">Deporte</label>
+        <select class="select" name="sport_id" id="in-sport" placeholder="Deporte" autofocus >
           <option value="">Deporte</option>
           @foreach ($sports as $sport)
             <option value="{{ $sport->id }} ">{{ $sport->name }}</option>
@@ -22,16 +22,22 @@
           </span>
         @endif
       </div>
-      <div class="{{ $errors->has('nplayers') ? ' has-error' : '' }}">
-        <label for="nplayers">Cantidad de jugadores que tenés</label>
-        <input type="number" name="nplayers" value="" min=1 max=30>
+      <div class="match-field {{ $errors->has('nplayers') ? ' has-error' : '' }}">
+        <label class="" for="nplayers">¿Cuántos jugadores tenés?</label>
+        <input type="number" class="hide" name="nplayers" id="in-nplayer" value="" min=1 max=30 placeholder="¿Cuántos jugadores tenés?">
+        <select class="select" name="nplayers_id" id="in-nplayer" placeholder="Deporte" autofocus >
+          <option value="">0</option>
+          @for ($i=1;$i<=30;$i++)
+            <option value="{{$i}}">{{ $i }}</option>
+          @endfor
+        </select>
         @if ($errors->has('nplayers'))
           <span class="nplayers">
             <strong>{{ $errors->first('nplayers') }}</strong>
           </span>
         @endif
       </div>
-      <div class="{{ $errors->has('date') ? ' has-error' : '' }}">
+      <div class="match-field {{ $errors->has('date') ? ' has-error' : '' }}">
         <label for="date">Fecha</label>
         <input type="datetime-local" name="date" value="datetime">
         @if ($errors->has('date'))
@@ -40,17 +46,17 @@
           </span>
         @endif
       </div>
-      <div class="{{ $errors->has('place') ? ' has-error' : '' }}">
-        <label for="">Lugar</label>
-        <input type="text" name="place" value="">
-        {{--<input type="place" name="place" value=""> <!-- api google -->--}}
+      <div class="match-field {{ $errors->has('place') ? ' has-error' : '' }}">
+        <label for="" class="hide">Lugar</label>
+        <input type="text" name="place" value="" placeholder="¿Dónde se juega?">
+        {{--<input type="place" name="place"  value=""> <!-- api google -->--}}
         @if ($errors->has('place'))
           <span class="place">
             <strong>{{ $errors->first('place') }}</strong>
           </span>
         @endif
       </div>
-      <div class="{{ $errors->has('comment') ? ' has-error' : '' }}">
+      <div class="match-field {{ $errors->has('comment') ? ' has-error' : '' }}">
         <label for="">Comentarios</label>
         <textarea name="comment" rows="8" cols="80"></textarea>
         @if ($errors->has('comment'))
@@ -59,10 +65,10 @@
           </span>
         @endif
       </div>
-      <div class="">
+      <div class="match-field">
         <button class="btn-solid-lg" type="submit" name="crear" id="Crear">Crear</butto>
       </div>
-      <div class="">
+      <div class="match-field">
         <a class="btn-solid-lg" href="/partidos" role="button">Cancelar</a>
       </div>
     </form>
