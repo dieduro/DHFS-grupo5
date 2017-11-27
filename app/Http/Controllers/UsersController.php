@@ -104,6 +104,8 @@ class UsersController extends Controller
         return view('profile.edit', $param);
     }
 
+
+
     /**
      * Remove the specified resource from storage.
      *

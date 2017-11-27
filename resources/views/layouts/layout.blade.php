@@ -43,7 +43,7 @@
   </nav>
   {{-- <span class="burger-icon"><i class="fa fa-bars menu" aria-hidden="true"></i></span> --}}
   <div class="burger-icon dropdown">
-  <button class="dropbtn"><i class="fa fa-bars menu" aria-hidden="true"></i></button>
+  <button class="dropbtn"><i class="fa fa-bars" aria-hidden="true"></i></button>
   <div id="myDropdown" class="dropdown-content">
     <li><a href="{{ route('register') }}" class="header_link">Registrate</a></li>
     <li ><a href="{{ route('login') }}" class="header_link">Ingresar</a></li>
