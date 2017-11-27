@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use \App\User;
+use Auth;
 
 class UsersController extends Controller
 {
@@ -78,21 +79,29 @@ class UsersController extends Controller
     public function update(Request $request, $id)
     {
         $user = User::find($id);
-
+        $user = new User();
+        $user->username = Auth::user()->username;
         $user->first_name = $request->input('first_name');
         $user->last_name = $request->input('last_name');
-        $user->email = $request->input('email');
-        $user->contraseña = $request->input('contraseña');
-        $user->photo = $request->input('photo');
+        // $user->email = Auth::user()->email;
+        if($request->has('password')) {
+          $user->password = bcrypt($request->input('password'));
+        } else {
+          $user->password = Auth::user()->password;
+        };
+        if ($request->has('photo')) {
+          $user->photo = $request->input('photo');
+          $extensionImagen = $request->file('photo')->getClientOriginalExtension();
+          $user->photo = $request->file('photo')->storeAs('/images/users_img', $user->email . "." . $extensionImagen, 'public');
+        } else {
+          $user->photo = Auth::user()->photo;
+        }
 
-        $extensionImagen = $request->file('photo')->getClientOriginalExtension();
-        $user->photo = $request->file('photo')->storeAs('/images/users_img', $user->email . "." . $extensionImagen, 'public');
-
-        $match->save();
+        $user->save();
         $param = [
           'user' => $user,
         ];
-        return redirect('/profile');
+        return view('profile.edit', $param);
     }
 
     /**

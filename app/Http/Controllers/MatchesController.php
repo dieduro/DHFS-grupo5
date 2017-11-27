@@ -49,7 +49,6 @@ class MatchesController extends Controller
 
     $sport = Sport::find($request->input('sport_id'));
 
-    $photo = $sport['photo'];
     $match = Match::create([
       'sport_id' => $request->input('sport_id'),
       'date' => $request->input('date'),
@@ -57,7 +56,7 @@ class MatchesController extends Controller
       'nplayers' => $request->input('nplayers'),
       'comment' => $request->input('comment'),
       'user_id' => Auth::user()->id,
-      'photo' => $photo
+      'photo' => $sport['photo']
     ]);
     return redirect('/partidos');
   }
