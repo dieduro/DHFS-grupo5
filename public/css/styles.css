@@ -198,7 +198,7 @@ h1 {
 	margin-right: 18px;
 }
 .nav-items a {
-	font-size: 0.4em;
+	font-size: 1em;
 	font-weight: 500;
 }
 .nav-items a:hover {
@@ -934,10 +934,7 @@ table {
 
 /* PROFILE */
 .left-nav {
-	overflow: hidden;
-	align-items: flex-start;
-	display: inline;
-	width: 20%;
+	display: none;
 }
 .flexbox {
 	display: flex;
@@ -952,7 +949,7 @@ table {
 	font-size: 0.8em;
 }
 .list-partidos {
-	width: 80%;
+	width: 100%;
 	display: inline;
 }
 .main-item {
@@ -1143,6 +1140,9 @@ table {
 	.profile_icon {
 		width: 45%;
 	}
+	.list-partidos {
+		width: 80%;
+	}
 	.faq_img {
 		background-image: url("../images/faq_img.jpg");
 		padding-top: 50px;
@@ -1181,6 +1181,12 @@ table {
 	.evento:last-child {
 		padding-right: 0;
 		width: 19%;
+	}
+	.left-nav {
+		overflow: hidden;
+		align-items: flex-start;
+		display: inline;
+		width: 20%;
 	}
 	@media (min-width: 1200px) {
 		.container {
