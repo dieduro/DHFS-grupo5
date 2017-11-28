@@ -63,10 +63,10 @@
     </ul>
   </div>
   <div class="footer_inner">
-    <div class="logo">
+    {{-- <div class="logo">
       <img src="{{ asset('../images/logo-home.png') }}" alt="logo">
-    </div>
-    <div class="cia">
+    </div> --}}
+    {{-- <div class="cia">
       <ul>
         <li><h3>Compañia</h3></li>
         <li class="foot_links"><a href="#">Acerca de</a></li>
@@ -88,7 +88,7 @@
         <li class="foot_links"><a href="#">Regalo</a></li>
       </ul>
     </div>
-  </div>
+  </div> --}}
   <div class="legales">
     <ul>
       <li> <a href="#">Legal</a></li>

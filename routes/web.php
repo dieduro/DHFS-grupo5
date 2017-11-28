@@ -55,6 +55,6 @@ Route::get('/deporte/eliminar', 'SportsController@destroy');
 
 Route::get('/{username}', 'UsersController@show')->middleware('isLogged');
 Route::get('/{username}/editar', 'UsersController@edit');
-Route::patch('/{username}/actualizar', 'UsersController@update');
+Route::patch('/{username}/editar', 'UsersController@update');
 Route::get('/{username}/eliminar', 'UserController@destroy');
 //Route::get('/{username}/misPartidos', 'UserController@misPartidos')

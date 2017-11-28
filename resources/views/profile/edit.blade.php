@@ -6,12 +6,13 @@
 
 @section('content')
 
+{{-- {{ dd( $user )}} --}}
   <div class="container caja">
 
     <div class="section_tit">
       <h3>Actualizar Datos de Perfil</h3>
     </div>
-    <form class="form" method="POST" action="/{{ Auth::user()->username }}/actualizar" enctype="multipart/form-data" >
+    <form class="form" method="POST" action="/{{ Auth::user()->username }}/editar" enctype="multipart/form-data" >
       {{ csrf_field() }}
       {{ method_field('patch') }}
       <div class="{{ $errors->has('first_name') ? ' has-error' : '' }}">

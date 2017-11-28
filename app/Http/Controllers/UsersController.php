@@ -80,38 +80,49 @@ class UsersController extends Controller
   {
 
     $rules = [
-      // 'first_name' => 'required',
+      'first_name' => 'required',
       'last_name' => 'required',
+      // 'password' => 'string|min:6|confirmed',
+      // 'email' => 'string|email|max:255|unique:users',
     ];
 
     $messages = [
-      "required" => "El campo es obligatorio",
+      'max' => 'El campo debe tener menos de 255 caracteres',
+      'min' => 'El campo debe tener al menos 6 caracteres',
+      'required' => 'El campo es obligatorio',
+      'email' => 'Asegurate de poner un mail válido',
+      'unique' => 'Ya existe el usuario',
+      'confirmed' => 'Las contraseñas no son iguales'
     ];
 
     $request->validate($rules, $messages);
 
     $user = User::where('username', "=", $username)->first();
-    if ($request->input('first_name') !== null ) {
-      $user->first_name = $request->input('first_name');
-    } else {
+
+    if ($request->input('first_name') == null ) {
       $user->first_name = Auth::user()->first_name;
-    }
-    if ($request->input('last_name') !== null ) {
-      $user->last_name = $request->input('last_name');
     } else {
-      $user->last_name = Auth::user()->last_name;
+      $user->first_name = $request->input('first_name');
     }
+
+    if ($request->input('last_name') == null ) {
+      $user->last_name = Auth::user()->last_name;
+    } else {
+      $user->last_name = $request->input('last_name');
+    }
+
     if ($request->input('email') !== null) {
       $user->email = $request->input('email');
     } else {
       $user->email = Auth::user()->email;
     };
-    $user->last_name = $request->input('username');
+
     if ($request->input('password') !== null) {
       $user->password = bcrypt($request->input('password'));
     } else {
       $user->password = Auth::user()->password;
     };
+
     if ($request->has('photo')) {
       $user->photo = $request->input('photo');
       $extensionImagen = $request->file('photo')->getClientOriginalExtension();
