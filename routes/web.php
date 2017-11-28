@@ -11,6 +11,9 @@
 |
 */
 
+Route::get('/storagelink', function () {
+    $exitCode = Artisan::call('storage:link');
+});
 
 Route::get('/', 'HomeController@index');
 Route::post('/', 'MatchesController@index')->middleware('guest');
@@ -63,9 +66,3 @@ Route::get('/{username}/editar', 'UsersController@edit');
 Route::patch('/{username}/editar', 'UsersController@update');
 Route::get('/{username}/eliminar', 'UserController@destroy');
 // Route::get('/{username}/misPartidos', 'UserController@misPartidos');
-
-
-
-Route::get('/storagelink', function () {
-    $exitCode = Artisan::call('storage:link');
-});
