@@ -27,8 +27,8 @@
     </div>
 
     <div class="buscador">
-      <form class="buscador-form" action="matches.index.blade.php" method="POST">
-      {{ csrf_field() }}
+      <form class="buscador-form" action='search' method="GET">
+      
         <select class="select" name="deporte" placeholder="Deporte">
           <option value="">Deporte</option>
           @foreach ($sports as $sport)
@@ -36,7 +36,7 @@
           @endforeach
         </select>
         <select class="select" name="zona" id="" placeholder="Zona">
-          <option value="xZona">Zona</option>
+          <option value="xZona">Cualquier Zona</option>
           <option value="capFed">Capital Federal</option>
           <option value="bsasNorte">BsAs - Zona Norte</option>
           <option value="bsasOesta">BsAs - Zona Oesta</option>
@@ -46,7 +46,7 @@
           <option value="rosario">Rosario</option>
         </select>
         <input type="date" name="date" value="" placeholder="Fecha">
-        <button class="btn-solid-sm" type="submit" name="buscar">Buscar</button>
+        <button class="btn-solid-sm" type="submit">Buscar</button>
       </form>
     </div>
   </section>

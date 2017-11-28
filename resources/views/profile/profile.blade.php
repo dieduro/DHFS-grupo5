@@ -14,7 +14,7 @@
         <li class="main-item">> PARTIDOS</li>
         <ul class="dropdown">
           <a href="/partidos/nuevo"><li>Crear Partido</li></a>
-          <a href="/partidos"><li>Mis Partidos</li></a>
+          <a href="/{{Auth::}}partidos"><li>Mis Partidos</li></a>
           <a href="#"><li>Buscar</li></a>
           <a href="#"><li>Me interesan</li></a>
         </ul>
