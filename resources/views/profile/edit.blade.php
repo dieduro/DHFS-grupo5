@@ -17,7 +17,7 @@
       {{ method_field('patch') }}
       <div class="{{ $errors->has('first_name') ? ' has-error' : '' }}">
         <label for="first_name">Nombre</label>
-        <input id="first_name" type="text" name="first_name" placeholder="{{ Auth::user()->first_name }}" value="{{ old('first_name') }}">
+        <input class="field" id="first_name" type="text" name="first_name" placeholder="{{ Auth::user()->first_name }}" value="{{ old('first_name') }}">
         @if ($errors->has('first_name'))
           <span class="errores">
             <strong>{{ $errors->first('first_name') }}</strong>
@@ -26,7 +26,7 @@
       </div>
       <div class="{{ $errors->has('last_name') ? ' has-error' : '' }}">
         <label for="last_name">Apellido</label>
-        <input id="last_name" type="text" name="last_name" placeholder="{{ Auth::user()->last_name }}" value="{{ old('last_name') }}">
+        <input class="field" id="last_name" type="text" name="last_name" placeholder="{{ Auth::user()->last_name }}" value="{{ old('last_name') }}">
         @if ($errors->has('last_name'))
           <span class="errores">
             <strong>{{ $errors->first('last_name') }}</strong>
@@ -35,7 +35,7 @@
       </div>
       <div class="{{ $errors->has('email') ? ' has-error' : '' }}">
         <label for="email">Email</label>
-        <input id="email" type="email" name="email" placeholder="{{ Auth::user()->email }}" value="{{ old('email') }}">
+        <input class="field" id="email" type="email" name="email" placeholder="{{ Auth::user()->email }}" value="{{ old('email') }}">
         @if ($errors->has('email'))
           <span class="errores">
             <strong>{{ $errors->first('email') }}</strong>
@@ -44,7 +44,7 @@
       </div>
       <div class="{{ $errors->has('password') ? ' has-error' : '' }}">
         <label for="password">Contraseña</label>
-        <input id="password" type="password" name="password" >
+        <input class="field" id="password" type="password" name="password" >
         @if ($errors->has('password'))
           <span class="errores">
             <strong>{{ $errors->first('password') }}</strong>
@@ -53,9 +53,9 @@
       </div>
       <div class="">
         <label for="password-confirm">Confirmar Contraseña</label>
-        <input id="password-confirm" type="password" name="password_confirmation" >
+        <input class="field" id="password-confirm" type="password" name="password_confirmation" >
       </div>
-      <div class="">
+      <div>
         <div class="file_div">
           <label for="upload-photo">
             {{-- <img class="profile_icon" src="{{asset('storage\images\users_img\userDefault.png')}}" alt="Subí tu foto de perfil"> --}}

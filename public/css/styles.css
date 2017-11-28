@@ -105,7 +105,7 @@ hr {
 	border-top: 1px solid #969696;
 }
 .section_tit {
-	margin-top: 50px;
+	margin-top: 20px;
 }
 
 /* HEADER ------------------------------- */
@@ -216,6 +216,19 @@ h1 {
 }
 
 /* BOTONES  ------------------------------- */
+.buscador-mobile-btn {
+	display: block;
+	margin: 10px auto;
+	width: 250px;
+	padding: 6px;
+	background-color: #30499B;
+	color: white;
+	text-transform: uppercase;
+	text-align: center;
+	font-weight: 500;
+	font-size: 0.9em;
+	display: block;
+}
 .btn-solid {
 	margin: 10px auto;
 	max-width: 250px;
@@ -233,8 +246,8 @@ h1 {
 	color: white;
 }
 .btn-solid-sm {
-	max-width: 70px;
-	padding: 6px;
+	width: 80px;
+	padding: 8px;
 	background-color: #30499B;
 	color: white;
 	text-transform: uppercase;
@@ -257,7 +270,7 @@ h1 {
 	letter-spacing: 0.05em;
 }
 .btn_upload {
-	width: 250px;
+	max-width: 250px;
 	display: block;
 	background-color: #F3A530;
 }
@@ -298,18 +311,13 @@ h1 {
 /* BUSCADOR ------------------------------- */
 .buscador {
 	border: 1px solid #30499B;
-	padding: 1.5vh;
 	margin: 10px 0 20px auto;
-	font-size: 1em;
-	display: flex;
-	justify-content: space-evenly;
-	flex-wrap: wrap;
+	display: none;
 }
-.select {
+.buscador-field {
 	border: 0;
-	width: 65px;
+	width: 25%;
 	border-right: 1px solid #30499B;
-	font-size: 0.7em;
 	color: #333333;
 	margin-right: 5px;
 }
@@ -571,15 +579,15 @@ input[type="file"] {
 }
 .faq_index {
 	display: flex;
+	justify-content: space-around;
 }
 .faq_card {
 	width: 31.73%;
 	display: block;
-	margin: 1% 0.8% 1% 0.8%;
 	padding: 15px;
 	text-align: center;
 	line-height: 1.4em;
-	height: 30vh;
+	height: 200px;
 }
 .faq_card .fa {
 	color: #F3A530;
@@ -608,9 +616,10 @@ input[type="file"] {
 	width: 100%;
 	overflow: hidden;
 	position: absolute;
-	top: 10px;
+	top: 0;
 	left: 0;
 	height: 100%;
+	padding: 8px;
 }
 .sport-heading {
 	display: inline-block;
@@ -622,7 +631,8 @@ input[type="file"] {
 .nplayers-container {
 	float: right;
 	position: absolute;
-	top: 0;
+	top: 10px;
+	right: 15px;
 }
 .divisor {
 	width: 80px;
@@ -633,7 +643,7 @@ input[type="file"] {
 	color: #d87a0e;
 	position: absolute;
 	top: 5px;
-	left: 40px;
+	left: 25px;
 }
 .total-nplayers {
 	font-size: 1em;
@@ -903,7 +913,6 @@ input[type="checkbox"] {
 
 /* TABLA PARTIDOS */
 .controls {
-	display: flex;
 	margin: 0 auto;
 }
 table, th, td {
@@ -920,7 +929,6 @@ table {
 
 /* PROFILE */
 .left-nav {
-	display: inline-block;
 	overflow: hidden;
 	width: 180px;
 }
@@ -951,9 +959,6 @@ table {
 .dropdown-left li:hover {
 	color: white;
 	background-color: #F3A530;
-}
-.controls {
-	display: inline;
 }
 
 /* MEDIA QUERIES ------------------------------- */
@@ -1001,7 +1006,7 @@ table {
 		display: none;
 	}
 	.countDesktop {
-		display:inline-block;
+		display: inline-block;
 	}
 	.picContainer {
 		top: 43%;
@@ -1009,6 +1014,15 @@ table {
 }
 
 @media (min-width:620px) {
+	.buscador-mobile-btn {
+		display: none;
+	}
+	.buscador {
+		display: flex;
+		padding: 10px;
+		font-size: 1em;
+		justify-content: center;
+	}
 	.footer_outer h3 {
 		font-size: 0.8em;
 		margin-bottom: 5px;
@@ -1056,10 +1070,12 @@ table {
 		max-width: 600px;
 		padding-bottom: 10px;
 	}
-	.buscador select {
-		font-size: initial;
-		width: 25%;
+	.section_tit {
+		margin-top: 50px;
 	}
+	/*.buscador select {
+		width: 25%;
+	}*/
 	.btn-solid {
 		max-width: 280px;
 		font-size: 1.1em;
@@ -1139,7 +1155,6 @@ table {
 	.evento:last-child {
 		padding-right: 0;
 		width: 19%;
-
 	}
 	@media (min-width: 1200px) {
 		.container {

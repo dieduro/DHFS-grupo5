@@ -34,6 +34,7 @@
         {{--PARTIDO #--}}
         @foreach ($matches as $match)
           <div class="container-match">
+            <a href="/partido_{{ $match->id }}"></a>
             <div class="top"></div>
             <div class="overlay-match">
               <h3 class="sport-heading">{{ $match->sport->name }}</h3>
@@ -69,10 +70,11 @@
               <img class="sport-img" src="{{ asset( $match->photo ) }}" alt="">
             </div>
           </div>
-        </div>
-      @endforeach
-      <!-- fin partido -->
-    </div>
-    <!-- partidos -->
+        </a>
+      </div>
+    @endforeach
+    <!-- fin partido -->
   </div>
+  <!-- partidos -->
+</div>
 @endsection

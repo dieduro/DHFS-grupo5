@@ -14,23 +14,23 @@ class SportsTableSeeder extends Seeder
     public function run()
     {
       $sports = [
-        'Paddle' => [2, 'images/sports/paddle.jpg'],
-        'Rugby' => [24, 'images/sports/rugby.jpg'],
-        'Volley' => [12, 'images/sports/volley.jpg'],
-        'Baseball' => [18, 'images/sports/baseball.jpg'],
-        'Basquet' => [ 12, 'images/sports/basquet.jpg'],
-        'Hockey Femenino' => [ 22, 'images/sports/hockey.jpg'],
-        'Hockey Masculino' => [22, 'images/sports/hockey.jpg'],
-        'Handball' => [14, 'images/sports/handball.jpg'],
-        'Futbol Masculino 11' => [22, 'images/sports/futbol.jpg'],
-        'Futbol Femenino 11' => [22, 'images/sports/futbol.jpg'],
-        'Futbol Masculino 5' => [10, 'images/sports/futbol.jpg'],
-        'Futbol Femenino 5' => [10, 'images/sports/futbol.jpg'],
-        'Softbol' => [18, 'images/sports/softball.jpg'],
-        'Pingpong' => [4, 'images/sports/pingpong.jpg'],
-        'Tenis' => [4, 'images/sports/paddle.jpg'],
-        'Squash' => [4, 'images/sports/squash.jpg'],
-        'Bádminton' => [4, 'images/sports/badminton.jpg']
+        'Paddle' => [2, 'images/paddle.jpg'],
+        'Rugby' => [24, 'images/rugby.jpg'],
+        'Volley' => [12, 'images/volley.jpg'],
+        'Baseball' => [18, 'images/baseball.jpg'],
+        'Basquet' => [ 12, 'images/basquet.jpg'],
+        'Hockey Femenino' => [ 22, 'images/hockey.jpg'],
+        'Hockey Masculino' => [22, 'images/hockey.jpg'],
+        'Handball' => [14, 'images/handball.jpg'],
+        'Futbol Masculino 11' => [22, 'images/futbol.jpg'],
+        'Futbol Femenino 11' => [22, 'images/futbol.jpg'],
+        'Futbol Masculino 5' => [10, 'images/futbol.jpg'],
+        'Futbol Femenino 5' => [10, 'images/futbol.jpg'],
+        'Softbol' => [18, 'images/softball.jpg'],
+        'Pingpong' => [4, 'images/pingpong.jpg'],
+        'Tenis' => [4, 'images/paddle.jpg'],
+        'Squash' => [4, 'images/squash.jpg'],
+        'Bádminton' => [4, 'images/badminton.jpg']
       ];
 
       foreach( $sports as $sport => $props ) {
