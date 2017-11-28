@@ -198,7 +198,7 @@ h1 {
 	margin-right: 18px;
 }
 .nav-items a {
-	font-size: 0.4em;
+	font-size: 1em;
 	font-weight: 500;
 }
 .nav-items a:hover {
@@ -934,10 +934,7 @@ table {
 
 /* PROFILE */
 .left-nav {
-	overflow: hidden;
-	align-items: flex-start;
-	display: inline;
-	width: 20%;
+	display: none;
 }
 .flexbox {
 	display: flex;
@@ -952,7 +949,7 @@ table {
 	font-size: 0.8em;
 }
 .list-partidos {
-	width: 80%;
+	width: 100%;
 	display: inline;
 }
 .main-item {
@@ -984,9 +981,6 @@ table {
 	.nav-items a {
 		font-size: 0.6em;
 	}
-	.matches-container {
-		justify-content: flex-start;
-	}
 	.container-match {
 		height: 300px;
 		width: 30%;
@@ -1001,8 +995,8 @@ table {
 	}
 	.sport-heading {
 		display: inline-block;
-		width: 200px;
-		font-size: 1.6em;
+		width: 60%;
+		font-size: 1em;
 		margin: 10px;
 		color: black;
 	}
@@ -1171,8 +1165,6 @@ table {
 		flex-basis: 32%;
 		margin:0;
 	}
-}
-@media (min-width: 860px) {
 	.evento {
 		display: table-cell;
 		padding-right: 10px;
@@ -1182,8 +1174,26 @@ table {
 		padding-right: 0;
 		width: 19%;
 	}
-	@media (min-width: 1200px) {
-		.container {
-			width: 1170px;
-		}
+	.left-nav {
+		overflow: hidden;
+		align-items: flex-start;
+		display: inline;
+		width: 20%;
 	}
+	.list-partidos {
+		width: 80%;
+	}
+}
+
+@media (min-width: 1200px) {
+	.container {
+		width: 1170px;
+	}
+	.matches-container {
+		justify-content: flex-start;
+	}
+	.sport-heading {
+		width: 60%;
+		font-size: 1.6em;
+	}
+}
