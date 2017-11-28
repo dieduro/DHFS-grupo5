@@ -26,10 +26,19 @@
       <h3>Buscador de Partidos</h3>
     </div>
 
+    <div class="buscador-mobile">
+      <button class="buscador-mobile-btn" type="submit" name="buscar">Buscar</button>
+    </div>
     <div class="buscador">
+<<<<<<< HEAD
       <form class="buscador-form" action='search' method="GET">
       
         <select class="select" name="deporte" placeholder="Deporte">
+=======
+      <form class="buscador-form" action="matches.index.blade.php" method="POST">
+        {{ csrf_field() }}
+        <select class="buscador-field" name="deporte" placeholder="Deporte">
+>>>>>>> 0cabe0820c6fed6848234cc9e27d882efbb08d39
           <option value="">Deporte</option>
           @foreach ($sports as $sport)
             <option value="{{ $sport->name }}">{{ $sport->name }}</option>
@@ -72,7 +81,7 @@
       </div>
       <div class="eventos">
         <div class="evento">
-          <img src="images/volleyU.jpg" alt="">
+          <img src="{{ asset('images/volleyU.jpg') }}" alt="">
           <div class="overlay">
             <p class="evento_deporte">Volley</p>
             <p class=evento_zona>Vicente Lopez</p>
@@ -131,35 +140,34 @@
   </section>
 
   <!-- MINI FAQ -->
-    <section class="container section">
-      <div class="section_tit">
-        <h3>¿Cómo funciona?</h3>
+  <section class="container section">
+    <div class="section_tit">
+      <h3>¿Cómo funciona?</h3>
+    </div>
+    <div class="faq_index">
+      <div class="faq_card">
+        <i class="fa fa-search" aria-hidden="true"></i>
+        <p class="faq_title">Buscá partidos</p>
+        <p>
+          ¿Tenés ganas de sumarte a un partido ya armado? Unite a los partidos del deporte que quieras, y esperá a ser aceptado. Podés interactuar con el resto de los jugadores y así encontrate para hacer jugar.
+        </p>
       </div>
-      <div class="faq_index">
-        <div class="faq_card">
-          <i class="fa fa-search" aria-hidden="true"></i>
-          <p class="faq_title">Buscá partidos</p>
-          <p>
-            ¿Tenés ganas de sumarte a un partido ya armado? Unite a los partidos del deporte que quieras, y esperá a ser aceptado. Podés interactuar con el resto de los jugadores y así encontrate para hacer jugar.
-          </p>
-        </div>
-        <div class="faq_card">
+      <div class="faq_card">
         <i class="fa fa-plus" aria-hidden="true"></i>
-          <p class="faq_title">Creá partidos</p>
-          <p >
-            Convertite en el organizador del partido y reclutá jugadores. Podés iniciar la convocatoria con la cantidad de jugadores que ya hayas conseguido y habilitar los puestos que te faltan.
-          </p>
-        </div>
-        <div class="faq_card">
-          <i class="fa fa-users" aria-hidden="true"></i>
-          <p class="faq_title">Conocé gente</p>
-          <p>
-            Hacete de una buena reputación y las convocatorias a jugar van a llegar hacia vos! Descubrí personas con tus mismos intereses deportivos y sumá amistades para jugar.
-          </p>
-        </div>
+        <p class="faq_title">Creá partidos</p>
+        <p >
+          Convertite en el organizador del partido y reclutá jugadores. Podés iniciar la convocatoria con la cantidad de jugadores que ya hayas conseguido y habilitar los puestos que te faltan.
+        </p>
       </div>
-    </section>
-
+      <div class="faq_card">
+        <i class="fa fa-users" aria-hidden="true"></i>
+        <p class="faq_title">Conocé gente</p>
+        <p>
+          Hacete de una buena reputación y las convocatorias a jugar van a llegar hacia vos! Descubrí personas con tus mismos intereses deportivos y sumá amistades para jugar.
+        </p>
+      </div>
+    </div>
+  </section>
 
   <!-- RECOMENDADOS -->
   <section class="container section">
@@ -167,60 +175,17 @@
       <h3>Partidos Recomendados</h3>
     </div>
     <ul class="lista-prox-part">
-      <li>
-        <div class="deporte">
-          <a href="#">
-            <img src="{{ asset ('images/volley.jpg') }}" alt="futbol">
-          </a>
-          <h5>Voley</h5>
-          <h6 class="data-day">Belgrano - Miercoles 5, 20hs</h6>
-        </div>
-      </li>
-      <li>
-        <div class="deporte">
-          <a href="#">
-            <img src="{{ asset ('images/futbol.jpg') }}" alt="futbol">
-          </a>
-          <h5>Futbol</h5>
-          <h6 class="data-day">El Palomar - Jueves 3, 19:30hs</h6>
-        </div>
-      </li>
-      <li>
-        <div class="deporte">
-          <a href="#">
-            <img src="{{ asset ('images/rugby.jpg') }}" alt="futbol">
-          </a>
-          <h5>Rugby</h5>
-          <h6 class="data-day">El Palomar - Jueves 18, 19:30hs</h6>
-        </div>
-      </li>
-      <li>
-        <div class="deporte">
-          <a href="">
-            <img src="{{ asset ('images/hockey.jpg') }}"  alt="futbol">
-          </a>
-          <h5>Hockey</h5>
-          <h6 class="data-day">El Palomar - Sábado 21, 19:30hs</h6>
-        </div>
-      </li>
-      <li>
-        <div class="deporte">
-          <a href="#">
-            <img src="{{ asset ('images/basket2.jpg') }}"  alt="futbol">
-          </a>
-          <h5>Basket</h5>
-          <h6 class="data-day">El Palomar - Jueves 5, 19:30hs</h6>
-        </div>
-      </li>
-      <li>
-        <div class="deporte">
-          <a href="#">
-            <img src="{{ asset ('images/squash.jpg') }}"  alt="futbol">
-          </a>
-          <h5>Squash</h5>
-          <h6 class="data-day">El Palomar - Lunes 16, 19:30hs</h6>
-        </div>
-      </li>
+      @foreach ($matches as $match)
+        <li>
+          <div class="deporte">
+            <a href="#">
+              <img src="{{ asset($match->photo) }}" alt="futbol">
+            </a>
+            <h5>{{ $match->sport->name }}</h5>
+            <h6 class="data-day">{{ $match->place }} - {{ $match->date }}</h6>
+          </div>
+        </li>
+      @endforeach
     </ul>
   </section>
   <div class="container section">

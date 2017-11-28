@@ -13,8 +13,6 @@ window.addEventListener('load', function() {
   // }
 
 
-
-
   // var todo = document.querySelector('#selectAll');
   //
   // todo.addEventListener('click', function() {
