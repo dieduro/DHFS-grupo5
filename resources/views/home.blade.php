@@ -72,7 +72,7 @@
       </div>
       <div class="eventos">
         <div class="evento">
-          <img src="images/volleyU.jpg" alt="">
+          <img src="{{ asset('images/volleyU.jpg') }}" alt="">
           <div class="overlay">
             <p class="evento_deporte">Volley</p>
             <p class=evento_zona>Vicente Lopez</p>

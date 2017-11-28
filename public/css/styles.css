@@ -142,7 +142,7 @@ h1 {
 }
 .dropbtn {
 	overflow: hidden;
-    position: relative;
+	position: relative;
 	right: 20px;
 	background-color: white
 }
@@ -151,24 +151,24 @@ h1 {
 	font-size: 30px;
 }
 .dropdown {
-    position: relative;
-    display: inline-block;
+	position: relative;
+	display: inline-block;
 }
 .dropdown-content {
-    display: none;
+	display: none;
 	position: fixed;
 	right: 0;
-    background-color: #ffffff;
+	background-color: #ffffff;
 	width:100%;
 	height: 100vh;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 99;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 99;
 }
 .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
 }
 .show {
 	display:block;
@@ -597,34 +597,29 @@ input[type="file"] {
 /* MIS PARTIDOS ------------------------------- */
 
 .matches-container {
-
-	display:flex;
+	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
 }
-
 .container-match {
-	height:100px;
+	height: 100px;
 	width: 100%;
-	margin: 10px;
+	margin-bottom: 40px;
 	position: relative;
 	overflow: hidden;
-	border:1px solid black;
+	border: 1px solid black;
 }
-
 .top {
-	height: 108px;
-	padding: 10px;
+	height: 50%;
 }
 .overlay-match {
 	width: 100%;
 	overflow: hidden;
 	position: absolute;
-	top: 0;
+	top: 10px;
 	left: 0;
 	height: 100%;
 }
-
 .sport-heading {
 	display: inline-block;
 	width: auto;
@@ -633,15 +628,13 @@ input[type="file"] {
 	margin: 4px;
 }
 .nplayers-container {
-	float:right;
-	overflow: hidden;
+	float: right;
 	position: absolute;
-	top:0;
+	top: 0;
 }
 .divisor {
 	width: 80px;
 	height: 80px;
-
 }
 .hay-nplayers {
 	font-size: 30px;
@@ -655,7 +648,7 @@ input[type="file"] {
 	color: black;
 	position: absolute;
 	bottom: 20px;
-	right: 5px;
+	right: -2px;
 }
 .picContainer {
 	overflow: hidden;
@@ -665,22 +658,20 @@ input[type="file"] {
 	margin: 0;
 	display: inline;
 	width: 54px;
-  	height: 54px;
+	height: 54px;
 }
 .userPic {
-
 	overflow: hidden;
 	float: right;
 	position: relative;
 	position: relative;
+	left: -4px;
 	top: 5px;
 	right: 5px;
 	width: 45px;
 	height: 45px;
 	border-radius: 50%;
 	z-index: 3;
-
-
 }
 .countMobile {
 	display: inline;
@@ -689,14 +680,12 @@ input[type="file"] {
 	float: right;
 	top:10px;
 	right:10px;
-    font-size: 1.4em;
+	font-size: 1.4em;
 }
 .countDesktop {
 	display:none;
-
 }
 .fondo {
-
 	height: 100%;
 	width: 100%;
 	z-index: 2;
@@ -709,15 +698,12 @@ input[type="file"] {
 }
 .info-match {
 	overflow: hidden;
-
-
 }
 .info-match p {
 	margin: 0 0 0 4px;
 	font-size: 1em;
 	font-family: 'Roboto', sans-serif;
 }
-
 .info-match p:first-child {
 	font-size: 1em;
 	font-weight: 600;
@@ -728,29 +714,31 @@ input[type="file"] {
 	color: black;
 }
 .info-match p:last-child {
-	margin-top:0;
+	margin-top: 0;
 }
-
 .bottom {
-	display:none;
+	display: none;
 	width: 100%;
-	height: 102px;;
-	background-image: url('../images/tennis.jpg');
+	height: 30%;
 	background-size: cover;
 }
-
 .views-likes {
 	position: relative;
-  top: 75px;
-  left: 10px;
-  color:white;
+	bottom: -120px;
+	left: 10px;
+	color: white;
 }
-.views-likes p{
-	display:inline;
+.views-likes p {
+	display: inline;
+	font-size: 0.9em;
+	margin-right: 8px;
 }
-
-
-
+.views-likes i {
+	font-size: 0.9em;
+}
+.sport-img {
+	width: 100%;
+}
 
 /* FOOTER ------------------------------- */
 .footer_outer {
@@ -946,39 +934,33 @@ table {
 		font-size: 0.6em;
 	}
 	.matches-container {
-		width: 70%;
+		width: 84%;
 		float:right;
 	}
-
-
 	.container-match {
-		height:210px;
-		width: 180px;
+		height: 300px;
+		width: 30%;
 	}
 	.bottom {
-		display:block;
+		display: block;
 	}
 	.sport-heading {
 		display: inline-block;
-		width: auto;
-		font-size: 1.6em;
-		margin:10px;
-
+		width: 160px;
+		font-size: 2em;
+		margin: 10px;
 	}
 	.info-match {
 		position: absolute;
-		top: 60px;
-
+		top: 180px;
 	}
 	.info-match p {
-
 		padding: 5px;
 		font-size: 1.2em;
 		font-family: 'Roboto', sans-serif;
 	}
 	.info-match p:first-child {
 		font-size: 1.1em;
-
 	}
 	.info-match p:nth-child(n+3) {
 		font-size: 0.8em;
@@ -991,10 +973,8 @@ table {
 		display:inline-block;
 	}
 	.picContainer {
-		top: 80px;
+		top: 43%;
 	}
-
-
 }
 
 @media (min-width:620px) {
@@ -1043,7 +1023,7 @@ table {
 	.mega h2 {
 		font-size: 4em;
 		max-width: 600px;
-		 padding-bottom: 10px;
+		padding-bottom: 10px;
 	}
 	.buscador select {
 		font-size: initial;
