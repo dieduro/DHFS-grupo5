@@ -266,7 +266,7 @@ h1 {
 .btn_upload {
 	max-width: 100px;
 	display: block;
-	border-radius: 10%;
+	background-color: #F3A530;
 }
 /* MEGA-IMG ------------------------------- */
 .mega {
@@ -345,7 +345,7 @@ h1 {
 }
 .flecha_der {
 	float: right;
-	
+
 }
 .ver_todos {
 	float: right;
@@ -597,7 +597,7 @@ input[type="file"] {
 /* MIS PARTIDOS ------------------------------- */
 
 .matches-container {
-	
+
 	display:flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
@@ -949,7 +949,7 @@ table {
 		width: 70%;
 		float:right;
 	}
-	
+
 
 	.container-match {
 		height:210px;
@@ -968,7 +968,7 @@ table {
 	.info-match {
 		position: absolute;
 		top: 60px;
-		
+
 	}
 	.info-match p {
 
@@ -1043,6 +1043,7 @@ table {
 	.mega h2 {
 		font-size: 4em;
 		max-width: 600px;
+		 padding-bottom: 10px;
 	}
 	.buscador select {
 		font-size: initial;
@@ -1075,7 +1076,6 @@ table {
 		color: white;
 		font-size: 1em;
 	}
-	
 	.login_img {
 		background-image: url("../images/login_img.jpg");
 		background-size: cover;
@@ -1093,11 +1093,9 @@ table {
 	}
 	.faq_img {
 		background-image: url("../images/faq_img.jpg");
-
 		padding-top: 50px;
 		padding-bottom: 50px;
 	}
-
 	footer .redes {
 		margin-bottom: 20px;
 	}

@@ -52,7 +52,6 @@
 </div>
 </header>
 
-
 @yield('content')
 
 <footer class="footer_outer">
@@ -109,8 +108,6 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="css/bootstrap/js/bootstrap.min.js"></script>
 <!-- script para redireccion de registro -->
-
 <script src="/js/main.js"></script>
-
 </body>
 </html>

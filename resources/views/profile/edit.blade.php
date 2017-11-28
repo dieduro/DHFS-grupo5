@@ -55,10 +55,17 @@
         <input id="password-confirm" type="password" name="password_confirmation" >
       </div>
       <div class="">
-        <label for="password-confirm">Actualizar foto de Perfil</label>
-        <input type="file" name="photo" value="{{ Auth::user()->photo }}">
-      </div>
-      <button class="btn-solid-lg" type="submit" name="button" id="register">Actualizar</button>
-    </form>
-  </div>
-@endsection
+        <div class="file_div">
+          <label for="upload-photo">
+            {{-- <img class="profile_icon" src="{{asset('storage\images\users_img\userDefault.png')}}" alt="Subí tu foto de perfil"> --}}
+            <span class="btn-solid-sm btn_upload">ACTUALIZÁ TU FOTO</span></label>
+          <input type="file" name="photo" id="upload-photo" />
+        </div>
+        {{-- <div class="">
+          <label for="password-confirm">Actualizar foto de Perfil</label>
+          <input type="file" name="photo" value="{{ Auth::user()->photo }}">
+        </div> --}}
+        <button class="btn-solid-lg" type="submit" name="button" id="register">Actualizar</button>
+      </form>
+    </div>
+  @endsection

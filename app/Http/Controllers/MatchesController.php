@@ -73,7 +73,7 @@ class MatchesController extends Controller
     return view('matches.edit', $param);
   }
 
-/* ACTUALIZAR LA DB DE PARTIDOS */
+/* ACTUALIZAR PARTIDOS */
   public function update(Request $request, $id)
   {
     $match = Match::find($id);
@@ -102,5 +102,14 @@ class MatchesController extends Controller
     $match = Match::find($id);
     $match->delete();
     return redirect('/partidos');
+  }
+
+  /* ORDENAR PARTIDOS POR FECHA */
+  public function orderByDate() {
+    $matches = Match::orderBy('date', 'asc')->get();
+    $param = [
+      'matches' => $matches
+    ];
+    return view('matches.index', $param);
   }
 }

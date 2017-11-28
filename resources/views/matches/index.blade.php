@@ -9,9 +9,12 @@
     <a href="/partidos/nuevo">Crear Partido</a>
   </div>
   <div class="container section">
+    <div class="controls">
+      <!-- esto que puse es sarasa -->
+        <a href="/partidos_orderByDate">Ordenar por Fecha</a>
+    </div>
 
   <div class="matches-container">
-    
     {{--PARTIDO #--}}
     <div class="container-match">
       <div class="top"></div>
@@ -120,8 +123,8 @@
       </div>
     </div>
   </div>
-  
-  
+
+
 
 </div>
 

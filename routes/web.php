@@ -38,6 +38,7 @@ Route::get('/faq', 'FaqController@index');
 
 // RUTAS PARTIDOS
 Route::get('/partidos', 'MatchesController@index');
+Route::get('/partidos_orderByDate', 'MatchesController@orderByDate');
 Route::get('/partidos/nuevo', 'MatchesController@create');
 Route::post('/partidos/nuevo', 'MatchesController@store');
 Route::get('/partido/editar/{id}', 'MatchesController@edit');
@@ -54,6 +55,6 @@ Route::get('/deporte/eliminar', 'SportsController@destroy');
 
 Route::get('/{username}', 'UsersController@show')->middleware('isLogged');
 Route::get('/{username}/editar', 'UsersController@edit');
-Route::patch('/{username}/editar', 'UsersController@update');
+Route::patch('/{username}/actualizar', 'UsersController@update');
 Route::get('/{username}/eliminar', 'UserController@destroy');
 //Route::get('/{username}/misPartidos', 'UserController@misPartidos')
