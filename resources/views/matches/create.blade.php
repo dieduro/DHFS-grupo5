@@ -11,7 +11,7 @@
 
       <div class="match-field {{ $errors->has('sport') ? ' has-error' : '' }}">
         <label for="sport" class="lbl-create hide">Deporte</label>
-        <select class="select input-create" name="sport_id"  placeholder="Deporte" autofocus >
+        <select class="select input-create" name="sport_id"  placeholder="Deporte" value="{{ old('sport_id')}}" autofocus >
           <option value="">Deporte</option>
           @foreach ($sports as $sport)
             <option value="{{ $sport->id }} ">{{ $sport->name }}</option>
@@ -27,7 +27,7 @@
       <div class="match-field {{ $errors->has('nplayers') ? ' has-error' : '' }}">
         <label class="lbl-create" for="nplayers">¿Cuántos jugadores tenés?</label>
         {{--<input type="number" class="input-create hide" name="nplayers" id="" value="" min=1 max=30 placeholder="¿Cuántos jugadores tenés?">--}}
-        <select class="input-create select" name="nplayers" id="in-nplayer" placeholder="Jugadores" autofocus >
+        <select class="input-create select" name="nplayers" id="in-nplayer" placeholder="Jugadores" value="{{ old('nplayers')}}" autofocus >
           <option value="">0</option>
           @for ($i=1;$i<=30;$i++)
             <option value="{{$i}}">{{ $i }}</option>
@@ -57,7 +57,7 @@
 
       <div class="match-field {{ $errors->has('place') ? ' has-error' : '' }}">
         <label for="" class="lbl-create hide">Lugar</label>
-        <input type="text" class="input-create" name="place" value="" placeholder="¿Dónde se juega?">
+        <input type="text" class="input-create" name="place" value="{{ old('place')}}" placeholder="¿Dónde se juega?">
         {{--<input type="place" name="place"  value=""> <!-- api google -->--}}
         @if ($errors->has('place'))
           <span class="errores">

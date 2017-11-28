@@ -22,11 +22,11 @@ class MatchesController extends Controller
     }
   }
 
-  public function show($id) {
-    $match = Match::find($id) {
-
-    }
-  }
+  // public function show($id) {
+  //   $match = Match::find($id) {
+  //
+  //   }
+  // }
 
   public function create()
   {

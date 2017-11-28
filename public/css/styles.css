@@ -983,9 +983,10 @@ table {
 	}
 	.sport-heading {
 		display: inline-block;
-		width: 160px;
-		font-size: 2em;
+		width: 200px;
+		font-size: 1.6em;
 		margin: 10px;
+		color: black;
 	}
 	.info-match {
 		position: absolute;
