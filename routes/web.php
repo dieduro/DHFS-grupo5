@@ -63,3 +63,9 @@ Route::get('/{username}/editar', 'UsersController@edit');
 Route::patch('/{username}/editar', 'UsersController@update');
 Route::get('/{username}/eliminar', 'UserController@destroy');
 // Route::get('/{username}/misPartidos', 'UserController@misPartidos');
+
+
+
+Route::get('/storagelink', function () {
+    $exitCode = Artisan::call('storage:link');
+});
