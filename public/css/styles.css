@@ -919,7 +919,7 @@ input[type="checkbox"] {
 	display: block;
 	align-items: flex-end;
 	text-align: right;
-font-size: 0.9em;
+	font-size: 0.9em;
 }
 table, th, td {
 	border-bottom: 1px solid #E5EAEF;
@@ -1094,9 +1094,11 @@ table {
 		margin-bottom: 20px;
 		color: #F3A530;
 	}
-	/*.buscador select {
-	width: 25%;
-	}*/
+	.buscador select {
+		width: 25%;
+		border: 0;
+		border-right: 1px blue solid;
+	}
 	.btn-solid {
 		max-width: 280px;
 		font-size: 1.1em;
