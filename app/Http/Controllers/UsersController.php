@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use \App\User;
+use \App\Match;
 use Auth;
 
 class UsersController extends Controller
@@ -47,9 +48,12 @@ class UsersController extends Controller
   */
   public function show($username)
   {
-    $user = User::where('username', "=", $username)->get();
+    $matches = Match::all();
+    $user = User::all();
+    // where('username', "=", $username)->get();
     $param = [
-      'user' => $user
+      'user' => $user,
+      'matches' => $matches
     ];
     return view('profile.profile', $param);
   }

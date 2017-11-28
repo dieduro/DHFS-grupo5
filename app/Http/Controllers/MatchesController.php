@@ -11,15 +11,15 @@ class MatchesController extends Controller
 {
   public function index()
   {
-    if(Auth::check()){
-    $matches = Match::where('user_id', "=", Auth::user()->id)->get();
-    $param = [
-      "matches" => $matches
-    ];
-    return view('matches.index', $param);
-  } else {
-    return redirect('/ingresar');
-  }
+    if ( Auth::check() ) {
+      $matches = Match::where('user_id', "=", Auth::user()->id)->get();
+      $param = [
+        "matches" => $matches
+      ];
+      return view('matches.index', $param);
+    } else {
+      return redirect('/ingresar');
+    }
   }
 
   public function create()
@@ -61,7 +61,7 @@ class MatchesController extends Controller
     return redirect('/partidos');
   }
 
-/* EDITAR DATOS DE PARTIDOS */
+  /* EDITAR DATOS DE PARTIDOS */
   public function edit($id)
   {
     $match = Match::find($id);
@@ -73,7 +73,7 @@ class MatchesController extends Controller
     return view('matches.edit', $param);
   }
 
-/* ACTUALIZAR PARTIDOS */
+  /* ACTUALIZAR PARTIDOS */
   public function update(Request $request, $id)
   {
     $match = Match::find($id);
@@ -92,11 +92,11 @@ class MatchesController extends Controller
       'matches' => $matches
     ];
     // return view('matches.index', $param);
-      return redirect('/partidos');
-  // }
-}
+    return redirect('/partidos');
+    // }
+  }
 
-/* ELIMINAR PARTIDO  */
+  /* ELIMINAR PARTIDO  */
   public function destroy($id)
   {
     $match = Match::find($id);

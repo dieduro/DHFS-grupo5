@@ -12,7 +12,7 @@
     </div>
 
     <div class="matches-container">
-      {{--PARTIDO #--}}
+      {{--PARTIDO--}}
       @foreach ($matches as $match)
         <div class="container-match">
           <div class="top"></div>

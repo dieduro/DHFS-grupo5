@@ -14,7 +14,7 @@
       <form class="form" method="POST" action="{{ route('register') }}" enctype="multipart/form-data" id="register">
         {{ csrf_field() }}
         <div class="{{ $errors->has('username') ? ' has-error' : '' }}">
-          <input id="username" type="text" placeholder="Nombre de Usuario" name="username" value="{{ old('username') }}"  autofocus>
+          <input class="field" id="username" type="text" placeholder="Nombre de Usuario" name="username" value="{{ old('username') }}"  autofocus>
           @if ($errors->has('username'))
             <span class="errores">
               <strong>{{ $errors->first('username') }}</strong>
@@ -22,7 +22,7 @@
           @endif
         </div>
         <div class="{{ $errors->has('email') ? ' has-error' : '' }}">
-          <input id="email" type="email" name="email" placeholder="Email" value="{{ old('email') }}">
+          <input class="field" id="email" type="email" name="email" placeholder="Email" value="{{ old('email') }}">
           @if ($errors->has('email'))
             <span class="errores">
               <strong>{{ $errors->first('email') }}</strong>
@@ -30,7 +30,7 @@
           @endif
         </div>
         <div class="{{ $errors->has('password') ? ' has-error' : '' }}">
-          <input id="password" type="password" name="password" placeholder="Contraseña" >
+          <input class="field" id="password" type="password" name="password" placeholder="Contraseña" >
           @if ($errors->has('password'))
             <span class="errores">
               <strong>{{ $errors->first('password') }}</strong>
@@ -38,7 +38,7 @@
           @endif
         </div>
         <div class="">
-          <input id="password-confirm" type="password" placeholder="Repetir Contraseña" name="password_confirmation" >
+          <input class="field" id="password-confirm" type="password" placeholder="Repetir Contraseña" name="password_confirmation" >
         </div>
         {{-- <div class="file_div">
           <label for="upload-photo"><img class="profile_icon" src="{{asset('storage\images\users_img\userDefault.png')}}" alt="Subí tu foto de perfil"><span class="btn-solid-sm btn_upload">SUBI TU FOTO</span></label>
