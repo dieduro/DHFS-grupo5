@@ -16,9 +16,9 @@ class MatchesController extends Controller
       $param = [
         "matches" => $matches
       ];
-      return view('matches.index', $param);
+      return view('profile.profile', $param);
     } else {
-      return redirect('/ingresar');
+      return redirect('/{username}');
     }
   }
 

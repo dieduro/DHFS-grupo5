@@ -606,7 +606,6 @@ input[type="file"] {
 .container-match {
 	height: 100px;
 	width: 100%;
-	margin-bottom: 40px;
 	position: relative;
 	overflow: hidden;
 	border: 1px solid lightgrey;
@@ -986,12 +985,16 @@ table {
 		font-size: 0.6em;
 	}
 	.matches-container {
-
-		float:right;
+		justify-content: flex-start;
 	}
 	.container-match {
 		height: 300px;
 		width: 30%;
+		margin-right: 5%;
+		margin-bottom: 40px;
+	}
+	.container-match:nth-child(3n) {
+		margin-right: 0;
 	}
 	.bottom {
 		display: block;

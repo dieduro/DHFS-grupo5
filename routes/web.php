@@ -33,7 +33,7 @@ Route::post('password/resetear', 'Auth\ResetPasswordController@reset');
 Auth::routes();
 
 // BUSCADOR
-Route::get('/search', 'SearchController@search'); 
+Route::get('/search', 'SearchController@search');
 
 Route::get('/inicio', 'HomeController@index')->name('home');
 
@@ -62,9 +62,4 @@ Route::get('/{username}', 'UsersController@show')->middleware('isLogged');
 Route::get('/{username}/editar', 'UsersController@edit');
 Route::patch('/{username}/editar', 'UsersController@update');
 Route::get('/{username}/eliminar', 'UserController@destroy');
-Route::get('/{username}/misPartidos', 'UserController@misPartidos');
-
-
- 
-
-
+// Route::get('/{username}/misPartidos', 'UserController@misPartidos');
