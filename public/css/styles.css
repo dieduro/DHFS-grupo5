@@ -164,6 +164,7 @@ h1 {
 	height: 100vh;
 	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 	z-index: 99;
+	list-style: none;
 }
 .dropdown-content a {
 	color: black;
