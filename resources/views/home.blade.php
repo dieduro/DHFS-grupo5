@@ -30,15 +30,9 @@
       <button class="buscador-mobile-btn" type="submit" name="buscar">Buscar</button>
     </div>
     <div class="buscador">
-<<<<<<< HEAD
       <form class="buscador-form" action='search' method="GET">
       
         <select class="select" name="deporte" placeholder="Deporte">
-=======
-      <form class="buscador-form" action="matches.index.blade.php" method="POST">
-        {{ csrf_field() }}
-        <select class="buscador-field" name="deporte" placeholder="Deporte">
->>>>>>> 0cabe0820c6fed6848234cc9e27d882efbb08d39
           <option value="">Deporte</option>
           @foreach ($sports as $sport)
             <option value="{{ $sport->name }}">{{ $sport->name }}</option>
