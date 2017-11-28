@@ -35,10 +35,10 @@
         <select class="select" name="deporte" placeholder="Deporte">
           <option value="">Deporte</option>
           @foreach ($sports as $sport)
-            <option value="{{ $sport->name }}">{{ $sport->name }}</option>
+            <option value="{{ $sport->id }}">{{ $sport->name }}</option>
           @endforeach
         </select>
-        <select class="select" name="zona" id="" placeholder="Zona">
+        {{--  <select class="select" name="zona" id="" placeholder="Zona">
           <option value="xZona">Cualquier Zona</option>
           <option value="capFed">Capital Federal</option>
           <option value="bsasNorte">BsAs - Zona Norte</option>
@@ -47,8 +47,9 @@
           <option value="cordoba">Cordoba</option>
           <option value="mdq">Mar del Plata</option>
           <option value="rosario">Rosario</option>
-        </select>
-        <input type="date" name="date" value="" placeholder="Fecha">
+        </select> 
+       <input type="date" name="date" value="" placeholder="Fecha">
+         --}}
         <button class="btn-solid-sm" type="submit">Buscar</button>
       </form>
     </div>
