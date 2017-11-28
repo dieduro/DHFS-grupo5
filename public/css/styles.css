@@ -70,7 +70,8 @@ a:hover {
 }
 h3 {
 	font-size: 1.2em;
-	color: #333333;
+	/*color: #333333;*/
+	color: #30499B;
 	font-weight: 600;
 	text-transform: uppercase;
 	display: inline-block;
@@ -1072,6 +1073,10 @@ table {
 	}
 	.section_tit {
 		margin-top: 50px;
+		text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+		color: #F3A530;
 	}
 	/*.buscador select {
 		width: 25%;
