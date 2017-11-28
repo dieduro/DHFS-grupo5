@@ -38,7 +38,7 @@ class MatchesController extends Controller
       'nplayers' => 'required',
       'date' => 'required',
       'place' => 'required',
-      'comment' => 'required'
+      // 'comment' => 'required'
     ];
 
     $messages = [
