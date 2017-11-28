@@ -915,7 +915,11 @@ input[type="checkbox"] {
 
 /* TABLA PARTIDOS */
 .controls {
-	margin: 0 auto;
+	margin: 10px auto 35px 0;
+	display: block;
+	align-items: flex-end;
+	text-align: right;
+font-size: 0.9em;
 }
 table, th, td {
 	border-bottom: 1px solid #E5EAEF;
@@ -932,7 +936,13 @@ table {
 /* PROFILE */
 .left-nav {
 	overflow: hidden;
-	width: 180px;
+	align-items: flex-start;
+	display: inline;
+	width: 20%;
+}
+.flexbox {
+	display: flex;
+	flex-wrap: wrap;
 }
 .buscar {
 	width: 150px;
@@ -941,6 +951,10 @@ table {
 	padding: 6px;
 	display: inline-block;
 	font-size: 0.8em;
+}
+.list-partidos {
+	width: 80%;
+	display: inline;
 }
 .main-item {
 	font-size: 0.9em;
@@ -972,7 +986,7 @@ table {
 		font-size: 0.6em;
 	}
 	.matches-container {
-		width: 84%;
+
 		float:right;
 	}
 	.container-match {
@@ -1076,12 +1090,12 @@ table {
 	.section_tit {
 		margin-top: 50px;
 		text-align: center;
-    font-size: 1.2em;
-    margin-bottom: 20px;
+		font-size: 1.2em;
+		margin-bottom: 20px;
 		color: #F3A530;
 	}
 	/*.buscador select {
-		width: 25%;
+	width: 25%;
 	}*/
 	.btn-solid {
 		max-width: 280px;

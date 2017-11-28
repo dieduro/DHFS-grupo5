@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-  <div class="container">
+  <div class="container flexbox">
     <div class="left-nav">
       <div>
         <input class="buscar" type="text" name="buscar" value="Buscar">
@@ -25,7 +25,7 @@
       </ul>
     </div>
     <!-- partidos -->
-    <div class="container section">
+    <div class="list-partidos">
       <div class="controls">
         <a href="/partidos_orderByDate">Ordenar por Fecha</a>
       </div>
