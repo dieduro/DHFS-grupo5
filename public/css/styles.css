@@ -106,7 +106,8 @@ hr {
 	border-top: 1px solid #969696;
 }
 .section_tit {
-	margin-top: 40px;
+	margin-top: 30px;
+	text-align: center;
 }
 
 /* HEADER ------------------------------- */
@@ -165,6 +166,7 @@ h1 {
 	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 	z-index: 99;
 	list-style: none;
+	padding-top: 15px;
 }
 .dropdown-content a {
 	color: black;
@@ -177,25 +179,18 @@ h1 {
 }
 .menu {
 	width: 100%;
-	margin-right: 15px;
 	align-self: center;
 	float: right;
 }
 .menu ul {
-	visibility: hidden;
-	display: flex;
-	justify-content: flex-end;
-	align-items: center;
+	display: none;
 	overflow: hidden;
 	margin: 0;
 	padding: 0;
 }
 .nav-items {
-	margin-right: 18px;
 	list-style: none;
-}
-.nav-items:last-child {
-	margin-right: 18px;
+	margin: 0 auto;
 }
 .nav-items a {
 	font-size: 1em;
@@ -682,8 +677,8 @@ input[type="file"] {
 	overflow: hidden;
 	position: relative;
 	float: right;
-	top:10px;
-	right:10px;
+	top: 5px;
+	right: 10px;
 	font-size: 1.4em;
 }
 .countDesktop {
@@ -702,6 +697,7 @@ input[type="file"] {
 }
 .info-match {
 	overflow: hidden;
+	margin-top: 10px;
 }
 .info-match p {
 	margin: 0 0 0 4px;
@@ -979,6 +975,9 @@ table {
 	.nav-items {
 		margin-right: 18px;
 	}
+	.nav-items:last-child {
+		margin-right: 18px;
+	}
 	.nav-items a {
 		font-size: 0.6em;
 	}
@@ -1053,150 +1052,158 @@ table {
 	}
 	.faq_card {
 		width: 33%;
-}
+	}
 
-@media (min-width: 768px) {
-	header {
-		justify-content: center;
-		margin: 25px 0;
+	@media (min-width: 768px) {
+		header {
+			justify-content: center;
+			margin: 25px 0;
+		}
+		.head-left {
+			display: inline;
+			width: 25%;
+		}
+		.logo {
+			width: 180px;
+		}
+		h1 {
+			padding: 0 10px;
+			align-self: baseline;
+			width: 500px;
+		}
+		.burger-icon {
+			display: none;
+		}
+		.nav-items {
+			margin-right: 18px;
+		}
+		.menu ul {
+			display: flex;
+			justify-content: flex-end;
+			flex-wrap: wrap;
+		}
+		.nav-items {
+			margin: 0;
+			margin-right: 18px;
+		}
+		.mega {
+			height: 60vh;
+		}
+		.mega h2 {
+			font-size: 4em;
+			max-width: 600px;
+			padding-bottom: 10px;
+		}
+		.section_tit {
+			margin-top: 50px;
+			text-align: center;
+			font-size: 1.2em;
+			margin-bottom: 20px;
+			color: #F3A530;
+		}
+		.buscador select {
+			width: 25%;
+			border: 0;
+			border-right: 1px blue solid;
+		}
+		.btn-solid {
+			max-width: 280px;
+			font-size: 1.1em;
+		}
+		.header_link {
+			display: inline-block;
+		}
+		.evento {
+			display: table-cell;
+			padding-right: 10px;
+			width: 20%;
+		}
+		.evento:first-child {
+			display: table-cell;
+		}
+		.evento:last-child {
+			padding-right: 0;
+			width: 19%;
+		}
+		.flechas {
+			top: 25%;
+		}
+		.flechas .fa {
+			color: white;
+			font-size: 1em;
+		}
+		.login_img {
+			background-image: url("../images/login_img.jpg");
+			background-size: cover;
+			padding-top: 50px;
+			padding-bottom: 50px;
+		}
+		.register_img {
+			background-image: url("../images/register_img.jpg");
+			background-size: cover;
+			padding-top: 50px;
+			padding-bottom: 50px;
+		}
+		.profile_icon {
+			width: 45%;
+		}
+		.faq_img {
+			background-image: url("../images/faq_img.jpg");
+			padding-top: 50px;
+			padding-bottom: 50px;
+		}
+		footer .redes {
+			margin-bottom: 20px;
+		}
+		footer .redes ul{
+			height: 40px;
+		}
+		.footer_outer h3 {
+			font-size: 0.9em;
+			margin-bottom: 5px;
+		}
+		.foot_links {
+			font-size: 0.75em;
+		}
+		.copyright p {
+			font-size: 0.75em;
+		}
+		footer .legales li {
+			font-size: 0.8em;
+		}
+		.lista-prox-part li {
+			flex-basis: 32%;
+			margin:0;
+		}
+		.evento {
+			display: table-cell;
+			padding-right: 10px;
+			width: 20%;
+		}
+		.evento:last-child {
+			padding-right: 0;
+			width: 19%;
+		}
+		.left-nav {
+			overflow: hidden;
+			align-items: flex-start;
+			display: inline;
+			width: 20%;
+		}
+		.list-partidos {
+			width: 80%;
+		}
 	}
-	.head-left {
-		display: inline;
-		width: 25%;
-	}
-	.logo {
-		width: 180px;
-	}
-	h1 {
-		padding: 0 10px;
-		align-self: baseline;
-		width: 500px;
-	}
-	.burger-icon {
-		display: none;
-	}
-	.menu ul {
-		flex-wrap: wrap;
-		visibility: visible;
-	}
-	.mega {
-		height: 60vh;
-	}
-	.mega h2 {
-		font-size: 4em;
-		max-width: 600px;
-		padding-bottom: 10px;
-	}
-	.section_tit {
-		margin-top: 50px;
-		text-align: center;
-		font-size: 1.2em;
-		margin-bottom: 20px;
-		color: #F3A530;
-	}
-	.buscador select {
-		width: 25%;
-		border: 0;
-		border-right: 1px blue solid;
-	}
-	.btn-solid {
-		max-width: 280px;
-		font-size: 1.1em;
-	}
-	.header_link {
-		display: inline-block;
-	}
-	.evento {
-		display: table-cell;
-		padding-right: 10px;
-		width: 20%;
-	}
-	.evento:first-child {
-		display: table-cell;
-	}
-	.evento:last-child {
-		padding-right: 0;
-		width: 19%;
-	}
-	.flechas {
-		top: 25%;
-	}
-	.flechas .fa {
-		color: white;
-		font-size: 1em;
-	}
-	.login_img {
-		background-image: url("../images/login_img.jpg");
-		background-size: cover;
-		padding-top: 50px;
-		padding-bottom: 50px;
-	}
-	.register_img {
-		background-image: url("../images/register_img.jpg");
-		background-size: cover;
-		padding-top: 50px;
-		padding-bottom: 50px;
-	}
-	.profile_icon {
-		width: 45%;
-	}
-	.faq_img {
-		background-image: url("../images/faq_img.jpg");
-		padding-top: 50px;
-		padding-bottom: 50px;
-	}
-	footer .redes {
-		margin-bottom: 20px;
-	}
-	footer .redes ul{
-		height: 40px;
-	}
-	.footer_outer h3 {
-		font-size: 0.9em;
-		margin-bottom: 5px;
-	}
-	.foot_links {
-		font-size: 0.75em;
-	}
-	.copyright p {
-		font-size: 0.75em;
-	}
-	footer .legales li {
-		font-size: 0.8em;
-	}
-	.lista-prox-part li {
-		flex-basis: 32%;
-		margin:0;
-	}
-	.evento {
-		display: table-cell;
-		padding-right: 10px;
-		width: 20%;
-	}
-	.evento:last-child {
-		padding-right: 0;
-		width: 19%;
-	}
-	.left-nav {
-		overflow: hidden;
-		align-items: flex-start;
-		display: inline;
-		width: 20%;
-	}
-	.list-partidos {
-		width: 80%;
-	}
-}
 
-@media (min-width: 1200px) {
-	.container {
-		width: 1170px;
+	@media (min-width: 1200px) {
+		.container {
+			width: 1170px;
+		}
+		.matches-container {
+			justify-content: flex-start;
+		}
+		.sport-heading {
+			width: 60%;
+			font-size: 1.6em;
+		}
 	}
-	.matches-container {
-		justify-content: flex-start;
-	}
-	.sport-heading {
-		width: 60%;
-		font-size: 1.6em;
-	}
-}
