@@ -106,7 +106,7 @@ hr {
 	border-top: 1px solid #969696;
 }
 .section_tit {
-	margin-top: 20px;
+	margin-top: 40px;
 }
 
 /* HEADER ------------------------------- */
@@ -148,7 +148,7 @@ h1 {
 	background-color: white
 }
 .dropbtn i {
-	magin-right:0;
+	margin-right: 0;
 	font-size: 30px;
 }
 .dropdown {
@@ -582,9 +582,10 @@ input[type="file"] {
 .faq_index {
 	display: flex;
 	justify-content: space-around;
+	flex-wrap: wrap;
 }
 .faq_card {
-	width: 31.73%;
+	width: 100%;
 	display: block;
 	padding: 15px;
 	text-align: center;
@@ -1050,6 +1051,8 @@ table {
 	.lista-prox-part li {
 		flex-basis: 48%;
 	}
+	.faq_card {
+		width: 33%;
 }
 
 @media (min-width: 768px) {
