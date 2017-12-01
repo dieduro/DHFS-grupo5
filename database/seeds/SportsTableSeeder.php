@@ -19,7 +19,7 @@ class SportsTableSeeder extends Seeder
         'Volley' => [12, 'images/volley.jpg'],
         'Baseball' => [18, 'images/baseball.jpg'],
         'Basquet' => [ 12, 'images/basquet.jpg'],
-        'Hockey Femenino' => [ 22, 'images/hockey.jpg'],
+        'Hockey Femenino' => [22, 'images/hockey.jpg'],
         'Hockey Masculino' => [22, 'images/hockey_fem.jpg'],
         'Handball' => [14, 'images/handball.jpg'],
         'Futbol Masculino 11' => [22, 'images/futbol.jpg'],
