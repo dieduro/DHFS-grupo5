@@ -57,10 +57,15 @@
       </div>
 
       <div class="match-field {{ $errors->has('place') ? ' has-error' : '' }}">
-        <input class="input-create"type="text" id="autocomplete" placeholder="Ingresa la dirección del partido" onFocus="geolocate()">
-        {{--<label for="" class="lbl-create">Lugar</label>
-        <input type="text" class="input-create" name="place" value="{{ old('place')}}" placeholder="¿Dónde se juega?">
-        <input type="place" name="place"  value=""> <!-- api google -->--}}
+        <input class="input-create"type="text" id="autocomplete" placeholder="Ingresa la dirección del partido" >
+       <div class="addressInfo">
+        <input class="field" id="street_number" disabled="true"></input>
+        <input class="field" id="locality" disabled="true"></input>
+        <input class="field" id="administrative_area_level_1" disabled="true"></input>
+        <input class="field" id="country" disabled="true"></input>
+      
+       </div>
+
         @if ($errors->has('place'))
           <span class="errores">
             <strong>{{ $errors->first('place') }}</strong>
@@ -78,7 +83,7 @@
         @endif
       </div>
       <div class="match-field">
-        <button class="btn-solid-lg" type="submit" name="crear" id="Crear">Crear</button>
+        <button class="btn-solid-lg" type="submit" name="crear" id="crear">Crear</button>
       </div>
       <div class="match-field">
         <a class="btn-solid-lg" href="/partidos" role="button">Cancelar</a>
@@ -87,5 +92,5 @@
   </div>
  
 
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEmgvA83jhBZTtI72oOKtaTg9bs6gyFhk&libraries=places"></script>
+<script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEmgvA83jhBZTtI72oOKtaTg9bs6gyFhk&libraries=places" async defer></script>
 @endsection
