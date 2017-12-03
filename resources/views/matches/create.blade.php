@@ -56,9 +56,10 @@
       </div>
 
       <div class="match-field {{ $errors->has('place') ? ' has-error' : '' }}">
-        <label for="" class="lbl-create hide">Lugar</label>
+        <input type="text" id="autocomplete" placeholder="Ingresa la dirección del partido" onFocus="geolocate()">
+        {{--<label for="" class="lbl-create">Lugar</label>
         <input type="text" class="input-create" name="place" value="{{ old('place')}}" placeholder="¿Dónde se juega?">
-        {{--<input type="place" name="place"  value=""> <!-- api google -->--}}
+        <input type="place" name="place"  value=""> <!-- api google -->--}}
         @if ($errors->has('place'))
           <span class="errores">
             <strong>{{ $errors->first('place') }}</strong>
@@ -83,4 +84,7 @@
       </div>
     </form>
   </div>
+ 
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEmgvA83jhBZTtI72oOKtaTg9bs6gyFhk&libraries=places"></script>
 @endsection
