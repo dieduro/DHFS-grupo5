@@ -1,12 +1,14 @@
-@extends('layouts.layout')
+@extends('layouts.dashboardLayout')
 
 @section('title')
   TeamUp! - Nuevo Partido
 @endsection
 
 @section('content')
-  <div class="container caja">
-    <form class="" action="/partidos/nuevo" method="post">
+  
+  <div class="create-match">
+    <div class="dashTitle"><h1 >Crear Partido</h1></div>
+    <form class="form" action="/partidos/nuevo" method="post">
       {{ csrf_field() }}
 
       <div class="match-field {{ $errors->has('sport') ? ' has-error' : '' }}">
@@ -27,9 +29,8 @@
       <div class="match-field {{ $errors->has('nplayers') ? ' has-error' : '' }}">
         <label class="lbl-create" for="nplayers">¿Cuántos jugadores tenés?</label>
         {{--<input type="number" class="input-create hide" name="nplayers" id="" value="" min=1 max=30 placeholder="¿Cuántos jugadores tenés?">--}}
-        <select class="input-create select" name="nplayers" id="in-nplayer" placeholder="Jugadores" value="{{ old('nplayers')}}" autofocus >
-          <option value="">0</option>
-          @for ($i=1;$i<=30;$i++)
+        <select class="input-create select" name="nplayers" id="in-nplayer" placeholder="Jugadores" value="{{ old('nplayers')}}" autofocus>
+          @for ($i=0;$i<=30;$i++)
             <option value="{{$i}}">{{ $i }}</option>
           @endfor
         </select>
@@ -42,7 +43,7 @@
 
       <div class="match-field {{ $errors->has('date') ? ' has-error' : '' }}">
         <label class="lbl-create" for="date">Fecha</label>
-        <input type="datetime-local" name="date" value="datetime">
+        <input class="input-create" type="datetime-local" name="date" value="datetime">
         {{-- <div class="date-cont">
           <input  placeholder="Día" class="date-input" type="number" min="1" max="31">
           <input  placeholder="Mes" class="date-input" type="number" min="1" max="12">
@@ -56,7 +57,7 @@
       </div>
 
       <div class="match-field {{ $errors->has('place') ? ' has-error' : '' }}">
-        <input type="text" id="autocomplete" placeholder="Ingresa la dirección del partido" onFocus="geolocate()">
+        <input class="input-create"type="text" id="autocomplete" placeholder="Ingresa la dirección del partido" onFocus="geolocate()">
         {{--<label for="" class="lbl-create">Lugar</label>
         <input type="text" class="input-create" name="place" value="{{ old('place')}}" placeholder="¿Dónde se juega?">
         <input type="place" name="place"  value=""> <!-- api google -->--}}
@@ -77,7 +78,7 @@
         @endif
       </div>
       <div class="match-field">
-        <button class="btn-solid-lg" type="submit" name="crear" id="Crear">Crear</butto>
+        <button class="btn-solid-lg" type="submit" name="crear" id="Crear">Crear</button>
       </div>
       <div class="match-field">
         <a class="btn-solid-lg" href="/partidos" role="button">Cancelar</a>

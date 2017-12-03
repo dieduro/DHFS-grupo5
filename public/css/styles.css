@@ -441,11 +441,15 @@ h1 {
 .match-field {
 	margin: 5px;
 	padding: 5px;
+	border : 1px solid #30499B;
+	overflow: hidden;
 }
 .input-create {
 	width: 100%;
-	height: 40px;
+	height: 50px;
 	font-size: 1.1em;
+	margin: 5px 0;
+	box-sizing: border-box;
 }
 .lbl-create {
 	font-size:1.1em;
@@ -465,6 +469,7 @@ h1 {
 }
 .form {
 	margin: 20px auto;
+	position:relative;
 }
 .form h6 {
 	display: inline;
@@ -591,6 +596,32 @@ input[type="file"] {
 	color: #F3A530;
 }
 
+/* USER DASHBOARD ------------------------------- */
+.dashSection {
+	position: relative;
+	width: 90%;
+	
+}
+.dashTitle {
+	display: block;
+	position:relative;
+	overflow:auto;
+}
+.dashTitle h1 {
+    margin: 0 0 10px;
+    width: 80%;
+	float: left;
+	font-size: 1.8em;
+	position: relative;
+}
+/* CREAR PARTIDO --------------------- */
+.create-match {
+	width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+	
+}
 
 /* MIS PARTIDOS ------------------------------- */
 
@@ -937,6 +968,10 @@ table {
 	display: flex;
 	flex-wrap: wrap;
 }
+.flexboxNoWrap {
+	display: flex;
+	flex-wrap: nowrap;
+}
 .buscar {
 	width: 150px;
 	border: 1px solid #30499B;
@@ -1053,6 +1088,9 @@ table {
 	.faq_card {
 		width: 33%;
 	}
+	.dashSection {
+		width:95%;
+	}
 
 	@media (min-width: 768px) {
 		header {
@@ -1093,6 +1131,15 @@ table {
 			font-size: 4em;
 			max-width: 600px;
 			padding-bottom: 10px;
+		}
+		.caja {
+			max-width: 300px;
+		}
+		.create-match {
+			
+			position:relative;
+			right:20px;
+			
 		}
 		.section_tit {
 			margin-top: 50px;
@@ -1193,6 +1240,9 @@ table {
 		.list-partidos {
 			width: 80%;
 		}
+	}
+	.dashSection {
+		width:80%;
 	}
 
 	@media (min-width: 1200px) {
