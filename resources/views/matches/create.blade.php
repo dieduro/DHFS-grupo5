@@ -88,9 +88,9 @@
         @if ($errors->has('comment'))
           <span class="errores">
             <strong>{{ $errors->first('comment') }}</strong>
-          </span>
+        </span>
         @endif
-      </div>
+    </div>
 
       <div class="match-field">
         <button class="btn-solid-lg" type="submit" name="crear" id="crear">Crear</button>

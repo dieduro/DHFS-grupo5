@@ -17,7 +17,7 @@ class MatchesTableSeeder extends Seeder
         '2' => [14, '2017-12-28 02:33:13', 'Tigre, BsAs', 8, 'images/pingpongU.jpg', 1],
         '3' => [6, '2017-12-01 02:33:13', 'Rosario, Sta Fe', 4, 'images/hockeyU.jpg', 1],
         '4' => [2, '2018-01-05 02:33:13', 'Flores, CABA', 2, 'images/rugbyU.jpg', 1],
-        '5' => [5, '2018-01-04 02:33:13', 'Villa Urquiza, CABA', 3, 'images/basketU.jpg', 1],
+        '5' => [5, '2018-01-04 02:33:13', 'Villa Urquiza, CABA', 3, 'images/basquetU.jpg', 1],
         '6' => [16, '2017-012-04 02:33:13', 'Parque Patricios, CABA', 3, 'images/squash.jpg', 1]
       ];
 

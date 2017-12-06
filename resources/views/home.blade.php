@@ -31,7 +31,7 @@
     </div>
     <div class="buscador">
       <form class="buscador-form" action='search' method="GET">
-      
+
         <select class="select" name="deporte" placeholder="Deporte">
           <option value="">Deporte</option>
           @foreach ($sports as $sport)
@@ -47,7 +47,7 @@
           <option value="cordoba">Cordoba</option>
           <option value="mdq">Mar del Plata</option>
           <option value="rosario">Rosario</option>
-        </select> 
+        </select>
        <input type="date" name="date" value="" placeholder="Fecha">
          --}}
         <button class="btn-solid-sm" type="submit">Buscar</button>
@@ -120,7 +120,7 @@
           </div>
         </div>
         <div class="evento">
-          <img src="images/basketU.jpg" alt="">
+          <img src="images/basquetU.jpg" alt="">
           <div class="overlay">
             <p class="evento_deporte">Basket</p>
             <p class=evento_zona>Floresta</p>

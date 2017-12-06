@@ -5,7 +5,7 @@
     street_number: '',
     locality: '',
     administrative_area_level_1: '',
-    country: '', 
+    country: '',
   };
   function initAutocomplete() {
     // Create the autocomplete object, restricting the search to geographical
@@ -13,26 +13,26 @@
     autocomplete = new google.maps.places.Autocomplete(
         /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
         {types: ['geocode']});
-  
+
     // When the user selects an address from the dropdown, populate the address
     // fields in the form.
     autocomplete.addListener('place_changed', fillInAddress);
-   
+
   }
 
     function fillInAddress() {
-      
+
       // Get the place details from the autocomplete object.
       var place = autocomplete.getPlace();
       console.log(place);
       console.log('me cago en dios');
-      
+
       for (var component in componentForm) {
-        
+
         document.getElementById(component).value = '';
         document.getElementById(component).disabled = false;
       }
-      
+
       // Get each component of the address from the place details
       // and fill the corresponding field on the form.
       for (var i = 0; i < place.address_components.length; i++) {
@@ -50,15 +50,15 @@
             lat: position.coords.latitude,
             lng: position.coords.longitude
           };
-          
+
           var circle = new google.maps.Circle({
             center: geolocation,
             radius: position.coords.accuracy
           });
-         
+
           autocomplete.setBounds(circle.getBounds());
-          
-          
+
+
         });
       }
     }
@@ -90,23 +90,23 @@ window.addEventListener('load', function() {
   // });
   // });
 
-   var btnSubmit = document.querySelector('#crear');
-   btnSubmit.addEventListener('click', function(event){
-     event.preventDefault();
-   });
-   
+   // var btnSubmit = document.querySelector('#crear');
+   // btnSubmit.addEventListener('click', function(event){
+   //   event.preventDefault();
+   // });
+   //
     var address = document.querySelector('#autocomplete');
     address.addEventListener('focus', function(event){
-      
+
       geolocate();
     });
     address.addEventListener('input', function(event){
       initAutocomplete();
-      
-      
+
+
     });
-    
-    
+
+
 
 
 
