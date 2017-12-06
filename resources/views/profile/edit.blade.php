@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@extends('layouts.dashboardLayout')
 
 @section('title')
   TeamUp! - Editar Perfil
@@ -8,10 +8,7 @@
 
 {{-- {{ dd( $user )}} --}}
   <div class="container caja">
-
-    <div class="section_tit">
-      <h3>Actualizar Datos de Perfil</h3>
-    </div>
+    <div class="dashTitle"><h1>Editar Perfil</h1></div>
     <form class="form" method="POST" action="/{{ Auth::user()->username }}/editar" enctype="multipart/form-data" >
       {{ csrf_field() }}
       {{ method_field('patch') }}

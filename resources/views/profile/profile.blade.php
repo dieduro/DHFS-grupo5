@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-  
+
     <!-- partidos -->
     <div class="list-partidos">
       <div class="controls">

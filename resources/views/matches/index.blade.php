@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@extends('layouts.dashboardLayout')
 
 @section('title')
   TeamUp! - Partidos
@@ -7,7 +7,6 @@
 @section('content')
   <div class="container section">
     <div class="controls">
-      <!-- esto que puse es sarasa -->
       <a href="/partidos_orderByDate">Ordenar por Fecha</a>
     </div>
 

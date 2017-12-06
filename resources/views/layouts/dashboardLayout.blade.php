@@ -67,6 +67,7 @@
       <ul>
         <li class="main-item">> PARTIDOS</li>
         <ul class="dropdown-left">
+          <a href="/{{ Auth::user()->username }}"><li>Resumen</li></a>
           <a href="/partidos/nuevo"><li>Crear Partido</li></a>
           <a href="/partidos"><li>Mis Partidos</li></a>
           <a href="#"><li>Me interesan</li></a>
@@ -79,7 +80,9 @@
       </ul>
     </div>
     <section class="dashSection">
+
   @yield('content')
+
   </section>
     </div>
   <footer class="footer_outer">

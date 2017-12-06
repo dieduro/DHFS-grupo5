@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@extends('layouts.dashboardLayout')
 
 @section('title')
   TeamUp! - Editar Partido
@@ -6,6 +6,7 @@
 
 @section('content')
   <div class="container">
+    <div class="dashTitle"><h1>Editar Partido</h1></div>
     <form class="" action="/partido/update/{{ $match->id }}" method="post">
       {{ csrf_field() }}
       {{ method_field('patch') }}

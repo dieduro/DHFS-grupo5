@@ -441,7 +441,6 @@ h1 {
 .match-field {
 	margin: 5px;
 	padding: 5px;
-	border : 1px solid #30499B;
 	overflow: hidden;
 }
 .input-create {
@@ -452,8 +451,9 @@ h1 {
 	box-sizing: border-box;
 }
 .lbl-create {
-	font-size:1.1em;
+	font-size: 1.1em;
 	font-family: 'Roboto', sans-serif;
+	display: block;
 }
 .date-cont {
 	display:flex;
@@ -600,7 +600,7 @@ input[type="file"] {
 .dashSection {
 	position: relative;
 	width: 90%;
-	
+
 }
 .dashTitle {
 	display: block;
@@ -620,7 +620,7 @@ input[type="file"] {
     position: relative;
     top: 0;
     left: 0;
-	
+
 }
 
 /* MIS PARTIDOS ------------------------------- */
@@ -1136,10 +1136,10 @@ table {
 			max-width: 300px;
 		}
 		.create-match {
-			
+
 			position:relative;
 			right:20px;
-			
+
 		}
 		.section_tit {
 			margin-top: 50px;

@@ -26,6 +26,6 @@ class CreateMatchUserTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('match_user');
     }
 }
