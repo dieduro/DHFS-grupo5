@@ -443,6 +443,9 @@ h1 {
 	padding: 5px;
 	overflow: hidden;
 }
+textarea {
+	width: 100%;
+}
 .input-create {
 	width: 100%;
 	height: 50px;
@@ -454,6 +457,7 @@ h1 {
 	font-size: 1.1em;
 	font-family: 'Roboto', sans-serif;
 	display: block;
+	margin-bottom: 10px;
 }
 .date-cont {
 	display:flex;
@@ -463,8 +467,8 @@ h1 {
 	justify-content: space-between;
 }
 .date-input {
-	height:40px;
-	flex-shrink:1;
+	height: 40px;
+	flex-shrink: 1;
 	flex-basis: 25%;
 }
 .form {

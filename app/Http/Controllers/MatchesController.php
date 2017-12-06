@@ -43,7 +43,7 @@ class MatchesController extends Controller
       'sport_id' => 'required',
       'nplayers' => 'required',
       'date' => 'required',
-      'place' => 'required',
+      // 'place' => 'required',
       // 'comment' => 'required'
     ];
 

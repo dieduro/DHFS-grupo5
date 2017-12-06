@@ -17,7 +17,7 @@ class CreateMatchesTable extends Migration
       $table->increments('id');
       $table->integer('sport_id')->references('id')->on('sports');
       $table->dateTime('date');
-      $table->string('place');
+      $table->string('place')->nullable();
       $table->integer('nplayers');
       $table->text('comment')->nullable();
       $table->string('photo');

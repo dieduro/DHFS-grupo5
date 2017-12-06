@@ -5,16 +5,16 @@
 @endsection
 
 @section('content')
-  
+
   <div class="create-match">
     <div class="dashTitle"><h1 >Crear Partido</h1></div>
     <form class="form" action="/partidos/nuevo" method="post">
       {{ csrf_field() }}
 
       <div class="match-field {{ $errors->has('sport') ? ' has-error' : '' }}">
-        <label for="sport" class="lbl-create hide">Deporte</label>
+        <label for="sport" class="lbl-create">Deporte</label>
         <select class="select input-create" name="sport_id"  placeholder="Deporte" value="{{ old('sport_id')}}" autofocus >
-          <option value="">Deporte</option>
+          <option value="">Seleccionar</option>
           @foreach ($sports as $sport)
             <option value="{{ $sport->id }} ">{{ $sport->name }}</option>
           @endforeach
@@ -30,8 +30,8 @@
         <label class="lbl-create" for="nplayers">¿Cuántos jugadores tenés?</label>
         {{--<input type="number" class="input-create hide" name="nplayers" id="" value="" min=1 max=30 placeholder="¿Cuántos jugadores tenés?">--}}
         <select class="input-create select" name="nplayers" id="in-nplayer" placeholder="Jugadores" value="{{ old('nplayers')}}" autofocus>
-          @for ($i=0;$i<=30;$i++)
-            <option value="{{$i}}">{{ $i }}</option>
+          @for ( $i = 0 ; $i <= 30 ; $i++)
+            <option value="{{ $i }}">{{ $i }}</option>
           @endfor
         </select>
         @if ($errors->has('nplayers'))
@@ -43,12 +43,12 @@
 
       <div class="match-field {{ $errors->has('date') ? ' has-error' : '' }}">
         <label class="lbl-create" for="date">Fecha</label>
-        <input class="input-create" type="datetime-local" name="date" value="datetime">
+        <input class="input-create select" type="datetime-local" name="date" value="datetime">
         {{-- <div class="date-cont">
-          <input  placeholder="Día" class="date-input" type="number" min="1" max="31">
-          <input  placeholder="Mes" class="date-input" type="number" min="1" max="12">
-          <input  placeholder="Año" class="date-input" type="number" min="2017" max="2021">
-        </div> --}}
+        <input  placeholder="Mes" class="select" type="number" min="1" max="12">
+        <input  placeholder="Día" class="select" type="number" min="1" max="31">
+        <input  placeholder="Año" class="select" type="number" min="2017" max="2021">
+      </div> --}}
         @if ($errors->has('date'))
           <span class="date">
             <strong>{{ $errors->first('date') }}</strong>
@@ -57,21 +57,30 @@
       </div>
 
       <div class="match-field {{ $errors->has('place') ? ' has-error' : '' }}">
-        <input class="input-create"type="text" id="autocomplete" placeholder="Ingresa la dirección del partido" >
-       <div class="addressInfo">
-        <input class="field" id="street_number" disabled="true"></input>
-        <input class="field" id="locality" disabled="true"></input>
-        <input class="field" id="administrative_area_level_1" disabled="true"></input>
-        <input class="field" id="country" disabled="true"></input>
-      
-       </div>
-
+        <label for="place" class="lbl-create">Lugar</label>
+        <input type="text" class="input-create select" name="place" value="{{ old('place')}}" placeholder="¿Dónde se juega?">
+        {{--<input type="place" name="place"  value=""> <!-- api google -->--}}
         @if ($errors->has('place'))
           <span class="errores">
             <strong>{{ $errors->first('place') }}</strong>
           </span>
         @endif
       </div>
+
+      {{-- <div class="match-field {{ $errors->has('place') ? ' has-error' : '' }}">
+        <input name="place" class="input-create" type="text" id="autocomplete" placeholder="Ingresa la dirección del partido" >
+        <div class="addressInfo">
+          <input class="field" id="street_number" disabled="true"></input>
+          <input class="field" id="locality" disabled="true"></input>
+          <input class="field" id="administrative_area_level_1" disabled="true"></input>
+          <input class="field" id="country" disabled="true"></input>
+        </div>
+        @if ($errors->has('place'))
+          <span class="errores">
+          <strong>{{ $errors->first('place') }}</strong>
+          </span>
+        @endif
+      </div> --}}
 
       <div class="match-field {{ $errors->has('comment') ? ' has-error' : '' }}">
         <label class="lbl-create" for="">Comentarios</label>
@@ -82,6 +91,7 @@
           </span>
         @endif
       </div>
+
       <div class="match-field">
         <button class="btn-solid-lg" type="submit" name="crear" id="crear">Crear</button>
       </div>
@@ -89,8 +99,7 @@
         <a class="btn-solid-lg" href="/partidos" role="button">Cancelar</a>
       </div>
     </form>
-  </div>
- 
+</div>
 
 <script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEmgvA83jhBZTtI72oOKtaTg9bs6gyFhk&libraries=places" async defer></script>
 @endsection
