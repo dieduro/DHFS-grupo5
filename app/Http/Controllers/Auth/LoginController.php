@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Validator;
 
 class LoginController extends Controller
 {
@@ -36,4 +38,25 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    /**
+    *
+    * @param  array  $data
+    * @return \Illuminate\Contracts\Validation\Validator
+    */
+    protected function validateLogin(Request $request)
+    {
+        $this->validate($request, [
+            $this->username() => 'required|string|email',
+            'password' => 'required|string',
+        ],
+        [
+          'required' => 'El campo es obligatorio',
+          'email' => 'Asegurate de poner un mail válido',
+          'failed' => 'These credentials do not match our records.',
+          'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
+        ]
+      );
+    }
+
 }
