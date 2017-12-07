@@ -62,7 +62,7 @@
   <div class="container flexbox">
     <div class="left-nav">
       <div>
-        <input class="buscar" type="text" name="buscar" value="Buscar">
+        <input class="buscar" type="text" name="buscar" placeholder="Buscar">
       </div>
       <ul>
         <li class="main-item">> PARTIDOS</li>

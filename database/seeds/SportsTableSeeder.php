@@ -14,13 +14,13 @@ class SportsTableSeeder extends Seeder
     public function run()
     {
       $sports = [
-        'Paddle' => [2, 'images/paddle.jpg'],
+        'Paddle' => [4, 'images/paddle.jpg'],
         'Rugby' => [24, 'images/rugby.jpg'],
         'Volley' => [12, 'images/volley.jpg'],
         'Baseball' => [18, 'images/baseball.jpg'],
         'Basquet' => [ 12, 'images/basquet.jpg'],
-        'Hockey Femenino' => [22, 'images/hockey.jpg'],
-        'Hockey Masculino' => [22, 'images/hockey_fem.jpg'],
+        'Hockey Femenino' => [22, 'images/hockey_fem.jpg'],
+        'Hockey Masculino' => [22, 'images/hockey.jpg'],
         'Handball' => [14, 'images/handball.jpg'],
         'Futbol Masculino 11' => [22, 'images/futbol.jpg'],
         'Futbol Femenino 11' => [22, 'images/futbol_fem.jpg'],

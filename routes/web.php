@@ -44,25 +44,25 @@ Route::get('/inicio', 'HomeController@index')->name('home');
 Route::get('/faq', 'FaqController@index');
 
 // RUTAS PARTIDOS
-Route::get('/partidos', 'MatchesController@index');
-Route::get('/partidos_orderByDate', 'MatchesController@orderByDate');
-Route::get('/partidos/nuevo', 'MatchesController@create');
-Route::post('/partidos/nuevo', 'MatchesController@store');
-Route::get('/partido_{id}', 'MatchesController@show');
-Route::get('/partido/editar/{id}', 'MatchesController@edit');
-Route::get('/partido/eliminar/{id}', 'MatchesController@destroy');
-Route::patch('/partido/update/{id}', 'MatchesController@update');
+Route::get('/partidos', 'MatchesController@index')->middleware('isLogged');
+Route::get('/partidos_orderByDate', 'MatchesController@orderByDate')->middleware('isLogged');
+Route::get('/partidos/nuevo', 'MatchesController@create')->middleware('isLogged');
+Route::post('/partidos/nuevo', 'MatchesController@store')->middleware('isLogged');
+Route::get('/partido_{id}', 'MatchesController@show')->middleware('isLogged');
+Route::get('/partido_{id}/editar', 'MatchesController@edit')->middleware('isLogged');
+Route::patch('/partido_{id}/update', 'MatchesController@update')->middleware('isLogged');
+Route::get('/partido_{id}/eliminar', 'MatchesController@destroy')->middleware('isLogged');
 
 // RUTAS DEPORTES
-Route::get('/deportes', 'SportsController@index');
-Route::get('/deportes/nuevo', 'SportsController@create');
-Route::post('/deportes/nuevo', 'SportsController@store');
+Route::get('/deportes', 'SportsController@index')->middleware('isLogged');
+Route::get('/deportes/nuevo', 'SportsController@create')->middleware('isLogged');
+Route::post('/deportes/nuevo', 'SportsController@store')->middleware('isLogged');
 Route::get('/deporte/editar/{id}', 'SportsController@edit')->middleware('isLogged');
 Route::post('/deporte/editar/{id}', 'SportsController@update')->middleware('isLogged');
 Route::get('/deporte/eliminar', 'SportsController@destroy')->middleware('isLogged');
 
 Route::get('/{username}', 'UsersController@show')->middleware('isLogged');
-Route::get('/{username}/editar', 'UsersController@edit');
-Route::patch('/{username}/editar', 'UsersController@update');
-Route::get('/{username}/eliminar', 'UserController@destroy');
+Route::get('/{username}/editar', 'UsersController@edit')->middleware('isLogged');
+Route::patch('/{username}/editar', 'UsersController@update')->middleware('isLogged');
+Route::get('/{username}/eliminar', 'UserController@destroy')->middleware('isLogged');
 // Route::get('/{username}/misPartidos', 'UserController@misPartidos');

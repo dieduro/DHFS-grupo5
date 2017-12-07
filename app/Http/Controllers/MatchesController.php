@@ -22,11 +22,13 @@ class MatchesController extends Controller
     }
   }
 
-  // public function show($id) {
-  //   $match = Match::find($id) {
-  //
-  //   }
-  // }
+  public function show($id) {
+    $match = Match::find($id);
+    $param = [
+      'match' => $match
+    ];
+    return view('matches.index', $param);
+  }
 
   public function create()
   {
@@ -97,9 +99,7 @@ class MatchesController extends Controller
       'match' => $match,
       'matches' => $matches
     ];
-    // return view('matches.index', $param);
     return redirect('/partidos');
-    // }
   }
 
   /* ELIMINAR PARTIDO  */

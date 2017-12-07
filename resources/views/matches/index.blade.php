@@ -1,7 +1,7 @@
 @extends('layouts.dashboardLayout')
 
 @section('title')
-  TeamUp! - Partidos
+  TeamUp! - Partido
 @endsection
 
 @section('content')
@@ -12,7 +12,6 @@
 
     <div class="matches-container">
       {{--PARTIDO--}}
-      @foreach ($matches as $match)
         <div class="container-match">
           <div class="top"></div>
           <div class="overlay-match">
@@ -49,7 +48,6 @@
           </div>
         </div>
       </div>
-    @endforeach
     <!-- fin partido -->
   </div>
 

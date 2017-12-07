@@ -404,12 +404,15 @@ h1 {
 
 /* RECOMENDADOS ------------------------------- */
 
-
 .lista-prox-part {
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
 	justify-content: space-between;
+}
+.lista-prox-part:after {
+	content: "";
+	width: 32%;
 }
 .lista-prox-part li {
 	flex-basis: 98%;
@@ -604,27 +607,22 @@ input[type="file"] {
 .dashSection {
 	position: relative;
 	width: 90%;
-
 }
 .dashTitle {
-	display: block;
-	position:relative;
-	overflow:auto;
+	display: inline;
+	position: relative;
+	overflow: auto;
 }
 .dashTitle h1 {
-    margin: 0 0 10px;
-    width: 80%;
-	float: left;
 	font-size: 1.8em;
-	position: relative;
 }
+
 /* CREAR PARTIDO --------------------- */
 .create-match {
 	width: 100%;
     position: relative;
     top: 0;
     left: 0;
-
 }
 
 /* MIS PARTIDOS ------------------------------- */
@@ -750,6 +748,26 @@ input[type="file"] {
 }
 .info-match p:last-child {
 	margin-top: 0;
+}
+.plus {
+	border-radius: 50%;
+	background-color: black;
+	width: 40px;
+	height: 40px;
+	overflow: hidden;
+	position: relative;
+	float: right;
+	top: 230px;
+	right: 8px;
+	font-size: 2em;
+	text-align: center;
+	color: white;
+}
+.plus:hover {
+	background-color: #d87a0e;
+}
+.plus p {
+	margin-top: 4px;
 }
 .bottom {
 	display: none;
@@ -947,8 +965,6 @@ input[type="checkbox"] {
 /* TABLA PARTIDOS */
 .controls {
 	margin: 10px auto 35px 0;
-	display: block;
-	align-items: flex-end;
 	text-align: right;
 	font-size: 0.9em;
 }
@@ -1045,7 +1061,7 @@ table {
 	}
 	.info-match p {
 		padding: 5px;
-		font-size: 1.2em;
+		font-size: 1em;
 		font-family: 'Roboto', sans-serif;
 	}
 	.info-match p:first-child {
