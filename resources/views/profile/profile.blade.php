@@ -7,7 +7,6 @@
 @section('content')
 
   <!-- partidos -->
-
     <div class="dashTitle"><h1>Resumen</h1></div>
     <div class="controls">
       <a href="/partidos_orderByDate">Ordenar por Fecha</a>

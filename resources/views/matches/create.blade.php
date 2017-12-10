@@ -55,7 +55,7 @@
     </div>
 
     <div class="match-field {{ $errors->has('place') ? ' has-error' : '' }}">
-      <label for="place" class="lbl-create">Lugar</label>
+      <label for="place" class="lbl-create">Seleccionar</label>
       <input type="text" class="input-create select" name="place" value="{{ old('place')}}" placeholder="¿Dónde se juega?">
       {{--<input type="place" name="place"  value=""> <!-- api google -->--}}
       @if ($errors->has('place'))
