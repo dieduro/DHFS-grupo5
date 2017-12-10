@@ -14,7 +14,7 @@
       <form class="form" method="POST" action="{{ route('register') }}" enctype="multipart/form-data" id="register">
         {{ csrf_field() }}
         <div class="{{ $errors->has('username') ? ' has-error' : '' }}">
-          <input class="field" id="username" type="text" placeholder="Nombre de Usuario" name="username" value="{{ old('username') }}"  autofocus>
+          <input class="field" id="username" type="text" placeholder="Nombre de Usuario" name="username" value="{{ old('username') }}" >
           @if ($errors->has('username'))
             <span class="errores">
               <strong>{{ $errors->first('username') }}</strong>
@@ -38,7 +38,7 @@
           @endif
         </div>
         <div class="">
-          <input class="field" id="password-confirm" type="password" placeholder="Repetir Contraseña" name="password_confirmation" >
+          <input class="field" id="cpassword" type="password" placeholder="Repetir Contraseña" name="password_confirmation" >
         </div>
         {{-- <div class="file_div">
           <label for="upload-photo"><img class="profile_icon" src="{{asset('storage\images\users_img\userDefault.png')}}" alt="Subí tu foto de perfil"><span class="btn-solid-sm btn_upload">SUBI TU FOTO</span></label>
@@ -59,7 +59,7 @@
         @endif
       </div> --}}
       <div class="legals {{ $errors->has('legals') ? ' has-error' : '' }}">
-        <input type="checkbox" name="legals" value="1" >
+        <input type="checkbox" name="legals" value="1" id="legals" >
         <h6 style="color:#555555">Acepto los Términos y Condiciones del servicio.</h6>
         @if ($errors->has('legals'))
           <span class="errores">
