@@ -646,6 +646,7 @@ input[type="file"] {
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
+	width:70%;
 }
 .container-match {
 	height: 100px;
@@ -1038,7 +1039,7 @@ table {
 	.container-match {
 		height: 300px;
 		width: 250px;
-		margin-right: 5%;
+		//margin-right: 5%;
 		margin-bottom: 40px;
 	}
 	.container-match:nth-child(3n) {

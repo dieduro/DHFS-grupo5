@@ -27,8 +27,8 @@
 
     
 
-   <div class="matches-container">
-    <ul>
+ 
+    <ul class="matches-container">
     
      @foreach ($matches as $match)
         <div class="container-match">
@@ -77,5 +77,5 @@
     </div>
   @endforeach
     </ul> 
-    </div>
+    
 @endsection
