@@ -55,48 +55,47 @@ window.addEventListener('load', function() {
           });
           autocomplete.setBounds(circle.getBounds());
         });
-      }
+      };
+    };
+
+    var btn = document.querySelector('.dropbtn');
+    btn.onclick = function() {
+      document.getElementById("myDropdown").classList.toggle("show");
     }
 
-    window.addEventListener('load', function() {
+    // var nplayers = document.querySelector(".countL");
+    // if (window.innerWidth < 420) {
+    //   nplayers.classList.toggle("show");
+    // }
 
-      var btn = document.querySelector('.dropbtn');
-      btn.onclick = function() {
-        document.getElementById("myDropdown").classList.toggle("show");
-      }
+    // var todo = document.querySelector('#selectAll');
+    //
+    // todo.addEventListener('click', function() {
+    //   var selected = document.querySelectorAll('.select');
+    //
+    //   selected.forEach(function(elem) {
+    //     if (elem.checked == true){
+    //       elem.checked = false;
+    //     } else {
+    //       elem.checked = true;
+    // }
+    // });
+    // });
 
-      // var nplayers = document.querySelector(".countL");
-      // if (window.innerWidth < 420) {
-      //   nplayers.classList.toggle("show");
-      // }
-
-      // var todo = document.querySelector('#selectAll');
-      //
-      // todo.addEventListener('click', function() {
-      //   var selected = document.querySelectorAll('.select');
-      //
-      //   selected.forEach(function(elem) {
-      //     if (elem.checked == true){
-      //       elem.checked = false;
-      //     } else {
-      //       elem.checked = true;
-      // }
-      // });
-      // });
-
-      // var btnSubmit = document.querySelector('#crear');
-      // btnSubmit.addEventListener('click', function(event){
-      //   event.preventDefault();
-      // });
-      //
-      var address = document.querySelector('#autocomplete');
-      address.addEventListener ('focus', function(event) {
-        geolocate();
-      });
-      address.addEventListener ('input', function(event) {
-        initAutocomplete();
-      });
+    // var btnSubmit = document.querySelector('#crear');
+    // btnSubmit.addEventListener('click', function(event){
+    //   event.preventDefault();
+    // });
+    //
+    var address = document.querySelector('#autocomplete');
+    address.addEventListener ('focus', function(event) {
+      geolocate();
     });
+    address.addEventListener ('input', function(event) {
+      initAutocomplete();
+    });
+
+
 
     username.addEventListener('blur', function () {
       var username = document.querySelector('#username').value;
@@ -108,6 +107,8 @@ window.addEventListener('load', function() {
         console.log("todo ok");
       };
     });
+
+    var form = document.querySelector('#register');
 
     email.addEventListener('blur', function () {
       var regexMail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
@@ -146,13 +147,12 @@ window.addEventListener('load', function() {
       };
     });
 
-    var form = document.querySelector('#register');
     form.addEventListener('submit', function (event) {
       var legals = document.querySelector('#legals');
       if ( legals.checked == false ) {
         event.preventDefault();
-        console.log("campo legals vacío");
+        console.log("campo legals no clickeado");
       };
     });
 
-});
+  });
