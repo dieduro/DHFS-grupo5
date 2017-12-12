@@ -87,72 +87,102 @@ window.addEventListener('load', function() {
     //   event.preventDefault();
     // });
     //
-    var address = document.querySelector('#autocomplete');
-    address.addEventListener ('focus', function(event) {
-      geolocate();
-    });
-    address.addEventListener ('input', function(event) {
-      initAutocomplete();
-    });
+    // var address = document.querySelector('#autocomplete');
+    // address.addEventListener ('focus', function(event) {
+    //   geolocate();
+    // });
+    // address.addEventListener ('input', function(event) {
+    //   initAutocomplete();
+    // });
 
 
+    // VALIDACION DE REGISTER
 
-    username.addEventListener('blur', function () {
-      var username = document.querySelector('#username').value;
-      if ( username.length == "" ) {
-        console.log("campo username vacío");
-      } else if ( username.length < 3 && username.length > 15 ) {
-        console.log("elegí un numbre de usuario de entre 3 y 15 caracteres");
-      } else {
-        console.log("todo ok");
-      };
-    });
-
-    var form = document.querySelector('#register');
-
-    email.addEventListener('blur', function () {
+    function validate() {
+      var regexVacio = /^[a-z0-9]+$/i;
       var regexMail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-      var email = document.querySelector('#email').value;
-      if ( email == "" ) {
-        console.log("campo email vacío");
-      } else if ( !regexMail.test(email) ) {
-        console.log("ingresá un mail válido");
-      } else {
-        console.log("todo correcto");
-      };
-    });
 
-    password.addEventListener('blur', function () {
-      var regexVacio = /^[a-z0-9]+$/i;
-      var password = document.querySelector('#password').value;
-      if ( !regexVacio.test(password) ) {
-        console.log("campo password vacío");
-      } else if ( password.length < 6 ) {
-        console.log("la contraseña debe tener al menos 8 caracteres");
-      } else {
-        console.log( "todo ok");
-      };
-    });
-
-    cpassword.addEventListener('blur', function () {
-      var regexVacio = /^[a-z0-9]+$/i;
-      var password = document.querySelector('#password').value
-      var cpassword = document.querySelector('#cpassword').value;
-      if ( !regexVacio.test(cpassword) ) {
-        console.log("Por favor confirmá la contraseña");
-      } else if ( cpassword !== password ) {
-        console.log("la contraseña no verifica");
-      } else {
-        console.log( "todo ok");
-      };
-    });
-
-    form.addEventListener('submit', function (event) {
+      var form = document.querySelector('#register');
+      var username = document.querySelector('#username');
+      var email = document.querySelector('#email');
+      var password = document.querySelector('#password');
+      var cpassword = document.querySelector('#cpassword');
       var legals = document.querySelector('#legals');
-      if ( legals.checked == false ) {
-        event.preventDefault();
-        console.log("campo legals no clickeado");
-      };
-    });
+
+      var errors = [];
+
+      username.addEventListener('blur', function () {
+        var username = document.querySelector('#username').value;
+        if ( !regexVacio.test(username) ) {
+          console.log("campo username vacío");
+          var errorUsername = ["username", "elegí un nombre de usuario"];
+          errors.push(errorUsername);
+        } else if ( username.length < 3 && username.length > 15 ) {
+          console.log("elegí un numbre de usuario de entre 3 y 15 caracteres");
+          var errorUsername = ["username", "elegí un numbre de usuario de entre 3 y 15 caracteres"];
+          errors.push(errorUsername);
+        } else {
+          console.log("todo ok");
+        };
+      });
+
+      email.addEventListener('blur', function () {
+        var email = document.querySelector('#email').value;
+        if ( !regexVacio.test(email) ) {
+          console.log("campo email vacío");
+          var errorEmail = ["email", "Email no puede estar vacío"];
+          errors.push(errorEmail);
+        } else if ( !regexMail.test(email) ) {
+          console.log("ingresá un mail válido");
+          var errorEmail = ["email", "Ingresá un email válido"];
+          errors.push(errorEmail);
+        } else {
+          console.log("todo ok en email");
+        };
+      });
+
+      password.addEventListener('blur', function () {
+        var password = document.querySelector('#password').value;
+        if ( !regexVacio.test(password) ) {
+          console.log("campo password vacío");
+          var errorPass = ["password", "Ingresá una contraseña"];
+          errors.push(errorPass)
+        } else if ( password.length < 6 ) {
+          console.log("la contraseña debe tener al menos 8 caracteres");
+          var errorPass = ["password", "Ingresá una contraseña"];
+        } else {
+          console.log("todo ok en pass");
+        };
+      });
+
+      cpassword.addEventListener('blur', function () {
+        var cpassword = document.querySelector('#cpassword').value;
+        if ( !regexVacio.test(cpassword) ) {
+          console.log("Por favor confirmá la contraseña");
+          var errorCpass = ["password", "Por favor confirmá la contraseña"]
+          errors.push(errorCpass);
+        } else if ( cpassword !== password ) {
+          console.log("la contraseña no verifica");
+          var errorCpass = ["password", "Las contraseñas no son iguales"]
+          errors.push(errorCpass);
+        } else {
+          console.log( "todo ok en cpassword");
+        };
+      });
+
+      legals.addEventListener('blur', function () {
+        if ( legals.checked == false ) {
+          console.log("campo legals no clickeado");
+        };
+      });
+
+      form.addEventListener('submit', function (event) {
+        if (errors != "") {
+          event.preventDefault();
+        };
+      });
+
+    };
+    validate();
 
   });
