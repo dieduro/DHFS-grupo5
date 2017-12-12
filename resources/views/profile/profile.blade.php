@@ -46,16 +46,16 @@
             </div>
           </a>
         </div>
-        <div class="bottom">
+        <div class="bottom" style="background-image: url({{ asset( $match->photo ) }})">
           <div class="views-likes">
             <i class="fa fa-eye"  aria-hidden="true"></i>
             <p class="social-counter">25</p>
             <i class="fa fa-heart" style="color:white" aria-hidden="true"></i>
             <p class="social-counter">6</p>
           </div>
-          <div >
+          {{--  <div >
             <img class="sport-img" src="{{ asset( $match->photo ) }}" alt="">
-          </div>
+          </div>  --}}
         </div>
       </a>
     </div>

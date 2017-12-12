@@ -1,10 +1,10 @@
-@extends ('layouts.layout')
+@extends ('layouts.dashboardLayout')
 
 @section('title')
-  TeamUp!
+  TeamUp!-Resultados
 @endsection
 @section('content')
-    <div class="container flexbox">
+    {{--  <div class="container flexbox">
     <div class="left-nav">
       <div>
         <input class="buscar" type="text" name="buscar" value="Buscar">
@@ -20,19 +20,19 @@
         {{--  <ul class="dropdown-left">
           <a href="/{{ Auth::user()->username }}/editar"><li>Editar Perfil</li></a>
           <a href="/{{Auth::user()->username }}/eliminar"><li>Eliminar Cuenta</li></a>
-        </ul>  --}}
+        </ul> 
       </ul>
-    </div>
+    </div>  --}}
 
 
     
 
  
-    <ul class="matches-container">
+    <div class="matches-container">
     
      @foreach ($matches as $match)
         <div class="container-match">
-          <a href="/partido_{{ $match->id }}">
+          <a href="/partido_{{ $match->id }}"> </a>
           <div class="top"></div>
           <div class="overlay-match">
             <h3 class="sport-heading">{{ $match->sport->name }}</h3>
@@ -62,20 +62,19 @@
             </div>
           </a>
         </div>
-        <div class="bottom">
+        <div class="bottom" style="background-image: url({{ asset( $match->photo ) }})">
           <div class="views-likes">
             <i class="fa fa-eye"  aria-hidden="true"></i>
             <p class="social-counter">25</p>
             <i class="fa fa-heart" style="color:white" aria-hidden="true"></i>
             <p class="social-counter">6</p>
           </div>
-          <div >
+            {{--  <div>
             <img class="sport-img" src="{{ asset( $match->photo ) }}" alt="">
-          </div>
+            </div>  --}}
         </div>
-      </a>
     </div>
   @endforeach
-    </ul> 
+    </div> 
     
 @endsection

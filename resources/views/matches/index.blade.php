@@ -11,7 +11,7 @@
     </div>
 
     <div class="matches-container">
-      {{--PARTIDO--}}ogojorijoinfuenkdwnekwbkjhbewkhbk
+      {{--PARTIDO--}}
         <div class="container-match">
           <div class="top"></div>
           <div class="overlay-match">
