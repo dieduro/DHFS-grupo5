@@ -118,7 +118,7 @@ window.addEventListener('load', function() {
           console.log("campo username vacío");
           var errorUsername = ["username", "elegí un nombre de usuario"];
           errors.push(errorUsername);
-        } else if ( username.length < 3 || username.length > 15 ) {
+        } else if ( usernameValue.length < 3 || usernameValue.length > 15 ) {
           // username.style.boxShadow = '0 0 2px red';
           username.style.backgroundColor = '#ffe5e5';
           console.log("elegí un numbre de usuario de entre 3 y 15 caracteres");
