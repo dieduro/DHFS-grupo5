@@ -212,7 +212,7 @@ window.addEventListener('load', function() {
         // validatePassword();
         // validateCpassword();
         // validateLegals();
-        if (errors != "") {
+        if (errors != null) {
           event.preventDefault();
           console.log(errors);
         } else {
