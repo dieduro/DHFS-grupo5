@@ -11,7 +11,7 @@ window.addEventListener('load', function() {
     // Create the autocomplete object, restricting the search to geographical
     // location types.
     autocomplete = new google.maps.places.Autocomplete(
-      /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
+      /** @type {!HTMLblurElement} */(document.getElementById('autocomplete')),
       {types: ['geocode']});
 
       // When the user selects an address from the dropdown, populate the address
@@ -91,14 +91,13 @@ window.addEventListener('load', function() {
     // address.addEventListener ('focus', function(event) {
     //   geolocate();
     // });
-    // address.addEventListener ('input', function(event) {
+    // address.addEventListener ('blur', function(event) {
     //   initAutocomplete();
     // });
 
 
     // VALIDACION DE REGISTER
 
-    function validate() {
       var regexVacio = /^[a-z0-9]+$/i;
       var regexMail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
 
@@ -111,78 +110,114 @@ window.addEventListener('load', function() {
 
       var errors = [];
 
-      username.addEventListener('blur', function () {
-        var username = document.querySelector('#username').value;
-        if ( !regexVacio.test(username) ) {
+      username.addEventListener('blur', function() {
+        var usernameValue = document.querySelector('#username').value;
+        if ( !regexVacio.test(usernameValue) ) {
+          // username.style.boxShadow = '0 0 2px red';
+          username.style.backgroundColor = '#ffe5e5';
           console.log("campo username vacío");
           var errorUsername = ["username", "elegí un nombre de usuario"];
           errors.push(errorUsername);
-        } else if ( username.length < 3 && username.length > 15 ) {
+        } else if ( username.length < 3 || username.length > 15 ) {
+          // username.style.boxShadow = '0 0 2px red';
+          username.style.backgroundColor = '#ffe5e5';
           console.log("elegí un numbre de usuario de entre 3 y 15 caracteres");
           var errorUsername = ["username", "elegí un numbre de usuario de entre 3 y 15 caracteres"];
           errors.push(errorUsername);
         } else {
-          console.log("todo ok");
+          // username.style.boxShadow = '0 0 2px #00B200';
+          username.style.backgroundColor = '#e5ffe5';
+          console.log("todo ok en username");
         };
       });
 
       email.addEventListener('blur', function () {
-        var email = document.querySelector('#email').value;
-        if ( !regexVacio.test(email) ) {
+        var emailValue = document.querySelector('#email').value;
+        if ( emailValue == null ) {
+          // email.style.boxShadow = '0 0 2px red';
+          email.style.backgroundColor = '#ffe5e5';
           console.log("campo email vacío");
           var errorEmail = ["email", "Email no puede estar vacío"];
           errors.push(errorEmail);
-        } else if ( !regexMail.test(email) ) {
+        } else if ( !regexMail.test(emailValue) ) {
+          // email.style.boxShadow = '0 0 2px red';
+          email.style.backgroundColor = '#ffe5e5';
           console.log("ingresá un mail válido");
           var errorEmail = ["email", "Ingresá un email válido"];
           errors.push(errorEmail);
         } else {
+          // email.style.boxShadow = '0 0 2px #00B200';
+          email.style.backgroundColor = '#e5ffe5';
           console.log("todo ok en email");
         };
       });
 
       password.addEventListener('blur', function () {
-        var password = document.querySelector('#password').value;
-        if ( !regexVacio.test(password) ) {
+        var passwordValue = document.querySelector('#password').value;
+        if ( !regexVacio.test(passwordValue) ) {
+          // password.style.boxShadow = '0 0 2px red';
+          password.style.backgroundColor = '#ffe5e5';
           console.log("campo password vacío");
           var errorPass = ["password", "Ingresá una contraseña"];
           errors.push(errorPass)
         } else if ( password.length < 6 ) {
+          // password.style.boxShadow = '0 0 2px red';
+          password.style.backgroundColor = '#ffe5e5';
           console.log("la contraseña debe tener al menos 8 caracteres");
           var errorPass = ["password", "Ingresá una contraseña"];
+          errors.push(errorPass);
         } else {
+          // password.style.boxShadow = '0 0 2px #00B200';
+          password.style.backgroundColor = '#e5ffe5';
           console.log("todo ok en pass");
         };
       });
 
       cpassword.addEventListener('blur', function () {
-        var cpassword = document.querySelector('#cpassword').value;
-        if ( !regexVacio.test(cpassword) ) {
+        var cpasswordValue = document.querySelector('#cpassword').value;
+        var passwordValue = document.querySelector('#password').value;
+        if ( !regexVacio.test(cpasswordValue) ) {
+          // cpassword.style.boxShadow = '0 0 2px red';
+          cpassword.style.backgroundColor = '#ffe5e5';
           console.log("Por favor confirmá la contraseña");
           var errorCpass = ["password", "Por favor confirmá la contraseña"]
           errors.push(errorCpass);
-        } else if ( cpassword !== password ) {
+        } else if ( cpasswordValue !== passwordValue ) {
+          // cpassword.style.boxShadow = '0 0 2px red';
+          cpassword.style.backgroundColor = '#ffe5e5';
           console.log("la contraseña no verifica");
           var errorCpass = ["password", "Las contraseñas no son iguales"]
           errors.push(errorCpass);
         } else {
+          // cpassword.style.boxShadow = '0 0 2px #00B200';
+          cpassword.style.backgroundColor = '#e5ffe5';
           console.log( "todo ok en cpassword");
         };
       });
 
       legals.addEventListener('blur', function () {
         if ( legals.checked == false ) {
+          legals.style.boxShadow = '0 0 2px red';
           console.log("campo legals no clickeado");
+          var errorLegals = ["legals", "debés aceptar las condiciones de uso de TeamUp!"];
+          errors.push(errorLegals);
+        } else {
+          legals.style.boxShadow = 'none';
         };
       });
 
       form.addEventListener('submit', function (event) {
+        // validateUsername();
+        // validateEmail();
+        // validatePassword();
+        // validateCpassword();
+        // validateLegals();
         if (errors != "") {
           event.preventDefault();
+          console.log(errors);
+        } else {
+          errors = [];
         };
       });
-
-    };
-    validate();
 
   });
