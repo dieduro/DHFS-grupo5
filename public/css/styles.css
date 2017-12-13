@@ -817,7 +817,7 @@ input[type="file"] {
 	max-width: 1140px;
 	width: 100%;
 	margin: 0 auto;
-	padding-top: 20px;
+	padding: 0 0 20px;
 	overflow: hidden;
 }
 .footer_outer h3 {
@@ -826,9 +826,9 @@ input[type="file"] {
 }
 .footer_inner {
 	display: flex;
-	justify-content: space-between;
 	margin: 0 auto;
 	padding: 0 15px;
+	justify-content: space-between;
 }
 footer .logo {
 	width: 20%;
@@ -879,22 +879,17 @@ footer .redes li:last-child {
 	margin-right: 0;
 }
 footer .legales {
-	clear: both;
-	position:relative;
-	top: 15px;
 	box-sizing: border-box;
 	overflow: hidden;
-	margin: 0 auto;
-	padding: 0 15px;
+}
+footer .legales ul {
+	display: flex;
 }
 footer .legales li {
-	float: left;
 	margin-right: 10px;
 	font-size: 0.6em;
 }
 footer .copyright {
-	padding-top: 5px;
-	margin:12px auto;
 }
 .copyright p {
 	display: block;
@@ -1185,7 +1180,7 @@ table {
 			width: 50%;
 			border: 0;
 			height:100%
-			
+
 		}
 		.container-match {
 			//flex-basis: 30%
@@ -1242,6 +1237,9 @@ table {
 		}
 		footer .redes ul{
 			height: 40px;
+		}
+		.footer_outer {
+			padding-top: 20px;
 		}
 		.footer_outer h3 {
 			font-size: 0.9em;
