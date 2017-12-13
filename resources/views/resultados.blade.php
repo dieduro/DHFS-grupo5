@@ -1,4 +1,5 @@
-@extends ('layouts.dashboardLayout')
+@extends ('layouts.layout')
+
 
 @section('title')
   TeamUp!-Resultados

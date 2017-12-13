@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use \App\Match;
+use Auth;
 
 class SearchController extends Controller
 {
@@ -22,7 +23,12 @@ class SearchController extends Controller
     //    if ($request->input('zona') !== null) {
     //     $resultado = $resultado->where('place', "=", $request->input('zona'));        
     //    }
-   
-        return view('resultados', $param);
+        
+        
+        if(Auth::check()) {
+            return view('profile.profile', $param);
+        } else {
+            return view('resultados', $param);
+        }
     }
 }
