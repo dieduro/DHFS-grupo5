@@ -5,77 +5,98 @@
   TeamUp!-Resultados
 @endsection
 @section('content')
-    {{--  <div class="container flexbox">
-    <div class="left-nav">
-      <div>
-        <input class="buscar" type="text" name="buscar" value="Buscar">
+
+  <div class="flexbox container">
+    <div class=" caja">
+        <div class="con_fb">
+          <a class="btn-solid-lg" href="{{ route('login') }}" role="button">Ingresá con Facebook</a>
+          <hr>
+        </div>
+        <form class="form" method="POST" id="login" action="{{ route('login') }}">
+          {{ csrf_field() }}
+          <div class="{{ $errors->has('email') ? ' has-error' : '' }}">
+            <input class="field" type="email" name="email" id="email" placeholder="Email" value="{{ old('email') }}"autofocus>
+            @if ($errors->has('email'))
+            <span class="errores">
+              <strong>{{ $errors->first('email') }}</strong>
+            </span>
+            @endif
+          </div>
+          <div class="{{ $errors->has('password') ? ' has-error' : '' }}">
+            <input class="field" type="password" name="password" id="password" placeholder="Contraseña" >
+          @if ($errors->has('password'))
+            <span class="errores">
+              <strong>{{ $errors->first('password') }}</strong>
+            </span>
+          @endif
+        </div>
+        <div class="recordarme">
+          <input type="checkbox" value="recordame" name="remember" {{ old('remember') ? 'checked' : '' }}> Recordame
+        </div>
+        <button class="btn-solid-lg" type="submit" name="iniciarSesion" id="iniciarSesion">INICIAR SESIÓN
+        </button>
+      </form>
+      <div class="linkeo">
+          <h6><a href="{{ route('password.request') }}">¿Olvidaste tu nombre de usuario o contraseña?</a></h6>
+          <br>
+          <h6>¿No tenés cuenta? <a href="{{ route('login') }}">Registrate</a></h6>
       </div>
-      <ul>
-        <li class="main-item">> PARTIDOS</li>
-        <ul class="dropdown-left">
-          <a href="/partidos/nuevo"><li>Crear Partido</li></a>
-          <a href="/partidos"><li>Mis Partidos</li></a>
-          <a href="#"><li>Me interesan</li></a>
-        </ul>
-        <li class="main-item">> MI CUENTA</li>
-        {{--  <ul class="dropdown-left">
-          <a href="/{{ Auth::user()->username }}/editar"><li>Editar Perfil</li></a>
-          <a href="/{{Auth::user()->username }}/eliminar"><li>Eliminar Cuenta</li></a>
-        </ul> 
-      </ul>
-    </div>  --}}
-
-
-    
-
- 
-    <div class="matches-container">
-    
-     @foreach ($matches as $match)
-        <div class="container-match">
-          <a href="/partido_{{ $match->id }}"> </a>
-          <div class="top"></div>
-          <div class="overlay-match">
-            <h3 class="sport-heading">{{ $match->sport->name }}</h3>
-            {{-- <p class="creator"> {{ $match->user->username }} </p> --}}
-            <p class="countMobile">{{ $match->nplayers }}/{{ $match->sport->players }}</p>
-            <div class="nplayers-container countDesktop">
-              <span class="hay-nplayers">{{ $match->nplayers }}</span>
-              <svg class="divisor"  viewBox="0 0 80 120"
-              xmlns="http://www.w3.org/2000/svg">
-              <line x1="90" y1="10" x2="50" y2="90"
-              stroke-width="2" stroke="black"/>
-            </svg>
-            <span class="total-nplayers">{{ $match->sport->players }}</span>
-          </div>
-          <div class= "info-match">
-            <p>{{ $match->date }}</p>
-            <p>{{ $match->place }}</p>
-          </div>
-          <div class="picContainer">
-            <div class="fondo">
-              <img  class="userPic" src="{{ asset('storage/'. $match->user->photo) }}" alt="">
-            </div>
-          </div>
-          <a href='/partido_{{ $match->id }}'>
-            <div class="plus">
-              <p>+</p>
-            </div>
-          </a>
-        </div>
-        <div class="bottom" style="background-image: url({{ asset( $match->photo ) }})">
-          <div class="views-likes">
-            <i class="fa fa-eye"  aria-hidden="true"></i>
-            <p class="social-counter">25</p>
-            <i class="fa fa-heart" style="color:white" aria-hidden="true"></i>
-            <p class="social-counter">6</p>
-          </div>
-            {{--  <div>
-            <img class="sport-img" src="{{ asset( $match->photo ) }}" alt="">
-            </div>  --}}
-        </div>
+      <div class="legals">
+          <hr>
+          <h6>Si hacés click en "INGRESÁ CON FACEBOOK" y no sos usuario de TEAMUP!, quedarás registrado y aceptarás los  <a href="/ttos">Términos y Condiciones</a> y <a href="/privacyPolicy"> Política de Privacidad</a> de TEAMUP!</h6>
+      </div>
     </div>
-  @endforeach
-    </div> 
-    
+   <div>
+    <h1>Resultados de la búsqueda</h1>
+      <div class="matches-container">
+      
+      
+      @foreach ($matches as $match)
+          <div class="container-match">
+            <a href="/partido_{{ $match->id }}"> </a>
+            <div class="top"></div>
+            <div class="overlay-match">
+              <h3 class="sport-heading">{{ $match->sport->name }}</h3>
+              {{-- <p class="creator"> {{ $match->user->username }} </p> --}}
+              <p class="countMobile">{{ $match->nplayers }}/{{ $match->sport->players }}</p>
+              <div class="nplayers-container countDesktop">
+                <span class="hay-nplayers">{{ $match->nplayers }}</span>
+                <svg class="divisor"  viewBox="0 0 80 120"
+                xmlns="http://www.w3.org/2000/svg">
+                <line x1="90" y1="10" x2="50" y2="90"
+                stroke-width="2" stroke="black"/>
+              </svg>
+              <span class="total-nplayers">{{ $match->sport->players }}</span>
+            </div>
+            <div class= "info-match">
+              <p>{{ $match->date }}</p>
+              <p>{{ $match->place }}</p>
+            </div>
+            <div class="picContainer">
+              <div class="fondo">
+                <img  class="userPic" src="{{ asset('storage/'. $match->user->photo) }}" alt="">
+              </div>
+            </div>
+            <a href='/partido_{{ $match->id }}'>
+              <div class="plus">
+                <p>+</p>
+              </div>
+            </a>
+          </div>
+          <div class="bottom" style="background-image: url({{ asset( $match->photo ) }})">
+            <div class="views-likes">
+              <i class="fa fa-eye"  aria-hidden="true"></i>
+              <p class="social-counter">25</p>
+              <i class="fa fa-heart" style="color:white" aria-hidden="true"></i>
+              <p class="social-counter">6</p>
+            </div>
+              {{--  <div>
+              <img class="sport-img" src="{{ asset( $match->photo ) }}" alt="">
+              </div>  --}}
+          </div>
+      </div>
+    @endforeach
+      </div> 
+    </div>
+  </div>  
 @endsection

@@ -106,7 +106,7 @@ hr {
 	border-top: 1px solid #969696;
 }
 .section_tit {
-	margin-top: 30px;
+	//margin-top: 30px;
 	text-align: center;
 }
 
@@ -310,7 +310,8 @@ h1 {
 .buscador {
 	border: 1px solid #30499B;
 	margin: 10px 0 20px auto;
-	display: none;
+	display: block;
+    overflow: hidden;
 }
 .buscador-field {
 	border: 0;
@@ -321,9 +322,23 @@ h1 {
 }
 .buscador-form {
 	height:40px;
-	width:60%;
+	width:100%;
 	text-align: center;
 }
+.buscador select {
+	width: 50%;
+	border: 0;
+	height:100%
+
+}
+.buscador-form button {
+	display: none;
+}
+
+.searchResults {
+
+}
+
 
 /* SLIDER  ------------------------------- */
 .slider {
@@ -1100,6 +1115,9 @@ table {
 		font-size: 1em;
 		justify-content: center;
 	}
+	.buscador-form button {
+		display: inline-block;
+	}
 	.footer_outer h3 {
 		font-size: 0.8em;
 		margin-bottom: 5px;
@@ -1175,12 +1193,7 @@ table {
 			margin-bottom: 20px;
 			color: #F3A530;
 		}
-		.buscador select {
-			width: 50%;
-			border: 0;
-			height:100%
-
-		}
+		
 		.container-match {
 			//flex-basis: 30%
 			

@@ -26,9 +26,6 @@
       <h3>Buscador de Partidos</h3>
     </div>
 
-    <div class="buscador-mobile">
-      <button class="buscador-mobile-btn" type="submit" name="buscar">Buscar</button>
-    </div>
     <div class="buscador">
       <form class="buscador-form" action='search' method="GET">
 

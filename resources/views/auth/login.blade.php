@@ -37,7 +37,7 @@
         </button>
       </form>
       <div class="linkeo">
-        <h6><a href="{{ route('password.request') }}">¿Olvidaste tu nombre de usuario o contraseña?</a></h6>
+        <h6><a href="{{ route('password.request') }}">¿Olvidaste tu contraseña?</a></h6>
         <br>
         <h6>¿No tenés cuenta? <a href="{{ route('login') }}">Registrate</a></h6>
       </div>
