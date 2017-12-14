@@ -545,7 +545,7 @@ input[type="file"] {
 	max-width: 250px;
 	margin: 0 auto;
 }
-.legals {
+.legals, .legals2 {
 	text-align: left;
 	max-width: 250px;
 	margin: 10px auto;
@@ -1158,7 +1158,6 @@ table {
 		.section_tit {
 			margin-top: 50px;
 			text-align: center;
-			font-size: 1.6em;
 			margin-bottom: 20px;
 			color: #F3A530;
 		}
@@ -1202,7 +1201,6 @@ table {
 		}
 		.register_img {
 			background-image: url("../images/register_img.jpg");
-			background-size: cover;
 			padding-top: 50px;
 			padding-bottom: 50px;
 		}

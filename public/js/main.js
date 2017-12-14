@@ -98,126 +98,142 @@ window.addEventListener('load', function() {
 
     // VALIDACION DE REGISTER
 
-      var regexVacio = /^[a-z0-9]+$/i;
-      var regexMail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    var regexVacio = /^[a-z0-9]+$/i;
+    var regexMail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
 
-      var form = document.querySelector('#register');
-      var username = document.querySelector('#username');
-      var email = document.querySelector('#email');
-      var password = document.querySelector('#password');
-      var cpassword = document.querySelector('#cpassword');
-      var legals = document.querySelector('#legals');
+    var form = document.querySelector('#register');
+    var username = document.querySelector('#username');
+    var email = document.querySelector('#email');
+    var password = document.querySelector('#password');
+    var cpassword = document.querySelector('#cpassword');
+    var legals = document.querySelector('#legals');
 
-      var errors = [];
+    var errors = [];
 
-      username.addEventListener('blur', function() {
-        var usernameValue = document.querySelector('#username').value;
-        if ( !regexVacio.test(usernameValue) ) {
-          // username.style.boxShadow = '0 0 2px red';
-          username.style.backgroundColor = '#ffe5e5';
-          console.log("campo username vacío");
-          var errorUsername = ["username", "elegí un nombre de usuario"];
-          errors.push(errorUsername);
-        } else if ( usernameValue.length < 3 || usernameValue.length > 15 ) {
-          // username.style.boxShadow = '0 0 2px red';
-          username.style.backgroundColor = '#ffe5e5';
-          console.log("elegí un numbre de usuario de entre 3 y 15 caracteres");
-          var errorUsername = ["username", "elegí un numbre de usuario de entre 3 y 15 caracteres"];
-          errors.push(errorUsername);
-        } else {
-          // username.style.boxShadow = '0 0 2px #00B200';
-          username.style.backgroundColor = '#e5ffe5';
-          console.log("todo ok en username");
-        };
-      });
+    function createSpan() {
+      var spanError = document.createElement("span");
+      spanError.className = "errores";
+      return spanError;
+    }
 
-      email.addEventListener('blur', function () {
-        var emailValue = document.querySelector('#email').value;
-        if ( emailValue == null ) {
-          // email.style.boxShadow = '0 0 2px red';
-          email.style.backgroundColor = '#ffe5e5';
-          console.log("campo email vacío");
-          var errorEmail = ["email", "Email no puede estar vacío"];
-          errors.push(errorEmail);
-        } else if ( !regexMail.test(emailValue) ) {
-          // email.style.boxShadow = '0 0 2px red';
-          email.style.backgroundColor = '#ffe5e5';
-          console.log("ingresá un mail válido");
-          var errorEmail = ["email", "Ingresá un email válido"];
-          errors.push(errorEmail);
-        } else {
-          // email.style.boxShadow = '0 0 2px #00B200';
-          email.style.backgroundColor = '#e5ffe5';
-          console.log("todo ok en email");
-        };
-      });
+    function deleteSpan(id) {
+      var div = document.querySelector(id);
+      var span = document.querySelector(id + " " + 'span');
 
-      password.addEventListener('blur', function () {
-        var passwordValue = document.querySelector('#password').value;
-        if ( !regexVacio.test(passwordValue) ) {
-          // password.style.boxShadow = '0 0 2px red';
-          password.style.backgroundColor = '#ffe5e5';
-          console.log("campo password vacío");
-          var errorPass = ["password", "Ingresá una contraseña"];
-          errors.push(errorPass)
-        } else if ( password.length < 6 ) {
-          // password.style.boxShadow = '0 0 2px red';
-          password.style.backgroundColor = '#ffe5e5';
-          console.log("la contraseña debe tener al menos 8 caracteres");
-          var errorPass = ["password", "Ingresá una contraseña"];
-          errors.push(errorPass);
-        } else {
-          // password.style.boxShadow = '0 0 2px #00B200';
-          password.style.backgroundColor = '#e5ffe5';
-          console.log("todo ok en pass");
-        };
-      });
+      if (div && span) {
+        div.removeChild(span);
+      }
+    }
 
-      cpassword.addEventListener('blur', function () {
-        var cpasswordValue = document.querySelector('#cpassword').value;
-        var passwordValue = document.querySelector('#password').value;
-        if ( !regexVacio.test(cpasswordValue) ) {
-          // cpassword.style.boxShadow = '0 0 2px red';
-          cpassword.style.backgroundColor = '#ffe5e5';
-          console.log("Por favor confirmá la contraseña");
-          var errorCpass = ["password", "Por favor confirmá la contraseña"]
-          errors.push(errorCpass);
-        } else if ( cpasswordValue !== passwordValue ) {
-          // cpassword.style.boxShadow = '0 0 2px red';
-          cpassword.style.backgroundColor = '#ffe5e5';
-          console.log("la contraseña no verifica");
-          var errorCpass = ["password", "Las contraseñas no son iguales"]
-          errors.push(errorCpass);
-        } else {
-          // cpassword.style.boxShadow = '0 0 2px #00B200';
-          cpassword.style.backgroundColor = '#e5ffe5';
-          console.log( "todo ok en cpassword");
-        };
-      });
+    username.addEventListener('blur', function() {
+      deleteSpan('.username');
+      var usernameValue = document.querySelector('#username').value;
+      var usernameDiv = document.querySelector('.username');
+      var spanError = createSpan();
+      if ( !regexVacio.test(usernameValue) ) {
+        var errorUsername = ["username", "Elegí un nombre de usuario"];
+        errors.push(errorUsername);
+      } else if ( usernameValue.length < 3 || usernameValue.length > 15 ) {
+        // username.style.boxShadow = '0 0 2px red';
+        var errorUsername = ["username", "Elegí un numbre de usuario de entre 3 y 15 caracteres"];
+        errors.push(errorUsername);
+      } else {
+        username.style.backgroundColor = '#e5ffe5';
+      };
 
-      legals.addEventListener('blur', function () {
-        if ( legals.checked == false ) {
-          legals.style.boxShadow = '0 0 2px red';
-          console.log("campo legals no clickeado");
-          var errorLegals = ["legals", "debés aceptar las condiciones de uso de TeamUp!"];
-          errors.push(errorLegals);
-        } else {
-          legals.style.boxShadow = 'none';
-        };
-      });
+      if (errorUsername) {
+        spanError.innerHTML = errorUsername[1];
+        usernameDiv.appendChild(spanError);
+        username.style.backgroundColor = '#ffe5e5';
+      }
+    });
 
-      form.addEventListener('submit', function (event) {
-        // validateUsername();
-        // validateEmail();
-        // validatePassword();
-        // validateCpassword();
-        // validateLegals();
-        if (errors != null) {
-          event.preventDefault();
-          console.log(errors);
-        } else {
-          errors = [];
-        };
-      });
+    email.addEventListener('blur', function () {
+      deleteSpan('.email');
+      var emailValue = document.querySelector('#email').value;
+      var emailDiv = document.querySelector('.email');
+      var spanError = createSpan();
+      if ( emailValue == "" ) {
+        var errorEmail = ["email", "Ingresá un email"];
+        errors.push(errorEmail);
+      } else if ( !regexMail.test(emailValue) ) {
+        var errorEmail = ["email", "Ingresá un email válido"];
+        errors.push(errorEmail);
+      } else {
+        email.style.backgroundColor = '#e5ffe5';
+      };
+
+      if (errorEmail) {
+        spanError.innerHTML = errorEmail[1];
+        emailDiv.appendChild(spanError);
+        email.style.backgroundColor = '#ffe5e5';
+      }
+    });
+
+    password.addEventListener('blur', function () {
+      deleteSpan('.password');
+      var passwordValue = document.querySelector('#password').value;
+      var passwordDiv = document.querySelector('.password');
+      var spanError = createSpan();
+      if ( !regexVacio.test(passwordValue) ) {
+        var errorPass = ["password", "Ingresá una contraseña"];
+        errors.push(errorPass);
+      } else if ( passwordValue.length < 6 ) {
+        var errorPass = ["password", "La contraseña debe tener al menos 6 caracteres"];
+        errors.push(errorPass);
+      } else {
+        password.style.backgroundColor = '#e5ffe5';
+      };
+
+      if (errorPass) {
+        spanError.innerHTML = errorPass[1];
+        passwordDiv.appendChild(spanError);
+        password.style.backgroundColor = '#ffe5e5';
+      };
+    });
+
+    cpassword.addEventListener('blur', function () {
+      deleteSpan('.cpassword');
+      var passwordValue = document.querySelector('#password').value;
+      var cpasswordValue = document.querySelector('#cpassword').value;
+      var cpasswordDiv = document.querySelector('.cpassword');
+      var spanError = createSpan();
+      if ( cpasswordValue == "" || cpasswordValue != passwordValue ) {
+        var errorCpass = ["cpassword", "Las contraseñas no se verifican"];
+        errors.push(errorCpass);
+      } else {
+        cpassword.style.backgroundColor = '#e5ffe5';
+      };
+
+      if (errorCpass) {
+        spanError.innerHTML = errorCpass[1];
+        cpasswordDiv.appendChild(spanError);
+        cpassword.style.backgroundColor = '#ffe5e5';
+      }
+    });
+
+    legals.addEventListener('blur', function () {
+      deleteSpan('.legals');
+      var legalsDiv = document.querySelector('.legals');
+      var spanError = createSpan();
+      if ( legals.checked == false ) {
+        legals.style.boxShadow = '0 0 2px red';
+        var errorLegals = ["legals", "Campo obligatorio"];
+        errors.push(errorLegals);
+
+        spanError.innerHTML = errorLegals[1];
+        legalsDiv.appendChild(spanError);
+      } else {
+        legals.style.boxShadow = 'none';
+      };
+    });
+
+    form.addEventListener('submit', function (event) {
+      if (errors.length > 0) {
+        event.preventDefault();
+      } else {
+        errors = [];
+      };
+    });
 
   });

@@ -13,7 +13,7 @@
       </div>
       <form class="form" method="POST" action="{{ route('register') }}" enctype="multipart/form-data" id="register">
         {{ csrf_field() }}
-        <div class="{{ $errors->has('username') ? ' has-error' : '' }}">
+        <div class="username{{ $errors->has('username') ? ' has-error' : '' }}">
           <input class="field" id="username" type="text" placeholder="Nombre de Usuario" name="username" value="{{ old('username') }}" >
           @if ($errors->has('username'))
             <span class="errores">
@@ -21,7 +21,7 @@
             </span>
           @endif
         </div>
-        <div class="{{ $errors->has('email') ? ' has-error' : '' }}">
+        <div class="email{{ $errors->has('email') ? ' has-error' : '' }}">
           <input class="field" id="email" type="email" name="email" placeholder="Email" value="{{ old('email') }}">
           @if ($errors->has('email'))
             <span class="errores">
@@ -29,7 +29,7 @@
             </span>
           @endif
         </div>
-        <div class="{{ $errors->has('password') ? ' has-error' : '' }}">
+        <div class="password{{ $errors->has('password') ? ' has-error' : '' }}">
           <input class="field" id="password" type="password" name="password" placeholder="Contraseña" >
           @if ($errors->has('password'))
             <span class="errores">
@@ -37,7 +37,7 @@
             </span>
           @endif
         </div>
-        <div class="">
+        <div class="cpassword">
           <input class="field" id="cpassword" type="password" placeholder="Repetir Contraseña" name="password_confirmation" >
         </div>
         {{-- <div class="file_div">
@@ -66,9 +66,10 @@
             <strong>{{ $errors->first('legals') }}</strong>
           </span>
         @endif
+      </div>
+      <div class="legals2">
         <hr>
         <h6>Si hacés click en "REGISTRATE CON FACEBOOK" aceptarás los <a href="#">Términos y Condiciones</a> y <a href="#">Política de Privacidad</a> de TEAMup! </h6>
-
       </div>
       <button class="btn-solid-lg" type="submit" name="button" id="register">REGISTRARME</button>
     </form>
