@@ -27,7 +27,6 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/{username}';
 
     /**
      * Create a new controller instance.
@@ -46,6 +45,7 @@ class LoginController extends Controller
     */
     protected function validateLogin(Request $request)
     {
+
         $this->validate($request, [
             $this->username() => 'required|string|email',
             'password' => 'required|string',
@@ -57,6 +57,14 @@ class LoginController extends Controller
           'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
         ]
       );
+    }
+    public function redirectPath()
+    {
+        if (method_exists($this, 'redirectTo')) {
+            return $this->redirectTo();
+        }
+
+        return property_exists($this, 'redirectTo') ? "/" . Auth::user()->name : '/home';
     }
 
 }

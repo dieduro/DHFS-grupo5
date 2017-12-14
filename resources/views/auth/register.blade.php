@@ -71,7 +71,7 @@
         <hr>
         <h6>Si hacés click en "REGISTRATE CON FACEBOOK" aceptarás los <a href="#">Términos y Condiciones</a> y <a href="#">Política de Privacidad</a> de TEAMup! </h6>
       </div>
-      <button class="btn-solid-lg" type="submit" name="button" id="register">REGISTRARME</button>
+      <button class="btn-solid-lg" type="submit" name="button" id="registerBtn">REGISTRARME</button>
     </form>
     <div class="linkeo">
       <h6>¿Ya tienes cuenta? <a href="{{ route('login') }}" >Iniciá Sesión</a></h6>

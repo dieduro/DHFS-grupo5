@@ -59,12 +59,13 @@
       </div>
     </div>
   </header>
+  
   <div class="container flexbox">
     <div class="left-nav">
-      <div>
+      <div class="dashMenu">
         <input class="buscar" type="text" name="buscar" placeholder="Buscar">
       </div>
-      <ul>
+      <ul class="dashMenu">
         <li class="main-item">> PARTIDOS</li>
         <ul class="dropdown-left">
           <a href="/{{ Auth::user()->username }}"><li>Resumen</li></a>
