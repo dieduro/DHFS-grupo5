@@ -5,8 +5,13 @@
 @endsection
 
 @section('content')
+<div class="profile">
+<div class="dashTitle"><h1>Perfil del Usuario</h1></div>
+  <img class="bigPic" src="{{ asset('storage/'. Auth::user()->photo) }}" alt="">
 
-<h1>Holaaaaa</h1>
-
+  <div class="userData">
+    <span>Hola {{Auth::user()->username}}!</span>
+  </div>
+</div>
 
 @endsection

@@ -1007,7 +1007,27 @@ table {
 .left-nav {
 	width:90%
 }
-
+.profile {
+	margin: 20px;
+	padding: 10px;
+}
+.bigPic {
+	width: 200px;
+	height:200px;
+	display: inline-block;
+	position: relative;
+	top: 40px;
+	height: auto;
+	border-radius: 50%;
+}
+.userData {
+	display: inline-block;
+	position: relative;
+    top: -100px;
+}
+.userData span {
+	font-size: 1.5em;
+}
 
 .dashMenu {
 	text-align:center;
