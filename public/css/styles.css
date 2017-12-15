@@ -439,12 +439,12 @@ h1 {
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
-	justify-content: space-between;
+	justify-content: space-around;
 }
-.lista-prox-part:after {
+/* .lista-prox-part:after {
 	content: "";
 	width: 32%;
-}
+} */
 .lista-prox-part li {
 	flex-basis: 98%;
 	margin:0;
