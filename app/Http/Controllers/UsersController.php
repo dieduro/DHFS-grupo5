@@ -130,7 +130,7 @@ class UsersController extends Controller
     if ($request->has('photo')) {
       $user->photo = $request->input('photo');
       $extensionImagen = $request->file('photo')->getClientOriginalExtension();
-      $user->photo = $request->file('photo')->storeAs('/images/users_img', $user->email . "." . $extensionImagen, 'public');
+      $user->photo = $request->file('photo')->storeAs('\images\users_img', $user->email . "." . $extensionImagen, 'public');
     } else {
       $user->photo = Auth::user()->photo;
     };
@@ -140,7 +140,9 @@ class UsersController extends Controller
     $param = [
       'user' => $user,
     ];
-    return view('profile.edit', $param);
+    return redirect('profile.profile'); 
+    //view('profile.profile', $param);
+    
   }
 
 

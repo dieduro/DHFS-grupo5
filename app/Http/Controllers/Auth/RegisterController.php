@@ -80,7 +80,7 @@ class RegisterController extends Controller
       $extensionImagen = $request->file('photo')->getClientOriginalExtension();
       $user->photo = $request->file('photo')->storeAs('/images/users_img', $user->email . "." . $extensionImagen, 'public');
     } else {
-      $user->photo = 'images\users_img\default.jpg';
+      $user->photo = 'images\users_img\userDefault.png';
     }
     $user->save();
 

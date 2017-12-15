@@ -16,7 +16,7 @@ class MatchesController extends Controller
       $param = [
         "matches" => $matches
       ];
-      return view('profile.profile', $param);
+      return view('profile.misPartidos', $param);
     } else {
       return redirect('/{username}');
     }
@@ -116,6 +116,6 @@ class MatchesController extends Controller
     $param = [
       'matches' => $matches
     ];
-    return view('profile.profile', $param);
+    return view('profile.misPartidos', $param);
   }
 }

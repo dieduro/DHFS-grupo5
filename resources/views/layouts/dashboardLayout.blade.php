@@ -19,6 +19,7 @@
       <!-- DIV VACIO -->
     </div>
     <h1><a href="/" class="header_link"><img class="logo" src="{{ asset('images/logo-home.png') }}" alt="logo TeamUp!"></a></h1>
+ 
     <nav class="menu">
       <ul>
         @if(Auth::check())
