@@ -17,7 +17,7 @@ class IsLogged
      public function handle($request, Closure $next)
      {
          if (!Auth::check()) {
-             return redirect('/');
+             return redirect('/login');
          }
 
          return $next($request);

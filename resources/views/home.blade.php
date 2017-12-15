@@ -29,7 +29,7 @@
     <div class="buscador">
       <form class="buscador-form" action='search' method="GET">
 
-        <select class="select" name="deporte" placeholder="Deporte">
+        <select class="select" name="deporte" placeholder="Deporte" id="selectSport">
           <option value="">Deporte</option>
           @foreach ($sports as $sport)
             <option value="{{ $sport->id }}">{{ $sport->name }}</option>
@@ -47,7 +47,7 @@
         </select>
        <input type="date" name="date" value="" placeholder="Fecha">
          --}}
-        <button class="btn-solid-sm" type="submit">Buscar</button>
+        <button class="btn-solid-sm" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
       </form>
     </div>
   </section>

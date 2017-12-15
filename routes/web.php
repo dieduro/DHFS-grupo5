@@ -46,7 +46,7 @@ Route::get('/faq', 'FaqController@index');
 // RUTAS PARTIDOS
 Route::get('/partidos', 'MatchesController@index')->middleware('isLogged');
 Route::get('/partidos_orderByDate', 'MatchesController@orderByDate')->middleware('isLogged');
-Route::get('/partidos/nuevo', 'MatchesController@create')->middleware('isLogged');
+Route::get('/partidos/nuevo', 'MatchesController@create')->name('crearPartido')->middleware('isLogged');
 Route::post('/partidos/nuevo', 'MatchesController@store')->middleware('isLogged');
 Route::get('/partido_{id}', 'MatchesController@show')->middleware('isLogged');
 Route::get('/partido_{id}/editar', 'MatchesController@edit')->middleware('isLogged');

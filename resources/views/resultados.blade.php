@@ -7,50 +7,20 @@
 @section('content')
 
   <div class="flexbox container">
-    <div class=" caja">
-        <div class="con_fb">
-          <a class="btn-solid-lg" href="{{ route('login') }}" role="button">Ingresá con Facebook</a>
-          <hr>
-        </div>
-        <form class="form" method="POST" id="login" action="{{ route('login') }}">
-          {{ csrf_field() }}
-          <div class="{{ $errors->has('email') ? ' has-error' : '' }}">
-            <input class="field" type="email" name="email" id="email" placeholder="Email" value="{{ old('email') }}"autofocus>
-            @if ($errors->has('email'))
-            <span class="errores">
-              <strong>{{ $errors->first('email') }}</strong>
-            </span>
-            @endif
-          </div>
-          <div class="{{ $errors->has('password') ? ' has-error' : '' }}">
-            <input class="field" type="password" name="password" id="password" placeholder="Contraseña" >
-          @if ($errors->has('password'))
-            <span class="errores">
-              <strong>{{ $errors->first('password') }}</strong>
-            </span>
-          @endif
-        </div>
-        <div class="recordarme">
-          <input type="checkbox" value="recordame" name="remember" {{ old('remember') ? 'checked' : '' }}> Recordame
-        </div>
-        <button class="btn-solid-lg" type="submit" name="iniciarSesion" id="iniciarSesion">INICIAR SESIÓN
-        </button>
-      </form>
-      <div class="linkeo">
-          <h6><a href="{{ route('password.request') }}">¿Olvidaste tu nombre de usuario o contraseña?</a></h6>
-          <br>
-          <h6>¿No tenés cuenta? <a href="{{ route('login') }}">Registrate</a></h6>
-      </div>
-      <div class="legals">
-          <hr>
-          <h6>Si hacés click en "INGRESÁ CON FACEBOOK" y no sos usuario de TEAMUP!, quedarás registrado y aceptarás los  <a href="/ttos">Términos y Condiciones</a> y <a href="/privacyPolicy"> Política de Privacidad</a> de TEAMUP!</h6>
-      </div>
-    </div>
-   <div>
-    <h1>Resultados de la búsqueda</h1>
+    
+   <div class="searchResults">
+    <h1 class="heading">Resultados de la búsqueda</h1>
       <div class="matches-container">
       
       
+        
+      @if ($matches->count() == 0)
+      <div>
+          <h2>No hay partidos que coincidan con tu búsqueda por el momento.</h2>
+          <h3>Aprovecha y <a href="{{ route('crearPartido') }}">creá uno!</a></h3>
+        </div>
+
+      @endif
       @foreach ($matches as $match)
           <div class="container-match">
             <a href="/partido_{{ $match->id }}"> </a>
@@ -97,6 +67,45 @@
       </div>
     @endforeach
       </div> 
+    </div>
+    <div class=" caja">
+        <div class="con_fb">
+          <a class="btn-solid-lg" href="{{ route('login') }}" role="button">Ingresá con Facebook</a>
+          <hr>
+        </div>
+        <form class="form" method="POST" id="login" action="{{ route('login') }}">
+          {{ csrf_field() }}
+          <div class="{{ $errors->has('email') ? ' has-error' : '' }}">
+            <input class="field" type="email" name="email" id="email" placeholder="Email" value="{{ old('email') }}"autofocus>
+            @if ($errors->has('email'))
+            <span class="errores">
+              <strong>{{ $errors->first('email') }}</strong>
+            </span>
+            @endif
+          </div>
+          <div class="{{ $errors->has('password') ? ' has-error' : '' }}">
+            <input class="field" type="password" name="password" id="password" placeholder="Contraseña" >
+          @if ($errors->has('password'))
+            <span class="errores">
+              <strong>{{ $errors->first('password') }}</strong>
+            </span>
+          @endif
+        </div>
+        <div class="recordarme">
+          <input type="checkbox" value="recordame" name="remember" {{ old('remember') ? 'checked' : '' }}> Recordame
+        </div>
+        <button class="btn-solid-lg" type="submit" name="iniciarSesion" id="iniciarSesion">INICIAR SESIÓN
+        </button>
+      </form>
+      <div class="linkeo">
+          <h6><a href="{{ route('password.request') }}">¿Olvidaste tu nombre de usuario o contraseña?</a></h6>
+          <br>
+          <h6>¿No tenés cuenta? <a href="{{ route('login') }}">Registrate</a></h6>
+      </div>
+      <div class="legals">
+          <hr>
+          <h6>Si hacés click en "INGRESÁ CON FACEBOOK" y no sos usuario de TEAMUP!, quedarás registrado y aceptarás los  <a href="/ttos">Términos y Condiciones</a> y <a href="/privacyPolicy"> Política de Privacidad</a> de TEAMUP!</h6>
+      </div>
     </div>
   </div>  
 @endsection

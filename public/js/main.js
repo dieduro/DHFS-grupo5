@@ -249,4 +249,27 @@ window.addEventListener('load', function() {
       };
     });
 
+// BUSCADOR DE PARTIDOS
+
+    var selectSport = document.querySelector(#selectSport)
+
+    selectSport.addEventListener('change', function(){
+      
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   });

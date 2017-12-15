@@ -62,9 +62,9 @@
   
   <div class="container flexbox">
     <div class="left-nav">
-      <div class="dashMenu">
+      {{--  <div class="dashMenu">
         <input class="buscar" type="text" name="buscar" placeholder="Buscar">
-      </div>
+      </div>  --}}
       <ul class="dashMenu">
         <li class="main-item">> PARTIDOS</li>
         <ul class="dropdown-left">

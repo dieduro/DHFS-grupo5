@@ -108,7 +108,19 @@ hr {
 .section_tit {
 	//margin-top: 30px;
 	text-align: center;
+	
 }
+.heading {
+	position: relative;
+	position: relative;
+    left: 20px;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 1.4em;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+}
+
 
 /* HEADER ------------------------------- */
 .head-left {
@@ -310,6 +322,7 @@ h1 {
 .buscador {
 	border: 1px solid #30499B;
 	margin: 10px 0 20px auto;
+	padding: 10px;
 	display: block;
     overflow: hidden;
 }
@@ -331,13 +344,10 @@ h1 {
 	height:100%
 
 }
-.buscador-form button {
-	display: none;
-}
-
 .searchResults {
-
+	width:100%;
 }
+
 
 
 /* SLIDER  ------------------------------- */
@@ -651,7 +661,7 @@ input[type="file"] {
 .create-match {
 	width: 100%;
 	position: relative;
-	top: 0;
+	top: 50px;
 	left: 0;
 }
 
@@ -1111,7 +1121,7 @@ table {
 	}
 	.buscador {
 		display: flex;
-		padding: 10px;
+		
 		font-size: 1em;
 		justify-content: center;
 	}
@@ -1172,7 +1182,7 @@ table {
 			margin-right: 18px;
 		}
 		.mega {
-			height: 60vh;
+			height: 50vh;
 		}
 		.mega h2 {
 			font-size: 4em;
