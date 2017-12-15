@@ -67,15 +67,14 @@
         <input class="buscar" type="text" name="buscar" placeholder="Buscar">
       </div>  --}}
       <ul class="dashMenu">
-       <li class="main-item">> MI CUENTA</li>
-        <ul class="dropdown-left">
+       <li class="main-item" id="miCuenta">> MI CUENTA</li>
+        <ul class="dropdown-left" id="dropdown-left" >
           <a href="/{{ Auth::user()->username }}"><li>Mi Perfil</li></a>
           <a href="/{{ Auth::user()->username }}/editar"><li>Editar Perfil</li></a>
           {{--  <a href="/{{Auth::user()->username }}/eliminar/{{Auth::user()->id}}"><li>Eliminar Cuenta</li></a>  --}}
         </ul>
-        <li class="main-item">> PARTIDOS</li>
-        <ul class="dropdown-left">
-          
+        <li class="main-item" id="partidos">> PARTIDOS</li>
+        <ul class="dropdown-left" id="partidosItems" >
           <a href="/partidos/nuevo"><li>Crear Partido</li></a>
           <a href="/partidos"><li>Mis Partidos</li></a>
           <a href="#"><li>Me interesan</li></a>

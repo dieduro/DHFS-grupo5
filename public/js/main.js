@@ -63,6 +63,21 @@ window.addEventListener('load', function() {
       document.getElementById("myDropdown").classList.toggle("show");
     }
 
+
+    var miCuenta = document.querySelector('#miCuenta');
+    miCuenta.onclick = function() {
+      var miCuentaItems = document.querySelector("#dropdown-left");
+      miCuentaItems.classList.toggle("show");
+    }
+
+    var partidos = document.querySelector('#partidos');
+    partidos.onclick = function() {
+      var partidosItems = document.querySelector("#partidosItems");
+      partidosItems.classList.toggle("show");
+    }
+
+
+
     // var nplayers = document.querySelector(".countL");
     // if (window.innerWidth < 420) {
     //   nplayers.classList.toggle("show");
@@ -251,7 +266,7 @@ window.addEventListener('load', function() {
 
 // BUSCADOR DE PARTIDOS
 
-    var selectSport = document.querySelector(#selectSport)
+    var selectSport = document.querySelector('#selectSport');
 
     selectSport.addEventListener('change', function(){
       
