@@ -15,7 +15,7 @@ Route::get('/storagelink', function () {
     $exitCode = Artisan::call('storage:link');
 });
 
-Route::get('/', 'HomeController@index');
+Route::get('/', 'HomeController@index')->middleware('redirectUser');
 Route::post('/', 'MatchesController@index')->middleware('guest');
 
 // Login Routes...
