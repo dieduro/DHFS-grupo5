@@ -64,5 +64,5 @@ Route::get('/deporte/eliminar', 'SportsController@destroy')->middleware('isLogge
 Route::get('/{username}', 'UsersController@show')->middleware('isLogged');
 Route::get('/{username}/editar', 'UsersController@edit')->middleware('isLogged');
 Route::patch('/{username}/editar', 'UsersController@update')->middleware('isLogged');
-Route::get('/{username}/eliminar', 'UserController@destroy')->middleware('isLogged');
+Route::get('/{username}/eliminar/{id}', 'UsersController@destroy')->middleware('isLogged');
 // Route::get('/{username}/misPartidos', 'UserController@misPartidos');

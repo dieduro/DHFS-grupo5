@@ -1023,10 +1023,12 @@ table {
 .userData {
 	display: inline-block;
 	position: relative;
-    top: -100px;
+	float: right;
 }
 .userData span {
 	font-size: 1.5em;
+	line-height: 2.5;
+    margin: 5px;
 }
 
 .dashMenu {
@@ -1095,6 +1097,7 @@ table {
 		//margin-right: 5%;
 		margin-bottom: 40px;
 	}
+	
 	.container-match:nth-child(3n) {
 		margin-right: 0;
 	}
@@ -1166,6 +1169,9 @@ table {
 	}
 	.dashSection {
 		width: 95%;
+	}
+	.userData {
+		float:none;
 	}
 
 }

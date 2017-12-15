@@ -6,7 +6,7 @@
 
 @section('content')
 <div class="profile">
-<div class="dashTitle"><h1>Perfil del Usuario</h1></div>
+<div class="dashTitle"><h1 class="heading">Perfil del Usuario</h1></div>
   <img class="bigPic" src="{{ asset('storage/'. Auth::user()->photo) }}" alt="">
 
   <div class="userData">
