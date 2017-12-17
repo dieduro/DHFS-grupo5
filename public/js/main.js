@@ -13,9 +13,14 @@ window.addEventListener('load', function() {
   function initAutocomplete() {
     // Create the autocomplete object, restricting the search to geographical
     // location types.
-    autocomplete = new google.maps.places.Autocomplete(
-      /** @type {!HTMLblurElement} */(document.getElementById('autocomplete')),
-      {types: ['geocode']});
+    var input = document.getElementById('autocomplete');
+    var options = {
+      //bounds: defaultBounds,
+      types: ['establishment','geocode'],
+      componentRestrictions: {country: 'ar'}
+    };
+    autocomplete = new google.maps.places.Autocomplete(input,
+      options);
       geolocate();
 
       // When the user selects an address from the dropdown, populate the address
@@ -45,6 +50,7 @@ window.addEventListener('load', function() {
     function fillInAddress() {
       // Get the place details from the autocomplete object.
       var place = autocomplete.getPlace();
+
       for (var component in componentForm) {
         document.getElementById(component).value = '';
         document.getElementById(component).disabled = false;
@@ -55,11 +61,16 @@ window.addEventListener('load', function() {
         
         var addressType = place.address_components[i].types[0];
         var val = place.address_components[i].long_name;
+      
        
-         if (componentForm.hasOwnProperty(addressType)) {
+
+         if (componentForm.hasOwnProperty(addressType) || addressType == 'premise') {
            if (addressType == "street_number") {
             document.getElementById(addressType).value = place.address_components[i+1].long_name+ ' ' + val;
-           }else {
+           } else if (addressType == 'premise') {
+            document.getElementById('street_number').value = val;
+           }
+           else {
             document.getElementById(addressType).value =  val;
            }
         }
