@@ -17,7 +17,6 @@ window.addEventListener('load', function() {
       /** @type {!HTMLblurElement} */(document.getElementById('autocomplete')),
       {types: ['geocode']});
       geolocate();
-      console.log(autocomplete);
 
       // When the user selects an address from the dropdown, populate the address
       // fields in the form.
@@ -49,20 +48,21 @@ window.addEventListener('load', function() {
       for (var component in componentForm) {
         document.getElementById(component).value = '';
         document.getElementById(component).disabled = false;
-       
       }
-      
       // Get each component of the address from the place details
       // and fill the corresponding field on the form.
       for (var i = 0; i < place.address_components.length; i++) {
         
         var addressType = place.address_components[i].types[0];
         var val = place.address_components[i].long_name;
-        console.log(val);
+       
          if (componentForm.hasOwnProperty(addressType)) {
-          document.getElementById(addressType).value = val;
+           if (addressType == "street_number") {
+            document.getElementById(addressType).value = place.address_components[i+1].long_name+ ' ' + val;
+           }else {
+            document.getElementById(addressType).value =  val;
+           }
         }
-        
       }
     }
 
