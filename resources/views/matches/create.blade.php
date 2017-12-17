@@ -67,7 +67,7 @@
 
     <div class="match-field {{ $errors->has('place') ? ' has-error' : '' }}">
     <input name="place" class="input-create" type="text" id="autocomplete" placeholder="Ingresa la dirección del partido" >
-    <div class="addressInfo">
+    <div class="addressInfo" id="addressInfo">
     <input class="field" placeholder="Calle y Número" id="street_number" disabled="true" ></input>
     <input class="field" placeholder="Barrio" id="sublocality_level_1" disabled="true"></input>
     <input class="field" placeholder="Ciudad" id="administrative_area_level_1" disabled="true"></input>

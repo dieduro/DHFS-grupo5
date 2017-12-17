@@ -17,7 +17,11 @@ class CreateMatchesTable extends Migration
       $table->increments('id');
       $table->integer('sport_id')->references('id')->on('sports');
       $table->dateTime('date');
-      $table->string('place')->nullable();
+      $table->string('name')->nullable();
+      $table->string('street_number')->nullable();
+      $table->string('locality')->nullable();
+      $table->string('city')->nullable();
+      $table->string('country')->nullable();
       $table->integer('nplayers');
       $table->text('comment')->nullable();
       $table->string('photo');

@@ -25,7 +25,7 @@ class MatchesTableSeeder extends Seeder
         $sport = \App\Match::create([
           "sport_id" => $props[0],
           "date" => $props[1],
-          "place" => $props[2],
+          "street_number" => $props[2],
           "nplayers" => $props[3],
           "photo" => $props[4],
           "user_id" => $props[5]

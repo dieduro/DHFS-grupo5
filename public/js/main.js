@@ -50,20 +50,37 @@ window.addEventListener('load', function() {
     function fillInAddress() {
       // Get the place details from the autocomplete object.
       var place = autocomplete.getPlace();
-
+      console.log(place);
       for (var component in componentForm) {
         document.getElementById(component).value = '';
         document.getElementById(component).disabled = false;
       }
       // Get each component of the address from the place details
       // and fill the corresponding field on the form.
-      for (var i = 0; i < place.address_components.length; i++) {
+      
+      if (place.name ) {
+        var hayName = document.querySelector('#name');
+        if ( hayName == null){
+          console.log('FTOOWKKSKS');
+          var nameInput =  document.createElement('input');
+          nameInput.setAttribute('class','field');
+          nameInput.setAttribute('id','name');
+          nameInput.setAttribute('placeholder','Club o Establecimiento');
+          var addressInfo = document.querySelector('#addressInfo');
+          addressInfo.prepend(nameInput);
+        }
+        var name = document.querySelector('#name');
+        componentForm.name = place.name;
+        name.value = componentForm.name;
         
+        
+       }
+       
+      for (var i = 0; i < place.address_components.length; i++) {
+       
         var addressType = place.address_components[i].types[0];
         var val = place.address_components[i].long_name;
-      
        
-
          if (componentForm.hasOwnProperty(addressType) || addressType == 'premise') {
            if (addressType == "street_number") {
             document.getElementById(addressType).value = place.address_components[i+1].long_name+ ' ' + val;

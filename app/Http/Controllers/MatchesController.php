@@ -60,7 +60,11 @@ class MatchesController extends Controller
     $match = Match::create([
       'sport_id' => $request->input('sport_id'),
       'date' => $request->input('date'),
-      'place' => $request->input('place'),
+      'name' => $request->input('name'),
+      'street_number' => $request->input('street_number'),
+      'locality' => $request->input('sublocality_level_1'),
+      'city' => $request->input('administrative_area_level_1'),
+      'country' => $request->input('country'),
       'nplayers' => $request->input('nplayers'),
       'comment' => $request->input('comment'),
       'user_id' => Auth::user()->id,
