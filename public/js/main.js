@@ -3,42 +3,25 @@ window.addEventListener('load', function() {
   var autocomplete;
   var componentForm = {
     street_number: '',
-    locality: '',
+    sublocality_level_1: '',
     administrative_area_level_1: '',
     country: '',
   };
+
+
+
   function initAutocomplete() {
     // Create the autocomplete object, restricting the search to geographical
     // location types.
     autocomplete = new google.maps.places.Autocomplete(
       /** @type {!HTMLblurElement} */(document.getElementById('autocomplete')),
       {types: ['geocode']});
+      geolocate();
+      console.log(autocomplete);
 
       // When the user selects an address from the dropdown, populate the address
       // fields in the form.
       autocomplete.addListener('place_changed', fillInAddress);
-    }
-
-    function fillInAddress() {
-      // Get the place details from the autocomplete object.
-      var place = autocomplete.getPlace();
-      console.log(place);
-      console.log('me cago en dios');
-
-      for (var component in componentForm) {
-        document.getElementById(component).value = '';
-        document.getElementById(component).disabled = false;
-      }
-
-      // Get each component of the address from the place details
-      // and fill the corresponding field on the form.
-      for (var i = 0; i < place.address_components.length; i++) {
-        var addressType = place.address_components[i].types[0];
-        if (componentForm[addressType]) {
-          var val = place.address_components[i][componentForm[addressType]];
-          document.getElementById(addressType).value = val;
-        }
-      }
     }
 
     function geolocate() {
@@ -54,9 +37,35 @@ window.addEventListener('load', function() {
             radius: position.coords.accuracy
           });
           autocomplete.setBounds(circle.getBounds());
+          
         });
       };
     };
+
+
+    function fillInAddress() {
+      // Get the place details from the autocomplete object.
+      var place = autocomplete.getPlace();
+      for (var component in componentForm) {
+        document.getElementById(component).value = '';
+        document.getElementById(component).disabled = false;
+       
+      }
+      
+      // Get each component of the address from the place details
+      // and fill the corresponding field on the form.
+      for (var i = 0; i < place.address_components.length; i++) {
+        
+        var addressType = place.address_components[i].types[0];
+        var val = place.address_components[i].long_name;
+        console.log(val);
+         if (componentForm.hasOwnProperty(addressType)) {
+          document.getElementById(addressType).value = val;
+        }
+        
+      }
+    }
+
 
     var btn = document.querySelector('.dropbtn');
     btn.onclick = function() {
@@ -102,13 +111,15 @@ window.addEventListener('load', function() {
     //   event.preventDefault();
     // });
     //
-    // var address = document.querySelector('#autocomplete');
-    // address.addEventListener ('focus', function(event) {
-    //   geolocate();
-    // });
-    // address.addEventListener ('blur', function(event) {
-    //   initAutocomplete();
-    // });
+    var address = document.querySelector('#autocomplete');
+    address.addEventListener ('focus', function(event) {
+      initAutocomplete();
+
+      
+    });
+    address.addEventListener ('blur', function(event) {
+     
+    });
 
 
     // VALIDACION DE REGISTER
@@ -147,29 +158,32 @@ window.addEventListener('load', function() {
       }
       return true;
     }
+    if (username) {
+      username.addEventListener('blur', function() {
+        if (errors.username) {
+          delete errors.username
+        }
+        deleteSpan('.username');
+        var usernameValue = document.querySelector('#username').value;
+        var usernameDiv = document.querySelector('.username');
+        var spanError = createSpan();
+        if ( !regexVacio.test(usernameValue) ) {
+          errors.username = "Elegí un nombre de usuario";
+        } else if ( usernameValue.length < 3 || usernameValue.length > 15 ) {
+          errors.username = "Elegí un numbre de usuario de entre 3 y 15 caracteres";
+        } else {
+          username.style.backgroundColor = '#e5ffe5';
+        };
+  
+        if (errors.username) {
+          spanError.innerHTML = errors.username;
+          usernameDiv.appendChild(spanError);
+          username.style.backgroundColor = '#ffe5e5';
+        }
+      });
+    }
 
-    username.addEventListener('blur', function() {
-      if (errors.username) {
-        delete errors.username
-      }
-      deleteSpan('.username');
-      var usernameValue = document.querySelector('#username').value;
-      var usernameDiv = document.querySelector('.username');
-      var spanError = createSpan();
-      if ( !regexVacio.test(usernameValue) ) {
-        errors.username = "Elegí un nombre de usuario";
-      } else if ( usernameValue.length < 3 || usernameValue.length > 15 ) {
-        errors.username = "Elegí un numbre de usuario de entre 3 y 15 caracteres";
-      } else {
-        username.style.backgroundColor = '#e5ffe5';
-      };
-
-      if (errors.username) {
-        spanError.innerHTML = errors.username;
-        usernameDiv.appendChild(spanError);
-        username.style.backgroundColor = '#ffe5e5';
-      }
-    });
+ 
 
     email.addEventListener('blur', function () {
       if (errors.email) {

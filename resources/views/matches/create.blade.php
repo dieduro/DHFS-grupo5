@@ -54,31 +54,31 @@
       @endif
     </div>
 
-    <div class="match-field {{ $errors->has('place') ? ' has-error' : '' }}">
-      <label for="place" class="lbl-create">Seleccionar</label>
-      <input type="text" class="input-create select" name="place" value="{{ old('place')}}" placeholder="¿Dónde se juega?">
-      {{--<input type="place" name="place"  value=""> <!-- api google -->--}}
+    {{--  <div class="match-field {{ $errors->has('place') ? ' has-error' : '' }}">
+    <label for="place" class="lbl-create">¿Donbde se juega?</label>
+      {{--  <input type="text" class="input-create select" name="place" value="{{ old('place')}}" placeholder="¿Dónde se juega?"> 
+      <input type="place" name="place"  value=""> <!-- api google -->
       @if ($errors->has('place'))
         <span class="errores">
           <strong>{{ $errors->first('place') }}</strong>
         </span>
       @endif
-    </div>
+    </div>  --}}
 
-    {{-- <div class="match-field {{ $errors->has('place') ? ' has-error' : '' }}">
+    <div class="match-field {{ $errors->has('place') ? ' has-error' : '' }}">
     <input name="place" class="input-create" type="text" id="autocomplete" placeholder="Ingresa la dirección del partido" >
     <div class="addressInfo">
-    <input class="field" id="street_number" disabled="true"></input>
-    <input class="field" id="locality" disabled="true"></input>
-    <input class="field" id="administrative_area_level_1" disabled="true"></input>
-    <input class="field" id="country" disabled="true"></input>
+    <input class="field" placeholder="Calle y Número" id="street_number" disabled="true" ></input>
+    <input class="field" placeholder="Barrio" id="sublocality_level_1" disabled="true"></input>
+    <input class="field" placeholder="Ciudad" id="administrative_area_level_1" disabled="true"></input>
+    <input class="field" placeholder="Pais" id="country" disabled="true"></input>
   </div>
   @if ($errors->has('place'))
   <span class="errores">
   <strong>{{ $errors->first('place') }}</strong>
 </span>
 @endif
-</div> --}}
+</div>
 
 <div class="match-field {{ $errors->has('comment') ? ' has-error' : '' }}">
   <label class="lbl-create" for="">Comentarios</label>
