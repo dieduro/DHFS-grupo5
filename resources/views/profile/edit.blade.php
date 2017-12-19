@@ -8,7 +8,7 @@
 
 {{-- {{ dd( $user )}} --}}
 
-    <div class="dashTitle"><h1>Editar Perfil</h1></div>
+    <div class="dashTitle"><h1 class="heading">Editar Perfil</h1></div>
     <div class="create-match">
     <form class="form" method="POST" action="/{{ Auth::user()->username }}/editar" enctype="multipart/form-data" >
       {{ csrf_field() }}

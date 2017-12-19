@@ -27,7 +27,7 @@ class MatchesController extends Controller
     $param = [
       'match' => $match
     ];
-    return view('matches.index', $param);
+    return view('matches.show', $param);
   }
 
   public function create()
@@ -77,9 +77,6 @@ class MatchesController extends Controller
     ]);
    
     return redirect('/partidos');
-  }
-  public function test(Request $rquest) {
-    dd($request);
   }
 
   /* EDITAR DATOS DE PARTIDOS */

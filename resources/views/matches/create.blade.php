@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-  <div class="dashTitle"><h1 >Crear Partido</h1></div>
+  <div class="dashTitle"><h1 class="heading">Crear Partido</h1></div>
   <div class="create-match">
     <form class="form" action="/partidos/nuevo" method="post">
       {{ csrf_field() }}
