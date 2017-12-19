@@ -7,7 +7,7 @@
 @section('content')
 
   
-    
+  <section class="container"> 
   <div class="searchResults">
     <div class="dashTitle"><h1 class="heading">Partidos de: {{ $sport->name }}</h1></div>
     <div class="matches-container">
@@ -67,11 +67,8 @@
     </div>
   @endforeach
     </div> 
-    <div class="cajita">
-      <div class="con_fb">
-        <a class="btn-solid-lg" href="{{ route('login') }}" role="button">Ingresá con Facebook</a>
-        <hr>
-      </div>
+    </div>
+  <div class="cajita">
       <form class="form-cajita" method="POST" id="login" action="{{ route('login') }}">
         {{ csrf_field() }}
         <div class="{{ $errors->has('email') ? ' has-error' : '' }}">
@@ -101,7 +98,8 @@
         <h6>¿No tenés cuenta? <a href="{{ route('login') }}">Registrate</a></h6>
     </div>
   </div>
-  </div>
+  
+  </section>
   
    
 @endsection

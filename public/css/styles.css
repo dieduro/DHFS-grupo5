@@ -365,9 +365,9 @@ h1 {
 
 }
 .searchResults {
-	flex-basis: 70%;
+	width: 100%;
+	background-color: rgba(42, 75, 102, 0.08);
 }
-
 
 
 
@@ -492,8 +492,11 @@ h1 {
 	border: 2px solid blue;
 }
 .cajita {
-	width: 450px;
-	height: 300px;
+	padding: 20px;
+    width: 100%;
+    margin: 20px auto;
+    border: 1px solid #30499B;
+    background-color: rgba(42, 75, 102, 0.08);
 }
 
 .form-cajita {
@@ -604,7 +607,7 @@ input[type="file"] {
 }
 .con_fb {
 	max-width: 250px;
-	margin: 0 auto;
+	margin: 20px auto;
 }
 .legals, .legals2 {
 	text-align: left;
@@ -682,7 +685,7 @@ input[type="file"] {
 .dashSection {
 	position: relative;
 	width: 90%;
-	background-color: rgba(41,77,107,.08);
+	background-color: rgba(42, 75, 102, 0.08);
 }
 .dashTitle {
 	
@@ -707,7 +710,7 @@ input[type="file"] {
 .matches-container {
 	margin-top: 30px;
 	display: flex;
-	justify-content: space-around;
+	justify-content: flex-start;
 	flex-wrap: wrap;
 	width:100%;
 }
@@ -972,10 +975,7 @@ footer .copyright {
 input[type="checkbox"] {
 	display: inline-block;
 }
-.con_fb {
-	max-width: 250px;
-	margin: 0 auto;
-}
+
 .legals {
 	text-align: left;
 	max-width: 250px;
@@ -1238,6 +1238,14 @@ table {
 		width: 50%;
 		position: absolute;
 		right: 0;
+	}
+	.cajita {
+		width: auto;
+		position: absolute;
+		top: 58px;
+		right: 20px;
+		padding: 20px 0;
+		height: 300px;
 	}
 
 }
