@@ -50,7 +50,7 @@ window.addEventListener('load', function() {
     function fillInAddress() {
       // Get the place details from the autocomplete object.
       var place = autocomplete.getPlace();
-      console.log(place);
+      
       for (var component in componentForm) {
         document.getElementById(component).value = '';
         document.getElementById(component).disabled = false;
@@ -61,7 +61,7 @@ window.addEventListener('load', function() {
       if (place.name ) {
         var hayName = document.querySelector('#name');
         if ( hayName == null){
-          console.log('FTOOWKKSKS');
+          
           var nameInput =  document.createElement('input');
           nameInput.setAttribute('class','field');
           nameInput.setAttribute('id','name');
@@ -75,9 +75,9 @@ window.addEventListener('load', function() {
         
         
        }
-       
+       console.log(place.address_components);
       for (var i = 0; i < place.address_components.length; i++) {
-       
+      
         var addressType = place.address_components[i].types[0];
         var val = place.address_components[i].long_name;
        

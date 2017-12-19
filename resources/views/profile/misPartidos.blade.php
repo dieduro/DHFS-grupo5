@@ -33,7 +33,7 @@
           </div>
           <div class= "info-match">
             <p>{{ $match->date }}</p>
-            <p>{{ $match->place }}</p>
+             <p>{{ "$match->locality, $match->city" }}</p>
           </div>
           <div class="picContainer">
             <div class="fondo">
@@ -57,7 +57,7 @@
             <img class="sport-img" src="{{ asset( $match->photo ) }}" alt="">
           </div>  --}}
         </div>
-      </a>
+      
     </div>
   @endforeach
   <!-- fin partido -->

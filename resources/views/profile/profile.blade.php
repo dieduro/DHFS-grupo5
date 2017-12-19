@@ -12,7 +12,8 @@
   <div class="userData">
     <span>Hola {{Auth::user()->username}}!</span>
   </div>
-     <div class="matches-container">
+  </div>
+   <div class="matches-container">
       {{--PARTIDO #--}}
       @foreach ($matches as $match)
         <div class="container-match">
@@ -33,7 +34,7 @@
           </div>
           <div class= "info-match">
             <p>{{ $match->date }}</p>
-            <p>{{ $match->street_number }}</p>
+            <p>{{ "$match->locality, $match->city" }}</p>
           </div>
           <div class="picContainer">
             <div class="fondo">
@@ -62,6 +63,6 @@
   @endforeach
   <!-- fin partido -->
 </div>
-</div>
+
 
 @endsection

@@ -646,6 +646,7 @@ input[type="file"] {
 .dashSection {
 	position: relative;
 	width: 90%;
+	background-color: rgba(41,77,107,.08);
 }
 .dashTitle {
 	display: inline;

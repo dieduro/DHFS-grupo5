@@ -40,13 +40,16 @@
       </div>
 
       <div class="match-field {{ $errors->has('date') ? ' has-error' : '' }}">
-        <label class="lbl-create" for="date">Fecha</label>
-        <input class="input-create select" type="datetime-local" name="date" value="datetime">
-        {{-- <div class="date-cont">
-        <input  placeholder="Mes" class="select" type="number" min="1" max="12">
-        <input  placeholder="Día" class="select" type="number" min="1" max="31">
-        <input  placeholder="Año" class="select" type="number" min="2017" max="2021">
-      </div> --}}
+        {{--  <input class="input-create select" type="datetime-local" name="date" value="datetime">  --}}
+        <div class="date-cont">
+          <label class="lbl-create" for="date">Fecha</label>
+          <input  placeholder="Día" class="select" type="number" min="1" max="31" name="day">
+          <input  placeholder="Mes" class="select" type="number" min="1" max="12" name="month">
+          <input  placeholder="Año" class="select" type="number" min="2017" max="2021" name="year">
+          <label class="lbl-create" for="time">Hora</label>  
+          <input  placeholder="00" class="select" type="number" min="00" max="24" name="hour">
+          <input  placeholder="00" class="select" type="number" min="00" max="59" name="minutes">
+        </div>
       @if ($errors->has('date'))
         <span class="date">
           <strong>{{ $errors->first('date') }}</strong>
@@ -54,24 +57,14 @@
       @endif
     </div>
 
-    {{--  <div class="match-field {{ $errors->has('place') ? ' has-error' : '' }}">
-    <label for="place" class="lbl-create">¿Donbde se juega?</label>
-      {{--  <input type="text" class="input-create select" name="place" value="{{ old('place')}}" placeholder="¿Dónde se juega?"> 
-      <input type="place" name="place"  value=""> <!-- api google -->
-      @if ($errors->has('place'))
-        <span class="errores">
-          <strong>{{ $errors->first('place') }}</strong>
-        </span>
-      @endif
-    </div>  --}}
 
     <div class="match-field {{ $errors->has('place') ? ' has-error' : '' }}">
-    <input name="place" class="input-create" type="text" id="autocomplete" placeholder="Ingresa la dirección del partido" >
+    <input  class="input-create" type="text" id="autocomplete" placeholder="Ingresa la dirección del partido" >
     <div class="addressInfo" id="addressInfo">
-    <input class="field" placeholder="Calle y Número" id="street_number" disabled="true" ></input>
-    <input class="field" placeholder="Barrio" id="sublocality_level_1" disabled="true"></input>
-    <input class="field" placeholder="Ciudad" id="administrative_area_level_1" disabled="true"></input>
-    <input class="field" placeholder="Pais" id="country" disabled="true"></input>
+    <input name="street_number" class="field" placeholder="Calle y Número" id="street_number" disabled="true" ></input>
+    <input name="locality" class="field" placeholder="Barrio" id="sublocality_level_1" disabled="true"></input>
+    <input name="city" class="field" placeholder="Ciudad" id="administrative_area_level_1" disabled="true"></input>
+    <input name="country" class="field" placeholder="Pais" id="country" disabled="true"></input>
   </div>
   @if ($errors->has('place'))
   <span class="errores">

@@ -44,7 +44,7 @@ class MatchesController extends Controller
     $rules = [
       'sport_id' => 'required',
       'nplayers' => 'required',
-      'date' => 'required',
+     // 'date' => 'required',
       // 'place' => 'required',
       // 'comment' => 'required'
     ];
@@ -57,20 +57,29 @@ class MatchesController extends Controller
 
     $sport = Sport::find($request->input('sport_id'));
 
+    $date = $request->input('day').'/'.$request->input('month').'/'.$request->input('year');
+    $time = $request->input('hour').':'.$request->input('minutes');
+
     $match = Match::create([
       'sport_id' => $request->input('sport_id'),
-      'date' => $request->input('date'),
+      'date' => $date,
+      'time' => $time,
       'name' => $request->input('name'),
       'street_number' => $request->input('street_number'),
-      'locality' => $request->input('sublocality_level_1'),
-      'city' => $request->input('administrative_area_level_1'),
+      'locality' => $request->input('locality'),
+      'city' => $request->input('city'),
       'country' => $request->input('country'),
       'nplayers' => $request->input('nplayers'),
       'comment' => $request->input('comment'),
       'user_id' => Auth::user()->id,
       'photo' => $sport['photo']
+      
     ]);
+   
     return redirect('/partidos');
+  }
+  public function test(Request $rquest) {
+    dd($request);
   }
 
   /* EDITAR DATOS DE PARTIDOS */
