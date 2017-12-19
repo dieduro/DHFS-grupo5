@@ -10,14 +10,14 @@
   <section class="container"> 
   <div class="searchResults">
     <div class="dashTitle"><h1 class="heading">Partidos de: {{ $sport->name }}</h1></div>
-    <div class="matches-container">
+    <div class="results-container">
     
     
       
     @if ($matches->count() == 0)
-    <div>
-        <h2>No hay partidos que coincidan con tu búsqueda por el momento.</h2>
-        <h3>Aprovecha y <a href="{{ route('crearPartido') }}">creá uno!</a></h3>
+    <div class="no-matches">
+        <p>No hay partidos que coincidan con tu búsqueda por el momento.</p>
+        <h2>Aprovecha y <a href="{{ route('crearPartido') }}">creá uno!</a></h2>
       </div>
 
     @endif

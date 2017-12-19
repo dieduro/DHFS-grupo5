@@ -367,6 +367,16 @@ h1 {
 .searchResults {
 	width: 100%;
 	background-color: rgba(42, 75, 102, 0.08);
+	min-height: 600px;
+}
+
+.no-matches {
+	margin: 20px;
+	padding: 10px;
+}
+.no-matches h2 {
+	font-size : 1.6em;
+	line-height: 2;
 }
 
 
@@ -710,10 +720,18 @@ input[type="file"] {
 .matches-container {
 	margin-top: 30px;
 	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	width:100%;
+}
+.results-container {
+	margin-top: 30px;
+	display: flex;
 	justify-content: flex-start;
 	flex-wrap: wrap;
 	width:100%;
 }
+
 .container-match {
 	height: 100px;
 	width: 100%;
