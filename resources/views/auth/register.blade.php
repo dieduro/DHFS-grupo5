@@ -40,24 +40,7 @@
         <div class="cpassword">
           <input class="field" id="cpassword" type="password" placeholder="Repetir Contraseña" name="password_confirmation" >
         </div>
-        {{-- <div class="file_div">
-          <label for="upload-photo"><img class="profile_icon" src="{{asset('storage\images\users_img\userDefault.png')}}" alt="Subí tu foto de perfil"><span class="btn-solid-sm btn_upload">SUBI TU FOTO</span></label>
-          <input type="file" name="photo" id="upload-photo" />
-        </div> --}}
-        {{-- <div class="">
-        <div class="file_div">
-        <label for="photo" id="profilePic_label">Foto de Perfil</label>
-        <input type="file" name="photo" value="">
-      </div> --}}
-
-      {{-- <div class="{{ $errors->has('password') ? ' has-error' : '' }}">
-        <input type="file" name="photo" value="">
-        @if ($errors->has('photo'))
-          <span class="errores">
-            <strong>{{ $errors->first('photo') }}</strong>
-          </span>
-        @endif
-      </div> --}}
+       
       <div class="legals {{ $errors->has('legals') ? ' has-error' : '' }}">
         <input type="checkbox" name="legals" value="1" id="legals" >
         <h6 style="color:#555555">Acepto los Términos y Condiciones del servicio.</h6>

@@ -1,4 +1,4 @@
-@extends('layouts.dashboardLayout')
+ @extends('layouts.dashboardLayout')
 
 @section('title')
   TeamUp! - Editar Partido

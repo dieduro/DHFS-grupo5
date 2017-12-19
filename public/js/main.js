@@ -26,6 +26,7 @@ window.addEventListener('load', function() {
       // When the user selects an address from the dropdown, populate the address
       // fields in the form.
       autocomplete.addListener('place_changed', fillInAddress);
+    
     }
 
     function geolocate() {
@@ -35,25 +36,25 @@ window.addEventListener('load', function() {
             lat: position.coords.latitude,
             lng: position.coords.longitude
           };
-
           var circle = new google.maps.Circle({
             center: geolocation,
             radius: position.coords.accuracy
           });
           autocomplete.setBounds(circle.getBounds());
-          
         });
       };
     };
-
 
     function fillInAddress() {
       // Get the place details from the autocomplete object.
       var place = autocomplete.getPlace();
       
       for (var component in componentForm) {
-        document.getElementById(component).value = '';
-        document.getElementById(component).disabled = false;
+        if (document.getElementById(component)) {
+          document.getElementById(component).value = '';
+          document.getElementById(component).disabled = false;
+        }
+        
       }
       // Get each component of the address from the place details
       // and fill the corresponding field on the form.
@@ -75,26 +76,39 @@ window.addEventListener('load', function() {
         
         
        }
-       console.log(place.address_components);
+       
       for (var i = 0; i < place.address_components.length; i++) {
       
         var addressType = place.address_components[i].types[0];
         var val = place.address_components[i].long_name;
        
          if (componentForm.hasOwnProperty(addressType) || addressType == 'premise') {
-           if (addressType == "street_number") {
+          if (addressType == "street_number") {
             document.getElementById(addressType).value = place.address_components[i+1].long_name+ ' ' + val;
-           } else if (addressType == 'premise') {
+          } else if (addressType == 'premise') {
             document.getElementById('street_number').value = val;
-           }
-           else {
+          }
+          else if (document.getElementById(addressType)) {
             document.getElementById(addressType).value =  val;
            }
         }
       }
     }
-
-
+    
+     
+    
+    var address = document.querySelector('#autocomplete');
+    if (address) {
+      address.addEventListener ('focus', function(event) {
+        initAutocomplete();
+        
+      });
+      address.addEventListener ('blur', function(event) {
+       
+      });
+    }
+  
+  
     var btn = document.querySelector('.dropbtn');
     btn.onclick = function() {
       document.getElementById("myDropdown").classList.toggle("show");
@@ -115,39 +129,6 @@ window.addEventListener('load', function() {
 
 
 
-    // var nplayers = document.querySelector(".countL");
-    // if (window.innerWidth < 420) {
-    //   nplayers.classList.toggle("show");
-    // }
-
-    // var todo = document.querySelector('#selectAll');
-    //
-    // todo.addEventListener('click', function() {
-    //   var selected = document.querySelectorAll('.select');
-    //
-    //   selected.forEach(function(elem) {
-    //     if (elem.checked == true){
-    //       elem.checked = false;
-    //     } else {
-    //       elem.checked = true;
-    // }
-    // });
-    // });
-
-    // var btnSubmit = document.querySelector('#crear');
-    // btnSubmit.addEventListener('click', function(event){
-    //   event.preventDefault();
-    // });
-    //
-    var address = document.querySelector('#autocomplete');
-    address.addEventListener ('focus', function(event) {
-      initAutocomplete();
-
-      
-    });
-    address.addEventListener ('blur', function(event) {
-     
-    });
 
 
     // VALIDACION DE REGISTER
@@ -186,7 +167,7 @@ window.addEventListener('load', function() {
       }
       return true;
     }
-    if (username) {
+    if (username) { 
       username.addEventListener('blur', function() {
         if (errors.username) {
           delete errors.username
@@ -210,94 +191,97 @@ window.addEventListener('load', function() {
         }
       });
     }
+    if (email) {
+      email.addEventListener('blur', function () {
+        if (errors.email) {
+          delete errors.email;
+        }
+        deleteSpan('.email');
+        var emailValue = document.querySelector('#email').value;
+        var emailDiv = document.querySelector('.email');
+        var spanError = createSpan();
+        if ( emailValue == "" ) {
+          errors.email = "Ingresá un email";
+        } else if ( !regexMail.test(emailValue) ) {
+          errors.email = "Ingresá un email válido";
+        } else {
+          email.style.backgroundColor = '#e5ffe5';
+        };
 
- 
+        if (errors.email) {
+          spanError.innerHTML = errors.email;
+          emailDiv.appendChild(spanError);
+          email.style.backgroundColor = '#ffe5e5';
+        }
+      });
+    }
+    if (password) {
+      password.addEventListener('blur', function () {
+        if (errors.password) {
+          delete errors.password;
+        }
+        deleteSpan('.password');
+        var passwordValue = document.querySelector('#password').value;
+        var passwordDiv = document.querySelector('.password');
+        var spanError = createSpan();
+        if ( !regexVacio.test(passwordValue) ) {
+          errors.password = "Ingresá una contraseña";
+        } else if ( passwordValue.length < 6 ) {
+          errors.password = "La contraseña debe tener al menos 6 caracteres";
+        } else {
+          password.style.backgroundColor = '#e5ffe5';
+        };
 
-    email.addEventListener('blur', function () {
-      if (errors.email) {
-        delete errors.email;
-      }
-      deleteSpan('.email');
-      var emailValue = document.querySelector('#email').value;
-      var emailDiv = document.querySelector('.email');
-      var spanError = createSpan();
-      if ( emailValue == "" ) {
-        errors.email = "Ingresá un email";
-      } else if ( !regexMail.test(emailValue) ) {
-        errors.email = "Ingresá un email válido";
-      } else {
-        email.style.backgroundColor = '#e5ffe5';
-      };
+        if (errors.password) {
+          spanError.innerHTML = errors.password;
+          passwordDiv.appendChild(spanError);
+          password.style.backgroundColor = '#ffe5e5';
+        };
+      });
+    }
+    if (cpassword) {
 
-      if (errors.email) {
-        spanError.innerHTML = errors.email;
-        emailDiv.appendChild(spanError);
-        email.style.backgroundColor = '#ffe5e5';
-      }
-    });
-
-    password.addEventListener('blur', function () {
-      if (errors.password) {
-        delete errors.password;
-      }
-      deleteSpan('.password');
-      var passwordValue = document.querySelector('#password').value;
-      var passwordDiv = document.querySelector('.password');
-      var spanError = createSpan();
-      if ( !regexVacio.test(passwordValue) ) {
-        errors.password = "Ingresá una contraseña";
-      } else if ( passwordValue.length < 6 ) {
-        errors.password = "La contraseña debe tener al menos 6 caracteres";
-      } else {
-        password.style.backgroundColor = '#e5ffe5';
-      };
-
-      if (errors.password) {
-        spanError.innerHTML = errors.password;
-        passwordDiv.appendChild(spanError);
-        password.style.backgroundColor = '#ffe5e5';
-      };
-    });
-
-    cpassword.addEventListener('blur', function () {
-      if (errors.cpassword) {
-        delete errors.cpassword;
-      }
-      deleteSpan('.cpassword');
-      var passwordValue = document.querySelector('#password').value;
-      var cpasswordValue = document.querySelector('#cpassword').value;
-      var cpasswordDiv = document.querySelector('.cpassword');
-      var spanError = createSpan();
-      if ( cpasswordValue == "" || cpasswordValue != passwordValue ) {
-        errors.cpassword = "Las contraseñas no se verifican";
-      } else {
-        cpassword.style.backgroundColor = '#e5ffe5';
-      };
-
-      if (errors.cpassword) {
-        spanError.innerHTML = errors.cpassword;
-        cpasswordDiv.appendChild(spanError);
-        cpassword.style.backgroundColor = '#ffe5e5';
-      }
-    });
-
-    legals.addEventListener('blur', function () {
-      if (errors.legals) {
-        delete errors.legals
-      }
-      deleteSpan('.legals');
-      var legalsDiv = document.querySelector('.legals');
-      var spanError = createSpan();
-      if ( legals.checked == false ) {
-        legals.style.boxShadow = '0 0 2px red';
-        errors.legals = "Campo obligatorio";
-        spanError.innerHTML = errors.legals;
-        legalsDiv.appendChild(spanError);
-      } else {
-        legals.style.boxShadow = 'none';
-      };
-    });
-
+      cpassword.addEventListener('blur', function () {
+        if (errors.cpassword) {
+          delete errors.cpassword;
+        }
+        deleteSpan('.cpassword');
+        var passwordValue = document.querySelector('#password').value;
+        var cpasswordValue = document.querySelector('#cpassword').value;
+        var cpasswordDiv = document.querySelector('.cpassword');
+        var spanError = createSpan();
+        if ( cpasswordValue == "" || cpasswordValue != passwordValue ) {
+          errors.cpassword = "Las contraseñas no se verifican";
+        } else {
+          cpassword.style.backgroundColor = '#e5ffe5';
+        };
+        if (errors.cpassword) {
+          spanError.innerHTML = errors.cpassword;
+          cpasswordDiv.appendChild(spanError);
+          cpassword.style.backgroundColor = '#ffe5e5';
+        }
+      });
+    }
+    if (legals) {
+      
+      legals.addEventListener('blur', function () {
+        if (errors.legals) {
+          delete errors.legals
+        }
+        deleteSpan('.legals');
+        var legalsDiv = document.querySelector('.legals');
+        var spanError = createSpan();
+        if ( legals.checked == false ) {
+          legals.style.boxShadow = '0 0 2px red';
+          errors.legals = "Campo obligatorio";
+          spanError.innerHTML = errors.legals;
+          legalsDiv.appendChild(spanError);
+        } else {
+          legals.style.boxShadow = 'none';
+        };
+      });
+    }
+    if (form) {
     form.addEventListener('submit', function (event) {
       if (!isEmpty(errors)) {
         event.preventDefault();
@@ -305,14 +289,18 @@ window.addEventListener('load', function() {
         errors = [];
       };
     });
+  }
 
 // BUSCADOR DE PARTIDOS
 
     var selectSport = document.querySelector('#selectSport');
-
+  
+    if ( selectSport) {
     selectSport.addEventListener('change', function(){
       
     })
+    }
+   
 
 
 

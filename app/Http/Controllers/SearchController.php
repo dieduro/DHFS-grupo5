@@ -3,26 +3,23 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use \App\Match;
+use \App\Sport;
 use Auth;
 
 class SearchController extends Controller
 {
     public function search(Request $request) {
-
-    //    $param = [
-    //         'deporte' => $request->input('deporte'),
-    //         'zona' => $request->input('zona'),
-    //         'fecha' => $request->input('fecha')
-    //    ];
-
-       $matches = \App\Match::where('sport_id', "=", $request->input("deporte"))->get();
-       $param = [
-           'matches' => $matches
+    
+        
+        $matches = \App\Match::where('sport_id', "=", $request->input("deporte"))->get();
+        $sport = \App\Sport::find($request->input("deporte"));
+        
+        $param = [
+           'matches' => $matches,
+           'sport' => $sport
        ];
-    //    if ($request->input('zona') !== null) {
-    //     $resultado = $resultado->where('place', "=", $request->input('zona'));        
-    //    }
         
         
         if(Auth::check()) {
@@ -31,4 +28,6 @@ class SearchController extends Controller
             return view('resultados', $param);
         }
     }
+
+
 }

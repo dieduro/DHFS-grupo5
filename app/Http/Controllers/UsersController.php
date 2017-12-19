@@ -29,6 +29,44 @@ class UsersController extends Controller
     //
   }
 
+
+  public function formatDate() {
+
+    $date = Auth::user()->created_at;
+    $tempDate = explode('-', $date, 3);
+    $tempDate[2] = explode(' ', $tempDate[2], 2 );
+    $year = $tempDate[0];
+    $month = $tempDate[1];
+    switch ($month){
+      case 1: $month = 'Enero';
+      break;
+      case 2: $month = 'Febrero';
+      break;
+      case 3: $month = 'Marzo';
+      break;
+      case 4: $month = 'Abril';
+      break;
+      case 5: $month = 'Mayo';
+      break;
+      case 6: $month = 'Junio';
+      break;
+      case 7: $month = 'Julio';
+      break;
+      case 8: $month = 'Agosto';
+      break;
+      case 9: $month = 'Septiembre';
+      break;
+      case 10: $month = 'Octubre';
+      break;
+      case 11: $month = 'Noviembre';
+      break;
+      case 12: $month = 'Diciembre';
+      break;
+    }
+    $formatDate = $month.' de '.$year;
+    return $formatDate;
+  }
+
   /**
   * Store a newly created resource in storage.
   *
@@ -49,11 +87,15 @@ class UsersController extends Controller
   public function show($username)
   {
     $matches = Match::all();
-    $user = User::all();
-    // where('username', "=", $username)->get();
+    $user = Auth::user();
+    $userMatches = Match::where('user_id', '=', $user->id)->count();
+    $memberSince = $this->formatDate();
+    
     $param = [
       'user' => $user,
-      'matches' => $matches
+      'matches' => $matches,
+      'userMatches' => $userMatches,
+      'memberSince' => $memberSince
     ];
     return view('profile.profile', $param);
   }
@@ -121,6 +163,12 @@ class UsersController extends Controller
       $user->email = Auth::user()->email;
     };
 
+    if ($request->input('location') !== null) {
+      $user->location = $request->input('city'). ', '.$request->input('country') ;
+    } else {
+      $user->location = Auth::user()->location;
+    };
+
     if ($request->input('password') !== null) {
       $user->password = bcrypt($request->input('password'));
     } else {
@@ -145,8 +193,6 @@ class UsersController extends Controller
     
   }
 
-
-
   /**
   * Remove the specified resource from storage.
   *
@@ -161,4 +207,5 @@ class UsersController extends Controller
 
     return redirect('/salir');
   }
+
 }

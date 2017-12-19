@@ -92,5 +92,5 @@
 </form>
 </div>
 
-<script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEmgvA83jhBZTtI72oOKtaTg9bs6gyFhk&libraries=places" async defer></script>
+
 @endsection
