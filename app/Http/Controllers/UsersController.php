@@ -86,7 +86,7 @@ class UsersController extends Controller
   */
   public function show($username)
   {
-    $matches = Match::all();
+    $matches = Match::where('active', '=', 1)->orderBy('date', 'asc')->get();
     $user = Auth::user();
     $userMatches = Match::where('user_id', '=', $user->id)->count();
     $memberSince = $this->formatDate();

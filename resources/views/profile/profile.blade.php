@@ -19,7 +19,9 @@
     
   </div>
 </div>
+ <div class="dashTitle"><h2 class="heading">Partidos que te pueden interesar</h2></div>
   <div class="matches-container">
+ 
     {{--PARTIDO #--}}
     @foreach ($matches as $match)
       <div class="container-match">

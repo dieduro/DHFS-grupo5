@@ -16,8 +16,8 @@ class CreateMatchesTable extends Migration
     Schema::create('matches', function (Blueprint $table) {
       $table->increments('id');
       $table->integer('sport_id')->references('id')->on('sports');
-      $table->string('date')->nullable();;
-      $table->string('time')->nullable();;
+      $table->string('date')->nullable();
+      $table->string('time')->nullable();
       $table->string('name')->nullable();
       $table->string('street_number')->nullable();
       $table->string('locality')->nullable();
@@ -28,6 +28,7 @@ class CreateMatchesTable extends Migration
       $table->string('photo');
       $table->integer('user_id')->references('id')->on('users');
       $table->timestamps();
+      $table->boolean('active')->default(1);
     });
   }
 
